@@ -11,47 +11,38 @@ const sass = require("gulp-sass")(require("sass"));
 
 const sassSrc = "./assets/src/scss/";
 const cssDest = "./assets/css/";
+const cssSrc = "./assets/src/css/";
 
 const sassTask = (cb) => {
     return gulp
-        .src(sassSrc + "style.scss")
+        .src(["./assets/src/scss/style.scss"])
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({ cascade: false }))
-        .pipe(gulp.dest(cssDest))
+        .pipe(gulp.dest("./assets/src/css"))
         .pipe(browserSync.stream());
     cb();
 };
 
-// const editorStylesTask = (cb) => {
-//     return gulp
-//         .src(editorSrc + "editor-style.scss")
-//         .pipe(sass().on("error", sass.logError))
-//         .pipe(autoprefixer({ cascade: false }))
-//         .pipe(gulp.dest(cssDest))
-//         .pipe(browserSync.stream());
-//     cb();
-// };
+const cssConcatExternalTask = (cb) => {
+    return gulp
+        .src([cssSrc + "style.css"])
+        .pipe(concat("style.css"))
+        .pipe(gulp.dest(cssDest));
+    cb();
+};
 
 const rtlCssTask = (cb) => {
     return gulp
-        .src(cssDest + "style.css")
+        .src(cssSrc + "style.css")
         .pipe(rtlcss())
         .pipe(rename("style-rtl.css"))
         .pipe(gulp.dest(cssDest));
     cb();
 };
 
-const cssConcatExternalTask = (cb) => {
-    return gulp
-        .src([cssDest + "style.css"])
-        .pipe(concat("style.css"))
-        .pipe(gulp.dest(cssDest));
-    cb();
-};
-
 const mainScriptsTask = (cb) => {
     return gulp
-        .src("./assets/src/js/")
+        .src("./assets/src/js/main.js")
         .pipe(concat("main.js"))
         .pipe(gulp.dest("./assets/js"));
     cb();
@@ -73,6 +64,7 @@ function liveServerTask(cb) {
         "change",
         series(sassTask, cssConcatExternalTask)
     );
+    gulp.watch(["./assets/src/js/main.js"]).on("change", series(mainScriptsTask));
     gulp.watch("./**/*.php").on("change", browserSync.reload);
     cb();
 }
@@ -80,6 +72,7 @@ function liveServerTask(cb) {
 exports.default = series(
     sassTask,
     cssConcatExternalTask,
+    rtlCssTask,
     mainScriptsTask,
     vendorScriptsTask,
     liveServerTask
