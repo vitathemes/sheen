@@ -7,9 +7,9 @@
  * @package brilliance
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'BRILLIANCE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'BRILLIANCE_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'brilliance_setup' ) ) :
@@ -50,7 +50,7 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'brilliance' ),
+				'primary' => esc_html__( 'Primary', 'brilliance' ),
 			)
 		);
 
@@ -140,10 +140,15 @@ add_action( 'widgets_init', 'brilliance_widgets_init' );
  * Enqueue scripts and styles.
  */
 function brilliance_scripts() {
-	wp_enqueue_style( 'brilliance-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'brilliance-style', get_stylesheet_uri(), array(), BRILLIANCE_VERSION );
 	wp_style_add_data( 'brilliance-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'brilliance-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// enqueue css
+	wp_enqueue_style( 'brilliance-main-style', get_template_directory_uri() . '/assets/css/style.css', array(), BRILLIANCE_VERSION );
+
+	wp_enqueue_script( 'brilliance-navigation', get_template_directory_uri() . './assets/js/navigation.js', array(), BRILLIANCE_VERSION, true );
+	wp_enqueue_script( 'brilliance-vendors-script', get_template_directory_uri() . './assets/js/vendors.js', array(), BRILLIANCE_VERSION, true );
+	wp_enqueue_script( 'brilliance-main-script', get_template_directory_uri() . './assets/js/main.js', array(), BRILLIANCE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -155,6 +160,11 @@ add_action( 'wp_enqueue_scripts', 'brilliance_scripts' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+* Nav menu walker
+*/
+require get_template_directory() . '/classes/class_brilliance_walker_nav_menu.php';
 
 /**
  * Custom template tags for this theme.
@@ -177,4 +187,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

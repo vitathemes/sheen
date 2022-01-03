@@ -35,3 +35,23 @@ function brilliance_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'brilliance_pingback_header' );
+
+
+if ( ! function_exists( 'brilliance_branding' ) ) {
+	function brilliance_branding() { 
+		/**
+		 * Get Custom Logo if exist
+		 */
+		if ( has_custom_logo() ) {
+			the_custom_logo();
+		} 
+		else {	
+
+			// Display the Text title with link 
+			/* translator %s : link of main page. translator %s 2: Site title  */
+			echo sprintf('<h1 class="c-header__title site-title"><a class="c-header__title__anchor" href="%s" rel="home">%s</a></h1>',
+			esc_attr(esc_url( home_url( '/' ))),
+			esc_html(get_bloginfo( 'name' )));
+			}
+	}
+}

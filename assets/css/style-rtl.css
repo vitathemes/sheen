@@ -321,12 +321,59 @@ template {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+body {
+  background-color: lightblue;
+}
+
+* {
+  transition-delay: 0s;
+  outline: red solid 1px !important;
+}
+
+body {
+  background-color: red !important;
+}
+
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+.o-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+.c-main {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: lightblue;
+}
+.c-footer {
+  background-color: lightblue;
+  min-height: 105px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 24px;
+  padding-top: 48px;
+}
+@media (min-width: 46.25em) {
+  .c-footer {
+    margin-top: auto;
+    padding: 0px 17px;
+    margin-bottom: 15px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/

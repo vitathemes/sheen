@@ -1,0 +1,11 @@
+.c-main {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    height: max-content;
+
+    background-color: lightblue;
+
+    @include mq($from: tablet) {
+    }
+}
