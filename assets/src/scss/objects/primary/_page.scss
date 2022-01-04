@@ -1,5 +1,19 @@
 .o-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: lightcyan;
+    display: flex;
+    justify-content: center;
+}
+
+.o-page__container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: calc(100vh - 105px);
+    width: 100%;
+
+    @include mq($from: tablet) {
+        max-width: 100%;
+        width: 1240px;
+    }
 }

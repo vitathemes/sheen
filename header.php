@@ -25,36 +25,40 @@
     <?php wp_body_open(); ?>
     <div id="page" class="o-page">
 
-        <a class="skip-link screen-reader-text" href="#primary">
-            <?php esc_html_e( 'Skip to content', 'brilliance' ); ?>
-        </a>
+        <div class="o-page__container">
 
-        <header id="masthead" class="c-header">
-            <div class="c-header__menu">
+            <a class="skip-link screen-reader-text" href="#primary">
+                <?php esc_html_e( 'Skip to content', 'brilliance' ); ?>
+            </a>
 
-                <div class="c-header__branding">
-                    <?php brilliance_branding(); ?>
-                </div><!-- .site-branding -->
+            <header id="masthead" class="c-header">
+                <div class="c-header__menu">
 
-                <nav class="c-nav" id="site-navigation">
-                    <button class="c-nav__toggle" aria-controls="primary-menu" aria-expanded="false">
-                        <?php esc_html_e( 'Primary Menu', 'brilliance' ); ?>
-                    </button>
+                    <div class="c-header__branding">
+                        <?php brilliance_branding(); ?>
+                    </div><!-- .site-branding -->
 
-                    <?php
-						if ( has_nav_menu( 'primary' ) ) {
-                            wp_nav_menu(
-                                array(
-                                    'walker'          => new Brilliance_walker_nav_menu(),
-                                    'theme_location'  => 'primary',
-                                    'menu_id'         => 'primary',
-                                    'menu_class'      => 's-nav nav-menu',
-                                    'container_class' => 'c-nav',
-                                )
-                            );
-                        }
-					?>
-                </nav><!-- #site-navigation -->
+                    <nav class="c-header__nav" id="site-navigation">
+                        <button class="c-nav__toggle c-nav__toggle--burger" aria-controls="primary-menu"
+                            aria-expanded="false">
+                            <span></span>
+                        </button>
 
-            </div><!-- .c-header__menu -->
-        </header><!-- #masthead -->
+                        <?php
+                            if ( has_nav_menu( 'primary' ) ) {
+                                wp_nav_menu(
+                                    array(
+                                        'walker'          => new Brilliance_walker_nav_menu(),
+                                        'theme_location'  => 'primary',
+                                        'menu_id'         => 'primary',
+                                        'menu_class'      => 's-nav nav-menu',
+                                        'container_class' => 'c-nav',
+                                    )
+                                );
+                            }
+                        ?>
+
+                    </nav><!-- #site-navigation -->
+
+                </div><!-- .c-header__menu -->
+            </header><!-- #masthead -->

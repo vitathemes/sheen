@@ -50,7 +50,11 @@ const mainScriptsTask = (cb) => {
 
 const vendorScriptsTask = (cb) => {
     return gulp
-        .src(["./assets/src/js/vendor/iconify.js"])
+
+        .src([
+            "./assets/src/js/vendor/iconify.js",
+            "./node_modules/masonry-layout/dist/masonry.pkgd.js",
+        ])
         .pipe(concat("vendors.js"))
         .pipe(gulp.dest("./assets/js"));
     cb();

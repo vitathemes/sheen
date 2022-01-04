@@ -1,3 +1,7 @@
-body {
-    background-color: lightblue;
+body.admin-bar {
+    .c-nav {
+        @include mq($until: tablet) {
+            top: 47px;
+        }
+    }
 }

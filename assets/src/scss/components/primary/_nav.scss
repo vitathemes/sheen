@@ -1,0 +1,119 @@
+.c-nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: darkred;
+
+    @include mq($from: tablet) {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+    }
+}
+
+.c-nav__toggle {
+    @include mq($from: tablet) {
+        display: none;
+    }
+}
+
+.s-nav {
+    margin: 0px;
+    padding: 0px;
+    width: max-content;
+    list-style-type: none;
+    background-color: lightskyblue;
+
+    .menu-item {
+        display: inline-block;
+
+        @include mq($from: tablet) {
+            margin-right: 64px;
+        }
+    }
+}
+
+/*------------------------------------*\
+  #Burger Button
+\*------------------------------------*/
+.c-nav__toggle {
+    padding: 0;
+    margin: 0;
+    width: 35px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border: none !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent;
+        outline: none;
+    }
+}
+
+.c-nav__toggle.c-nav__toggle--burger:after,
+.c-nav__toggle.c-nav__toggle--burger:before,
+.c-nav__toggle.c-nav__toggle--burger span {
+    width: 100%;
+    height: 2px;
+    border-radius: 0px;
+    position: absolute;
+    display: block !important;
+    background: red;
+}
+.c-nav__toggle.c-nav__toggle--burger:after,
+.c-nav__toggle.c-nav__toggle--burger:before {
+    content: "";
+    transition: 0.3s width 0.4s;
+}
+.c-nav__toggle.c-nav__toggle--burger:after {
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+}
+.c-nav__toggle.c-nav__toggle--burger:before {
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 1.5px;
+}
+.c-nav__toggle.c-nav__toggle--burger span {
+    top: 55%;
+    margin-top: -1.5px;
+    transition: transform 0.3s;
+}
+.c-nav__toggle.c-nav__toggle--burger span:before {
+    content: "";
+    background: red;
+    width: 100%;
+    height: 1px;
+    border-radius: 1px;
+    position: absolute;
+    left: 0px;
+    transition: transform 0.3s;
+}
+.c-nav__toggle.c-nav__toggle--burger.on:after {
+    transition: all 0.2s;
+    width: 0%;
+    left: 0px;
+}
+.c-nav__toggle.c-nav__toggle--burger.on:before {
+    transition: all 0.2s;
+    width: 0%;
+    right: 0px;
+}
+.c-nav__toggle.c-nav__toggle--burger.on span {
+    transform: rotate(45deg);
+    transition: 0.3s transform 0.4s;
+    height: 1px;
+}
+.c-nav__toggle.c-nav__toggle--burger.on span:before {
+    transform: rotate(-90deg);
+    transition: 0.3s transform 0.4s;
+}

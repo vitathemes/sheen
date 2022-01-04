@@ -11,10 +11,10 @@ if ( ! function_exists( 'brilliance_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function brilliance_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	function brilliance_posted_on(  $brilliance_has_modified_time = false ) {
+		$time_string = '<time class="c-post__entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( $brilliance_has_modified_time ) {
+			$time_string = '<time class="c-post__entry-date published" datetime="%1$s">%2$s</time><time class="c-post__entry-date__updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -27,14 +27,15 @@ if ( ! function_exists( 'brilliance_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'brilliance' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( '%s', 'post date', 'brilliance' ),
+			'<a class="c-post__date" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
+
 
 if ( ! function_exists( 'brilliance_posted_by' ) ) :
 	/**
@@ -112,46 +113,6 @@ if ( ! function_exists( 'brilliance_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'brilliance_post_thumbnail' ) ) :
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 */
-	function brilliance_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
-		}
-
-		if ( is_singular() ) :
-			?>
-
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
-			</a>
-
-			<?php
-		endif; // End is_singular().
-	}
-endif;
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
@@ -161,5 +122,65 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	 */
 	function wp_body_open() {
 		do_action( 'wp_body_open' );
+	}
+endif;
+
+
+if ( ! function_exists( 'brilliance_get_index_title' ) ) :
+	/**
+	  * Get index.php Title 
+	  */
+	function brilliance_get_index_title() {
+		if (is_home()) {
+			if (get_option('page_for_posts')) {
+				echo esc_html(get_the_title(get_option('page_for_posts')));
+			}
+			else{
+				echo esc_html__( "Blog" , "brilliance" );
+			}
+		} 
+	}
+endif;
+
+
+if ( ! function_exists('brilliance_get_thumbnail')) :
+	/**
+	 * Return thumbnail if exist
+	 */
+	function brilliance_get_thumbnail( $brilliance_image_size = "large" ) {
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail(
+				$brilliance_image_size,
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+					'class' => "c-post__thumbnail__image"
+				)
+			);
+		}
+		else{
+			echo '<img alt="'.esc_attr__( 'no thumbnail', 'brilliance' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
+		}
+}
+endif;
+
+
+if ( ! function_exists( 'brilliance_post_categories' ) ) : 
+	/**
+	 * Show post categories
+	 */
+	function brilliance_post_categories() {
+		$brilliance_categories = get_the_category();
+
+		echo "<div class='c-category'>";
+			foreach ( $brilliance_categories as $brilliance_category ) {
+				echo sprintf( '<a href="%s" class="c-category__item__link">%s</a>',
+					esc_url( get_category_link( $brilliance_category->term_id ) ),
+					esc_html( $brilliance_category->name ) );
+			}
+		echo "</div>";
 	}
 endif;

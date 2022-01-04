@@ -17,41 +17,36 @@ get_header();
 
 <main id="primary" class="c-main">
 
-    <?php
-		// if ( have_posts() ) :
-		// 	if ( is_home() && ! is_front_page() ) :
-	?>
-    <!-- <header>
-        <h1 class="page-title screen-reader-text"><?php //single_post_title(); ?></h1>
-    </header> -->
-    <?php
-			//endif;
+    <div class="c-main__content">
 
-		/* Start the Loop */
-		// while ( have_posts() ) :
-		// 	the_post();
+        <div class="c-main__header">
+            <h2 class="c-main__title">
+                <?php brilliance_get_index_title(); ?>
+            </h2>
+        </div>
 
-		// 	/*
-		// 		* Include the Post-Type-specific template for the content.
-		// 		* If you want to override this in a child theme, then include a file
-		// 		* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-		// 		*/
-		// 	get_template_part( 'template-parts/content', get_post_type() );
+        <div class="c-main__body js-main__body-has-masonry">
+            <?php
+				if ( have_posts() ) :
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+						
+						get_template_part( 'template-parts/content' , get_post_type() );
+					endwhile;
 
-		// endwhile;
+					the_posts_navigation();
 
-		// the_posts_navigation();
+				else :
 
-	// else :
+					get_template_part( 'template-parts/content', 'none' );
 
-	// 	get_template_part( 'template-parts/content', 'none' );
+				endif;
+			?>
+        </div>
 
-	// endif;
-	?>
-
+    </div>
 </main><!-- #main -->
-
-
 
 <?php
 get_footer();
