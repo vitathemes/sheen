@@ -24,6 +24,10 @@
 
 .c-main__body {
     margin-top: 74px;
+
+    @include mq($from: tablet) {
+        background-color: lightpink;
+    }
 }
 
 .c-main__title {

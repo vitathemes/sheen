@@ -1,9 +1,24 @@
 .c-post {
     width: 380px;
     max-width: 100%;
+    margin-bottom: 50px;
+
+    @include mq($from: tablet) {
+        margin-bottom: 70px;
+        display: inline-block;
+    }
 }
 
 .c-post__thumbnail__image {
     max-width: 100%;
     height: auto;
+}
+
+.c-post__entry-title {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
