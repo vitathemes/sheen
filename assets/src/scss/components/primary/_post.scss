@@ -7,6 +7,14 @@
         margin-bottom: 70px;
         display: inline-block;
     }
+
+    @include mq($until: desktop-md) {
+        width: 570px;
+    }
+
+    @include mq($until: tablet) {
+        width: 100%;
+    }
 }
 
 .c-post__thumbnail__image {

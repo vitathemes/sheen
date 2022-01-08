@@ -23,11 +23,13 @@
 }
 
 .c-main__body {
-    margin-top: 74px;
+    background-color: lightpink;
+    margin: 74px auto 0px auto;
+    max-width: 100%;
 
-    @include mq($from: tablet) {
-        background-color: lightpink;
-    }
+    // @include mq($until: desktop-md) {
+    //     width: 100vw !important;
+    // }
 }
 
 .c-main__title {

@@ -21,6 +21,8 @@
 
 			brilliance_posted_on();
 
+			brilliance_get_seprator();
+
 			brilliance_post_categories();
 		?>
 

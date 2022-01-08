@@ -184,3 +184,16 @@ if ( ! function_exists( 'brilliance_post_categories' ) ) :
 		echo "</div>";
 	}
 endif;
+
+
+if ( ! function_exists( 'brilliance_get_seprator' ) ) : 
+	/**
+	 * Display A simple Seprator
+	 */
+
+	function brilliance_get_seprator() {
+		
+		/* translators: %s: Simple seprator */
+		echo sprintf('<span class="u-seprator">%s</span>' , esc_html( '/' ) );
+	}
+endif;

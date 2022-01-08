@@ -577,12 +577,9 @@ template {
 }
 
 .c-main__body {
-  margin-top: 74px;
-}
-@media (min-width: 46.25em) {
-  .c-main__body {
-    background-color: lightpink;
-  }
+  background-color: lightpink;
+  margin: 74px auto 0px auto;
+  max-width: 100%;
 }
 
 .c-main__title {
@@ -598,6 +595,16 @@ template {
   .c-post {
     margin-bottom: 70px;
     display: inline-block;
+  }
+}
+@media (max-width: 77.1775em) {
+  .c-post {
+    width: 570px;
+  }
+}
+@media (max-width: 46.24em) {
+  .c-post {
+    width: 100%;
   }
 }
 
@@ -644,6 +651,10 @@ template {
 --------------------------------------------------------------*/
 /* Accessibility
 --------------------------------------------- */
+.u-seprator {
+  margin: 0px 23px;
+}
+
 /* Alignments
 --------------------------------------------- */
 /*--------------------------------------------------------------

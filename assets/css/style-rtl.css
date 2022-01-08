@@ -321,10 +321,6 @@ template {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-body {
-  background-color: lightgreen;
-}
-
 @media (max-width: 46.24em) {
   body.admin-bar .c-nav {
     top: 47px;
@@ -581,7 +577,9 @@ body {
 }
 
 .c-main__body {
-  margin-top: 74px;
+  background-color: lightpink;
+  margin: 74px auto 0px auto;
+  max-width: 100%;
 }
 
 .c-main__title {
@@ -591,11 +589,37 @@ body {
 .c-post {
   width: 380px;
   max-width: 100%;
+  margin-bottom: 50px;
+}
+@media (min-width: 46.25em) {
+  .c-post {
+    margin-bottom: 70px;
+    display: inline-block;
+  }
+}
+@media (max-width: 77.1775em) {
+  .c-post {
+    width: 570px;
+  }
+}
+@media (max-width: 46.24em) {
+  .c-post {
+    width: 100%;
+  }
 }
 
 .c-post__thumbnail__image {
   max-width: 100%;
   height: auto;
+}
+
+.c-post__entry-title {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .c-category {
@@ -627,6 +651,10 @@ body {
 --------------------------------------------------------------*/
 /* Accessibility
 --------------------------------------------- */
+.u-seprator {
+  margin: 0px 23px;
+}
+
 /* Alignments
 --------------------------------------------- */
 /*--------------------------------------------------------------
