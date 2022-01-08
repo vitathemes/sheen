@@ -13,7 +13,6 @@
 function brilliance_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -62,16 +61,16 @@ add_action( 'customize_preview_init', 'brilliance_customize_preview_js' );
 
 
 if( function_exists( 'kirki' ) ) {
+	
 	/*
 	 *	Kirki - Config
 	 */
-
+	
 	// Config 
-	Kirki::add_config( 'castpress_theme', array(
+	Kirki::add_config( 'brilliance_theme', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
-
 
 	/*
 	 *	Kirki -> Panels
@@ -80,19 +79,94 @@ if( function_exists( 'kirki' ) ) {
 	// Footer
 	Kirki::add_panel( 'footer', array(
 		'priority' => 180,
-		'title'    => esc_html__( 'Footer', 'castpress' ),
+		'title'    => esc_html__( 'Footer', 'brilliance' ),
 	) );
 
 
 	/*
 	 *	Kirki -> Sections
 	 */
-	
-	// Home Components 
-	Kirki::add_section( 'home_components', array(
-		'title'    => esc_html__( 'Home Components', 'castpress' ),
-		'panel'    => '',
-		'priority' => 5,
+
+	/* Typography Colors Section */
+	Kirki::add_section( 'colors', array(
+		'title'          => esc_html__( 'Theme Colors', 'brilliance' ),
+		'description'    => esc_html__( 'Change Theme color and customize them.', 'brilliance' ),
+		'panel'          => '',
+		'priority'       => 100,
 	) );
+
+	/* Typography Colors Fields */
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_primary_color',
+		'label'    => __( 'Primary Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#000000',
+		'priority' => 10,
+		
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_primary_accent_color',
+		'label'    => __( 'Primary Accent Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#FF00B8',
+		'priority' => 20,
+		
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_headings_color',
+		'label'    => __( 'Headings Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#060606',
+		'priority' => 30,
+		
+	] );
+	
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_primary_text_color',
+		'label'    => __( 'Primary Text Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#060606',
+		'priority' => 40,
+		
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_secondary_text_color',
+		'label'    => __( 'Secondary Text Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#767676',
+		'priority' => 50,
+		
+	] );
+
+	
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_tertiary_text_color',
+		'label'    => __( 'Tertiary Text Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#E1E1E1',
+		'priority' => 60,
+		
+	] );
+
+	
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_error_color',
+		'label'    => __( 'Error Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#FF3636',
+		'priority' => 70,
+		
+	] );
+	/* End Typography Colors Fields */
 
 }
