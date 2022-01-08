@@ -59,3 +59,40 @@ function brilliance_customize_preview_js() {
 	wp_enqueue_script( 'brilliance-customizer', get_template_directory_uri() . './assets/js/customizer.js', array( 'customize-preview' ), BRILLIANCE_VERSION, true );
 }
 add_action( 'customize_preview_init', 'brilliance_customize_preview_js' );
+
+
+if( function_exists( 'kirki' ) ) {
+	/*
+	 *	Kirki - Config
+	 */
+
+	// Config 
+	Kirki::add_config( 'castpress_theme', array(
+		'capability'    => 'edit_theme_options',
+		'option_type'   => 'theme_mod',
+	) );
+
+
+	/*
+	 *	Kirki -> Panels
+	 */
+
+	// Footer
+	Kirki::add_panel( 'footer', array(
+		'priority' => 180,
+		'title'    => esc_html__( 'Footer', 'castpress' ),
+	) );
+
+
+	/*
+	 *	Kirki -> Sections
+	 */
+	
+	// Home Components 
+	Kirki::add_section( 'home_components', array(
+		'title'    => esc_html__( 'Home Components', 'castpress' ),
+		'panel'    => '',
+		'priority' => 5,
+	) );
+
+}

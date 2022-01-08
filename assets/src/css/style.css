@@ -316,11 +316,38 @@ template {
 /*-------------------------------------------
 # Settings
 --------------------------------------------- */
+/* Josefin Sans-400 - latin */
+@font-face {
+  font-family: "josefin-sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/josefin-sans-v20-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/josefin-sans-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/josefin-sans-v20-latin-regular.woff2") format("woff2"), url("../../assets/fonts/josefin-sans-v20-latin-regular.woff") format("woff"), url("../../assets/fonts/josefin-sans-v20-latin-regular.ttf") format("truetype"), url("../../assets/fonts/josefin-sans-v20-latin-regular.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+/* Josefin Sans-700 - latin */
+@font-face {
+  font-family: "josefin-sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/josefin-sans-v20-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../../assets/fonts/josefin-sans-v20-latin-700.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/josefin-sans-v20-latin-700.woff2") format("woff2"), url("../../assets/fonts/josefin-sans-v20-latin-700.woff") format("woff"), url("../../assets/fonts/josefin-sans-v20-latin-700.ttf") format("truetype"), url("../../assets/fonts/josefin-sans-v20-latin-700.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+/*--------------------------------------------------------------
+# Abstracts
+--------------------------------------------------------------*/
 /* Box sizing
 --------------------------------------------- */
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
+body {
+  font-family: "josefin-sans";
+}
+
 @media (max-width: 46.24em) {
   body.admin-bar .c-nav {
     top: 47px;

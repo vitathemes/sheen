@@ -55,3 +55,41 @@ if ( ! function_exists( 'brilliance_branding' ) ) {
 			}
 	}
 }
+
+
+if ( ! function_exists( 'brilliance_theme_settings' ) ) {
+	function brilliance_theme_settings() {
+		$vars = ':root {	
+	            --brilliance-primary-color: ' . get_theme_mod( "knowpress_primary_color", "#0090AD" ) . ';
+	            --brilliance-primary-text-color: ' . get_theme_mod( "knowpress_primary_text_color", "#242A31" ) . ';
+	            --brilliance-secondary-text-color: ' . get_theme_mod( "knowpress_secondary_text_color", "#4D5A66" ) . ';
+	            --brilliance-sidebar-color: ' . get_theme_mod( "knowpress_sidebar_color", "#f6f8fa" ) . ';
+	            --brilliance-border-color: ' . get_theme_mod( "knowpress_border_color", "#E2E8EE" ) . ';
+	            --brilliance-card-bg-color: ' . get_theme_mod( "knowpress_card_bg_color", "#F5F7F9" ) . ';
+	            --brilliance-message-bg-color: ' . get_theme_mod( "knowpress_message_bg", "#EBFCFF" ) . ';
+	            --brilliance-message-border-color: ' . get_theme_mod( "knowpress_message_border", "#0090AD" ) . ';
+	            --brilliance-warning-bg-color: ' . get_theme_mod( "knowpress_warning_bg", "#FEFAEB" ) . ';
+	            --brilliance-warning-border-color: ' . get_theme_mod( "knowpress_warning_border", "#F2BB08" ) . ';
+	            --brilliance-danger-bg-color: ' . get_theme_mod( "knowpress_danger_bg", "#FBEEEF" ) . ';
+	            --brilliance-danger-border-color: ' . get_theme_mod( "knowpress_danger_border", "#D4303B" ) . ';
+	            --brilliance-list-bg-color: ' . get_theme_mod( "knowpress_list_bg", "#F5F7F9" ) . ';
+	            --brilliance-list-border-color: ' . get_theme_mod( "knowpress_list_border", "#0090AD" ) . ';
+			}';
+
+		$mobile_base_font        = get_theme_mod( 'text_typography_m', false );
+		$mobile_base_font_styles = "";
+		if ( $mobile_base_font ) {
+			$mobile_base_font_styles = "@media (max-width: 576px) { html {font-size:" . $mobile_base_font['font-size'] . " !important; line-height:" . $mobile_base_font['line-height'] . " !important; }}";
+		}
+
+		?>
+<style>
+<?php echo esc_html($vars);
+?><?php echo esc_html($mobile_base_font_styles);
+?>
+</style>
+<?php
+	}
+}
+add_action( 'wp_head', 'brilliance_theme_settings' );
+add_action( 'enqueue_block_editor_assets', 'brilliance_theme_settings' );
