@@ -361,13 +361,44 @@ body {
   transition-delay: 0s;
 }
 
+h1 {
+  color: var(--brilliance_theme_primary_color);
+}
+
+h2 {
+  color: var(--brilliance_theme_primary_accent_color);
+}
+
+h3 {
+  color: var(--brilliance_theme_headings_color);
+}
+
+h4 {
+  color: var(--brilliance_theme_primary_text_color);
+}
+
+h5 {
+  color: var(--brilliance_theme_primary_text_white_color);
+}
+
+h6 {
+  color: var(--brilliance_theme_secondary_text_color);
+}
+
+.h7 {
+  color: var(--brilliance_theme_tertiary_text_color);
+}
+
+.h8 {
+  color: var(--brilliance_theme_error_color);
+}
+
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
 .o-page {
   width: 100%;
   min-height: 100vh;
-  background-color: lightcyan;
   display: flex;
   justify-content: center;
 }

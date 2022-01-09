@@ -1,38 +1,34 @@
-// h1 {
-//     font-weight: 600;
-//     font-size: rem(29px);
-//     line-height: rem(43px);
-// }
+h1 {
+    color: $brilliance_primary_color;
+}
 
-// h2 {
-//     font-weight: 600;
-//     font-size: rem(23px);
-//     line-height: rem(35px);
-// }
+h2 {
+    color: $brilliance_primary_accent_color;
+}
 
-// h3 {
-//     font-weight: 600;
-//     font-size: rem(20px);
-//     line-height: rem(32px);
-// }
+h3 {
+    color: $brilliance_headings_color;
+}
 
-// h4 {
-//     font-weight: 600;
-//     font-size: rem(18px);
-//     line-height: rem(28px);
-// }
+h4 {
+    color: $brilliance_primary_text_color;
+}
 
-// h5 {
-//     font-weight: 600;
-//     font-size: rem(16px);
-//     line-height: rem(24px);
-// }
+h5 {
+    color: $brilliance_primary_text_white_color;
+}
 
-// h6 {
-//     font-weight: 600;
-//     font-size: rem(14px);
-//     line-height: rem(21px);
-// }
+h6 {
+    color: $brilliance_secondary_text_color;
+}
+
+.h7 {
+    color: $brilliance_tertiary_text_color;
+}
+
+.h8 {
+    color: $brilliance_error_color;
+}
 
 // h1,
 // h2,

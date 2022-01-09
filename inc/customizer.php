@@ -138,6 +138,16 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'brilliance', [
 		'type'     => 'color',
+		'settings' => 'theme_primary_text_white_color',
+		'label'    => __( 'Primary White Text Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#FBFBFB',
+		'priority' => 45,
+		
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
 		'settings' => 'theme_secondary_text_color',
 		'label'    => __( 'Secondary Text Color', 'brilliance' ),
 		'section'  => 'colors',

@@ -2,13 +2,14 @@
   #Colors
 \*------------------------------------*/
 // kirki variables
-$brilliance_heading_color: var(--brilliance_headings-color); //222222
-$brilliance_second_color: var(--brilliance_second-color); //555555
-$brilliance_tertiary_color: var(--brilliance_tertiary-color); //979797
-$brilliance_primary_color: var(--brilliance_primary-color); //7247ca
-$brilliance_primary_accent_color: var(--brilliance_primary_accent-color); //58379B
-
-$brilliance_headings_color: var(--brilliance_headings-color); //222222
+$brilliance_primary_color: var(--brilliance_theme_primary_color); //000000
+$brilliance_primary_accent_color: var(--brilliance_theme_primary_accent_color); //FF00B8
+$brilliance_headings_color: var(--brilliance_theme_headings_color); //060606
+$brilliance_primary_text_color: var(--brilliance_theme_primary_text_color); //060606
+$brilliance_primary_text_white_color: var(--brilliance_theme_primary_text_white_color); //FBFBFB
+$brilliance_secondary_text_color: var(--brilliance_theme_secondary_text_color); //58379B
+$brilliance_tertiary_text_color: var(--brilliance_theme_tertiary_text_color); //222222
+$brilliance_error_color: var(--brilliance_theme_error_color); //222222
 
 // Main color (Figma Design)
 $brilliance_main_primary_color: #000000;

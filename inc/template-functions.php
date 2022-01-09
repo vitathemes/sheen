@@ -6,7 +6,7 @@
  */
 
 /**
- * Enqueue scripts and styles. (Unplugable function. Required for loading assets)
+ * Enqueue scripts and styles. (Unplugable function. Required for loading theme css/js assets)
  */
 function brilliance_scripts() {
 	// WordPress default enqueue
@@ -75,7 +75,7 @@ if ( ! function_exists( 'brilliance_branding' ) ) {
 			echo sprintf('<h1 class="c-header__title site-title"><a class="c-header__title__anchor" href="%s" rel="home">%s</a></h1>',
 			esc_attr(esc_url( home_url( '/' ))),
 			esc_html(get_bloginfo( 'name' )));
-			}
+		}
 	}
 }
 
@@ -93,6 +93,8 @@ if ( ! function_exists( 'brilliance_typography' )) {
 
 		(get_theme_mod( 'theme_primary_text_color' ) == "" ) ? $brilliance_theme_primary_text_color = "#060606" : $brilliance_theme_primary_text_color = get_theme_mod( 'theme_primary_text_color' ); 
 
+		(get_theme_mod( 'theme_primary_text_white_color' ) == "" ) ? $brilliance_theme_primary_text_white_color = "#FBFBFB" : $brilliance_theme_primary_text_white_color = get_theme_mod( 'theme_primary_text_white_color' ); 
+
 		(get_theme_mod( 'theme_secondary_text_color' ) == "" ) ? $brilliance_theme_secondary_text_color = "#767676" : $brilliance_theme_secondary_text_color = get_theme_mod( 'theme_secondary_text_color' ); 
 
 		(get_theme_mod( 'theme_tertiary_text_color' ) == "" ) ? $brilliance_theme_tertiary_text_color = "#E1E1E1" : $brilliance_theme_tertiary_text_color = get_theme_mod( 'theme_tertiary_text_color' ); 
@@ -104,6 +106,7 @@ if ( ! function_exists( 'brilliance_typography' )) {
 					--brilliance_theme_primary_accent_color: 	    ' . $brilliance_theme_primary_accent_color . ';
 					--brilliance_theme_headings_color:   		    ' . $brilliance_theme_headings_color . ';
 					--brilliance_theme_primary_text_color:     		' . $brilliance_theme_primary_text_color . ';
+					--brilliance_theme_primary_text_white_color:    ' . $brilliance_theme_primary_text_white_color . ';
 					--brilliance_theme_secondary_text_color:   		' . $brilliance_theme_secondary_text_color . ';
 					--brilliance_theme_tertiary_text_color:   		' . $brilliance_theme_tertiary_text_color . ';
 					--brilliance_theme_error_color:   		        ' . $brilliance_theme_error_color . ';
