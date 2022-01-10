@@ -25,15 +25,6 @@ get_header();
             </h2>
         </div>
 
-        <h1 class="">We are the winner</h1>
-        <h2 class="">We are the winner</h2>
-        <h3 class="">We are the winner</h3>
-        <h4 class="">We are the winner</h4>
-        <h5 class="">We are the winner</h5>
-        <h6 class="">We are the winner</h6>
-        <p class="h7">We are the winner</p>
-        <p class="h8">We are the winner</p>
-
         <div class="c-main__body js-main__body-has-masonry">
             <?php
 				if ( have_posts() ) :

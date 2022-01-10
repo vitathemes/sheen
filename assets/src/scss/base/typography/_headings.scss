@@ -1,40 +1,54 @@
 h1 {
-    color: $brilliance_primary_color;
+    font-weight: 700;
+    font-size: rem(68px);
+    line-height: rem(68px);
+    font-family: $brilliance_main_font;
 }
 
 h2 {
-    color: $brilliance_primary_accent_color;
+    font-weight: 700;
+    font-size: rem(32px);
+    line-height: rem(35px);
+    font-family: $brilliance_main_font;
 }
 
 h3 {
-    color: $brilliance_headings_color;
+    font-weight: 400;
+    font-size: rem(24px);
+    line-height: rem(24px);
+    font-family: $brilliance_main_font;
 }
 
 h4 {
-    color: $brilliance_primary_text_color;
+    font-weight: 400;
+    font-size: rem(20px);
+    line-height: rem(25px);
+    font-family: $brilliance_secondary_font;
 }
 
 h5 {
-    color: $brilliance_primary_text_white_color;
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: rem(25px);
+    font-family: $brilliance_secondary_font;
+}
+
+.h5--italic {
+    font-style: italic;
 }
 
 h6 {
-    color: $brilliance_secondary_text_color;
+    font-weight: 400;
+    font-size: rem(14px);
+    line-height: rem(25px);
+    font-family: $brilliance_secondary_font;
 }
 
-.h7 {
-    color: $brilliance_tertiary_text_color;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-break: break-all;
 }
-
-.h8 {
-    color: $brilliance_error_color;
-}
-
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     word-break: break-all;
-// }

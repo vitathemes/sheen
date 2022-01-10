@@ -1,0 +1,17 @@
+* {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+body {
+    font-family: $brilliance_main_font;
+    transition: $global-transition;
+}
+
+body.admin-bar {
+    .c-nav {
+        @include mq($until: tablet) {
+            top: 47px;
+        }
+    }
+}

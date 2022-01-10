@@ -1,0 +1,84 @@
+/*------------------------------------*\
+  #Seprator
+\*------------------------------------*/
+.u-seprator {
+    margin: 0px 23px;
+}
+
+/*------------------------------------*\
+  #Links helpers
+\*------------------------------------*/
+.u-link--secondary {
+    color: $color_link_secondary; //060606
+    text-decoration: none;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover_secondary; //060606
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $brilliance_primary_accent_color; //FF3636
+        position: absolute;
+        bottom: -2px;
+        opacity: 0;
+        transition: $global-transition;
+    }
+}
+
+.u-link--meta {
+    color: $color_link_meta; //060606
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $brilliance_primary_accent_color;
+        position: absolute;
+        bottom: -2px;
+        transition: $global-transition;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover_meta; //060606
+
+        &::before {
+            opacity: 0;
+        }
+    }
+}
+
+.u-link--tertiary {
+    color: $color_link_tertiary; //060606
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover_tertiary; //FF00B8
+    }
+}
+
+.u-link--nav {
+    color: $color_link_nav; //060606
+    text-decoration: none;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover_nav; //767676
+    }
+}

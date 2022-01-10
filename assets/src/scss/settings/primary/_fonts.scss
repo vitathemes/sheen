@@ -1,21 +1,17 @@
+/*------------------------------------*\
+  #Josefin Sans
+\*------------------------------------*/
 /* Josefin Sans-400 - latin */
 @font-face {
     font-family: "josefin-sans";
     font-style: normal;
     font-weight: 400;
-    src: url("../../assets/fonts/josefin-sans-v20-latin-regular.eot"); /* IE9 Compat Modes */
     src: local(""),
-        url("../../assets/fonts/josefin-sans-v20-latin-regular.eot?#iefix")
-            format("embedded-opentype"),
-        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-regular.woff2")
-            format("woff2"),
-        /* Super Modern Browsers */
-            url("../../assets/fonts/josefin-sans-v20-latin-regular.woff") format("woff"),
+        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-regular.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-regular.woff")
+            format("woff"),
         /* Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-regular.ttf")
-            format("truetype"),
-        /* Safari, Android, iOS */
-            url("../../assets/fonts/josefin-sans-v20-latin-regular.svg#Inter")
-            format("svg"); /* Legacy iOS */
+            format("truetype");
 }
 
 /* Josefin Sans-700 - latin */
@@ -23,16 +19,42 @@
     font-family: "josefin-sans";
     font-style: normal;
     font-weight: 700;
-    src: url("../../assets/fonts/josefin-sans-v20-latin-700.eot"); /* IE9 Compat Modes */
     src: local(""),
-        url("../../assets/fonts/josefin-sans-v20-latin-700.eot?#iefix")
-            format("embedded-opentype"),
-        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-700.woff2")
-            format("woff2"),
-        /* Super Modern Browsers */
-            url("../../assets/fonts/josefin-sans-v20-latin-700.woff") format("woff"),
+        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-700.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-700.woff")
+            format("woff"),
         /* Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-700.ttf")
-            format("truetype"),
-        /* Safari, Android, iOS */
-            url("../../assets/fonts/josefin-sans-v20-latin-700.svg#Inter") format("svg"); /* Legacy iOS */
+            format("truetype");
 }
+
+/*------------------------------------*\
+  #DM SANS
+\*------------------------------------*/
+/* dm-sans-400 - latin */
+@font-face {
+    font-family: "dm-sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        /* IE6-IE8 */ url("../../assets/fonts/dm-sans-v6-latin-regular.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-regular.woff")
+            format("woff"),
+        /* Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-regular.ttf")
+            format("truetype");
+}
+
+/* dm-sans-400 - latin */
+@font-face {
+    font-family: "dm-sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local(""),
+        /* IE6-IE8 */ url("../../assets/fonts/dm-sans-v6-latin-italic.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-italic.woff")
+            format("woff"),
+        /* Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-italic.ttf")
+            format("truetype");
+}
+
+$brilliance_main_font: "josefin-sans";
+$brilliance_secondary_font: "dm-sans";

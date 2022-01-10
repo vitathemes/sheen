@@ -3,7 +3,6 @@
     position: absolute;
     width: 100%;
     top: 0;
-    background-color: darkred;
 
     @include mq($from: tablet) {
         display: flex;
@@ -23,14 +22,19 @@
     padding: 0px;
     width: max-content;
     list-style-type: none;
-    background-color: lightskyblue;
 
     .menu-item {
         display: inline-block;
 
         @include mq($from: tablet) {
-            margin-right: 64px;
+            margin-left: 64px;
         }
+    }
+}
+
+.s-nav .menu-item:first-child {
+    @include mq($from: tablet) {
+        margin-left: 0px;
     }
 }
 

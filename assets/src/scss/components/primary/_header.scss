@@ -1,5 +1,7 @@
+/*------------------------------------*\
+  #Header
+\*------------------------------------*/
 .c-header {
-    background-color: lightsalmon;
     max-height: 60px;
 
     @include mq($from: tablet) {
@@ -11,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: lightseagreen;
     margin-top: 16px;
 
     height: 44px;
@@ -22,7 +23,6 @@
     }
 }
 .c-header__branding {
-    background-color: lightgreen;
     width: 50%;
     display: flex;
     justify-content: flex-start;
@@ -30,6 +30,11 @@
 
     @include mq($from: tablet) {
         width: 20%;
+    }
+
+    img {
+        width: auto;
+        max-height: 44px;
     }
 }
 
@@ -39,7 +44,6 @@
 
 .c-header__nav {
     width: 50%;
-    background-color: darksalmon;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -52,5 +56,16 @@
 .c-header__nav.is-open {
     .c-nav {
         display: block;
+    }
+}
+
+.c-header__title__anchor {
+    text-transform: uppercase;
+    color: $brilliance_headings_color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brilliance_primary_accent_color;
     }
 }
