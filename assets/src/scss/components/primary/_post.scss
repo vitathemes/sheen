@@ -17,16 +17,30 @@
     }
 }
 
+.c-post__thumbnail__link {
+    &:hover,
+    &:focus,
+    &:active {
+        .c-post__thumbnail__image {
+            opacity: 0.5;
+        }
+    }
+}
+
 .c-post__thumbnail__image {
     max-width: 100%;
     height: auto;
 }
 
 .c-post__entry-title {
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    // word-wrap: break-word;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 1;
+    // -webkit-box-orient: vertical;
+}
+
+.c-post__entry-date {
+    text-transform: uppercase;
 }

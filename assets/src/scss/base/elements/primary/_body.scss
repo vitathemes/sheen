@@ -1,11 +1,15 @@
 * {
     -ms-word-wrap: break-word;
     word-wrap: break-word;
+    transition: $global-transition;
 }
 
 body {
-    font-family: $brilliance_main_font;
     transition: $global-transition;
+    font-weight: 400;
+    font-size: rem(16px);
+    line-height: rem(25px);
+    font-family: $brilliance_secondary_font;
 }
 
 body.admin-bar {

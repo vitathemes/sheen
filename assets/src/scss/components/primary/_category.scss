@@ -1,5 +1,8 @@
 .c-category {
-    background-color: lightgreen;
     width: max-content;
-    display: inline-block;
+    display: inline;
+}
+
+.c-category__item__link {
+    color: $brilliance_primary_text_color;
 }

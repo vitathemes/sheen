@@ -3,6 +3,7 @@
 \*------------------------------------*/
 .u-seprator {
     margin: 0px 23px;
+    color: $brilliance_primary_text_color;
 }
 
 /*------------------------------------*\
@@ -28,7 +29,7 @@
         height: 1px;
         background-color: $brilliance_primary_accent_color; //FF3636
         position: absolute;
-        bottom: -2px;
+        bottom: 0;
         opacity: 0;
         transition: $global-transition;
     }
