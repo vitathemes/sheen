@@ -1,0 +1,63 @@
+/*------------------------------------*\
+  #Button ( Primary )
+\*------------------------------------*/
+button,
+.wp-block-button__link,
+.c-btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid $color_border; // 333333
+    background-color: transparent; //transparent
+    color: $brilliance_primary_color; // 000000
+    border-radius: 0px;
+    cursor: pointer;
+    transition: $global-transition;
+    font-family: $brilliance_secondary_font;
+    font-weight: 500;
+    padding: rem(8px 24px);
+    text-decoration: none;
+    line-height: inherit;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $brilliance_primary_accent_color; // FF00B8
+        text-decoration: none;
+        border: 1px solid $brilliance_primary_accent_color;
+    }
+
+    &:visited,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+/*------------------------------------*\
+  #Button ( Search )
+\*------------------------------------*/
+.c-btn-seacrh {
+    padding: 0px;
+    border: none;
+    color: $brilliance_primary_text_white_color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent;
+        border: none;
+    }
+
+    &:focus {
+        outline: none;
+
+        svg {
+            color: $brilliance_tertiary_text_color;
+            outline: 1px solid white;
+        }
+    }
+}
+
+.c-btn-seacrh--big {
+    font-size: rem(30px);
+}

@@ -12,7 +12,7 @@
         return;
     }
 
-    const button = siteNavigation.getElementsByTagName("button")[0];
+    const button = siteNavigation.querySelector(".js-nav__toggle");
 
     // Return early if the button don't exist.
     if ("undefined" === typeof button) {
@@ -33,7 +33,14 @@
 
     // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
     button.addEventListener("click", function () {
-        siteNavigation.classList.toggle("is-open");
+        if (siteNavigation.classList.contains("is-open")) {
+            siteNavigation.classList.toggle("is-close");
+            siteNavigation.classList.remove("is-open");
+        } else {
+            siteNavigation.classList.toggle("is-open");
+            siteNavigation.classList.remove("is-close");
+        }
+        button.classList.toggle("on");
 
         if (button.getAttribute("aria-expanded") === "true") {
             button.setAttribute("aria-expanded", "false");

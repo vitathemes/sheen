@@ -192,17 +192,17 @@ if ( ! function_exists( 'brilliance_post_categories' ) ) :
 endif;
 
 
-if (! function_exists('castpress_get_category')) :
+if (! function_exists('brilliance_get_category')) :
 	/**
 	  * Return Post category
 	  */
-	function castpress_get_category( $castpress_have_seprator = false ) {
-		($castpress_have_seprator) ? $castpress_have_seprator = "<span class='seprator h5 u-link--secondary'> ".esc_html( " | " )." </span>" : $castpress_have_seprator = "";
+	function brilliance_get_category( $brilliance_have_seprator = false ) {
+		($brilliance_have_seprator) ? $brilliance_have_seprator = "<span class='seprator h5 u-link--secondary'> ".esc_html( " | " )." </span>" : $brilliance_have_seprator = "";
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'castpress' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'brilliance' ) );
 		if ( $categories_list ) {
 			/* $categories_list list of categories. Rendered from category section that client set in categories.*/
-			echo '<h5 class="c-episode__category u-font--regular">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($castpress_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<h5 class="c-episode__category u-font--regular">'.  wp_kses_post($categories_list) .'</h5>' . wp_kses_post($brilliance_have_seprator) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;

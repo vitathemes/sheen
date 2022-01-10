@@ -1,13 +1,18 @@
 .c-nav {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
+    height: 100vh;
     top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
 
     @include mq($from: tablet) {
         display: flex;
         justify-content: flex-end;
         position: relative;
+        height: max-content;
     }
 }
 
@@ -51,6 +56,7 @@
     position: relative;
     cursor: pointer;
     border: none !important;
+    z-index: 140;
 
     &:hover,
     &:focus,
@@ -68,7 +74,7 @@
     border-radius: 0px;
     position: absolute;
     display: block !important;
-    background: red;
+    background: $brilliance_primary_color;
 }
 .c-nav__toggle.c-nav__toggle--burger:after,
 .c-nav__toggle.c-nav__toggle--burger:before {
@@ -79,6 +85,7 @@
     top: 0px;
     left: 0px;
     margin-top: 0px;
+    height: 1px;
 }
 .c-nav__toggle.c-nav__toggle--burger:before {
     bottom: 0px;
@@ -90,11 +97,12 @@
 .c-nav__toggle.c-nav__toggle--burger span {
     top: 55%;
     margin-top: -1.5px;
+    height: 1px;
     transition: transform 0.3s;
 }
 .c-nav__toggle.c-nav__toggle--burger span:before {
     content: "";
-    background: red;
+    background: $brilliance_primary_color;
     width: 100%;
     height: 1px;
     border-radius: 1px;

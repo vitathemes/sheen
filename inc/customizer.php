@@ -177,6 +177,16 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 70,
 		
 	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_border_color',
+		'label'    => __( 'Border Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#333333',
+		'priority' => 80,
+		
+	] );
 	/* End Typography Colors Fields */
 
 }

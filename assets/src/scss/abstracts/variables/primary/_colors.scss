@@ -11,6 +11,8 @@ $brilliance_secondary_text_color: var(--brilliance_theme_secondary_text_color); 
 $brilliance_tertiary_text_color: var(--brilliance_theme_tertiary_text_color); //E1E1E1
 $brilliance_error_color: var(--brilliance_theme_error_color); //FF3636
 
+$brilliance_border_color: var(--brilliance_theme_border_color);
+
 // Main color (Figma Design)
 $brilliance_main_primary_color: #000000;
 $brilliance_main_white_color: #ffffff;
@@ -48,6 +50,9 @@ $color_link_hover_tertiary: $brilliance_primary_accent_color; //FF00B8
 
 // link visited
 $color_link_visited: $brilliance_primary_color;
+
+// borders
+$color_border: $brilliance_border_color;
 
 // button color
 // $brilliance_button_primary_color: $brilliance_primary_color;

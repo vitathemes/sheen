@@ -6,16 +6,18 @@
 
 body {
     transition: $global-transition;
-    font-weight: 400;
-    font-size: rem(16px);
-    line-height: rem(25px);
-    font-family: $brilliance_secondary_font;
 }
 
 body.admin-bar {
     .c-nav {
         @include mq($until: tablet) {
             top: 47px;
+        }
+    }
+
+    .c-header__search-close {
+        @include mq($until: tablet) {
+            padding-top: rem(32px);
         }
     }
 }

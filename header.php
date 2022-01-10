@@ -39,8 +39,8 @@
                     </div><!-- .site-branding -->
 
                     <nav class="c-header__nav" id="site-navigation">
-                        <button class="c-nav__toggle c-nav__toggle--burger" aria-controls="primary-menu"
-                            aria-expanded="false">
+                        <button class="c-nav__toggle c-nav__toggle--burger js-nav__toggle" aria-controls="primary-menu" aria-expanded="false"
+                            aria-label="<?php esc_attr_e('Primary menu', 'brilliance'); ?>">
                             <span></span>
                         </button>
 
@@ -50,13 +50,44 @@
                                     array(
                                         'walker'          => new Brilliance_walker_nav_menu(),
                                         'theme_location'  => 'primary',
-                                        'menu_id'         => 'primary',
+                                        'menu_id'         => 'primary-menu primary',
                                         'menu_class'      => 's-nav nav-menu',
                                         'container_class' => 'c-nav',
                                     )
                                 );
                             }
                         ?>
+
+                        <div class="c-header__search js-header__search">
+                            <button class="c-header__search-button js-header__search-button" aria-label="<?php esc_attr_e('Toggle Search', 'brilliance'); ?>"
+                                aria-controls="primary-menu" aria-expanded="false">
+                                <span class="c-header__search-icon iconify" data-icon="bx:bx-search-alt-2"></span>
+                            </button>
+                        </div>
+
+                        <div class="c-header__search-overlay">
+
+                            <div class="c-header__search-overlay__container">
+
+                                <div class="c-header__search-close">
+
+                                    <button class="c-btn-seacrh js-btn-seacrh" aria-label="<?php esc_attr_e('Toggle close', 'brilliance'); ?>" aria-controls="primary-menu"
+                                        aria-expanded="false">
+
+                                        <span class="c-header__search-close__icon iconify" data-icon="codicon:chrome-close">
+                                        </span>
+                                    </button>
+
+                                </div>
+
+
+                                <div class="c-header__search-wrapper">
+                                    <?php get_search_form(); ?>
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </nav><!-- #site-navigation -->
 

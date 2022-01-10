@@ -3,3 +3,11 @@
     transition-delay: 0s;
     // outline: red solid 1px !important;
 }
+
+path {
+    transition: none;
+}
+
+svg {
+    transition: none;
+}

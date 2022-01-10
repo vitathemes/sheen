@@ -2,24 +2,23 @@
   #Header
 \*------------------------------------*/
 .c-header {
-    max-height: 60px;
+    max-height: rem(60px);
 
     @include mq($from: tablet) {
-        max-height: 108px;
+        max-height: rem(108px);
     }
 }
 
 .c-header__menu {
+    width: 100%;
+    height: rem(44px);
+    margin-top: rem(29px);
+    max-height: rem(44px);
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 16px;
-
-    height: 44px;
-    max-height: 44px;
 
     @include mq($from: tablet) {
-        margin-top: 64px;
+        margin-top: rem(64px);
     }
 }
 .c-header__branding {
@@ -27,6 +26,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
+    z-index: 140;
 
     @include mq($from: tablet) {
         width: 20%;
@@ -44,12 +45,18 @@
 
 .c-header__nav {
     width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    text-align: right;
 
     @include mq($from: tablet) {
         width: calc(100% - 20%);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.c-header__nav.is-open {
+    .c-nav {
     }
 }
 
@@ -67,5 +74,143 @@
     &:focus,
     &:active {
         color: $brilliance_primary_accent_color;
+    }
+}
+
+.c-header__search {
+    display: none;
+
+    @include mq($from: tablet) {
+        display: block;
+    }
+}
+
+.c-header__search-button {
+    border: none;
+    font-size: rem(18px);
+    padding: 0px;
+
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent;
+        border: none;
+        color: $brilliance_primary_accent_color;
+    }
+
+    @include mq($from: tablet) {
+        padding-left: rem(48px);
+    }
+}
+
+.c-header__search-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.856);
+    top: 0;
+    left: 0;
+    z-index: 150;
+
+    display: none !important;
+
+    @include mq($from: tablet) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.c-header__search-overlay__container {
+    @include mq($from: tablet) {
+        width: 100%;
+        height: 100%;
+        max-width: rem(1240px);
+    }
+}
+
+.c-header__search-close {
+    width: 100%;
+    margin-top: rem(29px);
+    display: flex;
+    justify-content: flex-end;
+    font-size: rem(32px);
+    color: $brilliance_primary_text_white_color;
+
+    @include mq($from: tablet) {
+        margin-top: rem(64px);
+        font-size: rem(64px);
+    }
+}
+
+.c-header__search-close__icon {
+    margin-right: rem(16px);
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brilliance_secondary_text_color;
+    }
+
+    @include mq($from: tablet) {
+        margin-right: 0px;
+    }
+}
+
+.c-header__search-wrapper {
+    width: 100%;
+    margin-top: rem(64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-header__search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: rem(0px 16px);
+    max-width: rem(700px);
+
+    label {
+        width: 100%;
+    }
+
+    .c-header__search-field {
+        width: 100%;
+        position: relative;
+        padding-bottom: rem(12px);
+        font-size: rem(14px);
+        line-height: rem(18px);
+        color: $brilliance_primary_text_white_color;
+
+        &::placeholder {
+            font-weight: 400;
+            color: $brilliance_primary_text_white_color;
+        }
+
+        @include mq($from: tablet) {
+            font-size: rem(20px);
+            line-height: rem(26px);
+            padding-bottom: rem(16px);
+        }
+    }
+}
+
+.c-search-form__submit {
+    position: absolute;
+    right: rem(16px);
+}
+
+.c-header__search-icon--search {
+    font-size: rem(20px);
+
+    @include mq($from: tablet) {
+        font-size: rem(30px);
     }
 }

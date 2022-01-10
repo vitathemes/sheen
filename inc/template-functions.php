@@ -101,6 +101,8 @@ if ( ! function_exists( 'brilliance_typography' )) {
 
 		(get_theme_mod( 'theme_error_color' ) == "" ) ? $brilliance_theme_error_color = "#FF3636" : $brilliance_theme_error_color = get_theme_mod( 'theme_error_color' ); 
 
+		(get_theme_mod( 'theme_border_color' ) == "" ) ? $brilliance_theme_border_color = "#333333" : $brilliance_theme_border_color = get_theme_mod( 'theme_border_color' ); 
+
 		$html = ':root {	
 					--brilliance_theme_primary_color: 			    ' . $brilliance_theme_primary_color . ';
 					--brilliance_theme_primary_accent_color: 	    ' . $brilliance_theme_primary_accent_color . ';
@@ -110,6 +112,7 @@ if ( ! function_exists( 'brilliance_typography' )) {
 					--brilliance_theme_secondary_text_color:   		' . $brilliance_theme_secondary_text_color . ';
 					--brilliance_theme_tertiary_text_color:   		' . $brilliance_theme_tertiary_text_color . ';
 					--brilliance_theme_error_color:   		        ' . $brilliance_theme_error_color . ';
+					--brilliance_theme_border_color:   		        ' . $brilliance_theme_border_color . ';
 				}';
 							
 		return $html;
