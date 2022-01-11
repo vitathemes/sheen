@@ -21,6 +21,7 @@
         margin-top: rem(64px);
     }
 }
+
 .c-header__branding {
     width: 50%;
     display: flex;
@@ -36,6 +37,12 @@
     img {
         width: auto;
         max-height: 44px;
+    }
+}
+
+.c-header__branding.is-revert {
+    img {
+        filter: invert(100%);
     }
 }
 
@@ -57,6 +64,17 @@
 
 .c-header__nav.is-open {
     .c-nav {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .c-nav__toggle.c-nav__toggle--burger:after,
+    .c-nav__toggle.c-nav__toggle--burger:before,
+    .c-nav__toggle.c-nav__toggle--burger span {
+        background: $brilliance_primary_text_white_color;
+    }
+
+    .c-nav__toggle.c-nav__toggle--burger span:before {
+        background: $brilliance_primary_text_white_color;
     }
 }
 

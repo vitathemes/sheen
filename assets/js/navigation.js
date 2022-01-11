@@ -20,6 +20,7 @@
     }
 
     const menu = siteNavigation.getElementsByTagName("ul")[0];
+    const menuBranding = document.querySelector(".js-header__branding");
 
     // Hide menu toggle button if menu is empty and return early.
     if ("undefined" === typeof menu) {
@@ -33,6 +34,8 @@
 
     // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
     button.addEventListener("click", function () {
+        menuBranding.classList.toggle("is-revert");
+
         if (siteNavigation.classList.contains("is-open")) {
             siteNavigation.classList.toggle("is-close");
             siteNavigation.classList.remove("is-open");
@@ -50,14 +53,14 @@
     });
 
     // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-    document.addEventListener("click", function (event) {
-        const isClickInside = siteNavigation.contains(event.target);
+    // document.addEventListener("click", function (event) {
+    //     const isClickInside = siteNavigation.contains(event.target);
 
-        if (!isClickInside) {
-            siteNavigation.classList.remove("is-open");
-            button.setAttribute("aria-expanded", "false");
-        }
-    });
+    //     if (!isClickInside) {
+    //         siteNavigation.classList.remove("is-open");
+    //         button.setAttribute("aria-expanded", "false");
+    //     }
+    // });
 
     // Get all the link elements within the menu.
     const links = menu.getElementsByTagName("a");

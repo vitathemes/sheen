@@ -6,6 +6,7 @@
 .c-category__item__link {
     color: $brilliance_primary_text_color;
     margin-left: rem(8px);
+    text-transform: capitalize;
 
     &:first-child {
         margin-left: 0px;

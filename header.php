@@ -34,7 +34,7 @@
             <header id="masthead" class="c-header">
                 <div class="c-header__menu">
 
-                    <div class="c-header__branding">
+                    <div class="c-header__branding js-header__branding">
                         <?php brilliance_branding(); ?>
                     </div><!-- .site-branding -->
 
@@ -79,7 +79,6 @@
                                     </button>
 
                                 </div>
-
 
                                 <div class="c-header__search-wrapper">
                                     <?php get_search_form(); ?>
