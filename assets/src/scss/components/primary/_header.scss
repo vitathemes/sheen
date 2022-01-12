@@ -28,7 +28,7 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    z-index: 140;
+    z-index: 155;
 
     @include mq($from: tablet) {
         width: 20%;
@@ -81,6 +81,12 @@
 .c-header__nav.is-open {
     .c-nav {
         display: block;
+    }
+
+    .c-nav__toggle {
+        right: rem(24px);
+        position: fixed;
+        z-index: 155;
     }
 }
 

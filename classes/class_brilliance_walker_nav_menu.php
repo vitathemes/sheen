@@ -8,10 +8,10 @@ class Brilliance_walker_nav_menu extends Walker_Nav_Menu {
 		$permalink   = $item->url;
 
 		$output .= "<li class='" . implode( " ", $item->classes ) . "'>";
-		
+	
 		//Add SPAN if no Permalink
 		if ( $permalink ) {
-			$output .= '<a class="c-nav__menu-item__link u-link--nav" href="' . $permalink . '">';
+			$output .= '<a class="menu-item__link u-link--nav h4" href="' . $permalink . '">';
 		}
 		$output .= $title;
 		if ( $permalink ) {
