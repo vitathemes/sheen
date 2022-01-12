@@ -11,7 +11,13 @@ body {
 body.admin-bar {
     .c-nav {
         @include mq($until: tablet) {
-            top: 47px;
+            top: 0px;
+        }
+    }
+
+    .s-nav {
+        @include mq($until: tablet) {
+            padding-top: rem(155px);
         }
     }
 

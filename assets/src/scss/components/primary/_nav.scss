@@ -49,36 +49,22 @@
         margin-bottom: rem(30px);
         position: relative;
         width: 100%;
-        background-color: darkseagreen;
         text-align: center;
+
         @include mq($from: tablet) {
             margin-left: 64px;
             margin-bottom: 0px;
             width: max-content;
         }
-
-        &:focus-within,
-        &:hover,
-        &:focus,
-        &:active {
-            .sub-menu {
-                display: block;
-            }
-        }
     }
 
-    // .menu-item.focus {
-    //     .sub-menu {
-    //         display: block;
-    //     }
-    // }
-
     .sub-menu {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
         width: 100%;
         padding: 0px;
-        background-color: darkred;
         text-align: center;
+        margin-top: rem(24px);
 
         @include mq($from: tablet) {
             position: absolute;
@@ -92,41 +78,260 @@
 }
 
 .s-nav .menu-item:first-child {
+    &:focus-within,
+    &:hover,
+    &:focus,
+    &:active {
+        @include mq($until: tablet) {
+            color: $brilliance_secondary_text_color !important;
+        }
+    }
+
     @include mq($from: tablet) {
         margin-left: 0px;
     }
 }
 
 .c-nav__menu-item__link {
+    text-transform: capitalize;
+
     @include mq($until: tablet) {
         color: $brilliance_primary_text_white_color !important;
     }
-}
 
-.c-nav__menu-item__link:hover {
-    &:focus-within,
     &:hover,
     &:focus,
     &:active {
-        + .sub-menu {
-            display: block;
+        @include mq($until: tablet) {
+            color: $brilliance_secondary_text_color !important;
         }
+    }
+}
+
+/*------------------------------------*\
+    #Sub menus level handling 
+\*------------------------------------*/
+// LVL 1 hover
+.s-nav > .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+// LVL 1 focus
+.s-nav > .menu-item:focus-within > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+// LV 2 hover
+.s-nav > .menu-item:hover > .sub-menu > .menu-item {
+    top: -1px;
+}
+
+.s-nav > .menu-item:hover > .sub-menu > .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+
+    .menu-item {
+        margin-bottom: 0px;
+    }
+}
+
+// Last child hover special
+.s-nav > .menu-item:last-child:hover > .sub-menu > .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    border-left: none;
+    // background-color: lightseagreen;
+
+    @include mq($until: wide-bg) {
+        left: 60%;
+        top: 0;
+        transform: translate(0, 10%);
+        margin-top: 0;
+        z-index: 10;
+    }
+
+    .menu-item {
+        border-left: 1px solid white;
+    }
+}
+
+.s-nav > .menu-item:last-child:focus-within > .sub-menu > .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    border-left: none;
+
+    @include mq($until: wide-bg) {
+        left: 60%;
+        top: 0;
+        transform: translate(0, 10%);
+        margin-top: 0;
+        z-index: 10;
+    }
+
+    .menu-item {
+        border-left: 1px solid white;
+    }
+}
+
+// Last child hover special
+.s-nav
+    > .menu-item:last-child:hover
+    > .sub-menu
+    > .menu-item:hover
+    > .sub-menu
+    > .menu-item:hover
+    > .sub-menu {
+    @include mq($from: wide-xbg) {
+        left: 0;
+        top: 0;
+        transform: translate(0, 100%);
+        z-index: 20;
+        margin-top: 0;
+    }
+
+    .menu-item {
+        border: 1px solid white;
+        margin-bottom: 0px;
+    }
+}
+
+// last child focus
+.s-nav > .menu-item:last-child:focus-within > .sub-menu > .menu-item:focus-within > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    border-left: none;
+
+    @include mq($until: wide-bg) {
+        left: 60%;
+        top: 0;
+        transform: translate(0, 10%);
+        margin-top: 0;
+        z-index: 10;
+    }
+
+    .menu-item {
+        margin-bottom: 0px;
+    }
+}
+
+// LV 2 focus
+.s-nav > .menu-item:focus-within > .sub-menu > .menu-item:focus-within > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+// LVL 3 hover
+.s-nav
+    > .menu-item:hover
+    > .sub-menu
+    > .menu-item:hover
+    > .sub-menu
+    > .menu-item:hover
+    > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    display: none;
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+.s-nav > .menu-item:hover > .sub-menu > .menu-item:hover > .sub-menu > .menu-item {
+    top: -5px !important;
+}
+
+/*------------------------------------*\
+    #Last menu item 
+\*------------------------------------*/
+.s-nav > .menu-item:last-child > .sub-menu > .menu-item > .sub-menu {
+    // background-color: red;
+    // display: none;
+
+    @include mq($until: desktop-xmd) {
+        background-color: lightgreen;
+        padding-top: 0;
+        transform: translate(0, 0%);
+        left: 1%;
+        top: 100%;
+        margin-top: 0px;
     }
 }
 
 /*------------------------------------*\
     #SUB MENUS
 \*------------------------------------*/
-.sub-menu {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    background-color: lightpink;
+.s-nav {
+    .sub-menu {
+        visibility: hidden;
+        opacity: 0;
+        transition: $global-transition;
+        background-color: $brilliance_main_dark_color;
 
-    .menu-item {
-        margin-bottom: 0px;
-        background-color: lightseagreen;
+        @include mq($from: tablet) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            margin-top: rem(48px);
+
+            .menu-item {
+                margin-bottom: rem(24px);
+
+                @include mq($from: tablet) {
+                    width: 100%;
+                    background: $brilliance_main_dark_color;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    padding-bottom: rem(16px);
+                }
+
+                &:first-child {
+                    padding-top: rem(24px);
+                }
+
+                &:last-child {
+                    padding-bottom: rem(24px);
+                }
+            }
+
+            .c-nav__menu-item__link {
+                color: $brilliance_secondary_text_color;
+                display: block;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $brilliance_primary_text_white_color;
+                }
+            }
+        }
+
+        .sub-menu .menu-item:last-child {
+            margin-bottom: rem(24px);
+        }
+
+        .sub-menu {
+            visibility: hidden;
+            opacity: 0;
+            left: 100%;
+            transform: translate(0%, -20%);
+            top: 0;
+
+            .menu-item {
+                &:last-child {
+                    top: -2px;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: red solid white;
+                    }
+                }
+            }
+        }
     }
 }
 

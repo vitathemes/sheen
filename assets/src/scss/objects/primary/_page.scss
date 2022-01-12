@@ -3,6 +3,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .o-page__container {
@@ -16,5 +17,9 @@
         max-width: 100%;
         width: 1240px;
         padding: 0px;
+    }
+
+    @include mq($until: desktop-xmd) {
+        padding: rem(0px 16px);
     }
 }

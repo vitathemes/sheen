@@ -2,19 +2,20 @@
   #Colors
 \*------------------------------------*/
 // kirki variables
-$brilliance_primary_color: var(--brilliance_theme_primary_color); //000000
-$brilliance_primary_accent_color: var(--brilliance_theme_primary_accent_color); //FF00B8
-$brilliance_headings_color: var(--brilliance_theme_headings_color); //060606
-$brilliance_primary_text_color: var(--brilliance_theme_primary_text_color); //060606
-$brilliance_primary_text_white_color: var(--brilliance_theme_primary_text_white_color); //FBFBFB
-$brilliance_secondary_text_color: var(--brilliance_theme_secondary_text_color); //767676
-$brilliance_tertiary_text_color: var(--brilliance_theme_tertiary_text_color); //E1E1E1
-$brilliance_error_color: var(--brilliance_theme_error_color); //FF3636
+$brilliance_primary_color: var(--brilliance_theme_primary_color); //#000000
+$brilliance_primary_accent_color: var(--brilliance_theme_primary_accent_color); //#FF00B8
+$brilliance_headings_color: var(--brilliance_theme_headings_color); //#060606
+$brilliance_primary_text_color: var(--brilliance_theme_primary_text_color); //#060606
+$brilliance_primary_text_white_color: var(--brilliance_theme_primary_text_white_color); //#FBFBFB
+$brilliance_secondary_text_color: var(--brilliance_theme_secondary_text_color); //#767676
+$brilliance_tertiary_text_color: var(--brilliance_theme_tertiary_text_color); //#E1E1E1
+$brilliance_error_color: var(--brilliance_theme_error_color); //#FF3636
 
 $brilliance_border_color: var(--brilliance_theme_border_color);
 
 // Main color (Figma Design)
 $brilliance_main_primary_color: #000000;
+$brilliance_main_dark_color: #060606;
 $brilliance_main_white_color: #ffffff;
 $brilliance_main_accent_color: #ff00b8;
 
@@ -53,6 +54,7 @@ $color_link_visited: $brilliance_primary_color;
 
 // borders
 $color_border: $brilliance_border_color;
+$color_submenu_border: #ffffff;
 
 // button color
 // $brilliance_button_primary_color: $brilliance_primary_color;
