@@ -219,3 +219,164 @@ if ( ! function_exists( 'brilliance_get_seprator' ) ) :
 		echo sprintf('<span class="u-seprator">%s</span>' , esc_html( '/' ) );
 	}
 endif;
+
+
+if ( ! function_exists( 'brilliance_get_footer_copy' ) ) : 
+	/**
+	 * Display A simple Seprator
+	 */
+
+	function brilliance_get_footer_copy( $brilliance_has_custom_option = false ) {
+		
+		if( get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')) ) { 
+
+			/** Translator %s 1: The Footer copyright text */
+			echo sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')));
+		}
+
+		else { 
+			echo sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')));
+		}
+
+	}
+endif;
+
+
+
+if ( ! function_exists( 'brilliance_socials_links' ) ) :
+	/**
+	  * Display Social Networks
+	  */
+	function brilliance_socials_links() {
+
+		$brilliance_facebook  		=  get_theme_mod( 'facebook', "" );
+		$brilliance_twitter   		=  get_theme_mod( 'twitter', "" );
+		$brilliance_instagram 		=  get_theme_mod( 'instagram', "" );
+		$brilliance_linkedin  		=  get_theme_mod( 'linkedin', "" );
+		$brilliance_github    		=  get_theme_mod( 'github', "" );
+		$brilliance_mail   			=  get_theme_mod( 'mail', "" );
+		$brilliance_pinterest    	=  get_theme_mod( 'pinterest', "" );
+		$brilliance_youtube    		=  get_theme_mod( 'youtube', "" );
+		$brilliance_spotify    		=  get_theme_mod( 'spotify', "" );
+		$brilliance_gitlab    		=  get_theme_mod( 'gitlab', "" );
+		$brilliance_lastfm    		=  get_theme_mod( 'lastfm', "" );
+		$brilliance_stackoverflow   =  get_theme_mod( 'stackoverflow', "" );
+		$brilliance_quora    		=  get_theme_mod( 'quora', "" );
+		$brilliance_reddit    		=  get_theme_mod( 'reddit', "" );
+		$brilliance_medium    		=  get_theme_mod( 'medium', "" );
+		$brilliance_vimeo    		=  get_theme_mod( 'vimeo', "" );
+		$brilliance_lanyrd    		=  get_theme_mod( 'lanyrd', "" );
+		$brilliance_dribbble    	=  get_theme_mod( 'dribbble', "" );
+		$brilliance_behance    		=  get_theme_mod( 'behance', "" );
+		$brilliance_telegram    	=  get_theme_mod( 'telegram', "" );
+		$brilliance_codepen    		=  get_theme_mod( 'codepen', "" );
+
+
+		// If variable was not empty will display the icons
+		$brilliance_social_variables  = array($brilliance_facebook,$brilliance_twitter,$brilliance_instagram,$brilliance_linkedin,$brilliance_github,
+		$brilliance_mail, $brilliance_pinterest ,$brilliance_youtube ,$brilliance_spotify , $brilliance_gitlab,$brilliance_lastfm ,$brilliance_stackoverflow ,$brilliance_quora ,$brilliance_reddit ,$brilliance_medium ,
+		$brilliance_vimeo, $brilliance_lanyrd,$brilliance_dribbble ,$brilliance_behance,$brilliance_telegram,$brilliance_codepen
+		) ;
+
+		// Check if one of the variables are not empty
+		$brilliance_social_variable_flag = 0;
+		foreach($brilliance_social_variables as $brilliance_social){
+			if( !empty($brilliance_social)){
+				$brilliance_social_variable_flag = 1;
+				break;
+			}
+		}
+
+		// Display the icons here
+		if( $brilliance_social_variable_flag === 1 ) {
+
+			echo '<div class="c-social-share c-social-share--footer">';
+
+			if ( $brilliance_linkedin ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon dashicons dashicons-linkedin"></span></a>', esc_url( $brilliance_linkedin ), esc_html__( 'Linkedin', 'brilliance' ) );
+			}
+			
+			if ( $brilliance_facebook ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon dashicons dashicons-facebook-alt"></span></a>', esc_url( $brilliance_facebook ), esc_html__( 'Facebook', 'brilliance' ) );
+			}
+
+			if ( $brilliance_instagram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon dashicons dashicons-instagram"></span></a>', esc_url( $brilliance_instagram ), esc_html__( 'Instagram', 'brilliance' ) );
+			}
+
+			if ( $brilliance_twitter ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon dashicons dashicons-twitter"></span></a>', esc_url( $brilliance_twitter ), esc_html__( 'Twitter', 'brilliance' ) );
+			}
+
+			if ( $brilliance_github ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:github-filled" data-inline="false"></span></a>', esc_url( $brilliance_github ), esc_html__( 'Github', 'brilliance' ) );
+			}
+
+			if ( $brilliance_mail ) {
+				echo sprintf( '<a href="mailto:%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span></a>', esc_attr(sanitize_email( $brilliance_mail)), esc_html__( 'Mail', 'brilliance' ) );
+			}
+
+			if ( $brilliance_pinterest ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-pinterest" data-inline="false"></span></a>', esc_url( $brilliance_pinterest ), esc_html__( 'pinterest', 'brilliance' ) );
+			}
+
+			if ( $brilliance_youtube ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:youtube-fill" data-inline="false"></span></a>', esc_url( $brilliance_youtube ), esc_html__( 'youtube', 'brilliance' ) );
+			}
+
+			if ( $brilliance_spotify ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-spotify" data-inline="false"></span></a>', esc_url( $brilliance_spotify ), esc_html__( 'spotify', 'brilliance' ) );
+			}
+
+			if ( $brilliance_lastfm ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="brandico:lastfm-rect" data-inline="false"></span></a>', esc_url( $brilliance_lastfm ), esc_html__( 'lastfm', 'brilliance' ) );
+			}
+
+			if ( $brilliance_gitlab ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ion:logo-gitlab" data-inline="false"></span></a>', esc_url( $brilliance_gitlab ), esc_html__( 'gitlab', 'brilliance' ) );
+			}
+
+			if ( $brilliance_stackoverflow ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="cib:stackoverflow" data-inline="false"></span></a>', esc_url( $brilliance_stackoverflow ), esc_html__( 'stackoverflow', 'brilliance' ) );
+			}
+
+			if ( $brilliance_reddit ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:reddit-fill" data-inline="false"></span></a>', esc_url( $brilliance_reddit ), esc_html__( 'reddit', 'brilliance' ) );
+			}
+
+			if ( $brilliance_quora ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-quora" data-inline="false"></span></a>', esc_url( $brilliance_quora ), esc_html__( 'quora', 'brilliance' ) );
+			}
+
+			if ( $brilliance_medium ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:medium-circle-filled" data-inline="false"></span></a>', esc_url( $brilliance_medium ), esc_html__( 'medium', 'brilliance' ) );
+			}
+
+			if ( $brilliance_vimeo ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="brandico:vimeo-rect" data-inline="false"></span></a>', esc_url( $brilliance_vimeo ), esc_html__( 'vimeo', 'brilliance' ) );
+			}
+
+			if ( $brilliance_dribbble ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:dribbble-fill" data-inline="false"></span></a>', esc_url( $brilliance_dribbble ), esc_html__( 'dribbble', 'brilliance' ) );
+			}
+
+			if ( $brilliance_behance ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:behance-outlined" data-inline="false"></span></a>', esc_url( $brilliance_behance ), esc_html__( 'behance', 'brilliance' ) );
+			}
+
+			if ( $brilliance_lanyrd ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="cib:lanyrd" data-inline="false"></span></a>', esc_url( $brilliance_lanyrd ), esc_html__( 'lanyrd', 'brilliance' ) );
+			}
+
+			if ( $brilliance_telegram ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-telegram"  data-inline="false"></span></a>', esc_url( $brilliance_telegram ), esc_html__( 'Telegram', 'brilliance' ) );
+			}
+
+			if ( $brilliance_codepen ) {
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:codepen-fill" data-inline="false"></span></a>', esc_url( $brilliance_codepen ), esc_html__( 'Codepen', 'brilliance' ) );
+			}
+
+			echo '</div>';
+		}
+	}
+endif;

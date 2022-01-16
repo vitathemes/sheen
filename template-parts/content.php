@@ -6,7 +6,6 @@
  *
  * @package brilliance
  */
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-post js-post-has-masonry'); ?>>
 

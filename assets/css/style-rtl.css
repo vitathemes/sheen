@@ -1441,6 +1441,9 @@ input[type=submit]:focus {
   margin-right: 0px;
 }
 
+/*------------------------------------*\
+  #Footer
+\*------------------------------------*/
 .c-footer {
   background-color: lightslategray;
   min-height: 105px;
@@ -1455,6 +1458,17 @@ input[type=submit]:focus {
   .c-footer {
     margin-top: auto;
   }
+}
+
+.c-footer__container {
+  width: 100%;
+  background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+}
+
+.c-footer__text {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------

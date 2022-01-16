@@ -62,9 +62,9 @@ add_action( 'customize_preview_init', 'brilliance_customize_preview_js' );
 
 if( function_exists( 'kirki' ) ) {
 	
-	/*
-	 *	Kirki - Config
-	 */
+/*------------------------------------*\
+  ############# Config ###############
+\*------------------------------------*/
 	
 	// Config 
 	Kirki::add_config( 'brilliance_theme', array(
@@ -72,20 +72,27 @@ if( function_exists( 'kirki' ) ) {
 		'option_type'   => 'theme_mod',
 	) );
 
-	/*
-	 *	Kirki -> Panels
-	 */
+/*------------------------------------*\
+  ############# Panels ###############
+\*------------------------------------*/
 
 	// Footer
 	Kirki::add_panel( 'footer', array(
-		'priority' => 180,
+		'priority' => 200,
 		'title'    => esc_html__( 'Footer', 'brilliance' ),
 	) );
 
+/*------------------------------------*\
+  ############# Sections #############
+\*------------------------------------*/
 
-	/*
-	 *	Kirki -> Sections
-	 */
+	/* Social Options  */
+	Kirki::add_section( 'socials', array(
+		'title'          => esc_html__( 'Social Networks', 'brilliance' ),
+		'description'    => esc_html__( 'Add or Change Social Networks', 'brilliance' ),
+		'panel'          => '',
+		'priority'       => 90,
+	) );
 
 	/* Typography Colors Section */
 	Kirki::add_section( 'colors', array(
@@ -94,8 +101,31 @@ if( function_exists( 'kirki' ) ) {
 		'panel'          => '',
 		'priority'       => 100,
 	) );
+	
 
-	/* Typography Colors Fields */
+	/* Footer Normal Options */
+	Kirki::add_section( 'footer_context', array(
+		'title'          => esc_html__( 'Footer Context', 'brilliance' ),
+		'description'    => esc_html__( 'Change Theme footer Texts', 'brilliance' ),
+		'panel'          => 'footer',
+		'priority'       => 150,
+	) );
+	
+	/* Footer Pro Options */
+	Kirki::add_section( 'footer_copy', array(
+		'title'          => esc_html__( 'Footer Copyright Option', 'brilliance' ),
+		'description'    => esc_html__( 'Change Theme footer Copyright', 'brilliance' ),
+		'panel'          => 'footer',
+		'priority'       => 160,
+	) );
+
+/*------------------------------------*\
+  ############## Fields ##############
+\*------------------------------------*/
+
+	/*------------------------------------*\
+  		#Start Colors
+	\*------------------------------------*/
 	Kirki::add_field( 'brilliance', [
 		'type'     => 'color',
 		'settings' => 'theme_primary_color',
@@ -155,7 +185,6 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 50,
 		
 	] );
-
 	
 	Kirki::add_field( 'brilliance', [
 		'type'     => 'color',
@@ -166,7 +195,6 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 60,
 		
 	] );
-
 	
 	Kirki::add_field( 'brilliance', [
 		'type'     => 'color',
@@ -187,6 +215,205 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 80,
 		
 	] );
-	/* End Typography Colors Fields */
 
+	/*------------------------------------*\
+  		#End Colors
+	\*------------------------------------*/
+
+	/*------------------------------------*\
+  		#Start Footer Options
+	\*------------------------------------*/
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'text',
+		'settings' => 'footer_custom_text',
+		'label'    => esc_html__( 'Footer Cusom Text', 'brilliance' ),
+		'section'  => 'footer_context',
+		'default'  => esc_html__( 'Brilliance, a creative portfolio theme', 'brilliance' ),
+		'priority' => 10,
+	] );
+	
+	/*------------------------------------*\
+		#End Footer Options
+	\*------------------------------------*/
+	
+
+	/*------------------------------------*\
+		#Start Social Networks
+	\*------------------------------------*/
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'facebook',
+		'label'    => esc_html__( 'Facebook', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 10,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'twitter',
+		'label'    => esc_html__( 'Twitter', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 20,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'instagram',
+		'label'    => esc_html__( 'Instagram', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 30,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'linkedin',
+		'label'    => esc_html__( 'Linkedin', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 40,
+	] );
+	
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'github',
+		'label'    => esc_html__( 'Github', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 50,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'text',
+		'settings' => 'mail',
+		'label'    => __( 'Email', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 60,
+	] );
+
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'pinterest',
+		'label'    => __( 'Pinterest', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 70,
+	] );
+
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'youtube',
+		'label'    => __( 'Youtube', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 80,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'spotify',
+		'label'    => __( 'Spotify', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 90,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'gitlab',
+		'label'    => __( 'Gitlab', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 100,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'lastfm',
+		'label'    => __( 'Lastfm', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 110,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'stackoverflow',
+		'label'    => __( 'Stackoverflow', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 120,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'quora',
+		'label'    => __( 'Quora', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 130,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'reddit',
+		'label'    => __( 'Reddit', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 140,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'medium',
+		'label'    => __( 'Medium', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 150,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'vimeo',
+		'label'    => __( 'Vimeo', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 160,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'lanyrd',
+		'label'    => __( 'Lanyrd', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 170,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'dribbble',
+		'label'    => __( 'Dribbble', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 180,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'behance',
+		'label'    => __( 'Behance', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 190,
+	] );
+
+	
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'codepen',
+		'label'    => __( 'Codepen', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 200,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'link',
+		'settings' => 'telegram',
+		'label'    => __( 'Telegram', 'brilliance' ),
+		'section'  => 'socials',
+		'priority' => 210,
+	] );
+
+	/*------------------------------------*\
+		#End Social Networks
+	\*------------------------------------*/
+	
 }

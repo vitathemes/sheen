@@ -1,5 +1,7 @@
+/*------------------------------------*\
+  #Footer
+\*------------------------------------*/
 .c-footer {
-    background-color: lightslategray;
     min-height: 105px;
     display: flex;
     flex-wrap: wrap;
@@ -7,8 +9,38 @@
     color: white;
     width: 100%;
     margin-top: auto;
+    margin-bottom: rem(49px);
 
     @include mq($from: tablet) {
         margin-top: auto;
+        margin-bottom: rem(71px);
     }
+}
+
+.c-footer__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.c-footer__copy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+
+.c-footer__text {
+    text-align: center;
+    color: $brilliance_primary_text_color;
+}
+
+.c-footer__copy-text {
+    color: $brilliance_secondary_text_color;
+}
+
+.c-footer__copy-link {
+    margin-left: rem(4px);
 }

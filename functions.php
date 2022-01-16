@@ -25,7 +25,6 @@ function brilliance_content_width() {
 add_action( 'after_setup_theme', 'brilliance_content_width', 0 );
 
 
-
 /**
  * Theme Setup file
  */

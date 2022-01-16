@@ -1425,6 +1425,37 @@ input[type=submit]:focus {
   font-size: 1.875rem;
 }
 
+.c-social-share {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.c-social-share__item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0rem 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-social-share__item:hover .c-social-share__icon, .c-social-share__item:focus .c-social-share__icon, .c-social-share__item:active .c-social-share__icon {
+  color: var(--brilliance_theme_primary_accent_color);
+}
+
+.c-social-share__icon {
+  font-size: 1.25rem;
+  color: var(--brilliance_theme_primary_text_color);
+}
+.c-social-share__icon:hover, .c-social-share__icon:focus, .c-social-share__icon:active {
+  color: var(--brilliance_theme_primary_accent_color);
+}
+
 .c-category {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -1441,8 +1472,10 @@ input[type=submit]:focus {
   margin-left: 0px;
 }
 
+/*------------------------------------*\
+  #Footer
+\*------------------------------------*/
 .c-footer {
-  background-color: lightslategray;
   min-height: 105px;
   display: flex;
   flex-wrap: wrap;
@@ -1450,11 +1483,43 @@ input[type=submit]:focus {
   color: white;
   width: 100%;
   margin-top: auto;
+  margin-bottom: 3.0625rem;
 }
 @media (min-width: 46.25em) {
   .c-footer {
     margin-top: auto;
+    margin-bottom: 4.4375rem;
   }
+}
+
+.c-footer__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.c-footer__copy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.c-footer__text {
+  text-align: center;
+  color: var(--brilliance_theme_primary_text_color);
+}
+
+.c-footer__copy-text {
+  color: var(--brilliance_theme_secondary_text_color);
+}
+
+.c-footer__copy-link {
+  margin-left: 0.25rem;
 }
 
 /*--------------------------------------------------------------
@@ -1571,6 +1636,13 @@ input[type=submit]:focus {
 }
 .u-link--nav:hover, .u-link--nav:focus, .u-link--nav:active {
   color: var(--brilliance_theme_secondary_text_color);
+}
+
+/*------------------------------------*\
+  #no Margin
+\*------------------------------------*/
+.u-margin-none {
+  margin: 0;
 }
 
 /* Alignments
