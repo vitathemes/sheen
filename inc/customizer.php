@@ -82,6 +82,13 @@ if( function_exists( 'kirki' ) ) {
 		'title'    => esc_html__( 'Footer', 'brilliance' ),
 	) );
 
+	// Elements
+	Kirki::add_panel( 'elements', array(
+		'priority' => 90,
+		'title'    => esc_html__( 'Elements', 'brilliance' ),
+	) );
+	
+
 /*------------------------------------*\
   ############# Sections #############
 \*------------------------------------*/
@@ -119,6 +126,15 @@ if( function_exists( 'kirki' ) ) {
 		'priority'       => 160,
 	) );
 
+	/*------------------------------------*\
+  		#Elements
+	\*------------------------------------*/
+	Kirki::add_section( 'single_options', array(
+		'title'          => esc_html__( 'Single Options', 'brilliance' ),
+		'panel'          => 'elements',
+		'priority'       => 100,
+	) );
+	
 /*------------------------------------*\
   ############## Fields ##############
 \*------------------------------------*/
@@ -213,6 +229,16 @@ if( function_exists( 'kirki' ) ) {
 		'section'  => 'colors',
 		'default'  => '#333333',
 		'priority' => 80,
+		
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'color',
+		'settings' => 'theme_border_secondary_color',
+		'label'    => __( 'Secondary Border Color', 'brilliance' ),
+		'section'  => 'colors',
+		'default'  => '#060606',
+		'priority' => 90,
 		
 	] );
 
@@ -415,5 +441,22 @@ if( function_exists( 'kirki' ) ) {
 	/*------------------------------------*\
 		#End Social Networks
 	\*------------------------------------*/
+
+
+	/*------------------------------------*\
+		#Single Options
+	\*------------------------------------*/
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'radio-image',
+		'settings'    => 'single_thumbnail_size',
+		'label'       => esc_html__( 'Thumbnail Size', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 'normal',
+		'priority'    => 10,
+		'choices'     => [
+			'normal' => get_template_directory_uri() . '/assets/images/normal.jpg',
+			'wide'   => get_template_directory_uri() . '/assets/images/wide.jpg',
+		],
+	] );
 	
 }

@@ -20,7 +20,6 @@
         <?php 
 			the_title( '<h3 class="c-post__entry-title h3--bold"><a class="u-link--secondary" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 
-			
 			echo wp_kses_post( '<div class="c-post__entry-meta">' );
 
 				brilliance_posted_on(false , "u-link--tertiary");
@@ -28,7 +27,6 @@
 				brilliance_post_categories(", " , "u-link--meta");
 				
 			echo wp_kses_post( '</div>' );
-		
 		?>
 
         <?php

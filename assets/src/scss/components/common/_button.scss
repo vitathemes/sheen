@@ -61,3 +61,38 @@ input[type="submit"] {
 .c-btn-seacrh--big {
     font-size: rem(30px);
 }
+
+/*------------------------------------*\
+  #WordPress Buttons
+\*------------------------------------*/
+.wp-block-button__link {
+    margin: rem(8px 0px);
+}
+
+.wp-block-file__button,
+.wp-block-search__button {
+    border: 1px solid $color_border !important; // 333333
+    background-color: transparent !important; //transparent
+    color: $brilliance_primary_color !important; // 000000
+    border-radius: 0px !important;
+    cursor: pointer !important;
+    transition: $global-transition !important;
+    font-family: $brilliance_secondary_font !important;
+    font-weight: 500 !important;
+    padding: rem(8px 24px) !important;
+    text-decoration: none !important;
+    line-height: inherit !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $brilliance_primary_accent_color !important; // FF00B8
+        text-decoration: none !important;
+        border: 1px solid $brilliance_primary_accent_color !important;
+    }
+
+    &:visited,
+    &:focus {
+        text-decoration: none !important;
+    }
+}

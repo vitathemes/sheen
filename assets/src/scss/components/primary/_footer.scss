@@ -22,6 +22,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: rem(86px);
+
+    @include mq($from: tablet) {
+        margin-top: rem(187px);
+    }
 }
 
 .c-footer__copy {

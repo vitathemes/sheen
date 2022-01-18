@@ -1,0 +1,131 @@
+/*------------------------------------*\
+  #Pagination
+\*------------------------------------*/
+
+.c-pagination {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 48px;
+
+    @include mq($from: tablet) {
+        margin-top: 64px;
+    }
+}
+
+.c-pagination__load-more {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+        color 0.3s ease-in-out;
+}
+
+.c-pagination--load-more {
+    @include mq($from: tablet) {
+        padding-right: 0px;
+    }
+}
+
+/*------------------------------------*\
+    #Page Numbers (Word Press pagination)
+  \*------------------------------------*/
+
+.nav-links {
+    display: none !important;
+}
+
+.nav-previous {
+    font-size: 1.8em;
+    border-bottom: 1px solid grey;
+    transition: 1s all;
+}
+.nav-next {
+    font-size: 1.8em;
+    border-bottom: 1px solid grey;
+    transition: 1s all;
+}
+
+.page-numbers {
+    color: $brilliance_primary_text_color !important;
+    cursor: pointer;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $brilliance_neutral_gray_light_color;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    text-decoration: none !important;
+    border-radius: 999px;
+
+    &:hover {
+        background-color: $brilliance_tertiary_text_color !important;
+
+        text-decoration: none;
+        .dashicons {
+            &::before {
+                color: $brilliance_neutral_dark_gray_color !important;
+            }
+        }
+
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .dashicons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.2em;
+    }
+}
+
+.page-numbers.current {
+    background-color: $brilliance_primary_accent_color;
+    color: $brilliance_primary_text_color !important;
+}
+
+.next.page-numbers {
+    .dashicons {
+        height: 30px;
+        padding-left: 0px;
+
+        &::before {
+            vertical-align: middle;
+        }
+    }
+}
+
+.next.page-numbers,
+.prev.page-numbers {
+    background: transparent;
+    &:hover {
+        background-color: transparent !important;
+    }
+
+    .dashicons {
+        color: $brilliance_primary_text_color;
+
+        &:hover {
+            background: transparent;
+            color: $brilliance_neutral_dark_gray_color !important;
+        }
+    }
+}
+
+.dashicons-arrow-right-alt2:before {
+    text-align: center;
+}

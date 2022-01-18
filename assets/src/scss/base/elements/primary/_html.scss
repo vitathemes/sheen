@@ -1,7 +1,5 @@
 html {
     scroll-behavior: smooth;
     font-weight: 400;
-    font-size: rem(16px);
-    line-height: rem(25px);
-    font-family: $brilliance_secondary_font;
+    font: 16px/25px $brilliance_secondary_font;
 }

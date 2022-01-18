@@ -1,0 +1,26 @@
+.c-single__thumbnail {
+    margin-top: rem(24px);
+    display: flex;
+    justify-content: center;
+
+    @include mq($from: tablet) {
+        margin-top: rem(50px);
+    }
+}
+
+.c-single__thumbnail__img.wide {
+    width: 100%;
+}
+
+.c-single__content {
+    margin-top: rem(39px);
+    max-width: 100%;
+
+    @include mq($from: tablet) {
+        margin-top: rem(63px);
+    }
+}
+
+.wp-block-embed {
+    max-width: 90%;
+}

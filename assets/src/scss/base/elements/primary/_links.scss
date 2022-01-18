@@ -22,3 +22,11 @@ a {
         outline: none;
     }
 }
+
+a img {
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 0.5;
+    }
+}

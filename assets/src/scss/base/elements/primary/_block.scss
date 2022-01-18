@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  #Quote block
+\*------------------------------------*/
+.wp-block-quote {
+    border-left: 3px solid $color_border_secondary;
+    margin: rem(16px 0px);
+    padding-left: rem(16px);
+}
+
+.wp-block-quote.has-text-align-right {
+    border-left: none;
+    border-right: 3px solid $color_border_secondary;
+    padding-right: rem(16px);
+    padding-left: 0px;
+}
+
+.wp-block-group__inner-container {
+    padding: rem(16px);
+}
