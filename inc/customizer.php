@@ -464,7 +464,7 @@ if( function_exists( 'kirki' ) ) {
 		'settings'    => 'single_gallery',
 		'label'       => esc_html__( 'Display Single Gallery', 'brilliance' ),
 		'section'     => 'single_options',
-		'default'     => 1,
+		'default'     => "1",
 		'priority'    => 20,
 	] );
 	

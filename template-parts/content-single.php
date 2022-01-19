@@ -55,17 +55,16 @@
 		    ?>
         </div>
     </div>
+
+    <?php if( true == get_theme_mod( 'single_gallery', true ) ) : ?>
     <div class="c-single__gallery">
         <div class="c-single_wrapper c-single__wrapper-has-border">
             <h3 class="u-margin-none h3--bold"><?php esc_html_e( 'Image galleries' , 'brilliance' ) ?></h3>
             <p><?php esc_html_e( 'Here’s a really neat custom feature we added – galleries:' , 'brilliance' ) ?></p>
         </div>
-
-        <?php 
-            if( get_theme_mod( 'single_gallery' , 1 ) ) { 
-                brilliance_get_gallery( get_the_ID() );
-            }
-        ?>
+        <?php brilliance_get_gallery(get_the_ID()); ?>
     </div>
+    <?php endif; ?>
+
 </article>
 <!-- #post-<?php the_ID(); ?> -->

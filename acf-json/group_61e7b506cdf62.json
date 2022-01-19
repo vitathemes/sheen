@@ -1,0 +1,74 @@
+{
+    "key": "group_61e7b506cdf62",
+    "title": "Gallery Option",
+    "fields": [
+        {
+            "key": "field_61e7b512929bc",
+            "label": "Image Gallery",
+            "name": "image_gallery",
+            "type": "photo_gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "fields[image_gallery": {
+                "edit_modal": "Default",
+                "images_limit": "",
+                "remove_edit_button": "No",
+                "remove_delete_button": "No"
+            },
+            "edit_modal": "Default"
+        },
+        {
+            "key": "field_61e8475a3afe3",
+            "label": "Image Carousel",
+            "name": "image_carousel",
+            "type": "photo_gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "fields[image_carousel": {
+                "edit_modal": "Default",
+                "images_limit": "",
+                "remove_edit_button": "No",
+                "remove_delete_button": "No"
+            },
+            "edit_modal": "Default"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "projects"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1642612604
+}

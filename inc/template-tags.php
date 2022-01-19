@@ -411,7 +411,7 @@ if( ! function_exists('brilliance_get_gallery') ) :
 		$brilliance_images = acf_photo_gallery('image_gallery', $post_id );
 		if( count( $brilliance_images ) > 0 ) {
 
-			echo esc_html( '<div class="c-single__masonry js-single__masonry">' );
+			echo wp_kses_post( '<div class="c-single__masonry js-single__masonry">' );
 
 				foreach( $brilliance_images as $brilliance_image ) {
 
@@ -433,7 +433,7 @@ if( ! function_exists('brilliance_get_gallery') ) :
 					);
 				}
 
-			echo '</div>';
+			echo wp_kses_post('</div>');
 			
 		}
 	}
