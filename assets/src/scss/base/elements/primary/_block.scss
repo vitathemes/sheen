@@ -13,7 +13,15 @@
     padding-right: rem(16px);
     padding-left: 0px;
 }
-
+/*------------------------------------*\
+  #Quote group
+\*------------------------------------*/
 .wp-block-group__inner-container {
     padding: rem(16px);
+}
+/*------------------------------------*\
+  #Quote Embed
+\*------------------------------------*/
+.wp-block-embed {
+    max-width: 90%;
 }

@@ -607,8 +607,18 @@ input[type=checkbox]:checked:before {
   padding-left: 0px;
 }
 
+/*------------------------------------*\
+  #Quote group
+\*------------------------------------*/
 .wp-block-group__inner-container {
   padding: 1rem;
+}
+
+/*------------------------------------*\
+  #Quote Embed
+\*------------------------------------*/
+.wp-block-embed {
+  max-width: 90%;
 }
 
 img {
@@ -1352,7 +1362,7 @@ h6 {
 }
 @media (min-width: 46.25em) {
   .c-main__content--small {
-    max-width: 910px;
+    max-width: 56.875rem;
     margin-top: 6.875rem;
   }
 }
@@ -1675,6 +1685,39 @@ input[type=submit]:focus {
   text-align: center;
 }
 
+/*------------------------------------*\
+  #Single
+\*------------------------------------*/
+@media (min-width: 46.25em) {
+  .c-single--centered {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.c-single_wrapper {
+  width: 100%;
+}
+@media (min-width: 46.25em) {
+  .c-single_wrapper {
+    max-width: 56.875rem;
+  }
+}
+
+.c-single__wrapper-has-border {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 3rem;
+  margin-top: 3rem;
+}
+@media (min-width: 46.25em) {
+  .c-single__wrapper-has-border {
+    margin-top: 6rem;
+    padding-top: 4.4375rem;
+  }
+}
+
 .c-single__thumbnail {
   margin-top: 1.5rem;
   display: flex;
@@ -1700,8 +1743,49 @@ input[type=submit]:focus {
   }
 }
 
-.wp-block-embed {
-  max-width: 90%;
+/*------------------------------------*\
+  #Single Gallery 
+\*------------------------------------*/
+.c-single__gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.c-single__masonry-image__wrapper {
+  width: 380px;
+}
+@media (min-width: 46.25em) {
+  .c-single__masonry-image__wrapper {
+    margin-bottom: 50px;
+    display: inline-block;
+  }
+}
+@media (max-width: 77.1775em) {
+  .c-single__masonry-image__wrapper {
+    width: 570px;
+  }
+}
+@media (max-width: 68.115em) {
+  .c-single__masonry-image__wrapper {
+    width: 480px;
+  }
+}
+@media (max-width: 46.24em) {
+  .c-single__masonry-image__wrapper {
+    width: 100%;
+  }
+}
+
+.c-single__masonry {
+  text-align: left;
+  margin-top: 2.4375rem;
+}
+@media (min-width: 46.25em) {
+  .c-single__masonry {
+    margin-top: 3rem;
+  }
 }
 
 .c-category {

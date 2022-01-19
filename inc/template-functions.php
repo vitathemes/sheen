@@ -137,3 +137,100 @@ endif;
 
 add_action( 'admin_head', 'brilliance_theme_settings' );
 add_action( 'wp_head', 'brilliance_theme_settings' );
+
+
+if ( ! function_exists( 'brilliance_modify_libwp_post_type' ) ) {
+	function brilliance_modify_libwp_post_type( $brilliance_postTypeName ) {
+		/**
+		 * Modify LibWP post type name (If libwp plugin exist)
+		 */
+		$brilliance_postTypeName = 'projects';
+		return $brilliance_postTypeName;
+	} 
+	add_filter('libwp_post_type_1_name', 'brilliance_modify_libwp_post_type');
+}
+  
+if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {	  
+	function brilliance_modify_libwp_post_type_argument ( $brilliance_postTypeArguments ) {
+		/**
+		 * Modify LibWP post type arguments (If libwp plugin exist)
+		 */
+		$brilliance_postTypeArguments['labels'] = [
+			'name'          => _x('Projects', 'Post type general name', 'wp-indigo'),
+			'singular_name' => _x('Project', 'Post type singular name', 'wp-indigo'),
+			'menu_name'     => _x('Projects', 'Admin Menu text', 'wp-indigo'),
+			'add_new'       => __('Add New', 'wp-indigo'),
+			'edit_item'     => __('Edit Project', 'wp-indigo'),
+			'view_item'     => __('View Project', 'wp-indigo'),
+			'all_items'     => __('All Projects', 'wp-indigo'),
+		];
+		
+		$brilliance_postTypeArguments['rewrite']['slug'] 		= 'projects';
+		$brilliance_postTypeArguments['public'] 				= true;
+		$brilliance_postTypeArguments['show_ui'] 				= true;
+		$brilliance_postTypeArguments['menu_position'] 			= 5;
+		$brilliance_postTypeArguments['show_in_nav_menus']  	= true;
+		$brilliance_postTypeArguments['show_in_admin_bar']  	= true;
+		$brilliance_postTypeArguments['hierarchical'] 			= true;
+		$brilliance_postTypeArguments['can_export'] 			= true;
+		$brilliance_postTypeArguments['has_archive'] 			= true;
+		$brilliance_postTypeArguments['exclude_from_search'] 	= false;
+		$brilliance_postTypeArguments['publicly_queryable'] 	= true;
+		$brilliance_postTypeArguments['capability_type'] 		= 'post';
+		$brilliance_postTypeArguments['show_in_rest'] 			= true;
+		$brilliance_postTypeArguments['supports'] 				= array( 'title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' , 'comments' );
+	
+		return $brilliance_postTypeArguments;
+	}  
+	
+	add_filter('libwp_post_type_1_arguments', 'brilliance_modify_libwp_post_type_argument');
+  
+}
+
+if ( ! function_exists('brilliance_modify_libwp_taxonomy_name')) {
+	function brilliance_modify_libwp_taxonomy_name($brilliance_taxonomyName) {
+		/**
+		* Modify LibWP taxonomy name (If libwp plugin exist)
+		*/
+		$brilliance_taxonomyName = 'project_category';
+		return $brilliance_taxonomyName;
+	}
+	add_filter('libwp_taxonomy_1_name', 'brilliance_modify_libwp_taxonomy_name');
+}
+  
+if ( ! function_exists('brilliance_modify_libwp_taxonomy_post_type_name')) {
+	function brilliance_modify_libwp_taxonomy_post_type_name($brilliance_taxonomyPostTypeName) {
+		/**
+	    * Modify LibWP taxonomy post type name (If libwp plugin exist)
+		*/
+		$brilliance_taxonomyPostTypeName = 'projects';
+		return $brilliance_taxonomyPostTypeName;
+	}
+	add_filter('libwp_taxonomy_1_post_type', 'brilliance_modify_libwp_taxonomy_post_type_name');
+}
+	
+if ( ! function_exists('brilliance_modify_libwp_taxonomy_argument') ) {
+
+function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments) {
+	/**
+	* Modify LibWP taxonomy name (If libwp plugin exist)
+	*/
+	$brilliance_taxonomyArguments['labels'] = [
+		'name'          => _x('Project Categories', 'taxonomy general name', 'wp-indigo'),
+		'singular_name' => _x('Project Category', 'taxonomy singular name', 'wp-indigo'),
+		'search_items'  => __('Search Project Categories', 'wp-indigo'),
+		'all_items'     => __('All Project Categories', 'wp-indigo'),
+		'edit_item'     => __('Edit Project Category', 'wp-indigo'),
+		'add_new_item'  => __('Add New Project Category', 'wp-indigo'),
+		'new_item_name' => __('New Project Category Name', 'wp-indigo'),
+		'menu_name'     => __('Project Categories', 'wp-indigo'),
+	];
+	$brilliance_taxonomyArguments['rewrite']['slug'] = 'project_category';
+	$brilliance_taxonomyArguments['show_in_rest'] = true;
+
+	return $brilliance_taxonomyArguments;
+		  
+	}
+	
+	add_filter('libwp_taxonomy_1_arguments', 'brilliance_modify_libwp_taxonomy_argument');
+  }

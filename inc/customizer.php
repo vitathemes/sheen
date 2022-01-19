@@ -458,5 +458,14 @@ if( function_exists( 'kirki' ) ) {
 			'wide'   => get_template_directory_uri() . '/assets/images/wide.jpg',
 		],
 	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_gallery',
+		'label'       => esc_html__( 'Display Single Gallery', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 1,
+		'priority'    => 20,
+	] );
 	
 }

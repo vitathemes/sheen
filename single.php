@@ -12,7 +12,7 @@ get_header();
 
 <main id="primary" class="c-main">
 
-    <div class="c-main__content c-main__content--small">
+    <div class="c-main__content">
         <?php
 			while ( have_posts() ) :
 				

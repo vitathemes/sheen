@@ -404,3 +404,37 @@ if (! function_exists('brilliance_get_default_pagination')) :
 		}
 	}
 endif;
+
+
+if( ! function_exists('brilliance_get_gallery') ) :
+	function brilliance_get_gallery( $post_id ) { 
+		$brilliance_images = acf_photo_gallery('image_gallery', $post_id );
+		if( count( $brilliance_images ) > 0 ) {
+
+			echo esc_html( '<div class="c-single__masonry js-single__masonry">' );
+
+				foreach( $brilliance_images as $brilliance_image ) {
+
+					$brilliance_id                  = $brilliance_image['id'];
+					$brilliance_title               = $brilliance_image['title'];
+					$brilliance_caption             = $brilliance_image['caption'];
+					$brilliance_full_image_url      = $brilliance_image['full_image_url'];
+					$brilliance_thumbnail_image_url = $brilliance_image['thumbnail_image_url'];
+					$brilliance_url                 = $brilliance_image['url'];
+					$brilliance_target              = $brilliance_image['target'];
+					$brilliance_alt                 = get_field( 'photo_gallery_alt', $post_id );
+
+					echo sprintf( 
+						'<div class="c-single__masonry-image__wrapper js-single__masonry-image__wrapper">
+						<img class="c-single__masonry-img js-single__masonry-img" src="%s" data-src="" alt="%s" />
+						</div>', 
+						esc_url($brilliance_full_image_url),
+						esc_attr($brilliance_alt) 
+					);
+				}
+
+			echo '</div>';
+			
+		}
+	}
+endif;

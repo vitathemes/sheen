@@ -45,8 +45,13 @@ function brilliance_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      =>  __( 'Advanced Custom Fields', 'brilliance' ),
+			'name'      => __( 'Advanced Custom Fields', 'brilliance' ),
 			'slug'      => 'advanced-custom-fields',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'ACF Photo Gallery Field', 'cavatina' ),
+			'slug'      => 'navz-photo-gallery',
 			'required'  => false,
 		),
 		array(
