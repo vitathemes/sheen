@@ -59,8 +59,8 @@
     <?php if( true == get_theme_mod( 'single_gallery', true ) ) : ?>
     <div class="c-single__gallery">
         <div class="c-single_wrapper c-single__wrapper-has-border">
-            <h3 class="u-margin-none h3--bold"><?php esc_html_e( 'Image galleries' , 'brilliance' ) ?></h3>
-            <p><?php esc_html_e( 'Here’s a really neat custom feature we added – galleries:' , 'brilliance' ) ?></p>
+            <?php brilliance_get_gallery_theme_option( 'single_gallery_title' , 'Image galleries' , 'c-single__gallery-title h3--bold' , 'h3' ); // Function echo sanitized ?>
+            <?php brilliance_get_gallery_theme_option( 'single_gallery_description' , 'Here’s a really neat custom feature we added – galleries:' , 'c-single__gallery-desc ' , 'p'); // Function echo sanitized ?>
         </div>
         <?php brilliance_get_gallery(get_the_ID()); ?>
     </div>

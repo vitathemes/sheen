@@ -385,6 +385,9 @@ endif;
 if (! function_exists('brilliance_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
+	  *
+	  * @since v1.0.0
+	  *
 	  */
 	function brilliance_get_default_pagination( $brilliance_has_masonry = false ) {
 
@@ -408,6 +411,13 @@ endif;
 
 if( ! function_exists('brilliance_get_gallery') ) :
 	function brilliance_get_gallery( $post_id ) { 
+		/**
+		 * 
+		 * Get Gaallery fronm ACF ( if ACF exist )
+		 * 
+		 * @since v1.0.0
+		 * 
+		 */
 		$brilliance_images = acf_photo_gallery('image_gallery', $post_id );
 		if( count( $brilliance_images ) > 0 ) {
 
@@ -435,6 +445,33 @@ if( ! function_exists('brilliance_get_gallery') ) :
 
 			echo wp_kses_post('</div>');
 			
+		}
+	}
+endif;
+
+
+if( ! function_exists('brilliance_get_gallery_theme_option')): 
+	/**
+	 * 
+	 * Get Theme mods ( Used for getting Gallery title & description )
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_get_gallery_theme_option( $brilliance_theme_mod_name , $brilliance_them_mod_default , $brilliance_custom_class = '' , $brilliance_tag_name = 'h3') { 
+		if( get_theme_mod( $brilliance_theme_mod_name, $brilliance_them_mod_default ) ) { 
+			echo sprintf( '<%s class="%s">%s</%s>' , 
+			wp_kses_post( $brilliance_tag_name ),
+			esc_attr( $brilliance_custom_class ),
+			esc_html(get_theme_mod( $brilliance_theme_mod_name, $brilliance_them_mod_default )),
+			wp_kses_post( $brilliance_tag_name ) );
+		}
+		else { 
+			echo sprintf( '<%s class="%s">%s</%s>' ,
+			wp_kses_post( $brilliance_tag_name ),
+			esc_attr( $brilliance_custom_class ),
+			esc_html__( $brilliance_them_mod_default, 'brilliance' ) ),
+			wp_kses_post( $brilliance_tag_name );
 		}
 	}
 endif;

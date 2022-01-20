@@ -467,5 +467,23 @@ if( function_exists( 'kirki' ) ) {
 		'default'     => "1",
 		'priority'    => 20,
 	] );
-	
+
+	Kirki::add_field( 'brilliance', [
+		'type' 	   => 'text',
+		'label'    => esc_html__( 'Gallery Title', 'brilliance' ),
+		'settings' => 'single_gallery_title',
+		'section'  => 'single_options',
+		'default'  => esc_html__( 'Image galleries', 'brilliance' ),
+		'priority' => 30,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type' 	   => 'textarea',
+		'label'    => esc_html__( 'Gallery Description', 'brilliance' ),
+		'settings' => 'single_gallery_description',
+		'section'  => 'single_options',
+		'default'  => esc_html__( 'Here’s a really neat custom feature we added – galleries:', 'brilliance' ),
+		'priority' => 40,
+	] );
+
 }

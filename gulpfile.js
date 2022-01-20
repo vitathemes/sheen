@@ -15,7 +15,10 @@ const cssSrc = "./assets/src/css/";
 
 const sassTask = (cb) => {
     return gulp
-        .src(["./assets/src/scss/style.scss"])
+        .src([
+            "./node_modules/flickity/dist/flickity.css",
+            "./assets/src/scss/style.scss",
+        ])
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({ cascade: false }))
         .pipe(gulp.dest("./assets/src/css"))
@@ -54,6 +57,7 @@ const vendorScriptsTask = (cb) => {
             "./assets/src/js/vendor/iconify.js",
             "./node_modules/masonry-layout/dist/masonry.pkgd.js",
             "./node_modules/vanilla-lazyload/dist/lazyload.js",
+            "./node_modules/flickity/dist/flickity.pkgd.js",
         ])
         .pipe(concat("vendors.js"))
         .pipe(gulp.dest("./assets/js"));
