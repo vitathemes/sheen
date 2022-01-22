@@ -512,3 +512,26 @@ if (! function_exists('brilliance_get_tags')) :
 		}
 	}
 endif;
+
+
+if ( ! function_exists( 'brilliance_share_links' ) ) {
+	/**
+	 * 
+	 * Display Share icons 
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_share_links() {
+		if ( get_theme_mod( 'show_share_icons', true ) ) {
+			$brilliance_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
+			$brilliance_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
+			$brilliance_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+
+			echo sprintf( '<h4 class="c-social-share__title u-margin-none">%s</h4>', esc_html__( 'Share:', 'brilliance' ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $brilliance_facebook_url ), esc_attr__( "facebook" , "brilliance" ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $brilliance_twitter_url ), esc_attr__( "twitter" , "brilliance" ) );
+			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $brilliance_linkedin_url ), esc_attr__( "linkedin" , "brilliance" ) );
+		}
+	}
+}

@@ -461,11 +461,20 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'toggle',
-		'settings'    => 'single_gallery',
-		'label'       => esc_html__( 'Display Single Gallery', 'brilliance' ),
+		'settings'    => 'single_tags',
+		'label'       => esc_html__( 'Display Single Tags', 'brilliance' ),
 		'section'     => 'single_options',
 		'default'     => "1",
 		'priority'    => 20,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_shares',
+		'label'       => esc_html__( 'Display Share Options', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => "1",
+		'priority'    => 30,
 	]);
 
 	Kirki::add_field( 'brilliance', [
@@ -474,13 +483,13 @@ if( function_exists( 'kirki' ) ) {
 		'label'    => __( 'Sortable Sliders Option', 'brilliance' ),
 		'section'  => 'single_options',
 		'default'  => [ 'gallery', 'carousel' ],
-		'priority' => 30,
+		'priority' => 40,
 		'choices'  => [
 			'gallery'  => esc_html__( 'Gallery', 'brilliance' ),
 			'carousel' => esc_html__( 'Carousel', 'brilliance' ),
 		],
 	]);
-	
+
 	/*------------------------------------*\
 		#Single Options End
 	\*------------------------------------*/

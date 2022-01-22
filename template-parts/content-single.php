@@ -69,5 +69,11 @@
         }
     ?>
 
+    <?php if( true == get_theme_mod( 'single_shares', true ) ) : ?>
+    <div class="c-social-share c-social-share--lefted">
+        <?php brilliance_share_links(); ?>
+    </div>
+    <?php endif; ?>
+
 </article>
 <!-- #post-<?php the_ID(); ?> -->
