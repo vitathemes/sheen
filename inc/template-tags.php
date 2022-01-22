@@ -410,7 +410,7 @@ if (! function_exists('brilliance_get_default_pagination')) :
 endif;
 
 
-if( ! function_exists('brilliance_get_gallery') ) :
+if( ! function_exists('brilliance_get_gallery') && function_exists( 'acf' ) ) :
 	/**
 	 * 
 	 * Get Gaallery fronm ACF ( IF Acf & ACF Photo Gallery Exist )
@@ -418,8 +418,8 @@ if( ! function_exists('brilliance_get_gallery') ) :
 	 * @since v1.0.0
 	 * 
 	 */
-	function brilliance_get_gallery( $post_id ) { 
-		$brilliance_images = acf_photo_gallery( 'image_gallery', $post_id );
+	function brilliance_get_gallery( $brilliance_post_id ) { 
+		$brilliance_images = acf_photo_gallery( 'image_gallery', $brilliance_post_id );
 		if( count( $brilliance_images ) > 0 ) {
 			echo wp_kses_post( '<div class="c-single__masonry js-single__masonry">' );
 				foreach( $brilliance_images as $brilliance_image ) {
@@ -430,7 +430,7 @@ if( ! function_exists('brilliance_get_gallery') ) :
 					$brilliance_url                 = $brilliance_image['url'];
 					$brilliance_target              = $brilliance_image['target'];
 					$brilliance_full_image_url      = $brilliance_image['full_image_url'];
-					$brilliance_alt                 = get_field( 'photo_gallery_alt', $post_id );
+					$brilliance_alt                 = get_field( 'photo_gallery_alt', $brilliance_post_id );
 
 					echo sprintf( 
 						'<div class="c-single__masonry-image__wrapper js-single__masonry-image__wrapper">
@@ -446,7 +446,7 @@ if( ! function_exists('brilliance_get_gallery') ) :
 endif;
 
 
-if(!function_exists('brilliance_get_carousel')):
+if(!function_exists('brilliance_get_carousel') && function_exists( 'acf' ) ):
 	/**
 	 * 
 	 * Get Carousel Images ( If Acf & ACF Photo Gallery Exist )
@@ -454,8 +454,8 @@ if(!function_exists('brilliance_get_carousel')):
 	 * @since v1.0.0
 	 * 
 	 */
-	function brilliance_get_carousel( $post_id ) { 
-		$brilliance_carousel_images = acf_photo_gallery( 'image_gallery', $post_id );
+	function brilliance_get_carousel( $brilliance_post_id ) { 
+		$brilliance_carousel_images = acf_photo_gallery( 'image_gallery', $brilliance_post_id );
 		if( count( $brilliance_carousel_images ) > 0 ) {
 			echo wp_kses_post( '<div class="c-single__carousel js-single__carousel-slider">' );
 				foreach( $brilliance_carousel_images as $brilliance_carousel_image ) {
@@ -466,7 +466,7 @@ if(!function_exists('brilliance_get_carousel')):
 					$brilliance_url                 = $brilliance_carousel_image['url'];
 					$brilliance_target              = $brilliance_carousel_image['target'];
 					$brilliance_full_image_url      = $brilliance_carousel_image['full_image_url'];
-					$brilliance_alt                 = get_field( 'photo_gallery_alt', $post_id );
+					$brilliance_alt                 = get_field( 'photo_gallery_alt', $brilliance_post_id );
 					echo sprintf( 
 						'<div class="c-single__carousel-wrapper"><img class="c-single__carousel-img js-single__carousel-img" src="%s" data-src="" alt="%s" /></div>', 
 						esc_url($brilliance_full_image_url),
@@ -479,21 +479,36 @@ if(!function_exists('brilliance_get_carousel')):
 endif;
 
 
-if( ! function_exists('brilliance_get_gallery_theme_option')): 
+if(!function_exists('brilliance_get_acf_text') && function_exists( 'acf' )):
 	/**
 	 * 
-	 * Get Theme mods ( Used for getting Gallery title & description )
+	 * Return text of given field from ACF ( If acf existed )
 	 * 
 	 * @since v1.0.0
 	 * 
 	 */
-	function brilliance_get_gallery_theme_option( $brilliance_theme_mod_name , $brilliance_them_mod_default , $brilliance_custom_class = '' , $brilliance_tag_name = 'h3') { 
-		if( get_theme_mod( $brilliance_theme_mod_name, $brilliance_them_mod_default ) ) { 
-			echo sprintf( '<%s class="%s">%s</%s>' , 
-			wp_kses_post( $brilliance_tag_name ),
-			esc_attr( $brilliance_custom_class ),
-			esc_html(get_theme_mod( $brilliance_theme_mod_name, $brilliance_them_mod_default )),
-			wp_kses_post( $brilliance_tag_name ) );
+	function brilliance_get_acf_text( $brilliance_acf_field_name ) { 
+		echo esc_html( get_field($brilliance_acf_field_name) ); // Will Echo acf text field with Sanitization
+	}
+endif;
+
+
+if (! function_exists('brilliance_get_tags')) :
+	/**
+	 * 
+	 * Return post tags
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_get_tags( $brilliance_className = 'c-single__tag' ) {
+		$brilliance_post_tags = get_the_tags();
+		if ($brilliance_post_tags) {
+			$brilliance_tags = "";
+			foreach($brilliance_post_tags as $post_tag) {
+				$brilliance_tags .= '<a class="'.esc_attr( $brilliance_className ).' " href="'.  esc_url( get_tag_link( $post_tag->term_id ) ) .'" title="'.  esc_attr( $post_tag->name ) .'">'. esc_html( $post_tag->name ). '</a>';
+			}
+			echo wp_kses_post(sprintf('<div class="c-single__tags">%s %s</div>' , esc_html__( 'tags: ' , 'brilliance' ) , $brilliance_tags));
 		}
 	}
 endif;

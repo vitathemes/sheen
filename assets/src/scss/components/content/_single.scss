@@ -149,3 +149,28 @@
         margin-top: rem(39px);
     }
 }
+
+/*------------------------------------*\
+  #single tags
+\*------------------------------------*/
+.c-single__tags {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: rem(64px);
+    text-transform: capitalize;
+    color: $brilliance_primary_text_color;
+
+    @include mq($from: tablet) {
+        margin-top: rem(92px);
+    }
+}
+
+.c-single__tag {
+    margin: rem(0px 8px);
+    text-transform: uppercase;
+}
+
+.c-single__tag:first-child {
+    margin-left: rem(21px);
+}

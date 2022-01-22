@@ -56,24 +56,18 @@
         </div>
     </div>
 
-    <?php if( true == get_theme_mod( 'single_gallery', true ) ) : ?>
-    <div class="c-single__slider">
-        <div class="c-single__wrapper c-single__wrapper-has-border">
-            <?php brilliance_get_gallery_theme_option( 'single_gallery_title' , 'Image galleries' , 'c-single__slider-title h3--bold' , 'h3' ); // Function echo sanitized ?>
-            <?php brilliance_get_gallery_theme_option( 'single_gallery_description' , 'Here’s a really neat custom feature we added – galleries:' , 'c-single__slider-desc ' , 'p'); // Function echo sanitized ?>
-        </div>
-        <?php brilliance_get_gallery(get_the_ID()); ?>
-    </div>
-    <?php endif; ?>
+    <?php 
+        $brilliance_template_parts = get_theme_mod( 'single_sliders', array( 'gallery', 'carousel' ) );
+        foreach ( $brilliance_template_parts as $brilliance_template_part ) {
+            get_template_part( 'template-parts/components/' . $brilliance_template_part );
+        }
+    ?>
 
-    <div class="c-single__slider c-single__slider--carousel">
-        <div class="c-single__wrapper c-single__wrapper-has-border c-single__wrapper--carousel">
-            <?php brilliance_get_gallery_theme_option( 'single_carousel_title' , 'Image carousels' , 'c-single__slider-title h3--bold' , 'h3' ); // Function echo sanitized ?>
-            <?php brilliance_get_gallery_theme_option( 'single_carousel_description' , 'Here’s another gallery with only one column, which creates a carousel slide-show instead.
-		    A nice little feature: the carousel only advances when it is in view, so your visitors won’t scroll down to find it half way through your images.' , 'c-single__slider-desc ' , 'p'); // Function echo sanitized ?>
-        </div>
+    <?php 
+        if( true == get_theme_mod( 'single_tags', true )) { 
+            brilliance_get_tags('c-single__tag u-link--meta');
+        }
+    ?>
 
-        <?php brilliance_get_carousel(get_the_ID()); ?>
-    </div>
 </article>
 <!-- #post-<?php the_ID(); ?> -->

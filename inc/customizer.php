@@ -442,9 +442,9 @@ if( function_exists( 'kirki' ) ) {
 		#End Social Networks
 	\*------------------------------------*/
 
-
+	
 	/*------------------------------------*\
-		#Single Options
+		#Single Options Start
 	\*------------------------------------*/
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'radio-image',
@@ -457,7 +457,7 @@ if( function_exists( 'kirki' ) ) {
 			'normal' => get_template_directory_uri() . '/assets/images/normal.jpg',
 			'wide'   => get_template_directory_uri() . '/assets/images/wide.jpg',
 		],
-	] );
+	]);
 
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'toggle',
@@ -466,43 +466,23 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'single_options',
 		'default'     => "1",
 		'priority'    => 20,
-	] );
+	]);
 
 	Kirki::add_field( 'brilliance', [
-		'type' 	   => 'text',
-		'label'    => esc_html__( 'Gallery Title', 'brilliance' ),
-		'settings' => 'single_gallery_title',
+		'type'	   => 'sortable',
+		'settings' => 'single_sliders',
+		'label'    => __( 'Sortable Sliders Option', 'brilliance' ),
 		'section'  => 'single_options',
-		'default'  => esc_html__( 'Image galleries', 'brilliance' ),
+		'default'  => [ 'gallery', 'carousel' ],
 		'priority' => 30,
-	] );
-
-	Kirki::add_field( 'brilliance', [
-		'type' 	   => 'textarea',
-		'label'    => esc_html__( 'Gallery Description', 'brilliance' ),
-		'settings' => 'single_gallery_description',
-		'section'  => 'single_options',
-		'default'  => esc_html__( 'Here’s a really neat custom feature we added – galleries:', 'brilliance' ),
-		'priority' => 40,
-	] );
-
-	Kirki::add_field( 'brilliance', [
-		'type' 	   => 'text',
-		'label'    => esc_html__( 'Carousel Title', 'brilliance' ),
-		'settings' => 'single_carousel_title',
-		'section'  => 'single_options',
-		'default'  => esc_html__( 'Image carousels', 'brilliance' ),
-		'priority' => 50,
-	] );
-
-	Kirki::add_field( 'brilliance', [
-		'type' 	   => 'textarea',
-		'label'    => esc_html__( 'Carousel Description', 'brilliance' ),
-		'settings' => 'single_carousel_description',
-		'section'  => 'single_options',
-		'default'  => esc_html__( 'Here’s another gallery with only one column, which creates a carousel slide-show instead.
-		A nice little feature: the carousel only advances when it is in view, so your visitors won’t scroll down to find it half way through your images.', 'brilliance' ),
-		'priority' => 60,
-	] );
+		'choices'  => [
+			'gallery'  => esc_html__( 'Gallery', 'brilliance' ),
+			'carousel' => esc_html__( 'Carousel', 'brilliance' ),
+		],
+	]);
+	
+	/*------------------------------------*\
+		#Single Options End
+	\*------------------------------------*/
 
 }

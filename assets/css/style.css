@@ -1668,7 +1668,7 @@ input[type=submit]:focus {
   font-size: 12px !important;
   line-height: 15px !important;
   text-decoration: none !important;
-  border-radius: 999px;
+  border-radius: 999px !important;
 }
 .page-numbers:hover {
   background-color: var(--brilliance_theme_tertiary_text_color) !important;
@@ -1884,6 +1884,32 @@ input[type=submit]:focus {
   .c-single__slider-desc {
     margin-top: 2.4375rem;
   }
+}
+
+/*------------------------------------*\
+  #single tags
+\*------------------------------------*/
+.c-single__tags {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  text-transform: capitalize;
+  color: var(--brilliance_theme_primary_text_color);
+}
+@media (min-width: 46.25em) {
+  .c-single__tags {
+    margin-top: 5.75rem;
+  }
+}
+
+.c-single__tag {
+  margin: 0rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.c-single__tag:first-child {
+  margin-left: 1.3125rem;
 }
 
 .c-category {
