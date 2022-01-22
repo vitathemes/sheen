@@ -1788,6 +1788,36 @@ input[type=submit]:focus {
   }
 }
 
+.c-single__gallery-title {
+  margin: 0;
+}
+
+.c-single__gallery-desc {
+  margin: 0;
+  margin-top: 1.5rem;
+}
+@media (min-width: 46.25em) {
+  .c-single__gallery-desc {
+    margin-top: 2.4375rem;
+  }
+}
+
+/*------------------------------------*\
+  #Single carousel 
+\*------------------------------------*/
+.c-single__carousel {
+  width: 100%;
+  margin-top: 3rem;
+  padding-top: 2.875rem;
+  border-top: 0.0625rem solid #e1e1e1;
+}
+@media (min-width: 46.25em) {
+  .c-single__carousel {
+    margin-top: 6rem;
+    padding-top: 2.875rem;
+  }
+}
+
 .c-category {
   width: -webkit-max-content;
   width: -moz-max-content;

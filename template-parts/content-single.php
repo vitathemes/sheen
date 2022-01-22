@@ -66,5 +66,11 @@
     </div>
     <?php endif; ?>
 
+    <div class="c-single__carousel">
+
+
+
+    </div>
+
 </article>
 <!-- #post-<?php the_ID(); ?> -->

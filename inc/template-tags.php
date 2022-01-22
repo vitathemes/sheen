@@ -466,12 +466,5 @@ if( ! function_exists('brilliance_get_gallery_theme_option')):
 			esc_html(get_theme_mod( $brilliance_theme_mod_name, $brilliance_them_mod_default )),
 			wp_kses_post( $brilliance_tag_name ) );
 		}
-		else { 
-			echo sprintf( '<%s class="%s">%s</%s>' ,
-			wp_kses_post( $brilliance_tag_name ),
-			esc_attr( $brilliance_custom_class ),
-			esc_html__( $brilliance_them_mod_default, 'brilliance' ) ),
-			wp_kses_post( $brilliance_tag_name );
-		}
 	}
 endif;

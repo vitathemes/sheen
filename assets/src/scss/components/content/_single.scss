@@ -103,3 +103,18 @@
         margin-top: rem(39px);
     }
 }
+
+/*------------------------------------*\
+  #Single carousel 
+\*------------------------------------*/
+.c-single__carousel {
+    width: 100%;
+    margin-top: rem(48px);
+    padding-top: rem(46px);
+    border-top: rem(1px) solid $color_border_tertiary;
+
+    @include mq($from: tablet) {
+        margin-top: rem(96px);
+        padding-top: rem(46px);
+    }
+}
