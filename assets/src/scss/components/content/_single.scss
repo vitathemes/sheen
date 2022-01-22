@@ -9,7 +9,7 @@
         justify-content: center;
     }
 }
-.c-single_wrapper {
+.c-single__wrapper {
     width: 100%;
     @include mq($from: tablet) {
         max-width: rem(910px);
@@ -54,13 +54,6 @@
   #Single Gallery 
 \*------------------------------------*/
 
-.c-single__gallery {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .c-single__masonry-image__wrapper {
     width: 380px;
 
@@ -91,30 +84,68 @@
     }
 }
 
-.c-single__gallery-title {
-    margin: 0;
-}
-
-.c-single__gallery-desc {
-    margin: 0;
-    margin-top: rem(24px);
-
-    @include mq($from: tablet) {
-        margin-top: rem(39px);
-    }
-}
-
 /*------------------------------------*\
   #Single carousel 
 \*------------------------------------*/
 .c-single__carousel {
     width: 100%;
+    height: max-content;
     margin-top: rem(48px);
-    padding-top: rem(46px);
-    border-top: rem(1px) solid $color_border_tertiary;
+    transition: none;
+    position: relative;
+
+    .flickity-viewport {
+        overflow: hidden;
+    }
+
+    .flickity-slider {
+        height: rem(500px);
+    }
+
+    .flickity-page-dots {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 55px;
+    }
+}
+
+.c-single__carousel-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.c-single__carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*------------------------------------*\
+  #Carousel & gallery 
+\*------------------------------------*/
+
+.c-single__slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.c-single__slider--carousel {
+    height: max-content;
+}
+
+.c-single__slider-title {
+    margin: 0;
+}
+
+.c-single__slider-desc {
+    margin: 0;
+    margin-top: rem(24px);
 
     @include mq($from: tablet) {
-        margin-top: rem(96px);
-        padding-top: rem(46px);
+        margin-top: rem(39px);
     }
 }

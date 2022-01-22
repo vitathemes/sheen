@@ -246,30 +246,33 @@ endif;
 if ( ! function_exists( 'brilliance_socials_links' ) ) :
 	/**
 	  * Display Social Networks
+	  *
+	  * @since v1.0.0 
+	  *
 	  */
 	function brilliance_socials_links() {
 
-		$brilliance_facebook  		=  get_theme_mod( 'facebook', "" );
-		$brilliance_twitter   		=  get_theme_mod( 'twitter', "" );
-		$brilliance_instagram 		=  get_theme_mod( 'instagram', "" );
-		$brilliance_linkedin  		=  get_theme_mod( 'linkedin', "" );
-		$brilliance_github    		=  get_theme_mod( 'github', "" );
-		$brilliance_mail   			=  get_theme_mod( 'mail', "" );
-		$brilliance_pinterest    	=  get_theme_mod( 'pinterest', "" );
-		$brilliance_youtube    		=  get_theme_mod( 'youtube', "" );
-		$brilliance_spotify    		=  get_theme_mod( 'spotify', "" );
-		$brilliance_gitlab    		=  get_theme_mod( 'gitlab', "" );
-		$brilliance_lastfm    		=  get_theme_mod( 'lastfm', "" );
-		$brilliance_stackoverflow   =  get_theme_mod( 'stackoverflow', "" );
-		$brilliance_quora    		=  get_theme_mod( 'quora', "" );
-		$brilliance_reddit    		=  get_theme_mod( 'reddit', "" );
-		$brilliance_medium    		=  get_theme_mod( 'medium', "" );
-		$brilliance_vimeo    		=  get_theme_mod( 'vimeo', "" );
-		$brilliance_lanyrd    		=  get_theme_mod( 'lanyrd', "" );
-		$brilliance_dribbble    	=  get_theme_mod( 'dribbble', "" );
-		$brilliance_behance    		=  get_theme_mod( 'behance', "" );
-		$brilliance_telegram    	=  get_theme_mod( 'telegram', "" );
-		$brilliance_codepen    		=  get_theme_mod( 'codepen', "" );
+		$brilliance_facebook  		=  get_theme_mod( 'facebook', '' );
+		$brilliance_twitter   		=  get_theme_mod( 'twitter', '' );
+		$brilliance_instagram 		=  get_theme_mod( 'instagram', '' );
+		$brilliance_linkedin  		=  get_theme_mod( 'linkedin', '' );
+		$brilliance_github    		=  get_theme_mod( 'github', '' );
+		$brilliance_mail   			=  get_theme_mod( 'mail', '' );
+		$brilliance_pinterest    	=  get_theme_mod( 'pinterest', '' );
+		$brilliance_youtube    		=  get_theme_mod( 'youtube', '' );
+		$brilliance_spotify    		=  get_theme_mod( 'spotify', '' );
+		$brilliance_gitlab    		=  get_theme_mod( 'gitlab', '' );
+		$brilliance_lastfm    		=  get_theme_mod( 'lastfm', '' );
+		$brilliance_stackoverflow   =  get_theme_mod( 'stackoverflow', '' );
+		$brilliance_quora    		=  get_theme_mod( 'quora', '' );
+		$brilliance_reddit    		=  get_theme_mod( 'reddit', '' );
+		$brilliance_medium    		=  get_theme_mod( 'medium', '' );
+		$brilliance_vimeo    		=  get_theme_mod( 'vimeo', '' );
+		$brilliance_lanyrd    		=  get_theme_mod( 'lanyrd', '' );
+		$brilliance_dribbble    	=  get_theme_mod( 'dribbble', '' );
+		$brilliance_behance    		=  get_theme_mod( 'behance', '' );
+		$brilliance_telegram    	=  get_theme_mod( 'telegram', '' );
+		$brilliance_codepen    		=  get_theme_mod( 'codepen', '' );
 
 
 		// If variable was not empty will display the icons
@@ -390,9 +393,7 @@ if (! function_exists('brilliance_get_default_pagination')) :
 	  *
 	  */
 	function brilliance_get_default_pagination( $brilliance_has_masonry = false ) {
-
 		($brilliance_has_masonry) ? $brilliance_pagination_class_name = 'js-post-has-masonry' : $brilliance_pagination_class_name = '';
-
 		if(paginate_links()) {
 			echo wp_kses_post( '<div class="c-pagination '. esc_attr( $brilliance_pagination_class_name ) .'">' ) . wp_kses_post(
 				paginate_links(
@@ -410,28 +411,25 @@ endif;
 
 
 if( ! function_exists('brilliance_get_gallery') ) :
+	/**
+	 * 
+	 * Get Gaallery fronm ACF ( IF Acf & ACF Photo Gallery Exist )
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
 	function brilliance_get_gallery( $post_id ) { 
-		/**
-		 * 
-		 * Get Gaallery fronm ACF ( if ACF exist )
-		 * 
-		 * @since v1.0.0
-		 * 
-		 */
-		$brilliance_images = acf_photo_gallery('image_gallery', $post_id );
+		$brilliance_images = acf_photo_gallery( 'image_gallery', $post_id );
 		if( count( $brilliance_images ) > 0 ) {
-
 			echo wp_kses_post( '<div class="c-single__masonry js-single__masonry">' );
-
 				foreach( $brilliance_images as $brilliance_image ) {
-
 					$brilliance_id                  = $brilliance_image['id'];
 					$brilliance_title               = $brilliance_image['title'];
 					$brilliance_caption             = $brilliance_image['caption'];
-					$brilliance_full_image_url      = $brilliance_image['full_image_url'];
 					$brilliance_thumbnail_image_url = $brilliance_image['thumbnail_image_url'];
 					$brilliance_url                 = $brilliance_image['url'];
 					$brilliance_target              = $brilliance_image['target'];
+					$brilliance_full_image_url      = $brilliance_image['full_image_url'];
 					$brilliance_alt                 = get_field( 'photo_gallery_alt', $post_id );
 
 					echo sprintf( 
@@ -442,9 +440,40 @@ if( ! function_exists('brilliance_get_gallery') ) :
 						esc_attr($brilliance_alt) 
 					);
 				}
-
 			echo wp_kses_post('</div>');
-			
+		}
+	}
+endif;
+
+
+if(!function_exists('brilliance_get_carousel')):
+	/**
+	 * 
+	 * Get Carousel Images ( If Acf & ACF Photo Gallery Exist )
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_get_carousel( $post_id ) { 
+		$brilliance_carousel_images = acf_photo_gallery( 'image_gallery', $post_id );
+		if( count( $brilliance_carousel_images ) > 0 ) {
+			echo wp_kses_post( '<div class="c-single__carousel js-single__carousel-slider">' );
+				foreach( $brilliance_carousel_images as $brilliance_carousel_image ) {
+					$brilliance_id                  = $brilliance_carousel_image['id'];
+					$brilliance_title               = $brilliance_carousel_image['title'];
+					$brilliance_caption             = $brilliance_carousel_image['caption'];
+					$brilliance_thumbnail_image_url = $brilliance_carousel_image['thumbnail_image_url'];
+					$brilliance_url                 = $brilliance_carousel_image['url'];
+					$brilliance_target              = $brilliance_carousel_image['target'];
+					$brilliance_full_image_url      = $brilliance_carousel_image['full_image_url'];
+					$brilliance_alt                 = get_field( 'photo_gallery_alt', $post_id );
+					echo sprintf( 
+						'<div class="c-single__carousel-wrapper"><img class="c-single__carousel-img js-single__carousel-img" src="%s" data-src="" alt="%s" /></div>', 
+						esc_url($brilliance_full_image_url),
+						esc_attr($brilliance_alt) 
+					);
+				}
+			echo wp_kses_post('</div>');
 		}
 	}
 endif;

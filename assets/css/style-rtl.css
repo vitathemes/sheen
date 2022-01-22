@@ -1788,20 +1788,6 @@ input[type=submit]:focus {
   }
 }
 
-.c-single__gallery-title {
-  margin: 0;
-}
-
-.c-single__gallery-desc {
-  margin: 0;
-  margin-top: 1.5rem;
-}
-@media (min-width: 46.25em) {
-  .c-single__gallery-desc {
-    margin-top: 2.4375rem;
-  }
-}
-
 /*------------------------------------*\
   #Single carousel 
 \*------------------------------------*/
@@ -1815,6 +1801,23 @@ input[type=submit]:focus {
   .c-single__carousel {
     margin-top: 6rem;
     padding-top: 2.875rem;
+  }
+}
+
+/*------------------------------------*\
+  #Carousel & gallery 
+\*------------------------------------*/
+.c-single__slider-title {
+  margin: 0;
+}
+
+.c-single__slider-desc {
+  margin: 0;
+  margin-top: 1.5rem;
+}
+@media (min-width: 46.25em) {
+  .c-single__slider-desc {
+    margin-top: 2.4375rem;
   }
 }
 

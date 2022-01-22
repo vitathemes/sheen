@@ -57,20 +57,23 @@
     </div>
 
     <?php if( true == get_theme_mod( 'single_gallery', true ) ) : ?>
-    <div class="c-single__gallery">
-        <div class="c-single_wrapper c-single__wrapper-has-border">
-            <?php brilliance_get_gallery_theme_option( 'single_gallery_title' , 'Image galleries' , 'c-single__gallery-title h3--bold' , 'h3' ); // Function echo sanitized ?>
-            <?php brilliance_get_gallery_theme_option( 'single_gallery_description' , 'Here’s a really neat custom feature we added – galleries:' , 'c-single__gallery-desc ' , 'p'); // Function echo sanitized ?>
+    <div class="c-single__slider">
+        <div class="c-single__wrapper c-single__wrapper-has-border">
+            <?php brilliance_get_gallery_theme_option( 'single_gallery_title' , 'Image galleries' , 'c-single__slider-title h3--bold' , 'h3' ); // Function echo sanitized ?>
+            <?php brilliance_get_gallery_theme_option( 'single_gallery_description' , 'Here’s a really neat custom feature we added – galleries:' , 'c-single__slider-desc ' , 'p'); // Function echo sanitized ?>
         </div>
         <?php brilliance_get_gallery(get_the_ID()); ?>
     </div>
     <?php endif; ?>
 
-    <div class="c-single__carousel">
+    <div class="c-single__slider c-single__slider--carousel">
+        <div class="c-single__wrapper c-single__wrapper-has-border c-single__wrapper--carousel">
+            <?php brilliance_get_gallery_theme_option( 'single_carousel_title' , 'Image carousels' , 'c-single__slider-title h3--bold' , 'h3' ); // Function echo sanitized ?>
+            <?php brilliance_get_gallery_theme_option( 'single_carousel_description' , 'Here’s another gallery with only one column, which creates a carousel slide-show instead.
+		    A nice little feature: the carousel only advances when it is in view, so your visitors won’t scroll down to find it half way through your images.' , 'c-single__slider-desc ' , 'p'); // Function echo sanitized ?>
+        </div>
 
-
-
+        <?php brilliance_get_carousel(get_the_ID()); ?>
     </div>
-
 </article>
 <!-- #post-<?php the_ID(); ?> -->

@@ -486,4 +486,23 @@ if( function_exists( 'kirki' ) ) {
 		'priority' => 40,
 	] );
 
+	Kirki::add_field( 'brilliance', [
+		'type' 	   => 'text',
+		'label'    => esc_html__( 'Carousel Title', 'brilliance' ),
+		'settings' => 'single_carousel_title',
+		'section'  => 'single_options',
+		'default'  => esc_html__( 'Image carousels', 'brilliance' ),
+		'priority' => 50,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type' 	   => 'textarea',
+		'label'    => esc_html__( 'Carousel Description', 'brilliance' ),
+		'settings' => 'single_carousel_description',
+		'section'  => 'single_options',
+		'default'  => esc_html__( 'Here’s another gallery with only one column, which creates a carousel slide-show instead.
+		A nice little feature: the carousel only advances when it is in view, so your visitors won’t scroll down to find it half way through your images.', 'brilliance' ),
+		'priority' => 60,
+	] );
+
 }
