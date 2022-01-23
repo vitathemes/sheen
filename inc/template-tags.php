@@ -455,16 +455,10 @@ if(!function_exists('brilliance_get_carousel') && function_exists( 'acf' ) ):
 	 * 
 	 */
 	function brilliance_get_carousel( $brilliance_post_id ) { 
-		$brilliance_carousel_images = acf_photo_gallery( 'image_gallery', $brilliance_post_id );
+		$brilliance_carousel_images = acf_photo_gallery( 'image_carousel', $brilliance_post_id );
 		if( count( $brilliance_carousel_images ) > 0 ) {
 			echo wp_kses_post( '<div class="c-single__carousel js-single__carousel-slider">' );
 				foreach( $brilliance_carousel_images as $brilliance_carousel_image ) {
-					$brilliance_id                  = $brilliance_carousel_image['id'];
-					$brilliance_title               = $brilliance_carousel_image['title'];
-					$brilliance_caption             = $brilliance_carousel_image['caption'];
-					$brilliance_thumbnail_image_url = $brilliance_carousel_image['thumbnail_image_url'];
-					$brilliance_url                 = $brilliance_carousel_image['url'];
-					$brilliance_target              = $brilliance_carousel_image['target'];
 					$brilliance_full_image_url      = $brilliance_carousel_image['full_image_url'];
 					$brilliance_alt                 = get_field( 'photo_gallery_alt', $brilliance_post_id );
 					echo sprintf( 
@@ -523,15 +517,13 @@ if ( ! function_exists( 'brilliance_share_links' ) ) {
 	 * 
 	 */
 	function brilliance_share_links() {
-		if ( get_theme_mod( 'show_share_icons', true ) ) {
-			$brilliance_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
-			$brilliance_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
-			$brilliance_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+		$brilliance_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" .  esc_url( get_permalink() ) . "&title=" . esc_attr( get_the_title() );
+		$brilliance_twitter_url  = "https://twitter.com/intent/tweet?url=" . esc_url( get_permalink() ) . "&title=" . esc_attr( get_the_title() );
+		$brilliance_facebook_url = "https://www.facebook.com/sharer.php?u=" . esc_url( get_permalink() );
 
-			echo sprintf( '<h5 class="c-social-share__title u-margin-none">%s</h5>', esc_html__( 'Share:', 'brilliance' ) );
-			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $brilliance_facebook_url ), esc_attr__( "facebook" , "brilliance" ) );
-			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $brilliance_twitter_url ), esc_attr__( "twitter" , "brilliance" ) );
-			echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $brilliance_linkedin_url ), esc_attr__( "linkedin" , "brilliance" ) );
-		}
+		echo sprintf( '<h5 class="c-social-share__title u-margin-none">%s</h5>', esc_html__( 'Share:', 'brilliance' ) );
+		echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-facebook-alt c-social-share__item__icon"></span></a>', esc_url( $brilliance_facebook_url ), esc_attr__( "facebook" , "brilliance" ) );
+		echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-twitter c-social-share__item__icon"></span></a>', esc_url( $brilliance_twitter_url ), esc_attr__( "twitter" , "brilliance" ) );
+		echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $brilliance_linkedin_url ), esc_attr__( "linkedin" , "brilliance" ) );
 	}
 }

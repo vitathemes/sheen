@@ -478,12 +478,31 @@ if( function_exists( 'kirki' ) ) {
 	]);
 
 	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_meta_wrapper',
+		'label'       => esc_html__( 'Post Meta Wrapper', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 0,
+		'priority'    => 40,
+	]);
+
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_comments_count',
+		'label'       => esc_html__( 'Display Comments Count', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 0,
+		'priority'    => 50,
+	]);
+
+	Kirki::add_field( 'brilliance', [
 		'type'	   => 'sortable',
 		'settings' => 'single_sliders',
 		'label'    => __( 'Sortable Sliders Option', 'brilliance' ),
 		'section'  => 'single_options',
 		'default'  => [ 'gallery', 'carousel' ],
-		'priority' => 40,
+		'priority' => 60,
 		'choices'  => [
 			'gallery'  => esc_html__( 'Gallery', 'brilliance' ),
 			'carousel' => esc_html__( 'Carousel', 'brilliance' ),

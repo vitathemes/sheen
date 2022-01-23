@@ -28,9 +28,9 @@ class Brilliance_walker_comment extends Walker_Comment
 <<?php echo esc_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
     <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
         <div class="comment-meta">
-            <div class="comment-avatar">
-                <?php if ($args['avatar_size'] !== 0) echo get_avatar($comment, $args['avatar_size']); ?>
-            </div>
+
+            <?php if ($args['avatar_size'] !== 0) echo get_avatar($comment, $args['avatar_size']); ?>
+
 
             <div class="comment-content">
                 <div class="comment-header">

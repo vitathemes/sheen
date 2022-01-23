@@ -2179,10 +2179,13 @@ input[type=submit]:focus {
   display: flex;
 }
 
-.comment-avatar {
+.comment-meta .avatar {
   width: 50px;
+  min-width: 3.125rem;
   height: 50px;
   display: inline-block;
+  border-radius: 999px;
+  margin-right: 1.5rem;
 }
 
 .comment-header {
@@ -2193,8 +2196,12 @@ input[type=submit]:focus {
 }
 
 .comment-content {
-  width: calc(100% - 50px);
-  padding-left: 24px;
+  width: 100%;
+}
+@media (min-width: 46.25em) {
+  .comment-content {
+    width: calc(100% - 50px);
+  }
 }
 
 .c-comment__author__name {

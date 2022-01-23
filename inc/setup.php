@@ -64,7 +64,7 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 			apply_filters(
 				'brilliance_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
+					'default-color' => '#ffffff',
 					'default-image' => '',
 				)
 			)

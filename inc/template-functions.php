@@ -156,13 +156,13 @@ if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {
 		 * Modify LibWP post type arguments (If libwp plugin exist)
 		 */
 		$brilliance_postTypeArguments['labels'] = [
-			'name'          => _x('Projects', 'Post type general name', 'wp-indigo'),
-			'singular_name' => _x('Project', 'Post type singular name', 'wp-indigo'),
-			'menu_name'     => _x('Projects', 'Admin Menu text', 'wp-indigo'),
-			'add_new'       => __('Add New', 'wp-indigo'),
-			'edit_item'     => __('Edit Project', 'wp-indigo'),
-			'view_item'     => __('View Project', 'wp-indigo'),
-			'all_items'     => __('All Projects', 'wp-indigo'),
+			'name'          => _x('Projects', 'Post type general name', 'brlliance'),
+			'singular_name' => _x('Project', 'Post type singular name', 'brlliance'),
+			'menu_name'     => _x('Projects', 'Admin Menu text', 'brlliance'),
+			'add_new'       => __('Add New', 'brlliance'),
+			'edit_item'     => __('Edit Project', 'brlliance'),
+			'view_item'     => __('View Project', 'brlliance'),
+			'all_items'     => __('All Projects', 'brlliance'),
 		];
 		
 		$brilliance_postTypeArguments['rewrite']['slug'] 		= 'projects';
@@ -216,14 +216,14 @@ function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments
 	* Modify LibWP taxonomy name (If libwp plugin exist)
 	*/
 	$brilliance_taxonomyArguments['labels'] = [
-		'name'          => _x('Project Categories', 'taxonomy general name', 'wp-indigo'),
-		'singular_name' => _x('Project Category', 'taxonomy singular name', 'wp-indigo'),
-		'search_items'  => __('Search Project Categories', 'wp-indigo'),
-		'all_items'     => __('All Project Categories', 'wp-indigo'),
-		'edit_item'     => __('Edit Project Category', 'wp-indigo'),
-		'add_new_item'  => __('Add New Project Category', 'wp-indigo'),
-		'new_item_name' => __('New Project Category Name', 'wp-indigo'),
-		'menu_name'     => __('Project Categories', 'wp-indigo'),
+		'name'          => _x('Project Categories', 'taxonomy general name', 'brlliance'),
+		'singular_name' => _x('Project Category', 'taxonomy singular name', 'brlliance'),
+		'search_items'  => __('Search Project Categories', 'brlliance'),
+		'all_items'     => __('All Project Categories', 'brlliance'),
+		'edit_item'     => __('Edit Project Category', 'brlliance'),
+		'add_new_item'  => __('Add New Project Category', 'brlliance'),
+		'new_item_name' => __('New Project Category Name', 'brlliance'),
+		'menu_name'     => __('Project Categories', 'brlliance'),
 	];
 	$brilliance_taxonomyArguments['rewrite']['slug'] = 'project_category';
 	$brilliance_taxonomyArguments['show_in_rest'] = true;

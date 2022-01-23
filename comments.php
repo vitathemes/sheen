@@ -66,20 +66,26 @@
     <h3 class="c-comment__title comments-title">
         <?php
 			$brilliance_comment_count = get_comments_number();
-			if ( '1' === $brilliance_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'Comments', 'brilliance' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( 'Comments', 'Comments', $brilliance_comment_count, 'comments title', 'brilliance' ) ),
-					number_format_i18n( $brilliance_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
+			if( true == get_theme_mod( 'single_comments_count', false ) ) { 
+				echo sprintf( '<span>%s %s</span>' , esc_html( $brilliance_comment_count ) , esc_html__( 'Comments', 'brilliance' ) ); // Sanitized Values
 			}
+			else { 
+				if ( '1' === $brilliance_comment_count ) {
+					printf(
+						/* translators: 1: title. */
+						esc_html__( 'Comments', 'brilliance' ),
+						'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					);
+				} else {
+					printf( 
+						/* translators: 1: comment count number, 2: title. */
+						esc_html( _nx( 'Comments', 'Comments', $brilliance_comment_count, 'comments title', 'brilliance' ) ),
+						number_format_i18n( $brilliance_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					);
+				}
+			}
+			
 		?>
     </h3><!-- .comments-title -->
 

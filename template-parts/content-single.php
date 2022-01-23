@@ -57,6 +57,7 @@
     </div>
 
     <?php 
+        // Get sliders ( Carousel & Gallery ) Features ( Editable from customizer )
         $brilliance_template_parts = get_theme_mod( 'single_sliders', array( 'gallery', 'carousel' ) );
         foreach ( $brilliance_template_parts as $brilliance_template_part ) {
             get_template_part( 'template-parts/components/' . $brilliance_template_part );
@@ -64,16 +65,32 @@
     ?>
 
     <?php 
+        if( true == get_theme_mod( 'single_meta_wrapper', false ) ) : 
+            echo wp_kses_post( '<div class="c-single__wrapper">' );
+        endif;
+    ?>
+
+    <?php
+        // Display Single Tags ( Editable from Customizer ) 
         if( true == get_theme_mod( 'single_tags', true )) { 
             brilliance_get_tags('c-single__tag u-link--meta');
         }
     ?>
 
-    <?php if( true == get_theme_mod( 'single_shares', true ) ) : ?>
-    <div class="c-social-share c-social-share--lefted">
-        <?php brilliance_share_links(); ?>
-    </div>
-    <?php endif; ?>
+    <?php 
+        // Display Single Social Shares ( Editable from Customizer ) 
+        if( true == get_theme_mod( 'single_shares', true ) ) : 
+            echo wp_kses_post( '<div class="c-social-share c-social-share--lefted">' );
+                brilliance_share_links(); // Sanitized Function 
+            echo wp_kses_post( '</div>' );
+        endif; 
+    ?>
+
+    <?php 
+    if( true == get_theme_mod( 'single_meta_wrapper', false ) ) : 
+        echo wp_kses_post( '</div>' );
+    endif;
+    ?>
 
     <div class="c-single__wrapper">
         <?php 
