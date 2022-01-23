@@ -1823,6 +1823,10 @@ input[type=submit]:focus {
   }
 }
 
+.c-single__meta {
+  margin-top: 1.25rem;
+}
+
 .c-single__thumbnail {
   margin-top: 1.5rem;
   display: flex;
@@ -2078,7 +2082,12 @@ input[type=submit]:focus {
 }
 
 .children {
-  padding-left: 80px;
+  padding-left: 10px;
+}
+@media (min-width: 46.25em) {
+  .children {
+    padding-left: 80px;
+  }
 }
 .children:nth-child(n+2) .children {
   padding-left: 40px;
@@ -2095,6 +2104,19 @@ input[type=submit]:focus {
 
 .comment > ol.children {
   list-style-type: none;
+}
+
+@media (max-width: 46.24em) {
+  .comment.depth-2 {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+@media (max-width: 46.24em) {
+  .comment.depth-2 .children {
+    padding-left: 0;
+    margin-left: 0;
+  }
 }
 
 .comment-body {
@@ -2167,6 +2189,7 @@ input[type=submit]:focus {
   margin-bottom: 0.875rem;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .comment-content {
@@ -2180,6 +2203,7 @@ input[type=submit]:focus {
   width: -moz-max-content;
   width: max-content;
   display: inline-block;
+  margin-right: 0.8125rem;
 }
 .c-comment__author__name a {
   text-transform: capitalize;
@@ -2208,7 +2232,6 @@ input[type=submit]:focus {
 .comment-dater {
   text-transform: capitalize;
   margin: 0;
-  margin-left: 0.8125rem;
 }
 
 .c-comments__cookie {

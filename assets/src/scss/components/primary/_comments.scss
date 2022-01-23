@@ -81,7 +81,11 @@
 }
 
 .children {
-    padding-left: 80px;
+    padding-left: 10px;
+
+    @include mq($from: tablet) {
+        padding-left: 80px;
+    }
 
     &:nth-child(n + 2) {
         .children {
@@ -101,6 +105,20 @@
 
 .comment > ol.children {
     list-style-type: none;
+}
+
+.comment.depth-2 {
+    @include mq($until: tablet) {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children {
+        @include mq($until: tablet) {
+            padding-left: 0;
+            margin-left: 0;
+        }
+    }
 }
 
 .comment-body {
@@ -180,6 +198,7 @@
     margin-bottom: rem(14px);
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .comment-content {
@@ -191,6 +210,7 @@
     margin: 0;
     width: max-content;
     display: inline-block;
+    margin-right: rem(13px);
 
     a {
         text-transform: capitalize;
@@ -219,7 +239,6 @@
 .comment-dater {
     text-transform: capitalize;
     margin: 0;
-    margin-left: rem(13px);
 }
 
 .c-comments__cookie {

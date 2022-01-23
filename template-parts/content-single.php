@@ -11,7 +11,7 @@
     <div class="c-single__wrapper">
         <div class="c-single__header">
             <div class="c-single__header-title">
-                <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
+                <?php the_title( '<h2 class="c-single__title u-margin-none">', '</h2>' ); ?>
             </div>
             <div class="c-single__meta">
                 <?php
