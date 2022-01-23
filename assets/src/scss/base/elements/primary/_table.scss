@@ -1,0 +1,13 @@
+table {
+    margin-bottom: 16px;
+    background-color: $brilliance_neutral_gray_light_color;
+}
+tr {
+    &:nth-child(even) {
+        background-color: $brilliance_neutral_gray_color;
+    }
+}
+
+td {
+    padding: rem(8px);
+}

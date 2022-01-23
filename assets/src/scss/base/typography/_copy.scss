@@ -16,7 +16,11 @@ blockquote {
     border-left: rem(3px) solid $color_border_secondary;
     margin: 0;
     margin-bottom: rem(16px);
-    padding-left: rem(16px);
+    padding: rem(8px 0px 8px 16px);
+
+    P {
+        margin: 0;
+    }
 }
 
 address {
@@ -25,6 +29,8 @@ address {
 pre {
     background-color: $brilliance_neutral_gray_color;
     padding: 8px;
+    max-width: 100%;
+    overflow: auto;
 }
 
 // dl {

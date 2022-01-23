@@ -6,9 +6,11 @@
     justify-content: center;
     min-height: max-content;
     height: max-content;
+    padding: rem(0px 16px);
 
     @include mq($from: tablet) {
         justify-content: center;
+        padding: 0;
     }
 }
 

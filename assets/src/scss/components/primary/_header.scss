@@ -3,9 +3,11 @@
 \*------------------------------------*/
 .c-header {
     max-height: rem(60px);
+    padding: rem(0px 16px);
 
     @include mq($from: tablet) {
         max-height: rem(108px);
+        padding: 0;
     }
 }
 

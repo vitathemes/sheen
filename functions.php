@@ -36,6 +36,11 @@ require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+* Comment walker
+*/
+require get_template_directory() . '/classes/class_brilliance_walker_comment.php';
+
+/**
 * Nav menu walker
 */
 require get_template_directory() . '/classes/class_brilliance_walker_nav_menu.php';

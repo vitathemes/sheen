@@ -8,7 +8,7 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--centered'); ?>>
-    <div class="c-single_wrapper">
+    <div class="c-single__wrapper">
         <div class="c-single__header">
             <div class="c-single__header-title">
                 <?php the_title( '<h2 class="c-single__title">', '</h2>' ); ?>
@@ -74,6 +74,15 @@
         <?php brilliance_share_links(); ?>
     </div>
     <?php endif; ?>
+
+    <div class="c-single__wrapper">
+        <?php 
+            // If comments are open or we have at least one comment, load up the comment template.
+            if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif;
+        ?>
+    </div>
 
 </article>
 <!-- #post-<?php the_ID(); ?> -->

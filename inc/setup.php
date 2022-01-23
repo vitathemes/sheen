@@ -58,7 +58,6 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 			)
 		);
 
-
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',

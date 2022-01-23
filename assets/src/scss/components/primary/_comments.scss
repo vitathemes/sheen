@@ -1,0 +1,315 @@
+/*------------------------------------*\
+  #Comments Form 
+\*------------------------------------*/
+
+.c-comments {
+    width: 100%;
+    margin-top: rem(48px);
+    border-top: rem(1px) solid $color_border_tertiary;
+
+    @include mq($from: tablet) {
+        margin-top: rem(60px);
+    }
+}
+
+.comment-reply-title {
+    margin: 0;
+}
+
+.comments-area {
+    ol {
+        margin: 0px;
+    }
+}
+
+.comment-respond {
+    padding-top: 48px;
+    padding-bottom: 0px;
+    @include mq($from: tablet) {
+        padding-bottom: 48px;
+    }
+}
+
+.c-comments__desc {
+    color: $brilliance_secondary_text_color !important;
+    margin: 0;
+    margin-top: rem(8px);
+
+    @include mq($from: tablet) {
+    }
+}
+
+.c-comment__cookie {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    align-items: center;
+    margin-top: rem(33px);
+
+    @include mq($from: tablet) {
+        margin-top: rem(25px);
+    }
+}
+
+.c-comment__title {
+    width: 100%;
+    border-top: 1px solid $brilliance_tertiary_text_color;
+    padding-top: rem(48px);
+    font-weight: 700;
+
+    @include mq($from: tablet) {
+        padding-top: rem(39px);
+    }
+}
+
+#cancel-comment-reply-link {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+/*------------------------------------*\
+    #Comments List
+\*------------------------------------*/
+.comment-list {
+    .comment-respond {
+        margin-bottom: 48px;
+
+        @include mq($from: tablet) {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.children {
+    padding-left: 80px;
+
+    &:nth-child(n + 2) {
+        .children {
+            padding-left: 40px;
+            @include mq($until: mobile) {
+                padding-left: 0px;
+            }
+        }
+    }
+}
+
+.comment {
+    ol {
+        margin-left: rem(16px);
+    }
+}
+
+.comment > ol.children {
+    list-style-type: none;
+}
+
+.comment-body {
+    padding-bottom: 39px;
+}
+
+.comment.depth-1 {
+    border-bottom: 1px solid $color_border_tertiary;
+    margin-top: 24px;
+
+    @include mq($from: tablet) {
+        margin-top: 39px;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+.c-comments__title {
+    color: green;
+    // font-family: $castpress_font !important;
+}
+
+.comment-reply-link {
+    padding-top: 16px;
+    color: $brilliance_secondary_text_color;
+    text-decoration: none !important;
+    font-size: 14px;
+    line-height: 18px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $brilliance_primary_text_color;
+
+        &::before {
+            background-color: $brilliance_primary_text_color;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: rem(18px);
+        height: rem(18px);
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Crect x='0' y='0' width='20' height='20' fill='none' stroke='none' /%3E%3Cpath d='M19 16.685S16.775 6.953 8 6.953V2.969L1 9.542l7 6.69v-4.357c4.763-.001 8.516.421 11 4.81z' fill='currentColor'/%3E%3C/svg%3E")
+            no-repeat 50% 50%;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Crect x='0' y='0' width='20' height='20' fill='none' stroke='none' /%3E%3Cpath d='M19 16.685S16.775 6.953 8 6.953V2.969L1 9.542l7 6.69v-4.357c4.763-.001 8.516.421 11 4.81z' fill='currentColor'/%3E%3C/svg%3E")
+            no-repeat 50% 50%;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        vertical-align: middle;
+        display: inline-block;
+        transition: 0.2s all;
+        background-color: $brilliance_secondary_text_color;
+        margin-right: rem(10px);
+        margin-top: rem(-5px);
+    }
+}
+
+.comment-list {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.comment-meta {
+    width: 100%;
+    display: flex;
+}
+
+.comment-avatar {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.comment-header {
+    margin-bottom: rem(14px);
+    display: flex;
+    align-items: flex-start;
+}
+
+.comment-content {
+    width: calc(100% - 50px);
+    padding-left: 24px;
+}
+
+.c-comment__author__name {
+    margin: 0;
+    width: max-content;
+    display: inline-block;
+
+    a {
+        text-transform: capitalize;
+        color: $brilliance_primary_text_color;
+    }
+}
+
+.bypostauthor {
+    display: block;
+    color: $brilliance_primary_text_color;
+}
+
+.comment-date {
+    color: blue;
+}
+
+.time {
+    color: $brilliance_secondary_text_color;
+    display: block;
+
+    @include mq($from: tablet) {
+        display: inline-block;
+    }
+}
+
+.comment-dater {
+    text-transform: capitalize;
+    margin: 0;
+    margin-left: rem(13px);
+}
+
+.c-comments__cookie {
+    color: $brilliance_secondary_text_color;
+    margin-left: rem(10px);
+}
+
+.logged-in-as {
+    a {
+        color: blue; //qa-
+        &:hover {
+            color: green;
+            text-decoration: none;
+        }
+
+        &:visited {
+            text-decoration: none;
+        }
+    }
+}
+
+/*------------------------------------*\
+  #Comments Fields  
+\*------------------------------------*/
+
+.comment-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.c-comment__author,
+.c-comment__email {
+    width: 100%;
+    display: inline-block;
+
+    @include mq($from: tablet) {
+        width: 48%;
+    }
+}
+
+.c-comment__comment,
+.c-comment__url {
+    width: 100%;
+}
+
+.c-comment__comment {
+    margin: 0;
+    margin-top: rem(56px);
+}
+
+.c-comment__author,
+.comment-form-email,
+.comment-form-url {
+    color: $brilliance_secondary_text_color !important;
+    margin: 0;
+    margin-top: rem(48px);
+}
+
+.form-submit {
+    margin-bottom: 0px;
+}
+
+.c-comment_submit {
+    margin-top: rem(34px);
+
+    @include mq($from: tablet) {
+        margin-top: rem(47px);
+    }
+}
+
+.comment-form-arrow {
+    .dashicons {
+        padding-left: 4px;
+        width: max-content !important;
+        font-size: 11px;
+        padding-top: 4px;
+        height: 0px !important;
+
+        &::before {
+            color: pink;
+        }
+    }
+
+    &:hover {
+        .dashicons {
+            &::before {
+                color: yellow !important;
+            }
+        }
+    }
+}

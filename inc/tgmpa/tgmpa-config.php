@@ -50,7 +50,7 @@ function brilliance_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'ACF Photo Gallery Field', 'cavatina' ),
+			'name'      => __( 'ACF Photo Gallery Field', 'brilliance' ),
 			'slug'      => 'navz-photo-gallery',
 			'required'  => false,
 		),

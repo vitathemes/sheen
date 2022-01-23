@@ -11,15 +11,9 @@
     flex-direction: column;
     min-height: calc(100vh - 105px);
     width: 100%;
-    padding: 0px 16px;
 
     @include mq($from: tablet) {
         max-width: 100%;
         width: 1240px;
-        padding: 0px;
-    }
-
-    @include mq($until: desktop-xmd) {
-        padding: rem(0px 16px);
     }
 }
