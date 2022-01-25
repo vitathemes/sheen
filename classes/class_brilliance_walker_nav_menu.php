@@ -17,9 +17,5 @@ class Brilliance_walker_nav_menu extends Walker_Nav_Menu {
 		if ( $permalink ) {
 			$output .= '</a>';
 		}
-		if ( $args->walker->has_children ) {
-			/* translator %s : aria label name  */
-			//$output .= sprintf('<span aria-label="%s" role="button" class="c-nav__arrow js-nav__arrow dashicons dashicons-arrow-down-alt2 js-toggle-submenu"></span>', esc_attr__('Toggle sub menu', 'brilliance'));
-		}
 	}
 }

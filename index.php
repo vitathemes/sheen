@@ -16,9 +16,7 @@ get_header();
 ?>
 
 <main id="primary" class="c-main">
-
     <div class="c-main__content">
-
         <div class="c-main__header">
             <h2 class="c-main__title">
                 <?php brilliance_get_index_title(); ?>
@@ -44,7 +42,6 @@ get_header();
 				endif;
 			?>
         </div>
-
     </div>
 </main><!-- #main -->
 

@@ -27,7 +27,7 @@ if ( ! function_exists( 'brilliance_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'brilliance' ),
+			esc_html( '%s', 'brilliance' ),
 			'<a class="c-post__date '.esc_attr( $brilliance_date_class ).'" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -476,7 +476,7 @@ endif;
 if(!function_exists('brilliance_get_acf_text') && function_exists( 'acf' )):
 	/**
 	 * 
-	 * Return text of given field from ACF ( If acf existed )
+	 * Return text of given field from ACF (IF ACF Existed)
 	 * 
 	 * @since v1.0.0
 	 * 
@@ -527,3 +527,21 @@ if ( ! function_exists( 'brilliance_share_links' ) ) {
 		echo sprintf( '<a  class="c-social-share__item" target="_blank" href="%s" aria-label="%s" ><span class="dashicons dashicons-linkedin c-social-share__item__icon"></span></a>', esc_url( $brilliance_linkedin_url ), esc_attr__( "linkedin" , "brilliance" ) );
 	}
 }
+
+
+if ( ! function_exists('brilliance_get_profile_image')) :
+	/**
+	 * 
+	 * Get Profile Image
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_get_profile_image() {
+		$brilliance_image = wp_get_attachment_image_src(get_theme_mod( 'profile_image' )["id"] , 'thumbnail');
+		if($brilliance_image) { 
+			/** translator %s: image src, translator %s 2: image srcset */
+			echo sprintf('<div class="c-profile__thumbnail"><img class="c-profile__img" alt="%s" src="%s" loading="lazy" /></div>', esc_attr__( 'Profile image' , 'brilliance' ) , esc_attr( esc_url($brilliance_image[0])) );
+		}
+	}
+endif;

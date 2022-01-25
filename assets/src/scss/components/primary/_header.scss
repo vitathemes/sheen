@@ -9,6 +9,10 @@
         max-height: rem(108px);
         padding: 0;
     }
+
+    @include mq($until: wide-sm) {
+        padding: rem(0px 16px);
+    }
 }
 
 .c-header__menu {
@@ -21,6 +25,10 @@
 
     @include mq($from: tablet) {
         margin-top: rem(64px);
+    }
+
+    @include mq($until: wide-sm) {
+        margin-top: rem(16px);
     }
 }
 

@@ -1,4 +1,27 @@
 /*--------------------------------------*\
+  #Start jQuery
+\*--------------------------------------*/
+jQuery(function ($) {
+    /*--------------------------------------*\
+      #Scroll to top & Focus on logo
+    \*--------------------------------------*/
+    $(".js-footer__to-top").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+
+        setTimeout(() => {
+            if (brilliance_childFinder("body", "custom-logo-link")) {
+                $(".custom-logo-link").focus();
+            } else {
+                $(".c-header__title__anchor").focus();
+            }
+        }, 1000);
+    });
+});
+/*--------------------------------------*\
+  #END jQuery
+\*--------------------------------------*/
+
+/*--------------------------------------*\
   #Detect screen size
 \*--------------------------------------*/
 let brilliance_clientWindowSize = window.matchMedia("(max-width: 979px)");

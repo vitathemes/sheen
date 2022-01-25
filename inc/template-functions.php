@@ -9,6 +9,9 @@
  * Enqueue scripts and styles. (Unplugable function. Required for loading theme css/js assets)
  */
 function brilliance_scripts() {
+
+	wp_enqueue_script('jquery');
+
 	// WordPress default enqueue
 	wp_enqueue_style( 'brilliance-style', get_stylesheet_uri(), array(), BRILLIANCE_VERSION );
 	wp_style_add_data( 'brilliance-style', 'rtl', 'replace' );
@@ -75,7 +78,7 @@ if ( ! function_exists( 'brilliance_branding' ) ) {
 
 			// Display the Text title with link 
 			/* translator %s : link of main page. translator %s 2: Site title  */
-			echo sprintf('<h1 class="c-header__title site-title"><a class="c-header__title__anchor" href="%s" rel="home">%s</a></h1>',
+			echo sprintf('<h1 class="c-header__title site-title"><a class="c-header__title__anchor h2" href="%s" rel="home">%s</a></h1>',
 			esc_attr(esc_url( home_url( '/' ))),
 			esc_html(get_bloginfo( 'name' )));
 		}
@@ -156,13 +159,13 @@ if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {
 		 * Modify LibWP post type arguments (If libwp plugin exist)
 		 */
 		$brilliance_postTypeArguments['labels'] = [
-			'name'          => _x('Projects', 'Post type general name', 'brlliance'),
-			'singular_name' => _x('Project', 'Post type singular name', 'brlliance'),
-			'menu_name'     => _x('Projects', 'Admin Menu text', 'brlliance'),
-			'add_new'       => __('Add New', 'brlliance'),
-			'edit_item'     => __('Edit Project', 'brlliance'),
-			'view_item'     => __('View Project', 'brlliance'),
-			'all_items'     => __('All Projects', 'brlliance'),
+			'name'          => _x('Projects', 'Post type general name', 'brilliance'),
+			'singular_name' => _x('Project', 'Post type singular name', 'brilliance'),
+			'menu_name'     => _x('Projects', 'Admin Menu text', 'brilliance'),
+			'add_new'       => __('Add New', 'brilliance'),
+			'edit_item'     => __('Edit Project', 'brilliance'),
+			'view_item'     => __('View Project', 'brilliance'),
+			'all_items'     => __('All Projects', 'brilliance'),
 		];
 		
 		$brilliance_postTypeArguments['rewrite']['slug'] 		= 'projects';
@@ -216,14 +219,14 @@ function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments
 	* Modify LibWP taxonomy name (If libwp plugin exist)
 	*/
 	$brilliance_taxonomyArguments['labels'] = [
-		'name'          => _x('Project Categories', 'taxonomy general name', 'brlliance'),
-		'singular_name' => _x('Project Category', 'taxonomy singular name', 'brlliance'),
-		'search_items'  => __('Search Project Categories', 'brlliance'),
-		'all_items'     => __('All Project Categories', 'brlliance'),
-		'edit_item'     => __('Edit Project Category', 'brlliance'),
-		'add_new_item'  => __('Add New Project Category', 'brlliance'),
-		'new_item_name' => __('New Project Category Name', 'brlliance'),
-		'menu_name'     => __('Project Categories', 'brlliance'),
+		'name'          => _x('Project Categories', 'taxonomy general name', 'brilliance'),
+		'singular_name' => _x('Project Category', 'taxonomy singular name', 'brilliance'),
+		'search_items'  => __('Search Project Categories', 'brilliance'),
+		'all_items'     => __('All Project Categories', 'brilliance'),
+		'edit_item'     => __('Edit Project Category', 'brilliance'),
+		'add_new_item'  => __('Add New Project Category', 'brilliance'),
+		'new_item_name' => __('New Project Category Name', 'brilliance'),
+		'menu_name'     => __('Project Categories', 'brilliance'),
 	];
 	$brilliance_taxonomyArguments['rewrite']['slug'] = 'project_category';
 	$brilliance_taxonomyArguments['show_in_rest'] = true;

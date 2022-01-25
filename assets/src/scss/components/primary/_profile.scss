@@ -1,0 +1,45 @@
+.c-profile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.c-profile__thumbnail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: rem(64px);
+}
+
+.c-profile__img {
+    border-radius: 999px;
+    width: rem(150px);
+    height: rem(150px);
+    object-fit: contain;
+}
+
+.c-profile__name {
+    width: 100%;
+    text-align: left;
+    color: $brilliance_headings_color;
+    margin: 0;
+
+    @include mq($from: tablet) {
+        text-align: center;
+    }
+}
+
+.c-profile__description {
+    color: $brilliance_headings_color;
+    width: 100%;
+
+    margin: 0;
+    margin-top: rem(39px);
+    text-align: left;
+
+    @include mq($from: tablet) {
+        margin-top: rem(64px);
+        text-align: center;
+    }
+}

@@ -61,20 +61,22 @@ add_action( 'customize_preview_init', 'brilliance_customize_preview_js' );
 
 
 if( function_exists( 'kirki' ) ) {
-	
-/*------------------------------------*\
-  ############# Config ###############
-\*------------------------------------*/
+
+	add_action( 'init', function () {
+
+	/*------------------------------------*\
+	  ############# Config ###############
+	\*------------------------------------*/
 	
 	// Config 
 	Kirki::add_config( 'brilliance_theme', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
-	) );
+	));
 
-/*------------------------------------*\
-  ############# Panels ###############
-\*------------------------------------*/
+	/*------------------------------------*\
+	  ############# Panels ###############
+	\*------------------------------------*/
 
 	// Footer
 	Kirki::add_panel( 'footer', array(
@@ -88,10 +90,9 @@ if( function_exists( 'kirki' ) ) {
 		'title'    => esc_html__( 'Elements', 'brilliance' ),
 	) );
 	
-
-/*------------------------------------*\
-  ############# Sections #############
-\*------------------------------------*/
+	/*------------------------------------*\
+	  ############# Sections #############
+	\*------------------------------------*/
 
 	/* Social Options  */
 	Kirki::add_section( 'socials', array(
@@ -134,10 +135,16 @@ if( function_exists( 'kirki' ) ) {
 		'panel'          => 'elements',
 		'priority'       => 100,
 	) );
+
+	Kirki::add_section( 'home_options', array(
+		'title'          => esc_html__( 'Home Page Options', 'brilliance' ),
+		'panel'          => 'elements',
+		'priority'       => 120,
+	) );
 	
-/*------------------------------------*\
-  ############## Fields ##############
-\*------------------------------------*/
+	/*------------------------------------*\
+	  ############## Fields ##############
+	\*------------------------------------*/
 
 	/*------------------------------------*\
   		#Start Colors
@@ -446,6 +453,7 @@ if( function_exists( 'kirki' ) ) {
 	/*------------------------------------*\
 		#Single Options Start
 	\*------------------------------------*/
+	
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'radio-image',
 		'settings'    => 'single_thumbnail_size',
@@ -512,5 +520,44 @@ if( function_exists( 'kirki' ) ) {
 	/*------------------------------------*\
 		#Single Options End
 	\*------------------------------------*/
+
+
+	/*------------------------------------*\
+	  #Home Page Options start
+	\*------------------------------------*/
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'image',
+		'settings'    => 'profile_image',
+		'label'       => esc_html__( 'Profile Image', 'brilliance' ),
+		'description' => esc_html__( 'Add Profile Image here', 'brilliance' ),
+		'section'     => 'home_options',
+		'priority'    => 10,
+		'choices' => array(
+			'save_as' => 'array',
+		),
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'text',
+		'settings' => 'profile_name',
+		'label'    => __( 'Name', 'brilliance' ),
+		'section'  => 'home_options',
+		'priority' => 20,
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'textarea',
+		'settings' => 'profile_description',
+		'label'    => __( 'Description', 'brilliance' ),
+		'section'  => 'home_options',
+		'priority' => 30,
+	] );
+
+	/*------------------------------------*\
+	  #Home Page Options end
+	\*------------------------------------*/
+
+	});
 
 }

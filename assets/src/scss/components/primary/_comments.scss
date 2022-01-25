@@ -256,14 +256,16 @@
 
 .logged-in-as {
     a {
-        color: blue; //qa-
-        &:hover {
-            color: green;
-            text-decoration: none;
-        }
+        color: $brilliance_secondary_text_color;
 
         &:visited {
             text-decoration: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $brilliance_primary_text_color;
         }
     }
 }
