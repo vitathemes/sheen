@@ -213,7 +213,6 @@ if ( ! function_exists('brilliance_modify_libwp_taxonomy_post_type_name')) {
 }
 	
 if ( ! function_exists('brilliance_modify_libwp_taxonomy_argument') ) {
-
 function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments) {
 	/**
 	* Modify LibWP taxonomy name (If libwp plugin exist)
@@ -236,4 +235,61 @@ function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments
 	}
 	
 	add_filter('libwp_taxonomy_1_arguments', 'brilliance_modify_libwp_taxonomy_argument');
-  }
+}
+
+
+if( !function_exists('brilliance_load_more_script') ) : 
+	/**
+	 * 
+	 * Load More button 
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_load_more_script() {
+		global $wp_query;
+		wp_localize_script( 'brilliance-main-script', 'loadmore_params', array(
+			'ajaxurl' => esc_url(admin_url('admin-ajax.php')),
+			'posts' => json_encode( $wp_query->query_vars ),
+			'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+			'max_page' => $wp_query->max_num_pages
+		) );
+		wp_enqueue_script( 'brilliance-main-script' );
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'brilliance_load_more_script' );
+
+
+if( !function_exists('brilliance_loadmore_ajax_handler') ) : 
+	/**
+	 * 
+	 * Handle Load More Loop 
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_loadmore_ajax_handler( $brilliance_post_type = "post" ) {
+
+		if ( !empty( $_POST['query'] ||  $_POST['page'] )) {
+			
+				$brilliance_custom_args = [
+					"paged"            => sanitize_text_field( wp_unslash( $_POST['page'] )) + 1 ,
+					"posts_per_page"   => get_option("posts_per_page"),
+					"post_status"      => "publish",
+					"post_type"		   => $brilliance_post_type
+				];
+				
+				query_posts( $brilliance_custom_args );
+				
+				if( have_posts() ) :
+					while( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', get_post_type() );
+					endwhile;
+				endif;
+				
+			die; 
+		}
+	}
+	add_action('wp_ajax_loadmore', 'brilliance_loadmore_ajax_handler'); // wp_ajax_{action}
+	add_action('wp_ajax_nopriv_loadmore', 'brilliance_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+endif;

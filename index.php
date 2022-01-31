@@ -26,14 +26,17 @@ get_header();
         <div class="c-main__body js-main__body-has-masonry">
             <?php
 				if ( have_posts() ) :
+
 					/* Start the Loop */
 					while ( have_posts() ) :
+						
 						the_post();
 						
 						get_template_part( 'template-parts/content' , get_post_type() );
+						
 					endwhile;
 
-					brilliance_get_default_pagination(true);
+					brilliance_get_loadmore( $wp_query , true );
 
 				else :
 

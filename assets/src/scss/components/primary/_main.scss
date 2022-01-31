@@ -108,3 +108,13 @@
         width: 100%;
     }
 }
+
+.c-main__cat-filter {
+    width: 100%;
+    background: lightcoral;
+    margin-top: rem(64px);
+
+    @include mq($from: tablet) {
+        margin-top: rem(141px);
+    }
+}

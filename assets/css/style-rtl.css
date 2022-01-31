@@ -359,6 +359,26 @@ template {
 /*------------------------------------*\
   #Globals
 \*------------------------------------*/
+/*------------------------------------*\
+  #Animation
+\*------------------------------------*/
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* External (Flickity & etc...)
 --------------------------------------------- */
 /*------------------------------------*\
@@ -1546,10 +1566,69 @@ h6 {
   }
 }
 
+.c-main__cat-filter {
+  width: 100%;
+  background: lightcoral;
+  margin-top: 4rem;
+}
+@media (min-width: 57.5em) {
+  .c-main__cat-filter {
+    margin-top: 8.8125rem;
+  }
+}
+
+.c-filter {
+  width: 100%;
+  background: lightskyblue;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.c-filter.is-open .c-filter__item:nth-child(1),
+.c-filter.is-open .c-filter__item:nth-child(3) {
+  margin-top: 0.375rem;
+}
+
+.c-filter__items {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  border: none;
+  padding: 0;
+}
+.c-filter__items:hover, .c-filter__items:focus, .c-filter__items:active {
+  background: none;
+  border: none;
+}
+.c-filter__items:focus .c-filter__item, .c-filter__items:active .c-filter__item {
+  color: #767676;
+}
+
+.c-filter__item {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #060606;
+  border-radius: 999px;
+  margin: 0rem 0.125rem;
+}
+.c-filter__item:last-child {
+  margin-left: 0;
+}
+
 .c-post {
   width: 380px;
   max-width: 100%;
   margin-bottom: 50px;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 @media (min-width: 57.5em) {
   .c-post {

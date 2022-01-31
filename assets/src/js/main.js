@@ -3,6 +3,17 @@
 \*--------------------------------------*/
 jQuery(function ($) {
     /*--------------------------------------*\
+      Masonry Grids
+    \*--------------------------------------*/
+    $(".js-main__body-has-masonry").masonry({
+        // options
+        itemSelector: ".js-post-has-masonry",
+        gutter: 48,
+        fitWidth: true,
+        horizontalOrder: true,
+    });
+
+    /*--------------------------------------*\
       #Scroll to top & Focus on logo
     \*--------------------------------------*/
     $(".js-footer__to-top").click(function () {
@@ -15,6 +26,49 @@ jQuery(function ($) {
                 $(".c-header__title__anchor").focus();
             }
         }, 1000);
+    });
+
+    /*------------------------------------*\
+      #Handle Load More button
+    \*------------------------------------*/
+    $(document).ready(function () {
+        const brilliance_loadMoreButton = $(".js-pagination__load-more__btn");
+        $(".js-pagination__load-more").click(function () {
+            // setTimeout(function () {
+            //     brilliance_lazyLoadInstance.update();
+            // }, 1000);
+
+            var loadMore = $(this),
+                data = {
+                    action: "loadmore",
+                    query: loadmore_params.posts,
+                    page: loadmore_params.current_page,
+                };
+            $.ajax({
+                url: loadmore_params.ajaxurl,
+                data: data,
+                type: "POST",
+                beforeSend: function (xhr) {
+                    brilliance_loadMoreButton.text("Loading . . . ");
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $(".js-main__body-has-masonry").masonry("reloadItems");
+                        $(".js-main__body-has-masonry").masonry();
+                    }, 1);
+
+                    if (data) {
+                        loadMore.prev().after(data);
+                        brilliance_loadMoreButton.text("Load More");
+                        loadmore_params.current_page++;
+                        if (loadmore_params.current_page == loadmore_params.max_page)
+                            loadMore.remove();
+                    } else {
+                        loadMore.remove();
+                    }
+                },
+            });
+        });
     });
 });
 /*--------------------------------------*\
@@ -50,32 +104,6 @@ function brilliance_childFinder(parentElement, childElement) {
 }
 
 /*--------------------------------------*\
-  Masonry Grids
-\*--------------------------------------*/
-if (brilliance_childFinder("body", "js-main__body-has-masonry")) {
-    const brillianceMainGrid = document.querySelector(".js-main__body-has-masonry");
-    const brillianceMainGridMasonry = new Masonry(brillianceMainGrid, {
-        // options
-        itemSelector: ".js-post-has-masonry",
-        gutter: 48,
-        fitWidth: true,
-        horizontalOrder: true,
-    });
-}
-
-if (brilliance_childFinder("body", "js-single__masonry")) {
-    const brillianceMainGrid = document.querySelector(".js-single__masonry");
-    const brillianceMainGridMasonry = new Masonry(brillianceMainGrid, {
-        // options
-        itemSelector: ".js-single__masonry-image__wrapper",
-        resize: true,
-        gutter: 50,
-        fitWidth: true,
-        horizontalOrder: true,
-    });
-}
-
-/*--------------------------------------*\
   Images LazyLoad initialization 
 \*--------------------------------------*/
 if (
@@ -99,5 +127,18 @@ if (brilliance_childFinder("body", "js-single__carousel-slider")) {
         cellAlign: "left",
         prevNextButtons: false,
         lazyLoad: true,
+    });
+}
+
+/*--------------------------------------*\
+  #Filter Button
+\*--------------------------------------*/
+
+if (brilliance_childFinder("body", "js-filter__items")) {
+    const filterComponent = document.querySelector(".js-filter");
+    const filterBtn = document.querySelector(".js-filter__items");
+
+    filterBtn.addEventListener("click", function () {
+        filterComponent.classList.toggle("is-open");
     });
 }

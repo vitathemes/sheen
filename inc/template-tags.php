@@ -385,6 +385,26 @@ if ( ! function_exists( 'brilliance_socials_links' ) ) :
 endif;
 
 
+if ( !function_exists('brilliance_get_loadmore') ) : 
+	function brilliance_get_loadmore( $query  , $brilliance_has_masonry = false ) { 
+		/**
+		 * 
+		 * Render load more button
+		 * 
+		 * @since v1.0.0
+		 * 
+		 */
+		if ( $query->max_num_pages > 1 ) {
+			($brilliance_has_masonry) ? $brilliance_pagination_class_name = 'js-post-has-masonry' : $brilliance_pagination_class_name = '';
+			
+			echo sprintf( '<div class="c-pagination js-pagination__load-more js-pagination--load-more %s ">
+			<button class="button--small js-pagination__load-more__btn">%s</button>
+			</div>' , esc_attr( $brilliance_pagination_class_name ) , esc_html( 'Load More' , 'brilliance' ) );
+		}
+	}
+endif;
+
+
 if (! function_exists('brilliance_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
