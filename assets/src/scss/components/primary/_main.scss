@@ -109,12 +109,63 @@
     }
 }
 
-.c-main__cat-filter {
+/*------------------------------------*\
+  #Main Filter
+\*------------------------------------*/
+.c-main__filter {
     width: 100%;
-    background: lightcoral;
     margin-top: rem(64px);
+    margin-bottom: rem(30px);
 
     @include mq($from: tablet) {
         margin-top: rem(141px);
+        margin-bottom: rem(42px);
+    }
+}
+
+.c-main__filter-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.c-main__filter-wrapper.is-open {
+    .c-main__filter-item:nth-child(1),
+    .c-main__filter-item:nth-child(3) {
+        margin-top: rem(6px);
+    }
+}
+
+.c-main__filter-items {
+    width: max-content;
+    display: flex;
+    border: none;
+    padding: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: none;
+        border: none;
+    }
+
+    &:focus,
+    &:active {
+        .c-filter__item {
+            color: $brilliance_neutral_dark_gray_color;
+        }
+    }
+}
+
+.c-main__filter-item {
+    background: $brilliance_main_dark_color;
+    width: rem(5px);
+    height: rem(5px);
+    border-radius: 999px;
+    margin: rem(0px 2px);
+
+    &:last-child {
+        margin-right: 0;
     }
 }

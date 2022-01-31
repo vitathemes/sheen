@@ -2,6 +2,44 @@
   #Start jQuery
 \*--------------------------------------*/
 jQuery(function ($) {
+    $(".js-main__filter-items").on("click", function () {
+        $(".js-main__filter-wrapper").toggleClass("is-open");
+
+        $(".js-filter").slideToggle();
+    });
+
+    /*--------------------------------------*\
+      #Category Filter  
+    \*--------------------------------------*/
+    $(".js-filter__list").on("change", function () {
+        $("#filter").submit();
+    });
+
+    $("#filter").submit(function () {
+        var filter = $("#filter");
+        $.ajax({
+            url: filter.attr("action"),
+            data: filter.serialize(), // form data
+            type: filter.attr("method"), // POST
+            beforeSend: function (xhr) {},
+            success: function (data) {
+                filter.find("button").text("Apply filter"); // changing the button label back
+                $("#response").html(data); // insert data
+
+                setTimeout(function () {
+                    $(".js-main__body-has-masonry").masonry("reloadItems");
+                    $(".js-main__body-has-masonry").masonry();
+                }, 10);
+            },
+        });
+        return false;
+    });
+
+    $("#filter > .js-filter__cat").on("click", function () {
+        $("#filter .js-filter__cat").removeClass("active");
+        $(this).addClass("active");
+    });
+
     /*--------------------------------------*\
       Masonry Grids
     \*--------------------------------------*/
@@ -133,12 +171,11 @@ if (brilliance_childFinder("body", "js-single__carousel-slider")) {
 /*--------------------------------------*\
   #Filter Button
 \*--------------------------------------*/
+// if (brilliance_childFinder("body", "js-filter__items")) {
+//     const filterComponent = document.querySelector(".js-filter");
+//     const filterBtn = document.querySelector(".js-filter__items");
 
-if (brilliance_childFinder("body", "js-filter__items")) {
-    const filterComponent = document.querySelector(".js-filter");
-    const filterBtn = document.querySelector(".js-filter__items");
-
-    filterBtn.addEventListener("click", function () {
-        filterComponent.classList.toggle("is-open");
-    });
-}
+//     filterBtn.addEventListener("click", function () {
+//         filterComponent.classList.toggle("is-open");
+//     });
+// }

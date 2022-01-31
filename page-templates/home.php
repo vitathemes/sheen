@@ -10,7 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-get_header(); 
+get_header();
 ?>
 <main id="primary" class="c-main">
     <div class="c-main__content c-main__content--big-space">
@@ -30,9 +30,7 @@ get_header();
                 ?>
             </div>
         </div>
-
         <?php get_template_part( 'template-parts/components/projects' ); ?>
-
     </div>
 </main>
 <?php

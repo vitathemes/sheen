@@ -1,48 +1,28 @@
 .c-filter {
-    width: 100%;
-    background: lightskyblue;
-
-    display: flex;
-    justify-content: flex-end;
-}
-
-.c-filter.is-open {
-    .c-filter__item:nth-child(1),
-    .c-filter__item:nth-child(3) {
-        margin-top: rem(6px);
-    }
+    display: none;
 }
 
 .c-filter__items {
-    width: max-content;
-    display: flex;
-    border: none;
-    padding: 0;
-
-    &:hover,
-    &:focus,
-    &:active {
-        background: none;
-        border: none;
-    }
-
-    &:focus,
-    &:active {
-        .c-filter__item {
-            color: $brilliance_neutral_dark_gray_color;
-        }
-    }
 }
 
 .c-filter__item {
-    width: rem(10px);
-    height: rem(10px);
-    background: $brilliance_main_dark_color;
-    border-radius: 999px;
+}
 
-    margin: rem(0px 2px);
+.c-filter__cats {
+    width: 100%;
+    margin-top: rem(30px);
 
-    &:last-child {
-        margin-right: 0;
+    @include mq($from: tablet) {
+        margin-top: rem(42px);
     }
+}
+
+.c-filter__cat {
+    margin-right: rem(40px);
+    display: inline-block;
+}
+
+.c-filter__list {
+    visibility: hidden;
+    display: none;
 }

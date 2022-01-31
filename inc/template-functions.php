@@ -293,3 +293,47 @@ if( !function_exists('brilliance_loadmore_ajax_handler') ) :
 	add_action('wp_ajax_loadmore', 'brilliance_loadmore_ajax_handler'); // wp_ajax_{action}
 	add_action('wp_ajax_nopriv_loadmore', 'brilliance_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 endif;
+
+
+
+if( !function_exists('brilliance_cats_filter') ) : 
+	/**
+	 * 
+	 * Filter Categories with ajax
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	function brilliance_cats_filter() {
+		$brilliance_filter_args = array(
+			'orderby' 		 => 'date', 
+			'order'          => sanitize_text_field(wp_unslash($_POST['DESC'])), // ASC or DESC or date
+			'posts_per_page' => 999
+		);
+	
+		if( isset( $_POST['categoryfilter'] ) )
+			$brilliance_filter_args['tax_query'] = array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => sanitize_text_field(wp_unslash($_POST['categoryfilter'])),
+				)
+			);
+	 
+		$brilliance_filter_query = new WP_Query( $brilliance_filter_args );
+		
+		if( $brilliance_filter_query->have_posts() ) :
+			while( $brilliance_filter_query->have_posts() ): $brilliance_filter_query->the_post();
+				get_template_part( 'template-parts/content', get_post_type() );
+			endwhile;
+			
+			wp_reset_postdata();
+		else :
+			get_template_part( 'template-parts/content', 'none' );
+		endif;
+		
+		die();
+	}
+	add_action('wp_ajax_myfilter', 'brilliance_cats_filter'); // wp_ajax_{ACTION HERE} 
+	add_action('wp_ajax_nopriv_myfilter', 'brilliance_cats_filter');
+endif;
