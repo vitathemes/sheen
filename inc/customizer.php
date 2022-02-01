@@ -93,6 +93,13 @@ if( function_exists( 'kirki' ) ) {
 	/*------------------------------------*\
 	  ############# Sections #############
 	\*------------------------------------*/
+	
+	/* Typography Options */
+	Kirki::add_section( 'typography', array(
+		'title'          => esc_html__( 'Typography', 'brilliance' ),
+		'panel'          => '',
+		'priority'       => 50,
+	) );
 
 	/* Social Options  */
 	Kirki::add_section( 'socials', array(
@@ -270,7 +277,6 @@ if( function_exists( 'kirki' ) ) {
 		#End Footer Options
 	\*------------------------------------*/
 	
-
 	/*------------------------------------*\
 		#Start Social Networks
 	\*------------------------------------*/
@@ -556,6 +562,238 @@ if( function_exists( 'kirki' ) ) {
 
 	/*------------------------------------*\
 	  #Home Page Options end
+	\*------------------------------------*/
+
+
+	/*------------------------------------*\
+	  #Typography Options start
+	\*------------------------------------*/
+	
+	/* Typography */
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'toggle',
+		'settings' => 'use_google_fonts',
+		'label'    => esc_html__( 'Use Google Fonts', 'brilliance' ),
+		'section'  => 'typography',
+		'default'  => 1,
+		'priority' => 5,
+	] );
+
+	/* Base Fonts */
+	Kirki::add_field( 'brilliance', [
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'        => 'typography',
+		'settings'    => 'typography_base_font',
+		'label'       => esc_html__( 'Base Font', 'brilliance' ),
+		'section'     => 'typography',
+		'default'     => [
+			'font-family'   	 => 'DM Sans',
+			'font-size'          => '1rem',
+			'variant'         	 => 'regular',
+			'line-height'		 => '1.563rem',
+			'letter-spacing'     => '0'
+		],
+		'output'      => array(
+			array(
+				'element' => 'html',
+			),
+			array(
+				'element' => '.edit-post-visual-editor.editor-styles-wrapper',
+				'context' => [ 'editor' ],
+			)
+		),
+		'priority'    => 10,
+		'transport'   => 'auto',
+	] );
+
+	/* H1 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h1',
+		'label'           => esc_html__( 'H1', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '700',
+			'font-family'    => 'Josefin Sans',
+			'font-size'      => '3.75rem',
+			'line-height'    => '3.75rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 20,
+		'output'          => array(
+			array(
+				'element' => array( 'h1', '.h1' ),
+			),
+		),
+	] );
+
+	/* H2 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h2',
+		'label'           => esc_html__( 'H2', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '700',
+			'font-family'    => 'Josefin Sans',
+			'font-size'      => '2rem',
+			'line-height'    => '2.188rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 30,
+		'output'          => array(
+			array(
+				'element' => array( 'h2', '.h2' ),
+			),
+		),
+	] );
+	
+	/* H3 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h3',
+		'label'           => esc_html__( 'H3', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '400',
+			'font-family'    => 'Josefin Sans',
+			'font-size'      => '1.5rem',
+			'line-height'    => '1.5rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 40,
+		'output'          => array(
+			array(
+				'element' => array( 'h3', '.h3' ),
+			),
+		),
+	] );
+
+	/* H4 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h4',
+		'label'           => esc_html__( 'H4', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '400',
+			'font-family'    => 'DM Sans',
+			'font-size'      => '1.25rem',
+			'line-height'    => '1.625rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 50,
+		'output'          => array(
+			array(
+				'element' => array( 'h4', '.h4' ),
+			),
+		),
+	] );
+
+	/* H5 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h5',
+		'label'           => esc_html__( 'H5', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '400',
+			'font-family'    => 'DM Sans',
+			'font-size'      => '1rem',
+			'line-height'    => '1.563rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 60,
+		'output'          => array(
+			array(
+				'element' => array( 'h5', '.h5' ),
+			),
+		),
+	] );
+
+	/* H6 */
+	Kirki::add_field( 'brilliance',
+		[
+		'active_callback' => [
+			[
+				'setting'  => 'use_google_fonts',
+				'operator' => '==',
+				'value'    => true,
+			],
+		],
+		'type'            => 'typography',
+		'settings'        => 'typography_h6',
+		'label'           => esc_html__( 'H6', 'brilliance' ),
+		'section'         => 'typography',
+		'default'         => [
+			'font-weight'    => '400',
+			'font-family'    => 'DM Sans',
+			'font-size'      => '0.875rem',
+			'line-height'    => '1.125rem',
+			'letter-spacing' => '0',
+		],
+		'transport'       => 'auto',
+		'priority'        => 70,
+		'output'          => array(
+			array(
+				'element' => array( 'h6', '.h6' ),
+			),
+		),
+	] );
+
+	/*------------------------------------*\
+	  #Typography Options end
 	\*------------------------------------*/
 
 	});

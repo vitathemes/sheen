@@ -1,7 +1,10 @@
 * {
-    transition: 0s;
+    // Outline Developer option
     // outline: red solid 1px !important;
-    // transition-delay: $global-transition;
+}
+
+p {
+    color: $brilliance_primary_text_color;
 }
 
 path {
@@ -33,31 +36,26 @@ pre {
     overflow: auto;
 }
 
-// dl {
-//     margin-bottom: 16px;
-//     color: $castpress_second_color;
-// }
-// dt {
-//     margin-bottom: 16px;
-// }
+th {
+    color: $brilliance_primary_text_color;
+}
 
-// dd {
-//     margin-bottom: 16px;
-//     line-height: 27px;
-// }
+td,
+dt,
+dd {
+    color: $brilliance_secondary_text_color;
+}
 
-// figcaption {
-//     color: $castpress_second_color;
-// }
+hr {
+    outline: none;
+    border: 1px solid $brilliance_border_color;
+    background: $brilliance_border_color;
+}
 
-// blockquote {
-//     border-left: 1px solid $castpress_primary_color;
-//     padding-left: 16px;
-//     margin-bottom: 64px;
-//     margin: 0px;
-// }
+li {
+    color: $brilliance_primary_text_color;
+}
 
-// code {
-//     background-color: $castpress_neutral_gray_light_color;
-//     padding: 0px;
-// }
+legend {
+    color: $brilliance_primary_text_color;
+}

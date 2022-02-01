@@ -2,6 +2,9 @@
   #Start jQuery
 \*--------------------------------------*/
 jQuery(function ($) {
+    /*--------------------------------------*\
+      #Category Filter Toggle
+    \*--------------------------------------*/
     $(".js-main__filter-items").on("click", function () {
         $(".js-main__filter-wrapper").toggleClass("is-open");
 

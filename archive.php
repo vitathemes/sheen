@@ -6,46 +6,40 @@
  *
  * @package brilliance
  */
-
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="c-main">
+    <div class="c-main__content">
+        <div class="c-main__header">
+            <h2 class="c-main__title">
+                <?php echo wp_kses_post(get_the_archive_title()); ?>
+            </h2>
+        </div><!-- .c-main__header -->
+        <div class="c-main__body js-main__body-has-masonry">
+            <?php
+				if ( have_posts() ) :
 
-    <?php if ( have_posts() ) : ?>
+					/* Start the Loop */
+					while ( have_posts() ) :
+						
+						the_post();
+						
+						get_template_part( 'template-parts/content' );
+						
+					endwhile;
 
-    <header class="page-header">
-        <?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-    </header><!-- .page-header -->
+					brilliance_get_loadmore( $wp_query , true );
 
-    <?php
-		/* Start the Loop */
-		while ( have_posts() ) :
-			the_post();
+				else :
 
-			/*
-				* Include the Post-Type-specific template for the content.
-				* If you want to override this in a child theme, then include a file
-				* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				*/
-			get_template_part( 'template-parts/content', get_post_type() );
+					get_template_part( 'template-parts/content', 'none' );
 
-		endwhile;
-
-		the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
+				endif;
+			?>
+        </div><!-- .c-main__body -->
+    </div><!-- .c-main__content -->
 </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -7,10 +7,13 @@
     font-style: normal;
     font-weight: 400;
     src: local(""),
-        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-regular.woff2") format("woff2"),
-        /* Super Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-regular.woff")
+        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-regular.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-regular.woff")
             format("woff"),
-        /* Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-regular.ttf")
+        /* Modern Browsers */
+            url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-regular.ttf")
             format("truetype");
 }
 
@@ -20,10 +23,11 @@
     font-style: normal;
     font-weight: 700;
     src: local(""),
-        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans-v20-latin-700.woff2") format("woff2"),
-        /* Super Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-700.woff")
-            format("woff"),
-        /* Modern Browsers */ url("../../assets/fonts/josefin-sans-v20-latin-700.ttf")
+        /* IE6-IE8 */ url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-700.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-700.woff") format("woff"),
+        /* Modern Browsers */ url("../../assets/fonts/josefin-sans/josefin-sans-v20-latin-700.ttf")
             format("truetype");
 }
 
@@ -36,10 +40,11 @@
     font-style: normal;
     font-weight: 400;
     src: local(""),
-        /* IE6-IE8 */ url("../../assets/fonts/dm-sans-v6-latin-regular.woff2") format("woff2"),
-        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-regular.woff")
+        /* IE6-IE8 */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-regular.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-regular.woff")
             format("woff"),
-        /* Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-regular.ttf")
+        /* Modern Browsers */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-regular.ttf")
             format("truetype");
 }
 
@@ -49,10 +54,11 @@
     font-style: italic;
     font-weight: 400;
     src: local(""),
-        /* IE6-IE8 */ url("../../assets/fonts/dm-sans-v6-latin-italic.woff2") format("woff2"),
-        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-italic.woff")
+        /* IE6-IE8 */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-italic.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-italic.woff")
             format("woff"),
-        /* Modern Browsers */ url("../../assets/fonts/dm-sans-v6-latin-italic.ttf")
+        /* Modern Browsers */ url("../../assets/fonts/dm-sans/dm-sans-v10-latin-italic.ttf")
             format("truetype");
 }
 

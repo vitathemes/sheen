@@ -1,4 +1,7 @@
 <div class="c-filter js-filter">
+
+
+
     <form action="<?php echo esc_url(admin_url('admin-ajax.php')) ?>" method="POST" id="filter">
         <?php
             if( $brilliance_terms = get_terms( array( 'taxonomy' => 'category', 'orderby' => 'name' ) ) ) : 
