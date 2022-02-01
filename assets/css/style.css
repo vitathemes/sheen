@@ -677,10 +677,10 @@ input[type=checkbox]:checked:before {
 }
 
 select {
-  color: red;
-  border: none;
+  color: var(--brilliance_theme_primary_text_color);
+  border: 0.0625rem solid var(--brilliance_theme_border_color);
   border-radius: 0px;
-  background-color: green;
+  background-color: transparent;
   padding: 0.625rem 0.875rem;
 }
 
@@ -778,7 +778,7 @@ dd {
 
 hr {
   outline: none;
-  border: 1px solid var(--brilliance_theme_border_color);
+  border: 0.5px solid var(--brilliance_theme_border_color);
   background: var(--brilliance_theme_border_color);
 }
 

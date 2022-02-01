@@ -115,9 +115,9 @@ input[type="checkbox"]:checked {
 }
 
 select {
-    color: red;
-    border: none;
+    color: $brilliance_primary_text_color;
+    border: rem(1px) solid $brilliance_border_color;
     border-radius: $global-radius;
-    background-color: green;
+    background-color: transparent;
     padding: rem(10px 14px);
 }
