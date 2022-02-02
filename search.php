@@ -33,7 +33,7 @@ get_header();
 					
 				endwhile;
 
-				brilliance_get_loadmore( $wp_query , true );
+				brilliance_get_default_pagination(true);
 
 			else :
 

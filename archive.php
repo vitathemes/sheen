@@ -8,7 +8,6 @@
  */
 get_header();
 ?>
-
 <main id="primary" class="c-main">
     <div class="c-main__content">
         <div class="c-main__header">
@@ -29,7 +28,12 @@ get_header();
 						
 					endwhile;
 
-					brilliance_get_loadmore( $wp_query , true );
+					if( is_post_type_archive('projects') ) { 
+						brilliance_get_loadmore( $wp_query , true );
+					}
+					else { 
+						brilliance_get_default_pagination(true);
+					}
 
 				else :
 
@@ -40,6 +44,5 @@ get_header();
         </div><!-- .c-main__body -->
     </div><!-- .c-main__content -->
 </main><!-- #main -->
-
 <?php
 get_footer();

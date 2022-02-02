@@ -129,6 +129,7 @@ if ( ! function_exists( 'brilliance_typography' )) {
 	}
 }
 
+
 if ( ! function_exists( 'brilliance_theme_settings' )) : 
 	function brilliance_theme_settings() {
 		$brilliance_theme_typography = brilliance_typography();
@@ -153,6 +154,7 @@ if ( ! function_exists( 'brilliance_modify_libwp_post_type' ) ) {
 	add_filter('libwp_post_type_1_name', 'brilliance_modify_libwp_post_type');
 }
   
+
 if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {	  
 	function brilliance_modify_libwp_post_type_argument ( $brilliance_postTypeArguments ) {
 		/**
@@ -185,10 +187,9 @@ if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {
 	
 		return $brilliance_postTypeArguments;
 	}  
-	
 	add_filter('libwp_post_type_1_arguments', 'brilliance_modify_libwp_post_type_argument');
-  
 }
+
 
 if ( ! function_exists('brilliance_modify_libwp_taxonomy_name')) {
 	function brilliance_modify_libwp_taxonomy_name($brilliance_taxonomyName) {
@@ -200,6 +201,7 @@ if ( ! function_exists('brilliance_modify_libwp_taxonomy_name')) {
 	}
 	add_filter('libwp_taxonomy_1_name', 'brilliance_modify_libwp_taxonomy_name');
 }
+
   
 if ( ! function_exists('brilliance_modify_libwp_taxonomy_post_type_name')) {
 	function brilliance_modify_libwp_taxonomy_post_type_name($brilliance_taxonomyPostTypeName) {
@@ -212,6 +214,7 @@ if ( ! function_exists('brilliance_modify_libwp_taxonomy_post_type_name')) {
 	add_filter('libwp_taxonomy_1_post_type', 'brilliance_modify_libwp_taxonomy_post_type_name');
 }
 	
+
 if ( ! function_exists('brilliance_modify_libwp_taxonomy_argument') ) {
 function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments) {
 	/**
@@ -252,12 +255,13 @@ if( !function_exists('brilliance_load_more_script') ) :
 			'ajaxurl' => esc_url(admin_url('admin-ajax.php')),
 			'posts' => json_encode( $wp_query->query_vars ),
 			'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-			'max_page' => $wp_query->max_num_pages
+			'max_page' => $wp_query->max_num_pages,
+			'post_type' => 'projects'
 		) );
 		wp_enqueue_script( 'brilliance-main-script' );
 	}
+	add_action( 'wp_enqueue_scripts', 'brilliance_load_more_script' );
 endif;
-add_action( 'wp_enqueue_scripts', 'brilliance_load_more_script' );
 
 
 if( !function_exists('brilliance_loadmore_ajax_handler') ) : 
@@ -268,7 +272,7 @@ if( !function_exists('brilliance_loadmore_ajax_handler') ) :
 	 * @since v1.0.0
 	 * 
 	 */
-	function brilliance_loadmore_ajax_handler( $brilliance_post_type = "post" ) {
+	function brilliance_loadmore_ajax_handler( $brilliance_post_type = "projects" ) {
 
 		if ( !empty( $_POST['query'] ||  $_POST['page'] )) {
 			
@@ -276,7 +280,7 @@ if( !function_exists('brilliance_loadmore_ajax_handler') ) :
 					"paged"            => sanitize_text_field( wp_unslash( $_POST['page'] )) + 1 ,
 					"posts_per_page"   => get_option("posts_per_page"),
 					"post_status"      => "publish",
-					"post_type"		   => $brilliance_post_type
+					"post_type"		   => "projects"
 				];
 				
 				query_posts( $brilliance_custom_args );
@@ -308,7 +312,8 @@ if( !function_exists('brilliance_cats_filter') ) :
 		$brilliance_filter_args = array(
 			'orderby' 		 => 'date', 
 			'order'          => sanitize_text_field(wp_unslash($_POST['DESC'])), // ASC or DESC or date
-			'posts_per_page' => 999
+			'posts_per_page' => 999,
+			'post_type'		 => 'projects'
 		);
 	
 		if( isset( $_POST['categoryfilter'] ) )
@@ -337,3 +342,27 @@ if( !function_exists('brilliance_cats_filter') ) :
 	add_action('wp_ajax_myfilter', 'brilliance_cats_filter'); // wp_ajax_{ACTION HERE} 
 	add_action('wp_ajax_nopriv_myfilter', 'brilliance_cats_filter');
 endif;
+
+
+if ( !function_exists('brilliance_modify_archive_title') ) {
+	function brilliance_modify_archive_title( $brilliance_title ) {
+		/**
+		 * 
+		 * Modify Archive title 
+		 * 
+		 * @since v1.0.0
+		 * 
+		 */
+		if(is_post_type_archive('projects')){
+			if(get_theme_mod( 'archives_title' , 'projects')){
+				return get_theme_mod( 'archives_title' , 'projects');
+			}
+			else{
+				return esc_html__( 'projects' , 'brilliance' ); // Also Available to change From Kirki
+			}
+		}
+		return wp_kses_post( $brilliance_title );
+	}
+	add_filter( 'wp_title', 'brilliance_modify_archive_title' );
+	add_filter( 'get_the_archive_title', 'brilliance_modify_archive_title' );
+}

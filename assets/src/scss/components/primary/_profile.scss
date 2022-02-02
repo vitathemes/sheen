@@ -3,6 +3,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .c-profile__thumbnail {
@@ -42,4 +46,8 @@
         margin-top: rem(64px);
         text-align: center;
     }
+}
+
+.acf-gallery-backdrop {
+    z-index: 0 !important;
 }

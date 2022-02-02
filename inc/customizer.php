@@ -148,6 +148,12 @@ if( function_exists( 'kirki' ) ) {
 		'panel'          => 'elements',
 		'priority'       => 120,
 	) );
+
+	Kirki::add_section( 'projects_options', array(
+		'title'          => esc_html__( 'Projects Options', 'brilliance' ),
+		'panel'          => 'elements',
+		'priority'       => 130,
+	) );
 	
 	/*------------------------------------*\
 	  ############## Fields ##############
@@ -829,6 +835,23 @@ if( function_exists( 'kirki' ) ) {
 
 	/*------------------------------------*\
 	  #Typography Options end
+	\*------------------------------------*/
+
+	/*------------------------------------*\
+	  #Archive Options Start 
+	\*------------------------------------*/
+	
+	/* Custom Arvhives title  */
+	Kirki::add_field( 'brilliance', [
+		'type'     => 'text',
+		'settings' => 'archives_title',
+		'label'    => esc_html__( 'Post Type Archive title', 'brilliance' ),
+		'section'  => 'projects_options',
+		'priority' => 10,
+	] );
+	
+	/*------------------------------------*\
+	  #Archive Options Start 
 	\*------------------------------------*/
 
 	});

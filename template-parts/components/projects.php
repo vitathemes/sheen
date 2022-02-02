@@ -15,7 +15,7 @@
 
         $brilliance_args = array (
             "post_status"            => "publish",
-            "post_type"              => "post",
+            "post_type"              => "projects",
             "paged"                  => $brilliance_paged_post,
             "posts_per_page"         => get_option("posts_per_page"),
         );
@@ -38,12 +38,12 @@
 
     <?php get_template_part('template-parts/components/common/filter'); ?>
 
-    <div class="c-main__body js-main__body-has-masonry" id="response">
+    <div class="c-main__body c-main__body--projects js-main__body-has-masonry" id="response">
         <?php         
             if ( $brilliance_query->have_posts() ) :
                 
                 while ( $brilliance_query->have_posts() ) : $brilliance_query->the_post();
-                    get_template_part('template-parts/content', get_post_type());
+                    get_template_part( 'template-parts/content', get_post_type() );
                 endwhile;
             
                 brilliance_get_loadmore( $brilliance_query , true );

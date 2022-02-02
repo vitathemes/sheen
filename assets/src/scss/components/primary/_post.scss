@@ -1,3 +1,6 @@
+/*------------------------------------*\
+  #Post
+\*------------------------------------*/
 .c-post {
     width: 380px;
     max-width: 100%;
@@ -41,4 +44,16 @@
 
 .c-post__entry-date {
     text-transform: uppercase;
+}
+
+.c-post__taxonomy {
+    &::after {
+        content: ", ";
+    }
+
+    &:last-child {
+        &::after {
+            content: "";
+        }
+    }
 }

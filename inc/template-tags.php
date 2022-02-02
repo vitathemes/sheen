@@ -396,7 +396,6 @@ if ( !function_exists('brilliance_get_loadmore') ) :
 		 */
 		if ( $query->max_num_pages > 1 ) {
 			($brilliance_has_masonry) ? $brilliance_pagination_class_name = 'js-post-has-masonry' : $brilliance_pagination_class_name = '';
-			
 			echo sprintf( '<div class="c-pagination js-pagination__load-more js-pagination--load-more %s ">
 			<button class="button--small js-pagination__load-more__btn">%s</button>
 			</div>' , esc_attr( $brilliance_pagination_class_name ) , esc_html( 'Load More' , 'brilliance' ) );
@@ -564,4 +563,29 @@ if ( ! function_exists('brilliance_get_profile_image')) :
 			echo sprintf('<div class="c-profile__thumbnail"><img class="c-profile__img" alt="%s" src="%s" loading="lazy" /></div>', esc_attr__( 'Profile image' , 'brilliance' ) , esc_attr( esc_url($brilliance_image[0])) );
 		}
 	}
+endif;
+
+
+if ( ! function_exists( 'brilliance_get_taxonomy' ) ) :
+    /**
+	 *
+	 * Get Custom Taxonomies
+	 * 
+	 * @since v1.0.0 
+	 * 
+	 */
+    function brilliance_get_taxonomy( $brilliance_taxonomy_name = "" , $brilliance_class_name = "" , $brilliance_tag_name = "span" ) {
+        $brilliance_custom_taxs = get_the_terms( get_the_ID(), $brilliance_taxonomy_name );
+
+		$brilliance_output = "";
+
+        if (is_array($brilliance_custom_taxs) && !empty($brilliance_custom_taxs)) {
+            if( !empty( $brilliance_taxonomy_name ) ){
+                foreach ( $brilliance_custom_taxs as $brilliance_custom_tax ) {
+                    $brilliance_output .=  '<'. esc_html($brilliance_tag_name) .' class="'.esc_attr(  $brilliance_class_name  ).' " href="'.esc_url( get_tag_link( $brilliance_custom_tax->term_id ) ).'">' . esc_html( $brilliance_custom_tax->name ). '</'. esc_html($brilliance_tag_name) .'> ';
+                }
+				echo wp_kses_post($brilliance_output);
+            }
+        }
+    }
 endif;

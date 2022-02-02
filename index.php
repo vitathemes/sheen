@@ -13,7 +13,6 @@
  */
 get_header();
 ?>
-
 <main id="primary" class="c-main">
     <div class="c-main__content">
         <div class="c-main__header">
@@ -21,31 +20,30 @@ get_header();
                 <?php brilliance_get_index_title(); ?>
             </h2>
         </div>
-
         <div class="c-main__body js-main__body-has-masonry">
             <?php
+			
 				if ( have_posts() ) :
-
 					/* Start the Loop */
 					while ( have_posts() ) :
 						
 						the_post();
 						
 						get_template_part( 'template-parts/content' , get_post_type() );
-						
-					endwhile;
 
-					brilliance_get_loadmore( $wp_query , true );
+					endwhile;
+					
+					brilliance_get_default_pagination(true);
 
 				else :
 
 					get_template_part( 'template-parts/content', 'none' );
-
+					
 				endif;
+				
 			?>
         </div>
     </div>
 </main><!-- #main -->
-
 <?php
 get_footer();

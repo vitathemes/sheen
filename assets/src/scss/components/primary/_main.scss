@@ -52,6 +52,27 @@
     max-width: 100%;
 }
 
+.c-main__body--projects {
+    .c-main__no-result {
+        display: block;
+        margin-bottom: rem(64px);
+        text-align: center;
+    }
+
+    .c-main__page-header {
+        text-align: center;
+        width: 100%;
+    }
+
+    .c-main__page-content {
+        text-align: center;
+    }
+
+    .c-header__search-form {
+        display: inline-block;
+    }
+}
+
 .c-main__error {
     width: 100%;
     display: flex;
@@ -97,6 +118,7 @@
 .c-main__error-desc {
     display: flex;
     align-items: center;
+    margin-bottom: rem(16px);
 }
 
 .c-main__desc {
