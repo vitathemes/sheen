@@ -1066,6 +1066,9 @@ h6 {
 .c-header__search-wrapper .c-header__search-field {
   color: #ffffff !important;
 }
+.c-header__search-wrapper .c-header__search-field:hover, .c-header__search-wrapper .c-header__search-field:focus, .c-header__search-wrapper .c-header__search-field:active {
+  outline: #767676 solid 1px;
+}
 .c-header__search-wrapper .c-header__search-field::-moz-placeholder {
   color: #ffffff !important;
 }
@@ -1348,12 +1351,26 @@ h6 {
     background-color: #060606;
   }
 }
+@media (max-width: 57.49em) {
+  .sub-menu .menu-item {
+    width: 100%;
+    text-align: center;
+  }
+}
 .sub-menu .menu-item .menu-item__link {
   display: block;
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: var(--brilliance_theme_primary_text_white_color);
+}
+@media (max-width: 57.49em) {
+  .sub-menu .menu-item .menu-item__link {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: inline-block;
+  }
 }
 @media (min-width: 57.5em) {
   .sub-menu .menu-item .menu-item__link {
@@ -1445,6 +1462,11 @@ h6 {
 .menu-item__link:visited {
   text-decoration: none;
 }
+@media (max-width: 57.49em) {
+  .menu-item__link:hover, .menu-item__link:focus, .menu-item__link:active {
+    outline: #767676 solid 1px;
+  }
+}
 
 /*------------------------------------*\
   #Burger Button
@@ -1474,7 +1496,7 @@ h6 {
 }
 .c-nav__toggle:hover, .c-nav__toggle:focus, .c-nav__toggle:active {
   background-color: transparent;
-  outline: none;
+  outline: #767676 solid 1px;
 }
 
 .c-nav__toggle.c-nav__toggle--burger:after,

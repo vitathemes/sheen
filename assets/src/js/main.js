@@ -263,3 +263,30 @@ document.addEventListener("keydown", function (e) {
         brilliance_IsBackward = false;
     }
 });
+
+/*--------------------------------------*\
+  #Menu Trap Focus
+\*--------------------------------------*/
+
+if (brilliance_childFinder("body", "js-nav__toggle")) {
+    const brilliance_menuBtn = document.querySelector(".js-nav__toggle");
+    const brilliance_menuSerach = document.querySelector(".js-nav__search-button");
+
+    brilliance_menuBtn.addEventListener("click", function () {
+        brilliance_menuBtn.classList.toggle("is-open");
+
+        if (brilliance_menuBtn.classList.contains("is-open")) {
+            brilliance_menuBtn.addEventListener("blur", function () {
+                if (brilliance_IsBackward) {
+                    brilliance_menuSerach.focus();
+                }
+            });
+
+            brilliance_menuSerach.addEventListener("blur", function () {
+                if (!brilliance_IsBackward) {
+                    brilliance_menuBtn.focus();
+                }
+            });
+        }
+    });
+}

@@ -150,6 +150,12 @@
     .c-header__search-field {
         color: $brilliance_main_white_color !important;
 
+        &:hover,
+        &:focus,
+        &:active {
+            outline: $brilliance_neutral_dark_gray_color solid 1px;
+        }
+
         &::placeholder {
             color: $brilliance_main_white_color !important;
         }

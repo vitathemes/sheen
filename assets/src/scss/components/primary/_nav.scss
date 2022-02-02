@@ -236,12 +236,22 @@
     }
 
     .menu-item {
+        @include mq($until: tablet) {
+            width: 100%;
+            text-align: center;
+        }
+
         .menu-item__link {
             display: block;
             width: 100%;
             font-size: rem(14px);
             line-height: rem(18px);
             color: $brilliance_primary_text_white_color;
+
+            @include mq($until: tablet) {
+                width: max-content;
+                display: inline-block;
+            }
 
             @include mq($from: tablet) {
                 font-size: rem(16px);
@@ -346,6 +356,14 @@
     &:visited {
         text-decoration: none;
     }
+
+    &:hover,
+    &:focus,
+    &:active {
+        @include mq($until: tablet) {
+            outline: $brilliance_neutral_dark_gray_color solid 1px;
+        }
+    }
 }
 
 /*------------------------------------*\
@@ -379,7 +397,7 @@
     &:focus,
     &:active {
         background-color: transparent;
-        outline: none;
+        outline: $brilliance_neutral_dark_gray_color solid 1px;
     }
 }
 
