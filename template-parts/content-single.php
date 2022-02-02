@@ -15,9 +15,29 @@
             </div>
             <div class="c-single__meta">
                 <?php
-                    brilliance_posted_on( false , "u-link--tertiary" );
-                    brilliance_get_seprator();
-                    brilliance_post_categories( ", " , "u-link--meta" );
+                    /** Display Date */
+                    if( get_theme_mod( 'single_display_date', true ) == true ) { 
+                        brilliance_posted_on( false , "u-link--tertiary" );
+                    }
+
+                    /** Display Separator */
+                    if( get_theme_mod( 'single_display_date', true ) == true && get_theme_mod( 'single_display_author', true ) == true ) { 
+                        brilliance_get_seprator(); 
+                    }
+
+                    if( get_theme_mod( 'single_display_author', true ) == true ) { 
+                        brilliance_posted_by();
+                    }
+                     
+                    /** Display Separator */
+                    if( get_theme_mod( 'single_display_author', true ) == true && get_theme_mod( 'single_display_category', true ) == true ) { 
+                        brilliance_get_seprator(); 
+                    }
+
+                    /** Display Categories */
+                    if( get_theme_mod( 'single_display_category', true ) == true ) { 
+                        brilliance_post_categories( ", " , "u-link--meta" );
+                    }
                 ?>
             </div>
             <?php 

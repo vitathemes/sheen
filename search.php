@@ -12,9 +12,6 @@ get_header();
 
 <main id="primary" class="c-main">
     <div class="c-main__content">
-        <?php if ( have_posts() ) : ?>
-
-
         <div class="c-main__header">
             <h2 class="c-main__title">
                 <?php
@@ -23,7 +20,6 @@ get_header();
 				?>
             </h2>
         </div>
-
         <div class="c-main__body js-main__body-has-masonry">
             <?php
 			if ( have_posts() ) :
@@ -46,8 +42,6 @@ get_header();
 			endif;
 		?>
         </div>
-
-        <?php endif; ?>
     </div>
 </main><!-- #main -->
 <?php

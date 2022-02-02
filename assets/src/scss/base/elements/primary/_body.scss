@@ -17,7 +17,15 @@ body.admin-bar {
 
     .s-nav {
         @include mq($until: tablet) {
-            padding-top: rem(155px);
+            padding-top: rem(70px);
+        }
+    }
+
+    .c-nav.is-open {
+        .c-nav__toggle {
+            @include mq($until: tablet) {
+                top: rem(75px);
+            }
         }
     }
 

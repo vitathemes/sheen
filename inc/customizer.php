@@ -500,7 +500,6 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 40,
 	]);
 
-
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'toggle',
 		'settings'    => 'single_comments_count',
@@ -508,6 +507,42 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'single_options',
 		'default'     => 0,
 		'priority'    => 50,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_navigation',
+		'label'       => esc_html__( 'Display Post Navigation', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 0,
+		'priority'    => 55,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_display_date',
+		'label'       => esc_html__( 'Display Post Date', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 1,
+		'priority'    => 56,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_display_author',
+		'label'       => esc_html__( 'Display Post Author', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 1,
+		'priority'    => 57,
+	]);
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'single_display_category',
+		'label'       => esc_html__( 'Display Post Categories', 'brilliance' ),
+		'section'     => 'single_options',
+		'default'     => 1,
+		'priority'    => 58,
 	]);
 
 	Kirki::add_field( 'brilliance', [

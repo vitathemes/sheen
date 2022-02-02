@@ -39,20 +39,20 @@ input[type="submit"] {
 .c-btn-seacrh {
     padding: 0px;
     border: none;
-    color: $brilliance_primary_text_white_color;
+    color: $brilliance_main_primary_color;
+    right: 0;
 
     &:hover,
     &:focus,
     &:active {
         background-color: transparent;
         border: none;
+        color: $brilliance_neutral_dark_gray_color;
     }
 
     &:focus {
-        outline: none;
-
         svg {
-            color: $brilliance_tertiary_text_color;
+            color: $brilliance_neutral_dark_gray_color;
             outline: 1px solid white;
         }
     }
@@ -95,4 +95,8 @@ input[type="submit"] {
     &:focus {
         text-decoration: none !important;
     }
+}
+
+.c-btn-seacrh--close {
+    color: $brilliance_main_white_color;
 }
