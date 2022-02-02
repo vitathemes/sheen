@@ -1119,6 +1119,9 @@ h6 {
   position: absolute;
   right: 1rem;
 }
+.c-search-form__submit:hover, .c-search-form__submit:focus, .c-search-form__submit:active {
+  outline: #ffffff solid 1px;
+}
 
 .c-header__search-icon--search {
   font-size: 1.25rem;

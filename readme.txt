@@ -12,6 +12,7 @@ License URI: https://opensource.org/licenses/GPL-3.0
 Brilliance is a a minimal & mobile-first theme. The best choice for people who want to publish their projects.
 
 = Features =
+
 * Sass for stylesheets
 * Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 * Compatible with [Newsletter](https://wordpress.org/plugins/newsletter/)

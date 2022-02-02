@@ -211,7 +211,33 @@ if (brilliance_childFinder("body", "js-nav__search-button")) {
     const brilliance_navList = document.querySelector(".js-nav__list");
     const brilliance_primaryNav = document.querySelector(".js-nav__toggle");
 
+    // Search Button Clicked
     brilliance_searchBtn.addEventListener("click", function () {
+        brilliance_searchBtn.classList.toggle("is-toggled");
+
+        // Search form trap focus
+        if (brilliance_searchBtn.classList.contains("is-toggled")) {
+            setTimeout(() => {
+                brilliance_seacrhClose.focus();
+            }, 10);
+
+            // Backward
+            const brilliance_searchFieldx = document.querySelector(".search-field");
+            brilliance_seacrhClose.addEventListener("blur", function (e) {
+                if (brilliance_IsBackward) {
+                    brilliance_searchFieldx.focus();
+                }
+            });
+            // Forward
+            const castpress_headerSearchButton = document.querySelector(".c-search-form__submit");
+            castpress_headerSearchButton.addEventListener("blur", function (e) {
+                if (brilliance_IsBackward === false) {
+                    brilliance_seacrhClose.focus();
+                }
+            });
+        }
+
+        /* Trap Focus */
         brilliance_fadeIn(brilliance_searchOverlay, "flex");
         brilliance_navList.classList.add("is-hidden");
         brilliance_primaryNav.classList.add("is-hidden");
@@ -235,33 +261,5 @@ document.addEventListener("keydown", function (e) {
     } else {
         // Tab
         brilliance_IsBackward = false;
-    }
-});
-
-/*--------------------------------------*\
-  #Toggle Header Search Class
-\*--------------------------------------*/
-const brilliance_headerSearch = document.querySelector(".js-header__search");
-const brilliance_headerSearchIcon = document.querySelector(".js-header__search-icon");
-
-brilliance_headerSearchIcon.addEventListener("click", function () {
-    brilliance_headerSearch.classList.toggle("toggled");
-
-    // Search form trap focus
-    if (brilliance_headerSearch.classList.contains("toggled")) {
-        // Backward
-        const brilliance_headerSearchField = document.querySelector(".search-field");
-        brilliance_headerSearchIcon.addEventListener("blur", function (e) {
-            if (brilliance_IsBackward) {
-                brilliance_headerSearchField.focus();
-            }
-        });
-        // Forward
-        const brilliance_headerSearchButton = document.querySelector(".c-search-form__submit");
-        brilliance_headerSearchButton.addEventListener("blur", function (e) {
-            if (brilliance_IsBackward === false) {
-                brilliance_headerSearchIcon.focus();
-            }
-        });
     }
 });

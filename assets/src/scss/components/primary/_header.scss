@@ -192,6 +192,12 @@
 .c-search-form__submit {
     position: absolute;
     right: rem(16px);
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: $brilliance_main_white_color solid 1px;
+    }
 }
 
 .c-header__search-icon--search {
