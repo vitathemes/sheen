@@ -16,27 +16,30 @@
             <div class="c-single__meta">
                 <?php
                     if( 'projects' == get_post_type() ) { 
-                        $brilliance_category_option_name = get_theme_mod( 'display_projects_date', true );
+                        $brilliance_date_option = get_theme_mod( 'display_projects_date', true );
+                        $brilliance_author_option = get_theme_mod( 'display_projects_author' , false);
                     }
                     else { 
-                        $brilliance_category_option_name = get_theme_mod( 'single_display_date', true );
+                        $brilliance_date_option = get_theme_mod( 'single_display_date', true );
+                        $brilliance_author_option = get_theme_mod( 'single_display_author' , true);
+                        $brilliance_categories = get_theme_mod( 'single_display_category', true );
                     }
 
-                    if( $brilliance_category_option_name == true ) { 
+                    if( $brilliance_date_option == true ) { 
                         brilliance_posted_on( false , "u-link--tertiary" );
                     }
                     
-                    /** Display Separator */
-                    if( $brilliance_category_option_name == true && get_theme_mod( 'single_display_author', true ) == true ) { 
+                    /* Display Separator */
+                    if( ($brilliance_date_option == true && $brilliance_author_option == true) || $brilliance_date_option == true ) { 
                         brilliance_get_seprator(); 
                     }
 
-                    if( get_theme_mod( 'single_display_author', true ) == true ) { 
+                    if( $brilliance_author_option == true ) { 
                         brilliance_posted_by();
                     }
                      
                     /** Display Separator */
-                    if( get_theme_mod( 'single_display_author', true ) == true && get_theme_mod( 'single_display_category', true ) == true ) { 
+                    if( $brilliance_author_option == true && $brilliance_categories == true ) { 
                         brilliance_get_seprator(); 
                     }
 

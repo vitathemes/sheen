@@ -855,10 +855,19 @@ if( function_exists( 'kirki' ) ) {
 		'settings'    => 'display_projects_date',
 		'label'       => esc_html__( 'Display Projects Date', 'brilliance' ),
 		'section'     => 'projects_options',
-		'default'     => 1,
+		'default'     => 0,
 		'priority'    => 20,
 	]);
-	
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'display_projects_author',
+		'label'       => esc_html__( 'Display Author', 'brilliance' ),
+		'section'     => 'projects_options',
+		'default'     => 0,
+		'priority'    => 30,
+	]);
+
 	/*------------------------------------*\
 	  #Projects Options Start 
 	\*------------------------------------*/
