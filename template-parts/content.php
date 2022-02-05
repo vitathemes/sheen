@@ -20,7 +20,9 @@
 			echo wp_kses_post( '<div class="c-post__entry-meta">' );
 				brilliance_posted_on(false , "u-link--tertiary");
 				
-				brilliance_get_seprator();
+				if( has_term( 'projects' , 'projects_category') ) { 
+					brilliance_get_seprator();
+				}
 
 				if( 'projects' === get_post_type() ) { 
 					brilliance_get_taxonomy('project_category' , 'c-post__taxonomy u-link--meta' , 'a'); // Will be Escaped in function 
@@ -28,8 +30,6 @@
 				else { 
 					brilliance_post_categories(" " , "u-link--meta");
 				}
-
-				
 			echo wp_kses_post( '</div>' );
 	
 			wp_link_pages(

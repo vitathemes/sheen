@@ -366,3 +366,29 @@ if ( !function_exists('brilliance_modify_archive_title') ) {
 	add_filter( 'wp_title', 'brilliance_modify_archive_title' );
 	add_filter( 'get_the_archive_title', 'brilliance_modify_archive_title' );
 }
+
+
+if ( !function_exists('brilliance_register_block_style') ) :
+	/**
+	 * 
+	 * Register Block Style for gallery
+	 * 
+	 * @since v1.0.0
+	 * 
+	 */
+	add_action('init', function() {
+		register_block_style('core/gallery', [
+			'name' => 'masonry-grid',
+			'label' => __('Masonry Grid Layout', 'brilliance'),
+			'inline_style' => '.wp-block-gallery.is-style-masonry-grid.js-has-masonry',
+		]);
+	});
+
+	add_action('init', function() {
+		register_block_style('core/gallery', [
+			'name' => 'carousel-layout',
+			'label' => __('Carousel Layout', 'brilliance'),
+			'inline_style' => '.wp-block-gallery.has-carousel-style',
+		]);
+	});
+endif;

@@ -742,6 +742,23 @@ select {
   max-width: 90%;
 }
 
+/*------------------------------------*\
+  #Gallery Block
+\*------------------------------------*/
+.is-style-masonry-grid .wp-block-image {
+  margin: 0px !important;
+  margin-bottom: 2.375rem !important;
+  width: 100% !important;
+  max-width: 100%;
+}
+@media (min-width: 57.5em) {
+  .is-style-masonry-grid .wp-block-image {
+    margin-bottom: 3.125rem !important;
+    width: 380px !important;
+    margin-right: 0 !important;
+  }
+}
+
 table {
   margin-bottom: 16px;
   background-color: #f5f5f5;
@@ -1855,6 +1872,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.c-post__taxonomy {
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+}
 .c-post__taxonomy::after {
   content: ", ";
 }
@@ -2212,6 +2233,42 @@ input[type=submit]:focus {
   }
 }
 
+.c-single__content--custom-sm {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.c-single__content--custom-sm *:not(:where(.is-style-masonry-grid, .is-style-carousel-layout, .is-style-carousel-layout
+                > .flickity-viewport, .is-style-carousel-layout
+                > .flickity-viewport
+                > .flickity-slider, .is-style-carousel-layout
+                > .flickity-viewport
+                > .flickity-slider
+                > .wp-block-image, .flickity-page-dots)) {
+  max-width: 56.875rem;
+}
+.c-single__content--custom-sm .is-style-masonry-grid,
+.c-single__content--custom-sm .has-carousel-style {
+  width: 100% !important;
+}
+.c-single__content--custom-sm .is-style-carousel-layout {
+  margin-bottom: 3rem !important;
+}
+@media (min-width: 57.5em) {
+  .c-single__content--custom-sm .is-style-carousel-layout {
+    margin-bottom: 7.625rem !important;
+  }
+}
+.c-single__content--custom-sm .is-style-masonry-grid {
+  margin-top: 2.4375rem !important;
+}
+@media (min-width: 57.5em) {
+  .c-single__content--custom-sm .is-style-masonry-grid {
+    margin-top: 3rem;
+  }
+}
+
 .c-single__author {
   text-transform: uppercase;
 }
@@ -2257,7 +2314,8 @@ input[type=submit]:focus {
 /*------------------------------------*\
   #Single carousel 
 \*------------------------------------*/
-.c-single__carousel {
+.c-single__carousel,
+.is-style-carousel-layout {
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -2266,26 +2324,31 @@ input[type=submit]:focus {
   transition: none;
   position: relative;
 }
-.c-single__carousel .flickity-viewport {
+.c-single__carousel .flickity-viewport,
+.is-style-carousel-layout .flickity-viewport {
   overflow: hidden;
 }
-.c-single__carousel .flickity-slider {
+.c-single__carousel .flickity-slider,
+.is-style-carousel-layout .flickity-slider {
   height: 31.25rem;
 }
-.c-single__carousel .flickity-page-dots {
+.c-single__carousel .flickity-page-dots,
+.is-style-carousel-layout .flickity-page-dots {
   position: absolute;
   top: 100%;
   width: 100%;
   height: 55px;
 }
 
-.c-single__carousel-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.c-single__carousel-wrapper,
+.is-style-carousel-layout > .flickity-viewport > .flickity-slider > .wp-block-image {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
 }
 
-.c-single__carousel-img {
+.c-single__carousel-img,
+.is-style-carousel-layout > .flickity-viewport > .flickity-slider > img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

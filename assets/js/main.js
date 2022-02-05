@@ -54,6 +54,14 @@ jQuery(function ($) {
         horizontalOrder: true,
     });
 
+    $(".is-style-masonry-grid").masonry({
+        // options
+        itemSelector: ".wp-block-image",
+        gutter: 48,
+        fitWidth: true,
+        horizontalOrder: true,
+    });
+
     /*--------------------------------------*\
       #Scroll to top & Focus on logo
     \*--------------------------------------*/
@@ -111,6 +119,17 @@ jQuery(function ($) {
             });
         });
     });
+
+    /*--------------------------------------*\
+      #Carousel - Single Page
+    \*--------------------------------------*/
+    $(".is-style-carousel-layout").flickity({
+        setGallerySize: false,
+        imagesLoaded: true,
+        cellAlign: "left",
+        prevNextButtons: false,
+        lazyLoad: true,
+    });
 });
 /*--------------------------------------*\
   #END jQuery
@@ -153,21 +172,6 @@ if (
 ) {
     const brilliance_lazyLoadInstance = new LazyLoad({
         elements_selector: [".js-single__masonry-img", ".js-single__carousel-img"],
-    });
-}
-
-/*--------------------------------------*\
-  #Carousel - Single Page
-\*--------------------------------------*/
-if (brilliance_childFinder("body", "js-single__carousel-slider")) {
-    let carouselSingle = document.querySelector(".js-single__carousel-slider");
-
-    let flCarouselSingle = new Flickity(carouselSingle, {
-        setGallerySize: false,
-        imagesLoaded: true,
-        cellAlign: "left",
-        prevNextButtons: false,
-        lazyLoad: true,
     });
 }
 

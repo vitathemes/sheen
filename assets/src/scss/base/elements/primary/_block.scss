@@ -25,3 +25,21 @@
 .wp-block-embed {
     max-width: 90%;
 }
+
+/*------------------------------------*\
+  #Gallery Block
+\*------------------------------------*/
+.is-style-masonry-grid {
+    .wp-block-image {
+        margin: 0px !important;
+        margin-bottom: rem(38px) !important;
+        width: 100% !important;
+        max-width: 100%;
+
+        @include mq($from: tablet) {
+            margin-bottom: rem(50px) !important;
+            width: 380px !important;
+            margin-right: 0 !important;
+        }
+    }
+}

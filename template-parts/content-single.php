@@ -15,13 +15,19 @@
             </div>
             <div class="c-single__meta">
                 <?php
-                    /** Display Date */
-                    if( get_theme_mod( 'single_display_date', true ) == true ) { 
-                        brilliance_posted_on( false , "u-link--tertiary" );
+                    if( 'projects' == get_post_type() ) { 
+                        $brilliance_category_option_name = get_theme_mod( 'display_projects_date', true );
+                    }
+                    else { 
+                        $brilliance_category_option_name = get_theme_mod( 'single_display_date', true );
                     }
 
+                    if( $brilliance_category_option_name == true ) { 
+                        brilliance_posted_on( false , "u-link--tertiary" );
+                    }
+                    
                     /** Display Separator */
-                    if( get_theme_mod( 'single_display_date', true ) == true && get_theme_mod( 'single_display_author', true ) == true ) { 
+                    if( $brilliance_category_option_name == true && get_theme_mod( 'single_display_author', true ) == true ) { 
                         brilliance_get_seprator(); 
                     }
 
@@ -34,10 +40,17 @@
                         brilliance_get_seprator(); 
                     }
 
-                    /** Display Categories */
-                    if( get_theme_mod( 'single_display_category', true ) == true ) { 
-                        brilliance_post_categories( ", " , "u-link--meta" );
+                    if( 'post' === get_post_type() ) { 
+                        /** Display Post Categories */
+                        if( get_theme_mod( 'single_display_category', true ) == true ) { 
+                            brilliance_post_categories( ", " , "u-link--meta" );
+                        }
                     }
+                    else { 
+                        /** Display Custom Taxonomy on projects */
+                        brilliance_get_taxonomy('project_category' , 'c-post__taxonomy u-link--meta' , 'a'); // Will be Escaped in function 
+                    }
+                    
                 ?>
             </div>
             <?php 
@@ -49,31 +62,32 @@
                 }   
             ?>
         </div>
-        <div class="c-single__content">
-            <?php
-                the_content(
-                    sprintf(
-                        wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brilliance' ),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        wp_kses_post( get_the_title() )
-                    )
-                );
-                
-                wp_link_pages(
-                    array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brilliance' ),
-                        'after'  => '</div>',
-                    )
-                );
-		    ?>
-        </div>
+    </div>
+
+    <div class="c-single__content c-single__content--custom-sm">
+        <?php
+            the_content(
+                sprintf(
+                    wp_kses(
+                        /* translators: %s: Name of current post. Only visible to screen readers */
+                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'brilliance' ),
+                        array(
+                            'span' => array(
+                                'class' => array(),
+                            ),
+                        )
+                    ),
+                    wp_kses_post( get_the_title() )
+                )
+            );
+            
+            wp_link_pages(
+                array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'brilliance' ),
+                    'after'  => '</div>',
+                )
+            );
+        ?>
     </div>
 
     <?php 

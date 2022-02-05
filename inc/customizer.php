@@ -838,7 +838,7 @@ if( function_exists( 'kirki' ) ) {
 	\*------------------------------------*/
 
 	/*------------------------------------*\
-	  #Archive Options Start 
+	  #Projects Options Start 
 	\*------------------------------------*/
 	
 	/* Custom Arvhives title  */
@@ -849,9 +849,18 @@ if( function_exists( 'kirki' ) ) {
 		'section'  => 'projects_options',
 		'priority' => 10,
 	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'display_projects_date',
+		'label'       => esc_html__( 'Display Projects Date', 'brilliance' ),
+		'section'     => 'projects_options',
+		'default'     => 1,
+		'priority'    => 20,
+	]);
 	
 	/*------------------------------------*\
-	  #Archive Options Start 
+	  #Projects Options Start 
 	\*------------------------------------*/
 
 	});

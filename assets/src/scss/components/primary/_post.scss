@@ -47,6 +47,8 @@
 }
 
 .c-post__taxonomy {
+    text-transform: capitalize;
+    margin-left: rem(8px);
     &::after {
         content: ", ";
     }
