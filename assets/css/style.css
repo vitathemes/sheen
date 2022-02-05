@@ -2573,10 +2573,6 @@ input[type=submit]:focus {
   border-bottom: none;
 }
 
-.c-comments__title {
-  color: green;
-}
-
 .comment-reply-link {
   padding-top: 16px;
   color: var(--brilliance_theme_secondary_text_color);
@@ -2657,10 +2653,6 @@ input[type=submit]:focus {
 .bypostauthor {
   display: block;
   color: var(--brilliance_theme_primary_text_color);
-}
-
-.comment-date {
-  color: blue;
 }
 
 .time {
@@ -2755,13 +2747,6 @@ input[type=submit]:focus {
   padding-top: 4px;
   height: 0px !important;
 }
-.comment-form-arrow .dashicons::before {
-  color: pink;
-}
-.comment-form-arrow:hover .dashicons::before {
-  color: yellow !important;
-}
-
 .c-profile {
   width: 100%;
   display: flex;

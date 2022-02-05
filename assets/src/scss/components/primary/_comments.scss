@@ -138,8 +138,6 @@
     }
 }
 .c-comments__title {
-    color: green;
-    // font-family: $castpress_font !important;
 }
 
 .comment-reply-link {
@@ -232,7 +230,6 @@
 }
 
 .comment-date {
-    color: blue;
 }
 
 .time {
@@ -330,14 +327,14 @@
         height: 0px !important;
 
         &::before {
-            color: pink;
+            // color: pink;
         }
     }
 
     &:hover {
         .dashicons {
             &::before {
-                color: yellow !important;
+                // color: yellow !important;
             }
         }
     }

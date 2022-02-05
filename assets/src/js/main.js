@@ -233,8 +233,8 @@ if (brilliance_childFinder("body", "js-nav__search-button")) {
                 }
             });
             // Forward
-            const castpress_headerSearchButton = document.querySelector(".c-search-form__submit");
-            castpress_headerSearchButton.addEventListener("blur", function (e) {
+            const brilliance_headerSearchButton = document.querySelector(".c-search-form__submit");
+            brilliance_headerSearchButton.addEventListener("blur", function (e) {
                 if (brilliance_IsBackward === false) {
                     brilliance_seacrhClose.focus();
                 }
