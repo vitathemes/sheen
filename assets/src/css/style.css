@@ -2930,6 +2930,7 @@ input[type=submit]:focus {
   height: -moz-max-content;
   height: max-content;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 @media (min-width: 57.5em) {
   .c-footer__copy {
