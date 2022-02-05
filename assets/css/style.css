@@ -491,23 +491,33 @@ ul {
 /*------------------------------------*\
   #Links
 \*------------------------------------*/
-a {
+a,
+.a {
   color: var(--brilliance_theme_secondary_text_color);
   transition: all 0.2s;
   text-decoration: none;
 }
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+.a:hover,
+.a:focus,
+.a:active {
   color: var(--brilliance_theme_primary_text_color);
 }
-a:focus {
+a:focus,
+.a:focus {
   outline: 1px solid #000000;
   border-radius: 1px;
 }
-a:hover, a:active {
+a:hover, a:active,
+.a:hover,
+.a:active {
   outline: none;
 }
 
-a img:hover, a img:focus, a img:active {
+a img:hover, a img:focus, a img:active,
+.a img:hover,
+.a img:focus,
+.a img:active {
   opacity: 0.5;
 }
 

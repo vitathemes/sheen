@@ -185,7 +185,6 @@ if ( ! function_exists( 'brilliance_post_categories' ) ) :
 					esc_html( $brilliance_category->name ),
 					esc_html( $brilliance_separator ) );
 			}
-
 			echo  wp_kses_post(trim( $brilliance_output , $brilliance_separator ));
 		echo "</div>";
 	}

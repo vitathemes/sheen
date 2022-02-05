@@ -857,7 +857,7 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'projects_options',
 		'default'     => 0,
 		'priority'    => 20,
-	]);
+	] );
 
 	Kirki::add_field( 'brilliance', [
 		'type'        => 'toggle',
@@ -866,7 +866,16 @@ if( function_exists( 'kirki' ) ) {
 		'section'     => 'projects_options',
 		'default'     => 0,
 		'priority'    => 30,
-	]);
+	] );
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_display_taxonomy',
+		'label'       => esc_html__( 'Display Projects Category', 'brilliance' ),
+		'section'     => 'projects_options',
+		'default'     => 0,
+		'priority'    => 40,
+	] );
 
 	/*------------------------------------*\
 	  #Projects Options Start 

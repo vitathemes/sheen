@@ -1,7 +1,8 @@
 /*------------------------------------*\
   #Links
 \*------------------------------------*/
-a {
+a,
+.a {
     color: $color_link; //767676
     transition: $global-transition;
     text-decoration: none;
@@ -23,7 +24,8 @@ a {
     }
 }
 
-a img {
+a img,
+.a img {
     &:hover,
     &:focus,
     &:active {

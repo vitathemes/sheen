@@ -18,6 +18,7 @@
                     if( 'projects' == get_post_type() ) { 
                         $brilliance_date_option = get_theme_mod( 'display_projects_date', true );
                         $brilliance_author_option = get_theme_mod( 'display_projects_author' , false);
+                        $brilliance_categories = get_theme_mod( 'projects_display_taxonomy', false );
                     }
                     else { 
                         $brilliance_date_option = get_theme_mod( 'single_display_date', true );
@@ -30,7 +31,7 @@
                     }
                     
                     /* Display Separator */
-                    if( ($brilliance_date_option == true && $brilliance_author_option == true) || $brilliance_date_option == true ) { 
+                    if(($brilliance_date_option == true &&  $brilliance_author_option == true ) || ( $brilliance_date_option == true && $brilliance_categories == true )) { 
                         brilliance_get_seprator(); 
                     }
 
@@ -43,15 +44,15 @@
                         brilliance_get_seprator(); 
                     }
 
-                    if( 'post' === get_post_type() ) { 
-                        /** Display Post Categories */
-                        if( get_theme_mod( 'single_display_category', true ) == true ) { 
+                    if( $brilliance_categories == true ) { 
+                        if( 'post' === get_post_type() ) { 
+                            /* Display Post Categories */
                             brilliance_post_categories( ", " , "u-link--meta" );
                         }
-                    }
-                    else { 
-                        /** Display Custom Taxonomy on projects */
-                        brilliance_get_taxonomy('project_category' , 'c-post__taxonomy u-link--meta' , 'a'); // Will be Escaped in function 
+                        else { 
+                            /** Display Custom Taxonomy on projects */
+                            brilliance_get_taxonomy('project_category' , 'c-post__taxonomy a' , 'a'); // Will be Escaped in function 
+                        }
                     }
                     
                 ?>
