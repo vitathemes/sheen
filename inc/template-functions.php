@@ -20,9 +20,9 @@ function brilliance_scripts() {
 	wp_enqueue_style( 'brilliance-main-style', get_template_directory_uri() . '/assets/css/style.css', array(), BRILLIANCE_VERSION );
 
 	// enqueue js
-	wp_enqueue_script( 'brilliance-navigation', get_template_directory_uri() . './assets/js/navigation.js', array(), BRILLIANCE_VERSION, true );
-	wp_enqueue_script( 'brilliance-vendors-script', get_template_directory_uri() . './assets/js/vendors.js', array(), BRILLIANCE_VERSION, true );
-	wp_enqueue_script( 'brilliance-main-script', get_template_directory_uri() . './assets/js/main.js', array(), BRILLIANCE_VERSION, true );
+	wp_enqueue_script( 'brilliance-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), BRILLIANCE_VERSION, true );
+	wp_enqueue_script( 'brilliance-vendors-script', get_template_directory_uri() . '/assets/js/vendors.js', array(), BRILLIANCE_VERSION, true );
+	wp_enqueue_script( 'brilliance-main-script', get_template_directory_uri() . '/assets/js/main.js', array(), BRILLIANCE_VERSION, true );
 
 	// Dash icons
 	wp_enqueue_style('dashicons');
@@ -117,10 +117,8 @@ if ( ! function_exists( 'brilliance_typography' )) {
 					--brilliance_theme_error_color:   		        ' . $brilliance_theme_error_color . ';
 					--brilliance_theme_border_color:   		        ' . $brilliance_theme_border_color . ';
 					--brilliance_theme_border_secondary_color:   	' . $brilliance_theme_border_secondary_color . ';
-				}';
-							
-		return $html;
-		
+				}';		
+		return $html;	
 	}
 }
 
