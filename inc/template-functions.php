@@ -384,3 +384,6 @@ if ( !function_exists('brilliance_register_block_style') ) :
 		]);
 	});
 endif;
+
+
+	

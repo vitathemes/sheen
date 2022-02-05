@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="c-single__content c-single__content--custom-sm">
+    <div class="c-single__content c-single__content--centered">
         <?php
             the_content(
                 sprintf(

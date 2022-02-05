@@ -88,6 +88,8 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_theme_support( 'align-wide' );
 	}
 endif;
 add_action( 'after_setup_theme', 'brilliance_setup' );

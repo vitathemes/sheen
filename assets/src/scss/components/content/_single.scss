@@ -54,42 +54,41 @@
     }
 }
 
-.c-single__content--custom-sm {
+.c-single__content--centered {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 
-    *:not(:where(.is-style-masonry-grid, .is-style-carousel-layout, .is-style-carousel-layout
-                > .flickity-viewport, .is-style-carousel-layout
-                > .flickity-viewport
-                > .flickity-slider, .is-style-carousel-layout
-                > .flickity-viewport
-                > .flickity-slider
-                > .wp-block-image, .flickity-page-dots)) {
-        max-width: rem(910px);
+    .alignfull {
+        max-width: 100%;
     }
 
-    .is-style-masonry-grid,
-    .has-carousel-style {
-        width: 100% !important;
-    }
+    // .is-style-masonry-grid,
+    // .has-carousel-style {
+    //     width: 100% !important;
+    // }
 
-    .is-style-carousel-layout {
-        margin-bottom: rem(48px) !important;
+    // .is-style-carousel-layout {
+    //     margin-bottom: rem(48px) !important;
 
-        @include mq($from: tablet) {
-            margin-bottom: rem(122px) !important;
-        }
-    }
+    //     @include mq($from: tablet) {
+    //         margin-bottom: rem(122px) !important;
+    //     }
+    // }
 
-    .is-style-masonry-grid {
-        margin-top: rem(39px) !important;
+    // .is-style-masonry-grid {
+    //     margin-top: rem(39px) !important;
 
-        @include mq($from: tablet) {
-            margin-top: rem(48px);
-        }
-    }
+    //     @include mq($from: tablet) {
+    //         margin-top: rem(48px);
+    //     }
+    // }
+}
+
+.c-single__content--centered > * {
+    max-width: rem(910px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .c-single__author {
