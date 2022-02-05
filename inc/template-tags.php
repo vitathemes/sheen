@@ -230,16 +230,15 @@ if ( ! function_exists( 'brilliance_get_footer_copy' ) ) :
 		if( get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')) ) { 
 
 			/** Translator %s 1: The Footer copyright text */
-			echo sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')));
+			echo wp_kses_post( sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by'))) );
 		}
 
 		else { 
-			echo sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by')));
+			echo wp_kses_post( sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Brilliance, made by'))) );
 		}
 
 	}
 endif;
-
 
 
 if ( ! function_exists( 'brilliance_socials_links' ) ) :
@@ -272,7 +271,6 @@ if ( ! function_exists( 'brilliance_socials_links' ) ) :
 		$brilliance_behance    		=  get_theme_mod( 'behance', '' );
 		$brilliance_telegram    	=  get_theme_mod( 'telegram', '' );
 		$brilliance_codepen    		=  get_theme_mod( 'codepen', '' );
-
 
 		// If variable was not empty will display the icons
 		$brilliance_social_variables  = array($brilliance_facebook,$brilliance_twitter,$brilliance_instagram,$brilliance_linkedin,$brilliance_github,

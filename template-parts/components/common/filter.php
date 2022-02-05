@@ -1,5 +1,5 @@
 <div class="c-filter js-filter">
-    <span class="c-filter__title"><?php echo esc_html__( 'FILTERS' , 'brilliance' ) ?></span>
+    <span class="c-filter__title"><?php echo esc_html__( 'Filters' , 'brilliance' ) ?></span>
     <form action="<?php echo esc_url(admin_url('admin-ajax.php')) ?>" method="POST" id="filter">
         <?php
             if( $brilliance_terms = get_terms( array( 'taxonomy' => 'project_category', 'orderby' => 'name' ) ) ) : 
