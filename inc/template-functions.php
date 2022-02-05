@@ -46,11 +46,6 @@ function brilliance_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'brilliance_body_classes' );
@@ -311,15 +306,14 @@ if( !function_exists('brilliance_cats_filter') ) :
 	function brilliance_cats_filter() {
 		$brilliance_filter_args = array(
 			'orderby' 		 => 'date', 
-			'order'          => sanitize_text_field(wp_unslash($_POST['DESC'])), // ASC or DESC or date
-			'posts_per_page' => 999,
+			'posts_per_page' => get_option("posts_per_page"),
 			'post_type'		 => 'projects'
 		);
 	
 		if( isset( $_POST['categoryfilter'] ) )
 			$brilliance_filter_args['tax_query'] = array(
 				array(
-					'taxonomy' => 'category',
+					'taxonomy' => 'project_category',
 					'field' => 'id',
 					'terms' => sanitize_text_field(wp_unslash($_POST['categoryfilter'])),
 				)
