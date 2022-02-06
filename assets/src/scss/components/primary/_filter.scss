@@ -5,7 +5,7 @@
 
 .c-filter__title {
     text-transform: uppercase;
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
     margin-bottom: rem(48px);
     display: block;
 }
@@ -23,18 +23,18 @@
     margin-right: rem(40px);
     display: inline-block;
     cursor: pointer;
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
     text-transform: capitalize;
 
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_primary_text_color;
+        color: $sheen_primary_text_color;
     }
 }
 
 .c-filter__cat.active {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 .c-filter__list {

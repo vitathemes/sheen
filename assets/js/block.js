@@ -1,22 +1,34 @@
 /*--------------------------------------*\
+  #Detect Element inside other element
+\*--------------------------------------*/
+function sheen_childFinder(parentElement, childElement) {
+    let sheen_result = document.querySelector(parentElement).getElementsByClassName(childElement)[0]
+        ? true
+        : false;
+    return sheen_result;
+}
+
+/*--------------------------------------*\
   #Register Block style
 \*--------------------------------------*/
 window.addEventListener("load", function () {
-    wp.domReady(() => {
-        /*
-         * Register Blocks Styles for gallery
-         */
-        wp.blocks.registerBlockStyle("core/gallery", [
-            {
-                name: "masonry-grid",
-                label: "Masonry Grid Layout",
-                inline_style: ".wp-block-gallery.is-style-masonry-grid.js-has-masonry",
-            },
-            {
-                name: "carousel-layout",
-                label: "Carousel Layout",
-                inline_style: ".wp-block-gallery.has-carousel-style",
-            },
-        ]);
-    });
+    if (sheen_childFinder("body", "block-editor__container")) {
+        wp.domReady(() => {
+            /*
+             * Register Blocks Styles for gallery
+             */
+            wp.blocks.registerBlockStyle("core/gallery", [
+                {
+                    name: "masonry-grid",
+                    label: "Masonry Grid Layout",
+                    inline_style: ".wp-block-gallery.is-style-masonry-grid.js-has-masonry",
+                },
+                {
+                    name: "carousel-layout",
+                    label: "Carousel Layout",
+                    inline_style: ".wp-block-gallery.has-carousel-style",
+                },
+            ]);
+        });
+    }
 });

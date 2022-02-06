@@ -96,7 +96,7 @@
     font-size: rem(150px);
     line-height: 200px;
     text-align: center;
-    color: $brilliance_tertiary_text_color;
+    color: $sheen_tertiary_text_color;
 
     @include mq($from: tablet) {
         font-size: rem(200px);
@@ -104,7 +104,7 @@
 }
 
 .c-main__oops {
-    color: $brilliance_tertiary_text_color;
+    color: $sheen_tertiary_text_color;
     display: inline-block;
     margin: 0;
     margin-right: rem(12px);
@@ -122,7 +122,7 @@
 }
 
 .c-main__desc {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
     display: inline-block;
     margin: 0;
 
@@ -175,13 +175,13 @@
     &:focus,
     &:active {
         .c-filter__item {
-            color: $brilliance_neutral_dark_gray_color;
+            color: $sheen_neutral_dark_gray_color;
         }
     }
 }
 
 .c-main__filter-item {
-    background: $brilliance_main_dark_color;
+    background: $sheen_main_dark_color;
     width: rem(5px);
     height: rem(5px);
     border-radius: 999px;

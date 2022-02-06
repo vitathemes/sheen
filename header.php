@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package brilliance
+ * @package sheen
  */
 
 ?>
@@ -31,7 +31,7 @@
             <header id="masthead" class="c-header">
                 <div class="c-header__menu">
                     <div class="c-header__branding js-header__branding">
-                        <?php brilliance_branding(); ?>
+                        <?php sheen_branding(); ?>
                     </div><!-- .site-branding -->
                     <nav class="c-nav" id="site-navigation">
 
@@ -45,7 +45,7 @@
                                     if ( has_nav_menu( 'primary' ) ) {
                                         wp_nav_menu(
                                             array(
-                                                'walker'          => new Brilliance_walker_nav_menu(),
+                                                'walker'          => new Sheen_walker_nav_menu(),
                                                 'theme_location'  => 'primary',
                                                 'menu_id'         => 'primary-menu primary',
                                                 'menu_class'      => 's-nav__list nav-menu',

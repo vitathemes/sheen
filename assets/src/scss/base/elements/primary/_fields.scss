@@ -20,22 +20,22 @@ input[type="color"],
 textarea {
     width: 100%;
     border: none;
-    border-bottom: rem(1px) solid $brilliance_secondary_text_color;
-    color: $brilliance_secondary_text_color;
+    border-bottom: rem(1px) solid $sheen_secondary_text_color;
+    color: $sheen_secondary_text_color;
     background: transparent;
     position: relative;
     padding-bottom: rem(12px);
     font-weight: 400;
 
     &::placeholder {
-        color: $brilliance_secondary_text_color;
+        color: $sheen_secondary_text_color;
     }
 
     &:hover,
     &:focus,
     &:active {
         outline: none;
-        border-bottom: rem(1px) solid $brilliance_secondary_text_color;
+        border-bottom: rem(1px) solid $sheen_secondary_text_color;
     }
 
     &:focus {
@@ -84,7 +84,7 @@ input[type="checkbox"] {
     height: rem(16px);
     max-width: rem(16px);
     max-height: rem(16px);
-    outline: $brilliance_primary_text_color solid rem(1.8px);
+    outline: $sheen_primary_text_color solid rem(1.8px);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -99,7 +99,7 @@ input[type="checkbox"] {
 
     &:active,
     &:focus {
-        outline: $brilliance_primary_color solid rem(1.8px);
+        outline: $sheen_primary_color solid rem(1.8px);
     }
 }
 
@@ -115,8 +115,8 @@ input[type="checkbox"]:checked {
 }
 
 select {
-    color: $brilliance_primary_text_color;
-    border: rem(1px) solid $brilliance_border_color;
+    color: $sheen_primary_text_color;
+    border: rem(1px) solid $sheen_border_color;
     border-radius: $global-radius;
     background-color: transparent;
     padding: rem(10px 14px);

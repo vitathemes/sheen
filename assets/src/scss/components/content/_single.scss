@@ -186,7 +186,7 @@
     justify-content: flex-start;
     margin-top: rem(64px);
     text-transform: capitalize;
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 
     @include mq($from: tablet) {
         margin-top: rem(92px);

@@ -31,7 +31,7 @@
 }
 
 .c-comments__desc {
-    color: $brilliance_secondary_text_color !important;
+    color: $sheen_secondary_text_color !important;
     margin: 0;
     margin-top: rem(8px);
 
@@ -53,7 +53,7 @@
 
 .c-comment__title {
     width: 100%;
-    border-top: 1px solid $brilliance_tertiary_text_color;
+    border-top: 1px solid $sheen_tertiary_text_color;
     padding-top: rem(48px);
     font-weight: 700;
 
@@ -142,7 +142,7 @@
 
 .comment-reply-link {
     padding-top: 16px;
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
     text-decoration: none !important;
     font-size: 14px;
     line-height: 18px;
@@ -150,10 +150,10 @@
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_primary_text_color;
+        color: $sheen_primary_text_color;
 
         &::before {
-            background-color: $brilliance_primary_text_color;
+            background-color: $sheen_primary_text_color;
         }
     }
 
@@ -170,7 +170,7 @@
         vertical-align: middle;
         display: inline-block;
         transition: 0.2s all;
-        background-color: $brilliance_secondary_text_color;
+        background-color: $sheen_secondary_text_color;
         margin-right: rem(10px);
         margin-top: rem(-5px);
     }
@@ -220,20 +220,20 @@
 
     a {
         text-transform: capitalize;
-        color: $brilliance_primary_text_color;
+        color: $sheen_primary_text_color;
     }
 }
 
 .bypostauthor {
     display: block;
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 .comment-date {
 }
 
 .time {
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
     display: block;
 
     @include mq($from: tablet) {
@@ -247,13 +247,13 @@
 }
 
 .c-comments__cookie {
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
     margin-left: rem(10px);
 }
 
 .logged-in-as {
     a {
-        color: $brilliance_secondary_text_color;
+        color: $sheen_secondary_text_color;
 
         &:visited {
             text-decoration: none;
@@ -262,7 +262,7 @@
         &:hover,
         &:focus,
         &:active {
-            color: $brilliance_primary_text_color;
+            color: $sheen_primary_text_color;
         }
     }
 }
@@ -301,7 +301,7 @@
 .c-comment__author,
 .comment-form-email,
 .comment-form-url {
-    color: $brilliance_secondary_text_color !important;
+    color: $sheen_secondary_text_color !important;
     margin: 0;
     margin-top: rem(48px);
 }

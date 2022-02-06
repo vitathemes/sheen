@@ -1,5 +1,5 @@
 <?php 
-if ( ! function_exists( 'brilliance_setup' ) ) :
+if ( ! function_exists( 'sheen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -7,11 +7,11 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function brilliance_setup() {
+	function sheen_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on brilliance, use a find and replace
+		 * If you're building a theme based on sheen, use a find and replace
 		 * to change 'sheen' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'sheen', get_template_directory() . '/languages' );
@@ -62,7 +62,7 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'brilliance_custom_background_args',
+				'sheen_custom_background_args',
 				array(
 					'default-color' => '#ffffff',
 					'default-image' => '',
@@ -92,4 +92,4 @@ if ( ! function_exists( 'brilliance_setup' ) ) :
 		add_theme_support( 'align-wide' );
 	}
 endif;
-add_action( 'after_setup_theme', 'brilliance_setup' );
+add_action( 'after_setup_theme', 'sheen_setup' );

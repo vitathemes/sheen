@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package brilliance
+ * @package sheen
  */
 
 get_header();
@@ -33,7 +33,7 @@ get_header();
 					
 				endwhile;
 
-				brilliance_get_default_pagination(true);
+				sheen_get_default_pagination(true);
 
 			else :
 

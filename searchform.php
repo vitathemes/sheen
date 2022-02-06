@@ -2,7 +2,7 @@
 /**
  * Display Search Form 
  *
- * @package brilliance
+ * @package sheen
  */
 ?>
 <form role="search" method="get" class="c-header__search-form search-form" action="<?php echo esc_url(home_url( '/' )); ?>">

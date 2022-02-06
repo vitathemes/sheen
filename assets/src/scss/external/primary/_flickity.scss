@@ -20,19 +20,19 @@
         cursor: pointer;
         width: rem(15px);
         height: rem(15px);
-        background-color: $brilliance_tertiary_text_color;
+        background-color: $sheen_tertiary_text_color;
         border-radius: 999px;
         display: inline-block;
         margin: rem(0px 6.25px);
     }
 
     .dot.is-selected {
-        background-color: $brilliance_primary_accent_color;
+        background-color: $sheen_primary_accent_color;
     }
 }
 
 .flickity-page-dots li {
     &:hover {
-        background-color: $brilliance_primary_accent_color;
+        background-color: $sheen_primary_accent_color;
     }
 }

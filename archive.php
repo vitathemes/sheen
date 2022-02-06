@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package brilliance
+ * @package sheen
  */
 get_header();
 ?>
@@ -29,10 +29,10 @@ get_header();
 					endwhile;
 
 					if( is_post_type_archive('projects') ) { 
-						brilliance_get_loadmore( $wp_query , true );
+						sheen_get_loadmore( $wp_query , true );
 					}
 					else { 
-						brilliance_get_default_pagination(true);
+						sheen_get_default_pagination(true);
 					}
 
 				else :

@@ -29,7 +29,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 999px;
-    border: rem(1px) solid $brilliance_border_secondary_color;
+    border: rem(1px) solid $sheen_border_secondary_color;
     cursor: pointer;
     padding: 0;
 
@@ -41,14 +41,14 @@
     &:hover,
     &:focus,
     &:active {
-        background: $brilliance_primary_accent_color;
-        border: rem(1px) solid $brilliance_primary_accent_color;
+        background: $sheen_primary_accent_color;
+        border: rem(1px) solid $sheen_primary_accent_color;
     }
 }
 
 .c-footer__to-top__icon {
     font-size: rem(18px);
-    color: $brilliance_primary_color;
+    color: $sheen_primary_color;
     margin-top: rem(-2px);
 }
 
@@ -86,11 +86,11 @@
 
 .c-footer__text {
     text-align: center;
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 .c-footer__copy-text {
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
 }
 
 .c-footer__copy-link {

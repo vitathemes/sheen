@@ -1,29 +1,29 @@
 <div class="c-projects">
     <?php
         if( get_query_var( 'paged' ) )
-            $brilliance_paged = get_query_var( 'paged' );
+            $sheen_paged = get_query_var( 'paged' );
         else {
         if( get_query_var( 'page' ) )
-            $brilliance_paged = get_query_var( 'page' );
+            $sheen_paged = get_query_var( 'page' );
         else
-            $brilliance_paged = 1;
-            set_query_var( 'paged', $brilliance_paged );
-            $brilliance_paged_post = $brilliance_paged;
+            $sheen_paged = 1;
+            set_query_var( 'paged', $sheen_paged );
+            $sheen_paged_post = $sheen_paged;
         }
 
-        $brilliance_paged_post = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $sheen_paged_post = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-        $brilliance_args = array (
+        $sheen_args = array (
             "post_status"            => "publish",
             "post_type"              => "projects",
-            "paged"                  => $brilliance_paged_post,
+            "paged"                  => $sheen_paged_post,
             "posts_per_page"         => get_option("posts_per_page"),
         );
         
-        global $brilliance_query;
-        $brilliance_query = $wp_query;
+        global $sheen_query;
+        $sheen_query = $wp_query;
 
-        $brilliance_query->query($brilliance_args);
+        $sheen_query->query($sheen_args);
     ?>
 
     <div class="c-main__filter">
@@ -40,13 +40,13 @@
 
     <div class="c-main__body c-main__body--projects js-main__body-has-masonry" id="response">
         <?php         
-            if ( $brilliance_query->have_posts() ) :
+            if ( $sheen_query->have_posts() ) :
                 
-                while ( $brilliance_query->have_posts() ) : $brilliance_query->the_post();
+                while ( $sheen_query->have_posts() ) : $sheen_query->the_post();
                     get_template_part( 'template-parts/content', get_post_type() );
                 endwhile;
             
-                brilliance_get_loadmore( $brilliance_query , true );
+                sheen_get_loadmore( $sheen_query , true );
                 
                 wp_reset_postdata();
                 

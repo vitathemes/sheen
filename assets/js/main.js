@@ -69,7 +69,7 @@ jQuery(function ($) {
         $("html, body").animate({ scrollTop: 0 }, 1000);
 
         setTimeout(() => {
-            if (brilliance_childFinder("body", "custom-logo-link")) {
+            if (sheen_childFinder("body", "custom-logo-link")) {
                 $(".custom-logo-link").focus();
             } else {
                 $(".c-header__title__anchor").focus();
@@ -81,10 +81,10 @@ jQuery(function ($) {
       #Handle Load More button
     \*------------------------------------*/
     $(document).ready(function () {
-        const brilliance_loadMoreButton = $(".js-pagination__load-more__btn");
+        const sheen_loadMoreButton = $(".js-pagination__load-more__btn");
         $(".js-pagination__load-more").click(function () {
             // setTimeout(function () {
-            //     brilliance_lazyLoadInstance.update();
+            //     sheen_lazyLoadInstance.update();
             // }, 1000);
 
             var loadMore = $(this),
@@ -98,7 +98,7 @@ jQuery(function ($) {
                 data: data,
                 type: "POST",
                 beforeSend: function (xhr) {
-                    brilliance_loadMoreButton.text("Loading . . . ");
+                    sheen_loadMoreButton.text("Loading . . . ");
                 },
                 success: function (data) {
                     setTimeout(function () {
@@ -108,7 +108,7 @@ jQuery(function ($) {
 
                     if (data) {
                         loadMore.prev().after(data);
-                        brilliance_loadMoreButton.text("Load More");
+                        sheen_loadMoreButton.text("Load More");
                         loadmore_params.current_page++;
                         if (loadmore_params.current_page == loadmore_params.max_page)
                             loadMore.remove();
@@ -138,9 +138,9 @@ jQuery(function ($) {
 /*--------------------------------------*\
   #Detect screen size
 \*--------------------------------------*/
-let brilliance_clientWindowSize = window.matchMedia("(max-width: 979px)");
-function brilliance_isMobile(brilliance_clientWindowSize) {
-    if (brilliance_clientWindowSize.matches) {
+let sheen_clientWindowSize = window.matchMedia("(max-width: 979px)");
+function sheen_isMobile(sheen_clientWindowSize) {
+    if (sheen_clientWindowSize.matches) {
         // If media query matches
         return true;
     } else {
@@ -148,29 +148,27 @@ function brilliance_isMobile(brilliance_clientWindowSize) {
     }
 }
 
-brilliance_isMobile(brilliance_clientWindowSize); // Call listener function at run time
-brilliance_clientWindowSize.addListener(brilliance_isMobile); // Attach listener function on state changes
+sheen_isMobile(sheen_clientWindowSize); // Call listener function at run time
+sheen_clientWindowSize.addListener(sheen_isMobile); // Attach listener function on state changes
 
 /*--------------------------------------*\
   #Detect Element inside other element
 \*--------------------------------------*/
-function brilliance_childFinder(parentElement, childElement) {
-    let brilliance_result = document
-        .querySelector(parentElement)
-        .getElementsByClassName(childElement)[0]
+function sheen_childFinder(parentElement, childElement) {
+    let sheen_result = document.querySelector(parentElement).getElementsByClassName(childElement)[0]
         ? true
         : false;
-    return brilliance_result;
+    return sheen_result;
 }
 
 /*--------------------------------------*\
   Images LazyLoad initialization 
 \*--------------------------------------*/
 if (
-    brilliance_childFinder("body", "js-single__masonry-img") ||
-    brilliance_childFinder("body", "js-single__carousel-img")
+    sheen_childFinder("body", "js-single__masonry-img") ||
+    sheen_childFinder("body", "js-single__carousel-img")
 ) {
-    const brilliance_lazyLoadInstance = new LazyLoad({
+    const sheen_lazyLoadInstance = new LazyLoad({
         elements_selector: [".js-single__masonry-img", ".js-single__carousel-img"],
     });
 }
@@ -178,7 +176,7 @@ if (
 /*------------------------------------*\
   #Fade Out Vanilla JS
 \*------------------------------------*/
-function brilliance_fadeOut(el) {
+function sheen_fadeOut(el) {
     el.style.opacity = 1;
     (function fade() {
         if ((el.style.opacity -= 0.1) < 0) {
@@ -192,7 +190,7 @@ function brilliance_fadeOut(el) {
 /*------------------------------------*\
   #Fade In Vanilla JS
 \*------------------------------------*/
-function brilliance_fadeIn(el, display) {
+function sheen_fadeIn(el, display) {
     el.style.opacity = 0;
     el.style.display = display || "block";
     (function fade() {
@@ -207,87 +205,87 @@ function brilliance_fadeIn(el, display) {
 /*------------------------------------*\
   #Search Box toggle
 \*------------------------------------*/
-if (brilliance_childFinder("body", "js-nav__search-button")) {
-    const brilliance_searchBtn = document.querySelector(".js-nav__search-button");
-    const brilliance_seacrhClose = document.querySelector(".js-btn-seacrh-close");
-    const brilliance_searchOverlay = document.querySelector(".js-header__search-overlay");
+if (sheen_childFinder("body", "js-nav__search-button")) {
+    const sheen_searchBtn = document.querySelector(".js-nav__search-button");
+    const sheen_seacrhClose = document.querySelector(".js-btn-seacrh-close");
+    const sheen_searchOverlay = document.querySelector(".js-header__search-overlay");
 
-    const brilliance_navList = document.querySelector(".js-nav__list");
-    const brilliance_primaryNav = document.querySelector(".js-nav__toggle");
+    const sheen_navList = document.querySelector(".js-nav__list");
+    const sheen_primaryNav = document.querySelector(".js-nav__toggle");
 
     // Search Button Clicked
-    brilliance_searchBtn.addEventListener("click", function () {
-        brilliance_searchBtn.classList.toggle("is-toggled");
+    sheen_searchBtn.addEventListener("click", function () {
+        sheen_searchBtn.classList.toggle("is-toggled");
 
         // Search form trap focus
-        if (brilliance_searchBtn.classList.contains("is-toggled")) {
+        if (sheen_searchBtn.classList.contains("is-toggled")) {
             setTimeout(() => {
-                brilliance_seacrhClose.focus();
+                sheen_seacrhClose.focus();
             }, 10);
 
             // Backward
-            const brilliance_searchFieldx = document.querySelector(".search-field");
-            brilliance_seacrhClose.addEventListener("blur", function (e) {
-                if (brilliance_IsBackward) {
-                    brilliance_searchFieldx.focus();
+            const sheen_searchFieldx = document.querySelector(".search-field");
+            sheen_seacrhClose.addEventListener("blur", function (e) {
+                if (sheen_IsBackward) {
+                    sheen_searchFieldx.focus();
                 }
             });
             // Forward
-            const brilliance_headerSearchButton = document.querySelector(".c-search-form__submit");
-            brilliance_headerSearchButton.addEventListener("blur", function (e) {
-                if (brilliance_IsBackward === false) {
-                    brilliance_seacrhClose.focus();
+            const sheen_headerSearchButton = document.querySelector(".c-search-form__submit");
+            sheen_headerSearchButton.addEventListener("blur", function (e) {
+                if (sheen_IsBackward === false) {
+                    sheen_seacrhClose.focus();
                 }
             });
         }
 
         /* Trap Focus */
-        brilliance_fadeIn(brilliance_searchOverlay, "flex");
-        brilliance_navList.classList.add("is-hidden");
-        brilliance_primaryNav.classList.add("is-hidden");
+        sheen_fadeIn(sheen_searchOverlay, "flex");
+        sheen_navList.classList.add("is-hidden");
+        sheen_primaryNav.classList.add("is-hidden");
     });
 
-    brilliance_seacrhClose.addEventListener("click", function () {
-        brilliance_fadeOut(brilliance_searchOverlay);
-        brilliance_navList.classList.remove("is-hidden");
-        brilliance_primaryNav.classList.remove("is-hidden");
+    sheen_seacrhClose.addEventListener("click", function () {
+        sheen_fadeOut(sheen_searchOverlay);
+        sheen_navList.classList.remove("is-hidden");
+        sheen_primaryNav.classList.remove("is-hidden");
     });
 }
 
 /*--------------------------------------*\
   #Detect keyboard navigation action
 \*--------------------------------------*/
-let brilliance_IsBackward;
+let sheen_IsBackward;
 document.addEventListener("keydown", function (e) {
     if (e.shiftKey && e.keyCode == 9) {
         // Shift + tab
-        brilliance_IsBackward = true;
+        sheen_IsBackward = true;
     } else {
         // Tab
-        brilliance_IsBackward = false;
+        sheen_IsBackward = false;
     }
 });
 
 /*--------------------------------------*\
   #Menu Trap Focus
 \*--------------------------------------*/
-if (brilliance_childFinder("body", "js-nav__toggle")) {
-    const brilliance_menuBtn = document.querySelector(".js-nav__toggle");
-    const brilliance_menuSerach = document.querySelector(".js-nav__search-button");
+if (sheen_childFinder("body", "js-nav__toggle")) {
+    const sheen_menuBtn = document.querySelector(".js-nav__toggle");
+    const sheen_menuSerach = document.querySelector(".js-nav__search-button");
 
-    brilliance_menuBtn.addEventListener("click", function () {
-        brilliance_menuBtn.classList.toggle("is-open");
+    sheen_menuBtn.addEventListener("click", function () {
+        sheen_menuBtn.classList.toggle("is-open");
 
-        if (brilliance_menuBtn.classList.contains("is-open")) {
-            brilliance_menuBtn.addEventListener("blur", function () {
-                if (brilliance_IsBackward) {
-                    brilliance_menuSerach.focus();
+        if (sheen_menuBtn.classList.contains("is-open")) {
+            sheen_menuBtn.addEventListener("blur", function () {
+                if (sheen_IsBackward) {
+                    sheen_menuSerach.focus();
                 }
             });
 
-            brilliance_menuSerach.addEventListener("blur", function () {
-                if (!brilliance_IsBackward) {
-                    brilliance_menuBtn.focus();
+            sheen_menuSerach.addEventListener("blur", function () {
+                if (!sheen_IsBackward) {
+                    sheen_menuBtn.focus();
                 }
             });
         }

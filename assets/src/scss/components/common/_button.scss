@@ -9,11 +9,11 @@ input[type="reset"],
 input[type="submit"] {
     border: 1px solid $color_border; // 333333
     background-color: transparent; //transparent
-    color: $brilliance_primary_color; // 000000
+    color: $sheen_primary_color; // 000000
     border-radius: 0px;
     cursor: pointer;
     transition: $global-transition;
-    font-family: $brilliance_secondary_font;
+    font-family: $sheen_secondary_font;
     font-weight: 500;
     padding: rem(8px 24px);
     text-decoration: none;
@@ -22,9 +22,9 @@ input[type="submit"] {
     &:hover,
     &:focus,
     &:active {
-        background-color: $brilliance_primary_accent_color; // FF00B8
+        background-color: $sheen_primary_accent_color; // FF00B8
         text-decoration: none;
-        border: 1px solid $brilliance_primary_accent_color;
+        border: 1px solid $sheen_primary_accent_color;
     }
 
     &:visited,
@@ -39,7 +39,7 @@ input[type="submit"] {
 .c-btn-seacrh {
     padding: 0px;
     border: none;
-    color: $brilliance_main_primary_color;
+    color: $sheen_main_primary_color;
     right: 0;
 
     &:hover,
@@ -47,12 +47,12 @@ input[type="submit"] {
     &:active {
         background-color: transparent;
         border: none;
-        color: $brilliance_neutral_dark_gray_color;
+        color: $sheen_neutral_dark_gray_color;
     }
 
     &:focus {
         svg {
-            color: $brilliance_neutral_dark_gray_color;
+            color: $sheen_neutral_dark_gray_color;
             outline: 1px solid white;
         }
     }
@@ -73,11 +73,11 @@ input[type="submit"] {
 .wp-block-search__button {
     border: 1px solid $color_border !important; // 333333
     background-color: transparent !important; //transparent
-    color: $brilliance_primary_color !important; // 000000
+    color: $sheen_primary_color !important; // 000000
     border-radius: 0px !important;
     cursor: pointer !important;
     transition: $global-transition !important;
-    font-family: $brilliance_secondary_font !important;
+    font-family: $sheen_secondary_font !important;
     font-weight: 500 !important;
     padding: rem(8px 24px) !important;
     text-decoration: none !important;
@@ -86,9 +86,9 @@ input[type="submit"] {
     &:hover,
     &:focus,
     &:active {
-        background-color: $brilliance_primary_accent_color !important; // FF00B8
+        background-color: $sheen_primary_accent_color !important; // FF00B8
         text-decoration: none !important;
-        border: 1px solid $brilliance_primary_accent_color !important;
+        border: 1px solid $sheen_primary_accent_color !important;
     }
 
     &:visited,
@@ -98,5 +98,5 @@ input[type="submit"] {
 }
 
 .c-btn-seacrh--close {
-    color: $brilliance_main_white_color;
+    color: $sheen_main_white_color;
 }

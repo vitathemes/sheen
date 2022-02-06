@@ -6,7 +6,7 @@
  * @package     WordPress
  * @subpackage  Comment_Walker
  */
-class Brilliance_walker_comment extends Walker_Comment
+class sheen_walker_comment extends Walker_Comment
 {
 	/**
 	 * Output a comment in the HTML5 format. Don't worry, we're

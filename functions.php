@@ -1,15 +1,15 @@
 <?php
 /**
- * brilliance functions and definitions
+ * sheen functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package brilliance
+ * @package sheen
  */
 
-if ( ! defined( 'BRILLIANCE_VERSION' ) ) {
+if ( ! defined( 'SHEEN_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'BRILLIANCE_VERSION', '1.0.0' );
+	define( 'SHEEN_VERSION', '1.0.0' );
 }
 
 /**
@@ -19,10 +19,10 @@ if ( ! defined( 'BRILLIANCE_VERSION' ) ) {
  *
  * @global int $content_width
  */
-function brilliance_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'brilliance_content_width', 640 );
+function sheen_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'sheen_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'brilliance_content_width', 0 );
+add_action( 'after_setup_theme', 'sheen_content_width', 0 );
 
 
 /**
@@ -38,12 +38,12 @@ require get_template_directory() . '/inc/custom-header.php';
 /**
 * Comment walker
 */
-require get_template_directory() . '/classes/class_brilliance_walker_comment.php';
+require get_template_directory() . '/classes/class_sheen_walker_comment.php';
 
 /**
 * Nav menu walker
 */
-require get_template_directory() . '/classes/class_brilliance_walker_nav_menu.php';
+require get_template_directory() . '/classes/class_sheen_walker_nav_menu.php';
 
 /**
  * Custom template tags for this theme.

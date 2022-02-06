@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package brilliance
+ * @package sheen
  */
 
 /*
@@ -19,14 +19,14 @@
 	if ( post_password_required() ) {
 		return;
 	}		
-	$brilliance_comment_counter = get_comments_number();
+	$sheen_comment_counter = get_comments_number();
 ?>
 
 <div id="comments" class="c-comments comments-area">
 
     <?php
 			//Custom comment form 
-			$brilliance_comments_args = array(
+			$sheen_comments_args = array(
 			//Define Fields
 			'fields' => array(
 				//Author field
@@ -55,9 +55,9 @@
 			//Submit Button ID
 			'id_submit' =>  __( 'comment-submit' , 'sheen'),
 			// Submit class
-			'class_submit' =>  __( 'c-comment_submit brilliance-comment-submit' , 'sheen'),
+			'class_submit' =>  __( 'c-comment_submit sheen-comment-submit' , 'sheen'),
 		);
-		comment_form( $brilliance_comments_args );
+		comment_form( $sheen_comments_args );
 
 		// You can start editing here -- including this comment!
 		if ( have_comments() ) :
@@ -65,12 +65,12 @@
 
     <h3 class="c-comment__title comments-title">
         <?php
-			$brilliance_comment_count = get_comments_number();
+			$sheen_comment_count = get_comments_number();
 			if( true == get_theme_mod( 'single_comments_count', false ) ) { 
-				echo sprintf( '<span>%s %s</span>' , esc_html( $brilliance_comment_count ) , esc_html__( 'Comments', 'sheen' ) ); // Sanitized Values
+				echo sprintf( '<span>%s %s</span>' , esc_html( $sheen_comment_count ) , esc_html__( 'Comments', 'sheen' ) ); // Sanitized Values
 			}
 			else { 
-				if ( '1' === $brilliance_comment_count ) {
+				if ( '1' === $sheen_comment_count ) {
 					printf(
 						/* translators: 1: title. */
 						esc_html__( 'Comments', 'sheen' ),
@@ -79,8 +79,8 @@
 				} else {
 					printf( 
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( 'Comments', 'Comments', $brilliance_comment_count, 'comments title', 'sheen' ) ),
-						number_format_i18n( $brilliance_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						esc_html( _nx( 'Comments', 'Comments', $sheen_comment_count, 'comments title', 'sheen' ) ),
+						number_format_i18n( $sheen_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 					);
 				}
@@ -95,7 +95,7 @@
         <?php
 			wp_list_comments(
 				array(
-					'walker'      => new Brilliance_walker_comment(),
+					'walker'      => new Sheen_walker_comment(),
 					'style'      => 'ol',
 					'short_ping' => true,
 					'avatar_size' => 144,

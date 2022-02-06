@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package brilliance
+ * @package sheen
  */
 
 ?>
@@ -17,22 +17,22 @@
     </button>
     <div class="c-footer__container">
         <?php 
-            $brilliance_footer_custom_text = get_theme_mod( 'footer_custom_text' , esc_html('Brilliance, a creative portfolio theme') );
-            if( $brilliance_footer_custom_text ) {
+            $sheen_footer_custom_text = get_theme_mod( 'footer_custom_text' , esc_html('Sheen, a creative portfolio theme') );
+            if( $sheen_footer_custom_text ) {
                 /** Translator %s 1 : Footer custom Text */
-                echo sprintf('<h4 class="c-footer__text u-margin-none">%s</h4>' , esc_html($brilliance_footer_custom_text) );
+                echo sprintf('<h4 class="c-footer__text u-margin-none">%s</h4>' , esc_html($sheen_footer_custom_text) );
 			}
-            if( get_theme_mod( 'footer_copy_text' , '© 2022.Brilliance, made by VitaThemes' ) )
+            if( get_theme_mod( 'footer_copy_text' , '© 2022.Sheen, made by VitaThemes' ) )
         ?>
         <div class="c-footer__copy">
             <?php 
                 /** Translator %s 1: current year. Translator %s 2: copyright text. */
-                echo sprintf('<h5 class="c-footer__copy-text u-margin-none">%s %s</h5>' , esc_html( date("Y") ) , esc_html__('Brilliance, made by' , 'sheen') ); 
+                echo sprintf('<h5 class="c-footer__copy-text u-margin-none">%s %s</h5>' , esc_html( date("Y") ) , esc_html__('Sheen, made by' , 'sheen') ); 
                 /** Translator %s 1:Vitathems website, Translator %s 2: Vitathemes name text */
                 echo sprintf( '<a class="c-footer__copy-link u-link--nav" href="%s"><span class="u-link--tertiary" >%s</span></a>' , esc_url('http://vitathemes.com/') , esc_html__( 'VitaThemes', 'sheen' ) );  
             ?>
         </div>
-        <?php brilliance_socials_links(); ?>
+        <?php sheen_socials_links(); ?>
     </div>
 </footer><!-- #colophon -->
 <?php endif; ?>

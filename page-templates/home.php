@@ -15,17 +15,17 @@ get_header();
 <main id="primary" class="c-main">
     <div class="c-main__content c-main__content--big-space">
         <div class="c-profile">
-            <?php brilliance_get_profile_image(); ?>
+            <?php sheen_get_profile_image(); ?>
             <div class="c-profile__context">
                 <?php
-                    $brilliance_profile_name = get_theme_mod( 'profile_name', '' );
-                    if( $brilliance_profile_name ) { 
-                        echo sprintf( '<h1 class="c-profile__name">%s</h1>', esc_html($brilliance_profile_name));
+                    $sheen_profile_name = get_theme_mod( 'profile_name', '' );
+                    if( $sheen_profile_name ) { 
+                        echo sprintf( '<h1 class="c-profile__name">%s</h1>', esc_html($sheen_profile_name));
                     }
 
-                    $brilliance_profile_desc = get_theme_mod( 'profile_description', '' );
-                    if($brilliance_profile_desc) { 
-                        echo sprintf('<p class="c-profile__description h4">%s</p>' , esc_html($brilliance_profile_desc) );
+                    $sheen_profile_desc = get_theme_mod( 'profile_description', '' );
+                    if($sheen_profile_desc) { 
+                        echo sprintf('<p class="c-profile__description h4">%s</p>' , esc_html($sheen_profile_desc) );
                     }
                 ?>
             </div>

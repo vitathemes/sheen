@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package brilliance
+ * @package sheen
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-single c-single--centered'); ?>>
@@ -15,16 +15,16 @@
             </div>
             <div class="c-single__meta">
                 <?php
-                    brilliance_posted_on( false , "u-link--tertiary" );
-                    brilliance_get_seprator();
-                    brilliance_post_categories( ", " , "u-link--meta" );
+                    sheen_posted_on( false , "u-link--tertiary" );
+                    sheen_get_seprator();
+                    sheen_post_categories( ", " , "u-link--meta" );
                 ?>
             </div>
             <?php 
                 if( has_post_thumbnail() ) { 
                     echo wp_kses_post( '<div class="c-single__thumbnail">' );
-                    (get_theme_mod( 'single_thumbnail_size' , 'normal' ) === 'wide') ?  $brilliance_is_thumbnail_wide = esc_attr( 'c-single__thumbnail__img wide' ) : $brilliance_is_thumbnail_wide = esc_attr( 'c-single__thumbnail__img normal' ) ;
-                    brilliance_get_thumbnail( "large" , esc_attr( $brilliance_is_thumbnail_wide ) );
+                    (get_theme_mod( 'single_thumbnail_size' , 'normal' ) === 'wide') ?  $sheen_is_thumbnail_wide = esc_attr( 'c-single__thumbnail__img wide' ) : $sheen_is_thumbnail_wide = esc_attr( 'c-single__thumbnail__img normal' ) ;
+                    sheen_get_thumbnail( "large" , esc_attr( $sheen_is_thumbnail_wide ) );
                     echo wp_kses_post( '</div>' );
                 }   
             ?>
@@ -58,9 +58,9 @@
 
     <?php 
         // Get sliders ( Carousel & Gallery ) Features ( Editable from customizer )
-        $brilliance_template_parts = get_theme_mod( 'single_sliders', array( 'gallery', 'carousel' ) );
-        foreach ( $brilliance_template_parts as $brilliance_template_part ) {
-            get_template_part( 'template-parts/components/' . $brilliance_template_part );
+        $sheen_template_parts = get_theme_mod( 'single_sliders', array( 'gallery', 'carousel' ) );
+        foreach ( $sheen_template_parts as $sheen_template_part ) {
+            get_template_part( 'template-parts/components/' . $sheen_template_part );
         }
     ?>
 
@@ -73,7 +73,7 @@
     <?php
         // Display Single Tags ( Editable from Customizer ) 
         if( true == get_theme_mod( 'single_tags', true )) { 
-            brilliance_get_tags('c-single__tag u-link--meta');
+            sheen_get_tags('c-single__tag u-link--meta');
         }
     ?>
 
@@ -81,7 +81,7 @@
         // Display Single Social Shares ( Editable from Customizer ) 
         if( true == get_theme_mod( 'single_shares', true ) ) : 
             echo wp_kses_post( '<div class="c-social-share c-social-share--lefted">' );
-                brilliance_share_links(); // Sanitized Function 
+                sheen_share_links(); // Sanitized Function 
             echo wp_kses_post( '</div>' );
         endif; 
     ?>

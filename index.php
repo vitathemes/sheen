@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package brilliance
+ * @package sheen
  */
 get_header();
 ?>
@@ -17,7 +17,7 @@ get_header();
     <div class="c-main__content">
         <div class="c-main__header">
             <h2 class="c-main__title">
-                <?php brilliance_get_index_title(); ?>
+                <?php sheen_get_index_title(); ?>
             </h2>
         </div>
         <div class="c-main__body js-main__body-has-masonry">
@@ -33,7 +33,7 @@ get_header();
 
 					endwhile;
 					
-					brilliance_get_default_pagination(true);
+					sheen_get_default_pagination(true);
 
 				else :
 

@@ -3,7 +3,7 @@
 \*------------------------------------*/
 .u-seprator {
     margin: 0px 23px;
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 /*------------------------------------*\
@@ -13,7 +13,7 @@
     color: $color_link_secondary; //060606
     text-decoration: none;
     position: relative;
-    text-decoration-color: $brilliance_primary_accent_color;
+    text-decoration-color: $sheen_primary_accent_color;
     text-underline-offset: rem(4px);
 
     &:hover,
@@ -21,7 +21,7 @@
     &:active {
         text-decoration: underline;
         color: $color_link_hover_secondary; //060606
-        text-decoration-color: $brilliance_primary_accent_color;
+        text-decoration-color: $sheen_primary_accent_color;
         &::before {
             opacity: 1;
         }
@@ -33,7 +33,7 @@
     position: relative;
     transition: 0.5s all;
     text-decoration: underline;
-    text-decoration-color: $brilliance_primary_accent_color;
+    text-decoration-color: $sheen_primary_accent_color;
     text-underline-offset: rem(4px);
 
     &:hover,

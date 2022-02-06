@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package brilliance
+ * @package sheen
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-post js-post-has-masonry'); ?>>
     <div class="c-post__thumbnail">
         <a class="c-post__thumbnail__link" href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-            <?php brilliance_get_thumbnail(); ?>
+            <?php sheen_get_thumbnail(); ?>
         </a>
     </div>
     <div class="c-post__entry-header">
@@ -27,20 +27,20 @@
 				}
 
 				if( $sheen_archive_date == true ) { 
-					brilliance_posted_on( false , "c-post__date--projects u-link--tertiary" );
+					sheen_posted_on( false , "c-post__date--projects u-link--tertiary" );
 				}
 				
 				if( $sheen_archive_date == true ) { 
 					if( has_term( '', 'project_category' ) || has_category('',$post->ID) ) { 
-						brilliance_get_seprator();
+						sheen_get_seprator();
 					}
 				}
 				
 				if( 'projects' === get_post_type() ) { 
-					brilliance_get_taxonomy('project_category' , 'c-post__taxonomy' , 'a');
+					sheen_get_taxonomy('project_category' , 'c-post__taxonomy' , 'a');
 				}
 				else { 
-					brilliance_post_categories(" " , "u-link--meta");
+					sheen_post_categories(" " , "u-link--meta");
 				}
 				
 			echo wp_kses_post( '</div>' );

@@ -56,7 +56,7 @@
 }
 
 .page-numbers {
-    color: $brilliance_primary_text_color !important;
+    color: $sheen_primary_text_color !important;
     cursor: pointer;
     margin: 2px;
     width: 40px;
@@ -64,19 +64,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $brilliance_neutral_gray_light_color;
+    background-color: $sheen_neutral_gray_light_color;
     font-size: 12px !important;
     line-height: 15px !important;
     text-decoration: none !important;
     border-radius: 999px !important;
 
     &:hover {
-        background-color: $brilliance_tertiary_text_color !important;
+        background-color: $sheen_tertiary_text_color !important;
 
         text-decoration: none;
         .dashicons {
             &::before {
-                color: $brilliance_neutral_dark_gray_color !important;
+                color: $sheen_neutral_dark_gray_color !important;
             }
         }
 
@@ -94,8 +94,8 @@
 }
 
 .page-numbers.current {
-    background-color: $brilliance_primary_accent_color;
-    color: $brilliance_primary_text_color !important;
+    background-color: $sheen_primary_accent_color;
+    color: $sheen_primary_text_color !important;
 }
 
 .next.page-numbers {
@@ -117,11 +117,11 @@
     }
 
     .dashicons {
-        color: $brilliance_primary_text_color;
+        color: $sheen_primary_text_color;
 
         &:hover {
             background: transparent;
-            color: $brilliance_neutral_dark_gray_color !important;
+            color: $sheen_neutral_dark_gray_color !important;
         }
     }
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * brilliance Theme Customizer
+ * sheen Theme Customizer
  *
- * @package brilliance
+ * @package sheen
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function brilliance_customize_register( $wp_customize ) {
+function sheen_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
@@ -19,26 +19,26 @@ function brilliance_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'brilliance_customize_partial_blogname',
+				'render_callback' => 'sheen_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'brilliance_customize_partial_blogdescription',
+				'render_callback' => 'sheen_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'brilliance_customize_register' );
+add_action( 'customize_register', 'sheen_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function brilliance_customize_partial_blogname() {
+function sheen_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -47,17 +47,17 @@ function brilliance_customize_partial_blogname() {
  *
  * @return void
  */
-function brilliance_customize_partial_blogdescription() {
+function sheen_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function brilliance_customize_preview_js() {
-	wp_enqueue_script( 'brilliance-customizer', get_template_directory_uri() . './assets/js/customizer.js', array( 'customize-preview' ), BRILLIANCE_VERSION, true );
+function sheen_customize_preview_js() {
+	wp_enqueue_script( 'sheen-customizer', get_template_directory_uri() . './assets/js/customizer.js', array( 'customize-preview' ), SHEEN_VERSION, true );
 }
-add_action( 'customize_preview_init', 'brilliance_customize_preview_js' );
+add_action( 'customize_preview_init', 'sheen_customize_preview_js' );
 
 
 if( function_exists( 'kirki' ) ) {
@@ -69,7 +69,7 @@ if( function_exists( 'kirki' ) ) {
 	\*------------------------------------*/
 	
 	// Config 
-	Kirki::add_config( 'brilliance_theme', array(
+	Kirki::add_config( 'sheen_theme', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	));
@@ -281,7 +281,7 @@ if( function_exists( 'kirki' ) ) {
 		'settings' => 'footer_custom_text',
 		'label'    => esc_html__( 'Footer Cusom Text', 'sheen' ),
 		'section'  => 'footer_context',
-		'default'  => esc_html__( 'Brilliance, a creative portfolio theme', 'sheen' ),
+		'default'  => esc_html__( 'Sheen, a creative portfolio theme', 'sheen' ),
 		'priority' => 10,
 	] );
 	

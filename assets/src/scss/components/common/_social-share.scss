@@ -23,19 +23,19 @@
     &:focus,
     &:active {
         .c-social-share__icon {
-            color: $brilliance_primary_accent_color;
+            color: $sheen_primary_accent_color;
         }
     }
 }
 
 .c-social-share__icon {
     font-size: rem(20px);
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_primary_accent_color;
+        color: $sheen_primary_accent_color;
     }
 }
 
@@ -44,16 +44,16 @@
     &:focus,
     &:active {
         .c-social-share__item__icon {
-            color: $brilliance_primary_accent_color;
+            color: $sheen_primary_accent_color;
         }
     }
 }
 .c-social-share__item__icon {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_primary_accent_color;
+        color: $sheen_primary_accent_color;
     }
 }

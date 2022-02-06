@@ -62,12 +62,12 @@
 
 .c-header__title__anchor {
     text-transform: uppercase;
-    color: $brilliance_headings_color;
+    color: $sheen_headings_color;
 
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_primary_accent_color;
+        color: $sheen_primary_accent_color;
     }
 }
 
@@ -103,7 +103,7 @@
     display: flex;
     justify-content: flex-end;
     font-size: rem(32px);
-    color: $brilliance_primary_text_white_color;
+    color: $sheen_primary_text_white_color;
 
     @include mq($from: tablet) {
         margin-top: rem(100px);
@@ -118,7 +118,7 @@
     &:hover,
     &:focus,
     &:active {
-        color: $brilliance_secondary_text_color;
+        color: $sheen_secondary_text_color;
     }
 
     @include mq($from: tablet) {
@@ -140,7 +140,7 @@
     }
 
     .c-btn-seacrh {
-        color: $brilliance_main_white_color;
+        color: $sheen_main_white_color;
 
         @include mq($until: tablet) {
             right: rem(16px);
@@ -148,16 +148,16 @@
     }
 
     .c-header__search-field {
-        color: $brilliance_main_white_color !important;
+        color: $sheen_main_white_color !important;
 
         &:hover,
         &:focus,
         &:active {
-            outline: $brilliance_neutral_dark_gray_color solid 1px;
+            outline: $sheen_neutral_dark_gray_color solid 1px;
         }
 
         &::placeholder {
-            color: $brilliance_main_white_color !important;
+            color: $sheen_main_white_color !important;
         }
     }
 }
@@ -180,11 +180,11 @@
         padding-bottom: rem(12px);
         font-size: rem(14px);
         line-height: rem(18px);
-        color: $brilliance_primary_text_color;
+        color: $sheen_primary_text_color;
 
         &::placeholder {
             font-weight: 400;
-            color: $brilliance_primary_text_color;
+            color: $sheen_primary_text_color;
         }
 
         @include mq($from: tablet) {
@@ -202,7 +202,7 @@
     &:hover,
     &:focus,
     &:active {
-        outline: $brilliance_main_white_color solid 1px;
+        outline: $sheen_main_white_color solid 1px;
     }
 }
 

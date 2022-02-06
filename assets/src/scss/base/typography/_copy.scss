@@ -4,7 +4,7 @@
 }
 
 p {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 path {
@@ -30,32 +30,32 @@ address {
 }
 
 pre {
-    background-color: $brilliance_neutral_gray_color;
+    background-color: $sheen_neutral_gray_color;
     padding: 8px;
     max-width: 100%;
     overflow: auto;
 }
 
 th {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 td,
 dt,
 dd {
-    color: $brilliance_secondary_text_color;
+    color: $sheen_secondary_text_color;
 }
 
 hr {
     outline: none;
-    border: 0.5px solid $brilliance_border_color;
-    background: $brilliance_border_color;
+    border: 0.5px solid $sheen_border_color;
+    background: $sheen_border_color;
 }
 
 li {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
 
 legend {
-    color: $brilliance_primary_text_color;
+    color: $sheen_primary_text_color;
 }
