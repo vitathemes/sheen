@@ -24,6 +24,7 @@
     display: inline-block;
     cursor: pointer;
     color: $brilliance_secondary_text_color;
+    text-transform: capitalize;
 
     &:hover,
     &:focus,

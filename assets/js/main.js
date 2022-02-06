@@ -271,7 +271,6 @@ document.addEventListener("keydown", function (e) {
 /*--------------------------------------*\
   #Menu Trap Focus
 \*--------------------------------------*/
-
 if (brilliance_childFinder("body", "js-nav__toggle")) {
     const brilliance_menuBtn = document.querySelector(".js-nav__toggle");
     const brilliance_menuSerach = document.querySelector(".js-nav__search-button");

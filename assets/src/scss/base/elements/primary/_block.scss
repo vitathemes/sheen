@@ -30,6 +30,14 @@
   #Gallery Block
 \*------------------------------------*/
 .is-style-masonry-grid {
+    max-width: 100% !important;
+    margin-top: rem(48px);
+    margin-bottom: rem(48px);
+
+    @include mq($from: tablet) {
+        margin-bottom: rem(96px);
+    }
+
     .wp-block-image {
         margin: 0px !important;
         margin-bottom: rem(38px) !important;

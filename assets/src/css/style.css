@@ -755,6 +755,16 @@ select {
 /*------------------------------------*\
   #Gallery Block
 \*------------------------------------*/
+.is-style-masonry-grid {
+  max-width: 100% !important;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 57.5em) {
+  .is-style-masonry-grid {
+    margin-bottom: 6rem;
+  }
+}
 .is-style-masonry-grid .wp-block-image {
   margin: 0px !important;
   margin-bottom: 2.375rem !important;
@@ -1820,6 +1830,7 @@ h6 {
   display: inline-block;
   cursor: pointer;
   color: var(--brilliance_theme_secondary_text_color);
+  text-transform: capitalize;
 }
 .c-filter__cat:hover, .c-filter__cat:focus, .c-filter__cat:active {
   color: var(--brilliance_theme_primary_text_color);
