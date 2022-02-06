@@ -154,6 +154,12 @@ if( function_exists( 'kirki' ) ) {
 		'panel'          => 'elements',
 		'priority'       => 130,
 	) );
+
+	Kirki::add_section( 'archive_options', array(
+		'title'          => esc_html__( 'Archive Options', 'brilliance' ),
+		'panel'          => 'elements',
+		'priority'       => 140,
+	) );
 	
 	/*------------------------------------*\
 	  ############## Fields ##############
@@ -877,8 +883,34 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 40,
 	] );
 
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'projects_display_archives_date',
+		'label'       => esc_html__( 'Display Projects Archives Date', 'brilliance' ),
+		'section'     => 'projects_options',
+		'default'     => 0,
+		'priority'    => 50,
+	] );
+
 	/*------------------------------------*\
-	  #Projects Options Start 
+	  #Projects Options end 
+	\*------------------------------------*/
+
+	/*------------------------------------*\
+	  #Archive Options Start 
+	\*------------------------------------*/
+
+	Kirki::add_field( 'brilliance', [
+		'type'        => 'toggle',
+		'settings'    => 'archives_display_date',
+		'label'       => esc_html__( 'Display Date', 'brilliance' ),
+		'section'     => 'archive_options',
+		'default'     => 1,
+		'priority'    => 40,
+	] );
+	
+	/*------------------------------------*\
+	  #Archive Options End 
 	\*------------------------------------*/
 
 	});

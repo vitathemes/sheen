@@ -19,14 +19,25 @@
 
 			echo wp_kses_post( '<div class="c-post__entry-meta">' );
 
-				brilliance_posted_on( false , "u-link--tertiary" );
+				if( 'projects' === get_post_type() ) { 
+					$sheen_archive_date = get_theme_mod( 'projects_display_archives_date', false );
+				}
+				else { 
+					$sheen_archive_date = get_theme_mod( 'archives_display_date', true );
+				}
+
+				if( $sheen_archive_date == true ) { 
+					brilliance_posted_on( false , "c-post__date--projects u-link--tertiary" );
+				}
 				
-				if( has_term( '', 'project_category' ) || has_category('',$post->ID) ) { 
-					brilliance_get_seprator();
+				if( $sheen_archive_date == true ) { 
+					if( has_term( '', 'project_category' ) || has_category('',$post->ID) ) { 
+						brilliance_get_seprator();
+					}
 				}
 				
 				if( 'projects' === get_post_type() ) { 
-					brilliance_get_taxonomy('project_category' , 'c-post__taxonomy u-link--meta' , 'a'); // Will be Escaped in function 
+					brilliance_get_taxonomy('project_category' , 'c-post__taxonomy' , 'a');
 				}
 				else { 
 					brilliance_post_categories(" " , "u-link--meta");

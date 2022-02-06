@@ -1,4 +1,4 @@
-=== Brilliance ===
+=== Sheen ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.6
 Tested up to: 5.9
@@ -9,7 +9,7 @@ License URI: https://opensource.org/licenses/GPL-3.0
 
 == Description ==
 
-Brilliance is a a minimal & mobile-first theme. The best choice for people who want to publish their projects.
+Sheen is a a minimal & mobile-first theme. The best choice for people who want to publish their projects.
 
 = Features =
 
@@ -29,14 +29,17 @@ Brilliance is a a minimal & mobile-first theme. The best choice for people who w
 * Support 3 level of menus
 * …and much more
 
-See a working example at [demo.vitathemes.com/brilliance](https://demo.vitathemes.com/brilliance/).
+See a working example at [demo.vitathemes.com/sheen](https://demo.vitathemes.com/sheen/).
 
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
-4. Active Recommended plugins at the top of dashboard ( `Kirki Customizer Framework` , `Advanced Custom Fields` , `LibWp`).
+4. Active Recommended plugins at the top of dashboard ( `Kirki Customizer Framework` , `LibWp`).
+5. After libWp plugin activated go to `Settings > Permalink` and select `Post name` (\*this option is recommended) radio button and save the changes.
+6. You can add your projects from `Projects` section in dashboard.
+7. Also for editing theme features you can go to Appearance > Customize and Customize theme. Also we highly recommend to Avtive `Kirki Customizer Framework` to have more editing features.
 
 == Changelog ==
 
@@ -50,7 +53,7 @@ See a working example at [demo.vitathemes.com/brilliance](https://demo.vitatheme
 
 == Copyright ==
 
-Brilliance is distributed under the terms of the GNU GPL.
+Sheen is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -62,9 +65,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Brilliance is distributed under the terms of the GNU GPL version 3.0
+Sheen is distributed under the terms of the GNU GPL version 3.0
 
-Brilliance bundles the following third-party resources:
+Sheen bundles the following third-party resources:
 
 Dashicons by WordPress
 License: GNU GPLv2, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html

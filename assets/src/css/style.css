@@ -1884,13 +1884,18 @@ h6 {
 
 .c-post__taxonomy {
   text-transform: capitalize;
-  margin-left: 0.5rem;
 }
 .c-post__taxonomy::after {
   content: ", ";
 }
 .c-post__taxonomy:last-child::after {
   content: "";
+}
+
+.c-post__entry-title {
+  text-transform: capitalize;
+  margin-top: 1.875rem;
+  margin-bottom: 0.75rem;
 }
 
 /*------------------------------------*\
@@ -3001,16 +3006,6 @@ input[type=submit]:focus {
 }
 .u-link--secondary:hover::before, .u-link--secondary:focus::before, .u-link--secondary:active::before {
   opacity: 1;
-}
-.u-link--secondary::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: var(--brilliance_theme_primary_accent_color);
-  position: absolute;
-  bottom: 0;
-  opacity: 0;
-  transition: all 0.2s;
 }
 
 .u-link--meta {

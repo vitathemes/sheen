@@ -2243,40 +2243,19 @@ input[type=submit]:focus {
   }
 }
 
-.c-single__content--custom-sm {
+.c-single__content--centered {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }
-.c-single__content--custom-sm *:not(:where(.is-style-masonry-grid, .is-style-carousel-layout, .is-style-carousel-layout
-                > .flickity-viewport, .is-style-carousel-layout
-                > .flickity-viewport
-                > .flickity-slider, .is-style-carousel-layout
-                > .flickity-viewport
-                > .flickity-slider
-                > .wp-block-image, .flickity-page-dots)) {
+.c-single__content--centered .alignfull {
+  max-width: 100%;
+}
+
+.c-single__content--centered > * {
   max-width: 56.875rem;
-}
-.c-single__content--custom-sm .is-style-masonry-grid,
-.c-single__content--custom-sm .has-carousel-style {
-  width: 100% !important;
-}
-.c-single__content--custom-sm .is-style-carousel-layout {
-  margin-bottom: 3rem !important;
-}
-@media (min-width: 57.5em) {
-  .c-single__content--custom-sm .is-style-carousel-layout {
-    margin-bottom: 7.625rem !important;
-  }
-}
-.c-single__content--custom-sm .is-style-masonry-grid {
-  margin-top: 2.4375rem !important;
-}
-@media (min-width: 57.5em) {
-  .c-single__content--custom-sm .is-style-masonry-grid {
-    margin-top: 3rem;
-  }
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .c-single__author {

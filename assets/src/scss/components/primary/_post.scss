@@ -48,7 +48,6 @@
 
 .c-post__taxonomy {
     text-transform: capitalize;
-    margin-left: rem(8px);
     &::after {
         content: ", ";
     }
@@ -58,4 +57,10 @@
             content: "";
         }
     }
+}
+
+.c-post__entry-title {
+    text-transform: capitalize;
+    margin-top: rem(30px);
+    margin-bottom: rem(12px);
 }
