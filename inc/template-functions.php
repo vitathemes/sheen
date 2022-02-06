@@ -34,18 +34,18 @@ function brilliance_scripts() {
 add_action( 'wp_enqueue_scripts', 'brilliance_scripts' );
 
 
-if( !function_exists('brilliance_qnqueue_editor_scripts') ) : 
+if( !function_exists('brilliance_enqueue_editor_scripts') ) : 
 	/**
 	 * 
-	 * Enqueue
+	 * Enqueue Editor scripts 
 	 * 
 	 * @since v1.0.0
 	 * 
 	 */
-	function brilliance_qnqueue_editor_scripts() {
+	function brilliance_enqueue_editor_scripts() {
 		wp_enqueue_script( 'brilliance-editor-scripts', get_template_directory_uri() . '/assets/js/block.js' );
 	}
-	add_action( 'admin_enqueue_scripts', 'brilliance_qnqueue_editor_scripts' );
+	add_action( 'admin_enqueue_scripts', 'brilliance_enqueue_editor_scripts' );
 endif;
 
 
@@ -373,7 +373,3 @@ if ( !function_exists('brilliance_modify_archive_title') ) {
 	add_filter( 'wp_title', 'brilliance_modify_archive_title' );
 	add_filter( 'get_the_archive_title', 'brilliance_modify_archive_title' );
 }
-
-
-
-	

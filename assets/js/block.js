@@ -1,10 +1,10 @@
 /*--------------------------------------*\
-  #Register Block style using json 
+  #Register Block style
 \*--------------------------------------*/
 window.addEventListener("load", function () {
     wp.domReady(() => {
         /*
-         * Register Blocks Styles
+         * Register Blocks Styles for gallery
          */
         wp.blocks.registerBlockStyle("core/gallery", [
             {
