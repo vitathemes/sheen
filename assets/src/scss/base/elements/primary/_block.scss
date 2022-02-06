@@ -51,3 +51,12 @@
         }
     }
 }
+
+.is-style-carousel-layout {
+    max-width: 100% !important;
+    margin-bottom: rem(48px);
+
+    @include mq($from: tablet) {
+        margin-bottom: rem(122px);
+    }
+}

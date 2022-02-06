@@ -779,6 +779,16 @@ select {
   }
 }
 
+.is-style-carousel-layout {
+  max-width: 100% !important;
+  margin-bottom: 3rem;
+}
+@media (min-width: 57.5em) {
+  .is-style-carousel-layout {
+    margin-bottom: 7.625rem;
+  }
+}
+
 table {
   margin-bottom: 16px;
   background-color: #f5f5f5;
