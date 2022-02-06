@@ -5,6 +5,12 @@
 
 p {
     color: $sheen_primary_text_color;
+    margin-bottom: rem(48px);
+}
+
+p.is-style-paragraph-no-margin {
+    margin-bottom: rem(8px);
+    margin-top: 0;
 }
 
 path {

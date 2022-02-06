@@ -789,6 +789,53 @@ select {
   }
 }
 
+.wpcf7-form p {
+  margin-bottom: 3.75rem;
+}
+
+.wpcf7-response-output {
+  text-align: left;
+  color: var(--sheen_theme_error_color);
+  font-size: 12px;
+  line-height: 10px;
+  margin: 0px !important;
+  border-radius: 4px;
+  border: none !important;
+  letter-spacing: 0.1em;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  display: flex;
+  align-items: flex-start;
+  padding: 0px !important;
+}
+.wpcf7-response-output::before {
+  content: " * ";
+}
+@media (min-width: 57.5em) {
+  .wpcf7-response-output {
+    line-height: 20px;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  color: var(--sheen_theme_error_color);
+}
+
+.wpcf7-form-control-wrap.author-name {
+  margin-bottom: 4.0625rem;
+}
+
+.wpcf7-form-control.wpcf7-textarea {
+  height: 5rem;
+}
+
 table {
   margin-bottom: 16px;
   background-color: #f5f5f5;
@@ -814,6 +861,12 @@ figure {
 
 p {
   color: var(--sheen_theme_primary_text_color);
+  margin-bottom: 3rem;
+}
+
+p.is-style-paragraph-no-margin {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
 }
 
 path {
@@ -2806,10 +2859,6 @@ input[type=submit]:focus {
   }
 }
 
-.acf-gallery-backdrop {
-  z-index: 0 !important;
-}
-
 .gallery {
   margin-bottom: 1.5em;
   display: grid;
@@ -3073,6 +3122,13 @@ input[type=submit]:focus {
   #no Margin
 \*------------------------------------*/
 .u-margin-none {
+  margin: 0;
+}
+
+/*------------------------------------*\
+  #Headings
+\*------------------------------------*/
+.is-style-heading-no-margin {
   margin: 0;
 }
 

@@ -29,6 +29,20 @@ window.addEventListener("load", function () {
                     inline_style: ".wp-block-gallery.has-carousel-style",
                 },
             ]);
+
+            wp.blocks.registerBlockStyle("core/paragraph", [
+                {
+                    name: "paragraph-no-margin",
+                    label: "No Paragraph Margin",
+                },
+            ]);
+
+            wp.blocks.registerBlockStyle("core/heading", [
+                {
+                    name: "heading-no-margin",
+                    label: "No Heading Margin",
+                },
+            ]);
         });
     }
 });

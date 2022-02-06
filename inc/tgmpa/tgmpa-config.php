@@ -45,16 +45,6 @@ function sheen_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Advanced Custom Fields', 'sheen' ),
-			'slug'      => 'advanced-custom-fields',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'ACF Photo Gallery Field', 'sheen' ),
-			'slug'      => 'navz-photo-gallery',
-			'required'  => false,
-		),
-		array(
 			'name'      => __( 'LibWp', 'sheen' ),
 			'slug'      => 'libwp',
 			'required'  => false,

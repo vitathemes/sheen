@@ -557,19 +557,6 @@ if( function_exists( 'kirki' ) ) {
 		'priority'    => 58,
 	]);
 
-	Kirki::add_field( 'sheen', [
-		'type'	   => 'sortable',
-		'settings' => 'single_sliders',
-		'label'    => __( 'Sortable Sliders Option', 'sheen' ),
-		'section'  => 'single_options',
-		'default'  => [ 'gallery', 'carousel' ],
-		'priority' => 60,
-		'choices'  => [
-			'gallery'  => esc_html__( 'Gallery', 'sheen' ),
-			'carousel' => esc_html__( 'Carousel', 'sheen' ),
-		],
-	]);
-
 	/*------------------------------------*\
 		#Single Options End
 	\*------------------------------------*/

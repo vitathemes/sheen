@@ -95,14 +95,6 @@
     </div>
 
     <?php 
-        // Get sliders ( Carousel & Gallery ) Features ( Editable from customizer )
-        $sheen_template_parts = get_theme_mod( 'single_sliders', array( 'gallery', 'carousel' ) );
-        foreach ( $sheen_template_parts as $sheen_template_part ) {
-            get_template_part( 'template-parts/components/' . $sheen_template_part );
-        }
-    ?>
-
-    <?php 
         if( true == get_theme_mod( 'single_meta_wrapper', false ) ) : 
             echo wp_kses_post( '<div class="c-single__wrapper">' );
         endif;

@@ -126,7 +126,7 @@ if ( ! function_exists( 'sheen_typography' )) {
 					--sheen_theme_primary_accent_color: 	    ' . $sheen_theme_primary_accent_color . ';
 					--sheen_theme_headings_color:   		    ' . $sheen_theme_headings_color . ';
 					--sheen_theme_primary_text_color:     		' . $sheen_theme_primary_text_color . ';
-					--sheen_theme_primary_text_white_color:    ' . $sheen_theme_primary_text_white_color . ';
+					--sheen_theme_primary_text_white_color:     ' . $sheen_theme_primary_text_white_color . ';
 					--sheen_theme_secondary_text_color:   		' . $sheen_theme_secondary_text_color . ';
 					--sheen_theme_tertiary_text_color:   		' . $sheen_theme_tertiary_text_color . ';
 					--sheen_theme_error_color:   		        ' . $sheen_theme_error_color . ';

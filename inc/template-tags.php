@@ -213,8 +213,7 @@ if ( ! function_exists( 'sheen_get_seprator' ) ) :
 	 */
 
 	function sheen_get_seprator() {
-		
-		/* translators: %s: Simple seprator */
+		/* translators: %s: Simple separator */
 		echo sprintf('<span class="u-seprator">%s</span>' , esc_html( '/' ) );
 	}
 endif;
@@ -422,83 +421,6 @@ if (! function_exists('sheen_get_default_pagination')) :
 					)
 			)) . wp_kses_post( '</div>' );
 		}
-	}
-endif;
-
-
-if( ! function_exists('sheen_get_gallery') && function_exists( 'acf' ) ) :
-	/**
-	 * 
-	 * Get Gaallery fronm ACF ( IF Acf & ACF Photo Gallery Exist )
-	 * 
-	 * @since v1.0.0
-	 * 
-	 */
-	function sheen_get_gallery( $sheen_post_id ) { 
-		$sheen_images = acf_photo_gallery( 'image_gallery', $sheen_post_id );
-		if( count( $sheen_images ) > 0 ) {
-			echo wp_kses_post( '<div class="c-single__masonry js-single__masonry">' );
-				foreach( $sheen_images as $sheen_image ) {
-					$sheen_id                  = $sheen_image['id'];
-					$sheen_title               = $sheen_image['title'];
-					$sheen_caption             = $sheen_image['caption'];
-					$sheen_thumbnail_image_url = $sheen_image['thumbnail_image_url'];
-					$sheen_url                 = $sheen_image['url'];
-					$sheen_target              = $sheen_image['target'];
-					$sheen_full_image_url      = $sheen_image['full_image_url'];
-					$sheen_alt                 = get_field( 'photo_gallery_alt', $sheen_post_id );
-
-					echo sprintf( 
-						'<div class="c-single__masonry-image__wrapper js-single__masonry-image__wrapper">
-						<img class="c-single__masonry-img js-single__masonry-img" src="%s" data-src="" alt="%s" />
-						</div>', 
-						esc_url($sheen_full_image_url),
-						esc_attr($sheen_alt) 
-					);
-				}
-			echo wp_kses_post('</div>');
-		}
-	}
-endif;
-
-
-if(!function_exists('sheen_get_carousel') && function_exists( 'acf' ) ):
-	/**
-	 * 
-	 * Get Carousel Images ( If Acf & ACF Photo Gallery Exist )
-	 * 
-	 * @since v1.0.0
-	 * 
-	 */
-	function sheen_get_carousel( $sheen_post_id ) { 
-		$sheen_carousel_images = acf_photo_gallery( 'image_carousel', $sheen_post_id );
-		if( count( $sheen_carousel_images ) > 0 ) {
-			echo wp_kses_post( '<div class="c-single__carousel js-single__carousel-slider">' );
-				foreach( $sheen_carousel_images as $sheen_carousel_image ) {
-					$sheen_full_image_url      = $sheen_carousel_image['full_image_url'];
-					$sheen_alt                 = get_field( 'photo_gallery_alt', $sheen_post_id );
-					echo sprintf( 
-						'<div class="c-single__carousel-wrapper"><img class="c-single__carousel-img js-single__carousel-img" src="%s" data-src="" alt="%s" /></div>', 
-						esc_url($sheen_full_image_url),
-						esc_attr($sheen_alt) 
-					);
-				}
-			echo wp_kses_post('</div>');
-		}
-	}
-endif;
-
-
-if(!function_exists('sheen_get_acf_text') && function_exists( 'acf' )):
-	/**
-	 * 
-	 * Return text of given field from ACF (IF ACF Existed)
-	 * 
-	 * @since v1.0.0
-	 * 
-	 */
-	function sheen_get_acf_text( $sheen_acf_field_name ) { 
-		echo esc_html( get_field($sheen_acf_field_name) ); // Will Echo acf text field with Sanitization
 	}
 endif;
 
