@@ -3021,9 +3021,15 @@ input[type=submit]:focus {
   color: var(--brilliance_theme_primary_text_color);
   text-decoration: none;
   position: relative;
+  -webkit-text-decoration-color: var(--brilliance_theme_primary_accent_color);
+  text-decoration-color: var(--brilliance_theme_primary_accent_color);
+  text-underline-offset: 0.25rem;
 }
 .u-link--secondary:hover, .u-link--secondary:focus, .u-link--secondary:active {
+  text-decoration: underline;
   color: var(--brilliance_theme_primary_text_color);
+  -webkit-text-decoration-color: var(--brilliance_theme_primary_accent_color);
+  text-decoration-color: var(--brilliance_theme_primary_accent_color);
 }
 .u-link--secondary:hover::before, .u-link--secondary:focus::before, .u-link--secondary:active::before {
   opacity: 1;

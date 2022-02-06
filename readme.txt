@@ -96,4 +96,14 @@ Source: http://tgmpluginactivation.com
 Image for theme screenshot, Credit pxhere
 License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://pxhere.com/en/photo/1373307
+Source: https://pxhere.com/en/photo/1253402
+
+Image for theme screenshot, Credit pxhere
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/98175
+
+Image for theme screenshot, Credit pxhere
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1397228

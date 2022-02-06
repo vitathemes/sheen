@@ -47,7 +47,7 @@
 	
 			wp_link_pages(
 				array(
-					'before' => '<div class="c-post__page-links">' . esc_html__( 'Pages:', 'brilliance' ),
+					'before' => '<div class="c-post__page-links">' . esc_html__( 'Pages:', 'sheen' ),
 					'after'  => '</div>',
 				)
 			);

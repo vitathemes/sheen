@@ -55,14 +55,14 @@ class Brilliance_walker_comment extends Walker_Comment
 
                 <?php if (!$comment->comment_approved): ?>
                 <p class="comment-awaiting-moderation">
-                    <?php esc_html_e('Your comment is awaiting moderation.', 'brilliance'); ?></p>
+                    <?php esc_html_e('Your comment is awaiting moderation.', 'sheen'); ?></p>
                 <?php endif; ?>
 
                 <?php comment_text(); ?>
 
                 <?php
 					// Output Edit link
-					edit_comment_link(__('Edit', 'brilliance'), '<span class="edit-link">', '</span>');
+					edit_comment_link(__('Edit', 'sheen'), '<span class="edit-link">', '</span>');
 
 					// Output Reply link
 					comment_reply_link([

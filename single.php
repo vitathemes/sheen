@@ -19,8 +19,8 @@ get_header();
 				if( get_theme_mod( 'single_navigation' , false ) === true ) { 
 					the_post_navigation(
 						array(
-							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'brilliance' ) . '</span> <span class="nav-title">%title</span>',
-							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'brilliance' ) . '</span> <span class="nav-title">%title</span>',
+							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'sheen' ) . '</span> <span class="nav-title">%title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'sheen' ) . '</span> <span class="nav-title">%title</span>',
 						)
 					);
 				}

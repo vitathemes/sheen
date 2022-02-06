@@ -13,11 +13,15 @@
     color: $color_link_secondary; //060606
     text-decoration: none;
     position: relative;
+    text-decoration-color: $brilliance_primary_accent_color;
+    text-underline-offset: rem(4px);
 
     &:hover,
     &:focus,
     &:active {
+        text-decoration: underline;
         color: $color_link_hover_secondary; //060606
+        text-decoration-color: $brilliance_primary_accent_color;
         &::before {
             opacity: 1;
         }

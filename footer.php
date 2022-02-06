@@ -12,7 +12,7 @@
 ?>
 <?php if( !is_404() ) : ?>
 <footer id="colophon" class="c-footer">
-    <button class="c-footer__to-top js-footer__to-top" aria-label="<?php esc_attr_e( 'To top button' , 'brilliance') ?>">
+    <button class="c-footer__to-top js-footer__to-top" aria-label="<?php esc_attr_e( 'To top button' , 'sheen') ?>">
         <span class="c-footer__to-top__icon iconify" data-icon="fe:arrow-up"></span>
     </button>
     <div class="c-footer__container">
@@ -27,9 +27,9 @@
         <div class="c-footer__copy">
             <?php 
                 /** Translator %s 1: current year. Translator %s 2: copyright text. */
-                echo sprintf('<h5 class="c-footer__copy-text u-margin-none">%s %s</h5>' , esc_html( date("Y") ) , esc_html__('Brilliance, made by' , 'brilliance') ); 
+                echo sprintf('<h5 class="c-footer__copy-text u-margin-none">%s %s</h5>' , esc_html( date("Y") ) , esc_html__('Brilliance, made by' , 'sheen') ); 
                 /** Translator %s 1:Vitathems website, Translator %s 2: Vitathemes name text */
-                echo sprintf( '<a class="c-footer__copy-link u-link--nav" href="%s"><span class="u-link--tertiary" >%s</span></a>' , esc_url('http://vitathemes.com/') , esc_html__( 'VitaThemes', 'brilliance' ) );  
+                echo sprintf( '<a class="c-footer__copy-link u-link--nav" href="%s"><span class="u-link--tertiary" >%s</span></a>' , esc_url('http://vitathemes.com/') , esc_html__( 'VitaThemes', 'sheen' ) );  
             ?>
         </div>
         <?php brilliance_socials_links(); ?>

@@ -28,7 +28,7 @@
 
     <div class="c-main__filter">
         <div class="c-main__filter-wrapper js-main__filter-wrapper">
-            <button class="c-main__filter-items js-main__filter-items" aria-label="<?php esc_attr_e( 'Filter button', 'brilliance' ) ?>">
+            <button class="c-main__filter-items js-main__filter-items" aria-label="<?php esc_attr_e( 'Filter button', 'sheen' ) ?>">
                 <div class="c-main__filter-item"></div>
                 <div class="c-main__filter-item"></div>
                 <div class="c-main__filter-item"></div>

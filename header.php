@@ -26,7 +26,7 @@
     <div id="page" class="o-page">
         <div class="o-page__container">
             <a class="skip-link screen-reader-text" href="#primary">
-                <?php esc_html_e( 'Skip to content', 'brilliance' ); ?>
+                <?php esc_html_e( 'Skip to content', 'sheen' ); ?>
             </a>
             <header id="masthead" class="c-header">
                 <div class="c-header__menu">
@@ -36,7 +36,7 @@
                     <nav class="c-nav" id="site-navigation">
 
                         <button class="c-nav__toggle c-nav__toggle--burger js-nav__toggle" aria-controls="primary-menu" aria-expanded="false"
-                            aria-label="<?php esc_attr_e('Primary menu', 'brilliance'); ?>">
+                            aria-label="<?php esc_attr_e('Primary menu', 'sheen'); ?>">
                             <span></span>
                         </button>
                         <div class="c-nav__list js-nav__list">
@@ -57,7 +57,7 @@
                             ?>
                             <?php if( !is_404() ) : ?>
                             <div class="c-nav__search">
-                                <button class="c-nav__search-button js-nav__search-button" aria-label="<?php esc_attr_e('Toggle Search open', 'brilliance'); ?>"
+                                <button class="c-nav__search-button js-nav__search-button" aria-label="<?php esc_attr_e('Toggle Search open', 'sheen'); ?>"
                                     aria-controls="primary-menu" aria-expanded="false">
                                     <span class="c-header__search-icon iconify" data-icon="akar-icons:search"></span>
                                 </button>
@@ -67,7 +67,7 @@
                         <div class="c-header__search-overlay js-header__search-overlay">
                             <div class="c-header__search-overlay__container">
                                 <div class="c-header__search-close">
-                                    <button class="c-btn-seacrh c-btn-seacrh--close js-btn-seacrh-close" aria-label="<?php esc_attr_e('Toggle Search close', 'brilliance'); ?>"
+                                    <button class="c-btn-seacrh c-btn-seacrh--close js-btn-seacrh-close" aria-label="<?php esc_attr_e('Toggle Search close', 'sheen'); ?>"
                                         aria-controls="primary-menu" aria-expanded="false">
                                         <span class="c-header__search-close__icon iconify" data-icon="codicon:chrome-close">
                                         </span>

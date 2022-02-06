@@ -30,32 +30,32 @@
 			//Define Fields
 			'fields' => array(
 				//Author field
-				'author' => '<h6 class="c-comment__author comment-form-author"><input type="text" id="author" name="author" aria-required="true" placeholder="'. esc_attr__( 'Name*', 'brilliance' ) .'" /></h6>',
+				'author' => '<h6 class="c-comment__author comment-form-author"><input type="text" id="author" name="author" aria-required="true" placeholder="'. esc_attr__( 'Name*', 'sheen' ) .'" /></h6>',
 				//Email Field
-				'email' => '<h6 class="c-comment__email comment-form-email"><input type="email" id="email" name="email" placeholder="'.esc_attr__( 'Email*' , 'brilliance' ).'" /></h6>',
+				'email' => '<h6 class="c-comment__email comment-form-email"><input type="email" id="email" name="email" placeholder="'.esc_attr__( 'Email*' , 'sheen' ).'" /></h6>',
 				//URL Field
-				'url' => '<h6 class="c-comment__url comment-form-url"><input type="url" id="url" name="url" placeholder="'.esc_attr__( 'Website' , 'brilliance' ).'" /></h6>',
+				'url' => '<h6 class="c-comment__url comment-form-url"><input type="url" id="url" name="url" placeholder="'.esc_attr__( 'Website' , 'sheen' ).'" /></h6>',
 				//Cookies
-				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'brilliance' ) .'</span></div>',
+				'cookies' => '<div class="c-comment__cookie"><input type="checkbox" name="wp-comment-cookies-consent" required><span class="c-comments__cookie">' . __(' Save my name, email, and website in this browser for the next time I comment', 'sheen' ) .'</span></div>',
 			),
 			// Change the title of send button
-			'label_submit' => __( 'Submit', 'brilliance'),
+			'label_submit' => __( 'Submit', 'sheen'),
 			// Change the title replyof comment
-			'title_reply' => sprintf( '<span class="h3 h3--bold">%s</span>' , esc_html__( 'Leave a Reply', 'brilliance' ) ),
+			'title_reply' => sprintf( '<span class="h3 h3--bold">%s</span>' , esc_html__( 'Leave a Reply', 'sheen' ) ),
 			// Change the title of the reply section
-			'title_reply_to' =>  __( 'Reply' , 'brilliance'),
+			'title_reply_to' =>  __( 'Reply' , 'sheen'),
 			//Cancel Reply Text
-			'cancel_reply_link' =>  __( 'Cancel Reply', 'brilliance' ),
+			'cancel_reply_link' =>  __( 'Cancel Reply', 'sheen' ),
 			// Redefine your own textarea (the comment body).
-			'comment_field' => '<h6 class="c-comment__comment comment-form-comment "><textarea id="comment" name="comment" aria-required="true" placeholder="'.esc_attr__( 'Your Comment*', 'brilliance' ).'" ></textarea></h6>',
+			'comment_field' => '<h6 class="c-comment__comment comment-form-comment "><textarea id="comment" name="comment" aria-required="true" placeholder="'.esc_attr__( 'Your Comment*', 'sheen' ).'" ></textarea></h6>',
 			//Message Before Comment
-			'comment_notes_before' =>'<h6 class="c-comments__desc">'. __( 'Required fields are marked *' , 'brilliance') .'</h6>',
+			'comment_notes_before' =>'<h6 class="c-comments__desc">'. __( 'Required fields are marked *' , 'sheen') .'</h6>',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
-			'id_submit' =>  __( 'comment-submit' , 'brilliance'),
+			'id_submit' =>  __( 'comment-submit' , 'sheen'),
 			// Submit class
-			'class_submit' =>  __( 'c-comment_submit brilliance-comment-submit' , 'brilliance'),
+			'class_submit' =>  __( 'c-comment_submit brilliance-comment-submit' , 'sheen'),
 		);
 		comment_form( $brilliance_comments_args );
 
@@ -67,19 +67,19 @@
         <?php
 			$brilliance_comment_count = get_comments_number();
 			if( true == get_theme_mod( 'single_comments_count', false ) ) { 
-				echo sprintf( '<span>%s %s</span>' , esc_html( $brilliance_comment_count ) , esc_html__( 'Comments', 'brilliance' ) ); // Sanitized Values
+				echo sprintf( '<span>%s %s</span>' , esc_html( $brilliance_comment_count ) , esc_html__( 'Comments', 'sheen' ) ); // Sanitized Values
 			}
 			else { 
 				if ( '1' === $brilliance_comment_count ) {
 					printf(
 						/* translators: 1: title. */
-						esc_html__( 'Comments', 'brilliance' ),
+						esc_html__( 'Comments', 'sheen' ),
 						'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 					);
 				} else {
 					printf( 
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( 'Comments', 'Comments', $brilliance_comment_count, 'comments title', 'brilliance' ) ),
+						esc_html( _nx( 'Comments', 'Comments', $brilliance_comment_count, 'comments title', 'sheen' ) ),
 						number_format_i18n( $brilliance_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 					);
@@ -110,7 +110,7 @@
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'brilliance' ); ?></p>
+    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'sheen' ); ?></p>
     <?php
 		endif;
 	endif; // Check for have_comments().

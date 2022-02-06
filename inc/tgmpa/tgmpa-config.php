@@ -40,22 +40,22 @@ function brilliance_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'      => __( 'Kirki Customizer Framework', 'brilliance' ),
+			'name'      => __( 'Kirki Customizer Framework', 'sheen' ),
 			'slug'      => 'kirki',
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Advanced Custom Fields', 'brilliance' ),
+			'name'      => __( 'Advanced Custom Fields', 'sheen' ),
 			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'ACF Photo Gallery Field', 'brilliance' ),
+			'name'      => __( 'ACF Photo Gallery Field', 'sheen' ),
 			'slug'      => 'navz-photo-gallery',
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'LibWp', 'brilliance' ),
+			'name'      => __( 'LibWp', 'sheen' ),
 			'slug'      => 'libwp',
 			'required'  => false,
 		),
@@ -71,7 +71,7 @@ function brilliance_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'brilliance',
+		'id'           => 'sheen',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

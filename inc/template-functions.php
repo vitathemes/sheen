@@ -169,13 +169,13 @@ if ( ! function_exists('brilliance_modify_libwp_post_type_argument') ) {
 		 * Modify LibWP post type arguments (If libwp plugin exist)
 		 */
 		$brilliance_postTypeArguments['labels'] = [
-			'name'          => _x('Projects', 'Post type general name', 'brilliance'),
-			'singular_name' => _x('Project', 'Post type singular name', 'brilliance'),
-			'menu_name'     => _x('Projects', 'Admin Menu text', 'brilliance'),
-			'add_new'       => __('Add New', 'brilliance'),
-			'edit_item'     => __('Edit Project', 'brilliance'),
-			'view_item'     => __('View Project', 'brilliance'),
-			'all_items'     => __('All Projects', 'brilliance'),
+			'name'          => _x('Projects', 'Post type general name', 'sheen'),
+			'singular_name' => _x('Project', 'Post type singular name', 'sheen'),
+			'menu_name'     => _x('Projects', 'Admin Menu text', 'sheen'),
+			'add_new'       => __('Add New', 'sheen'),
+			'edit_item'     => __('Edit Project', 'sheen'),
+			'view_item'     => __('View Project', 'sheen'),
+			'all_items'     => __('All Projects', 'sheen'),
 		];
 		
 		$brilliance_postTypeArguments['rewrite']['slug'] 		= 'projects';
@@ -229,14 +229,14 @@ function brilliance_modify_libwp_taxonomy_argument($brilliance_taxonomyArguments
 	* Modify LibWP taxonomy name (If libwp plugin exist)
 	*/
 	$brilliance_taxonomyArguments['labels'] = [
-		'name'          => _x('Project Categories', 'taxonomy general name', 'brilliance'),
-		'singular_name' => _x('Project Category', 'taxonomy singular name', 'brilliance'),
-		'search_items'  => __('Search Project Categories', 'brilliance'),
-		'all_items'     => __('All Project Categories', 'brilliance'),
-		'edit_item'     => __('Edit Project Category', 'brilliance'),
-		'add_new_item'  => __('Add New Project Category', 'brilliance'),
-		'new_item_name' => __('New Project Category Name', 'brilliance'),
-		'menu_name'     => __('Project Categories', 'brilliance'),
+		'name'          => _x('Project Categories', 'taxonomy general name', 'sheen'),
+		'singular_name' => _x('Project Category', 'taxonomy singular name', 'sheen'),
+		'search_items'  => __('Search Project Categories', 'sheen'),
+		'all_items'     => __('All Project Categories', 'sheen'),
+		'edit_item'     => __('Edit Project Category', 'sheen'),
+		'add_new_item'  => __('Add New Project Category', 'sheen'),
+		'new_item_name' => __('New Project Category Name', 'sheen'),
+		'menu_name'     => __('Project Categories', 'sheen'),
 	];
 	$brilliance_taxonomyArguments['rewrite']['slug'] = 'project_category';
 	$brilliance_taxonomyArguments['show_in_rest'] = true;
@@ -365,7 +365,7 @@ if ( !function_exists('brilliance_modify_archive_title') ) {
 				return get_theme_mod( 'archives_title' , 'projects');
 			}
 			else{
-				return esc_html__( 'projects' , 'brilliance' ); // Also Available to change From Kirki
+				return esc_html__( 'projects' , 'sheen' ); // Also Available to change From Kirki
 			}
 		}
 		return wp_kses_post( $brilliance_title );
