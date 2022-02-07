@@ -65,3 +65,10 @@ li {
 legend {
     color: $sheen_primary_text_color;
 }
+
+hr {
+    border: none !important;
+    border-top: 2px solid $sheen_tertiary_text_color !important;
+    background: none;
+    outline: none;
+}

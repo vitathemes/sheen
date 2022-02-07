@@ -308,71 +308,71 @@ if ( ! function_exists( 'sheen_socials_links' ) ) :
 			}
 
 			if ( $sheen_github ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:github-filled" data-inline="false"></span></a>', esc_url( $sheen_github ), esc_html__( 'Github', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="ant-design:github-filled" data-inline="false"></span></a>', esc_url( $sheen_github ), esc_html__( 'Github', 'sheen' ) );
 			}
 
 			if ( $sheen_mail ) {
-				echo sprintf( '<a href="mailto:%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span></a>', esc_attr(sanitize_email( $sheen_mail)), esc_html__( 'Mail', 'sheen' ) );
+				echo sprintf( '<a href="mailto:%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="ant-design:mail-outlined" data-inline="false"></span></a>', esc_attr(sanitize_email( $sheen_mail)), esc_html__( 'Mail', 'sheen' ) );
 			}
 
 			if ( $sheen_pinterest ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-pinterest" data-inline="false"></span></a>', esc_url( $sheen_pinterest ), esc_html__( 'pinterest', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="bx:bxl-pinterest" data-inline="false"></span></a>', esc_url( $sheen_pinterest ), esc_html__( 'pinterest', 'sheen' ) );
 			}
 
 			if ( $sheen_youtube ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:youtube-fill" data-inline="false"></span></a>', esc_url( $sheen_youtube ), esc_html__( 'youtube', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="akar-icons:youtube-fill" data-inline="false"></span></a>', esc_url( $sheen_youtube ), esc_html__( 'youtube', 'sheen' ) );
 			}
 
 			if ( $sheen_spotify ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-spotify" data-inline="false"></span></a>', esc_url( $sheen_spotify ), esc_html__( 'spotify', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="bx:bxl-spotify" data-inline="false"></span></a>', esc_url( $sheen_spotify ), esc_html__( 'spotify', 'sheen' ) );
 			}
 
 			if ( $sheen_lastfm ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="brandico:lastfm-rect" data-inline="false"></span></a>', esc_url( $sheen_lastfm ), esc_html__( 'lastfm', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="brandico:lastfm-rect" data-inline="false"></span></a>', esc_url( $sheen_lastfm ), esc_html__( 'lastfm', 'sheen' ) );
 			}
 
 			if ( $sheen_gitlab ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ion:logo-gitlab" data-inline="false"></span></a>', esc_url( $sheen_gitlab ), esc_html__( 'gitlab', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="ion:logo-gitlab" data-inline="false"></span></a>', esc_url( $sheen_gitlab ), esc_html__( 'gitlab', 'sheen' ) );
 			}
 
 			if ( $sheen_stackoverflow ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="cib:stackoverflow" data-inline="false"></span></a>', esc_url( $sheen_stackoverflow ), esc_html__( 'stackoverflow', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="cib:stackoverflow" data-inline="false"></span></a>', esc_url( $sheen_stackoverflow ), esc_html__( 'stackoverflow', 'sheen' ) );
 			}
 
 			if ( $sheen_reddit ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:reddit-fill" data-inline="false"></span></a>', esc_url( $sheen_reddit ), esc_html__( 'reddit', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="akar-icons:reddit-fill" data-inline="false"></span></a>', esc_url( $sheen_reddit ), esc_html__( 'reddit', 'sheen' ) );
 			}
 
 			if ( $sheen_quora ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-quora" data-inline="false"></span></a>', esc_url( $sheen_quora ), esc_html__( 'quora', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="bx:bxl-quora" data-inline="false"></span></a>', esc_url( $sheen_quora ), esc_html__( 'quora', 'sheen' ) );
 			}
 
 			if ( $sheen_medium ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:medium-circle-filled" data-inline="false"></span></a>', esc_url( $sheen_medium ), esc_html__( 'medium', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="ant-design:medium-circle-filled" data-inline="false"></span></a>', esc_url( $sheen_medium ), esc_html__( 'medium', 'sheen' ) );
 			}
 
 			if ( $sheen_vimeo ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="brandico:vimeo-rect" data-inline="false"></span></a>', esc_url( $sheen_vimeo ), esc_html__( 'vimeo', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="brandico:vimeo-rect" data-inline="false"></span></a>', esc_url( $sheen_vimeo ), esc_html__( 'vimeo', 'sheen' ) );
 			}
 
 			if ( $sheen_dribbble ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:dribbble-fill" data-inline="false"></span></a>', esc_url( $sheen_dribbble ), esc_html__( 'dribbble', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="akar-icons:dribbble-fill" data-inline="false"></span></a>', esc_url( $sheen_dribbble ), esc_html__( 'dribbble', 'sheen' ) );
 			}
 
 			if ( $sheen_behance ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="ant-design:behance-outlined" data-inline="false"></span></a>', esc_url( $sheen_behance ), esc_html__( 'behance', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="ant-design:behance-outlined" data-inline="false"></span></a>', esc_url( $sheen_behance ), esc_html__( 'behance', 'sheen' ) );
 			}
 
 			if ( $sheen_lanyrd ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="cib:lanyrd" data-inline="false"></span></a>', esc_url( $sheen_lanyrd ), esc_html__( 'lanyrd', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="cib:lanyrd" data-inline="false"></span></a>', esc_url( $sheen_lanyrd ), esc_html__( 'lanyrd', 'sheen' ) );
 			}
 
 			if ( $sheen_telegram ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="bx:bxl-telegram"  data-inline="false"></span></a>', esc_url( $sheen_telegram ), esc_html__( 'Telegram', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="bx:bxl-telegram"  data-inline="false"></span></a>', esc_url( $sheen_telegram ), esc_html__( 'Telegram', 'sheen' ) );
 			}
 
 			if ( $sheen_codepen ) {
-				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon iconify" data-icon="akar-icons:codepen-fill" data-inline="false"></span></a>', esc_url( $sheen_codepen ), esc_html__( 'Codepen', 'sheen' ) );
+				echo sprintf( '<a href="%s" aria-label="%s" class="c-social-share__item" target="_blank"><span class=" c-social-share__icon c-social-share__icon--iconify iconify" data-icon="akar-icons:codepen-fill" data-inline="false"></span></a>', esc_url( $sheen_codepen ), esc_html__( 'Codepen', 'sheen' ) );
 			}
 
 			echo '</div>';

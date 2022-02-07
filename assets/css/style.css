@@ -918,6 +918,13 @@ legend {
   color: var(--sheen_theme_primary_text_color);
 }
 
+hr {
+  border: none !important;
+  border-top: 2px solid var(--sheen_theme_tertiary_text_color) !important;
+  background: none;
+  outline: none;
+}
+
 h1,
 .h1 {
   font-weight: 700;
@@ -2135,6 +2142,15 @@ input[type=submit]:focus {
 }
 .c-social-share__item__icon:hover, .c-social-share__item__icon:focus, .c-social-share__item__icon:active {
   color: var(--sheen_theme_primary_accent_color);
+}
+
+.c-social-share__icon--iconify {
+  font-size: 1.125rem;
+}
+
+.c-social-share--footer {
+  padding: 0rem 1rem;
+  flex-wrap: wrap;
 }
 
 /*------------------------------------*\

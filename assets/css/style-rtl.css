@@ -2137,6 +2137,15 @@ input[type=submit]:focus {
   color: var(--sheen_theme_primary_accent_color);
 }
 
+.c-social-share__icon--iconify {
+  font-size: 1.125rem;
+}
+
+.c-social-share--footer {
+  padding: 0rem 1rem;
+  flex-wrap: wrap;
+}
+
 /*------------------------------------*\
   #Pagination
 \*------------------------------------*/
@@ -2857,10 +2866,6 @@ input[type=submit]:focus {
     margin-top: 4rem;
     text-align: center;
   }
-}
-
-.acf-gallery-backdrop {
-  z-index: 0 !important;
 }
 
 .gallery {

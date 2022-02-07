@@ -57,3 +57,12 @@
         color: $sheen_primary_accent_color;
     }
 }
+
+.c-social-share__icon--iconify {
+    font-size: rem(18px);
+}
+
+.c-social-share--footer {
+    padding: rem(0px 16px);
+    flex-wrap: wrap;
+}
