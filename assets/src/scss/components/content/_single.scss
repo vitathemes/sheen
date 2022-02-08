@@ -189,7 +189,7 @@
     display: flex;
     justify-content: flex-start;
     margin-top: rem(64px);
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: $sheen_primary_text_color;
 
     @include mq($from: tablet) {

@@ -65,8 +65,8 @@
     align-items: center;
     justify-content: center;
     background-color: $sheen_neutral_gray_light_color;
-    font-size: 12px !important;
-    line-height: 15px !important;
+    font-size: 16px !important;
+    line-height: 25px !important;
     text-decoration: none !important;
     border-radius: 999px !important;
 
@@ -96,6 +96,12 @@
 .page-numbers.current {
     background-color: $sheen_primary_accent_color;
     color: $sheen_primary_text_color !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $sheen_primary_accent_color !important;
+    }
 }
 
 .next.page-numbers {

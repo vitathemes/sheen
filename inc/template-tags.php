@@ -429,8 +429,7 @@ if (! function_exists('sheen_get_default_pagination')) :
 						'prev_text' => '<span class="dashicons dashicons-arrow-left-alt2"></span>',
 						'next_text' => '<span class="dashicons dashicons-arrow-right-alt2"></span>',
 						'mid_size' => 1,
-						'end_size' => 1
-
+						'end_size' => 1,
 					)
 			)) . wp_kses_post( '</div>' );
 		}

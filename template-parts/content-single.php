@@ -67,7 +67,6 @@
             ?>
         </div>
     </div>
-
     <div class="c-single__content c-single__content--centered">
         <?php
             the_content(
@@ -93,34 +92,21 @@
             );
         ?>
     </div>
-
-    <?php 
-        if( true == get_theme_mod( 'single_meta_wrapper', false ) ) : 
-            echo wp_kses_post( '<div class="c-single__wrapper">' );
-        endif;
-    ?>
-
-    <?php
-        // Display Single Tags ( Editable from Customizer ) 
-        if( true == get_theme_mod( 'single_tags', true )) { 
-            sheen_get_tags('c-single__tag u-link--meta');
-        }
-    ?>
-
-    <?php 
-        // Display Single Social Shares ( Editable from Customizer ) 
-        if( true == get_theme_mod( 'single_shares', true ) ) : 
-            echo wp_kses_post( '<div class="c-social-share c-social-share--lefted">' );
-                sheen_share_links(); // Sanitized Function 
-            echo wp_kses_post( '</div>' );
-        endif; 
-    ?>
-
-    <?php 
-    if( true == get_theme_mod( 'single_meta_wrapper', false ) ) : 
-        echo wp_kses_post( '</div>' );
-    endif;
-    ?>
+    <div class="c-single__wrapper">
+        <?php 
+            //Display Single Tags ( Editable from Customizer ) 
+            if( true == get_theme_mod( 'single_tags', true )) { 
+                sheen_get_tags('c-single__tag u-link--meta');
+            }
+    
+            //Display Single Social Shares (Editable from Customizer) 
+            if( true == get_theme_mod( 'single_shares', true ) ) : 
+                echo wp_kses_post( '<div class="c-social-share c-social-share--lefted">' );
+                    sheen_share_links(); // Sanitized Function 
+                echo wp_kses_post( '</div>' );
+            endif;
+        ?>
+    </div>
 
     <div class="c-single__wrapper">
         <?php 

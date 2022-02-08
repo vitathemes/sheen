@@ -505,15 +505,6 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'sheen', [
 		'type'        => 'toggle',
-		'settings'    => 'single_meta_wrapper',
-		'label'       => esc_html__( 'Post Meta Wrapper', 'sheen' ),
-		'section'     => 'single_options',
-		'default'     => 0,
-		'priority'    => 40,
-	]);
-
-	Kirki::add_field( 'sheen', [
-		'type'        => 'toggle',
 		'settings'    => 'single_comments_count',
 		'label'       => esc_html__( 'Display Comments Count', 'sheen' ),
 		'section'     => 'single_options',

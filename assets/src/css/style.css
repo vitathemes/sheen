@@ -439,6 +439,81 @@ template {
   background-color: var(--sheen_theme_primary_accent_color);
 }
 
+/*------------------------------------*\
+  #Contact Form 7
+\*------------------------------------*/
+.wpcf7-form p {
+  margin-bottom: 3.75rem;
+}
+
+.wpcf7-response-output {
+  text-align: left;
+  color: var(--sheen_theme_error_color);
+  font-size: 12px;
+  line-height: 10px;
+  margin: 0px !important;
+  border-radius: 4px;
+  border: none !important;
+  letter-spacing: 0.1em;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  display: flex;
+  align-items: flex-start;
+  padding: 0px !important;
+}
+.wpcf7-response-output::before {
+  content: " * ";
+}
+@media (min-width: 57.5em) {
+  .wpcf7-response-output {
+    line-height: 20px;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  color: var(--sheen_theme_error_color);
+}
+
+.wpcf7-form-control-wrap.author-name {
+  margin-bottom: 4.0625rem;
+}
+
+.wpcf7-form-control.wpcf7-textarea {
+  height: 5rem;
+}
+
+.wpcf7-response-output {
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  line-height: 1.375rem;
+  margin-top: 1.5rem !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0px !important;
+}
+@media (min-width: 57.5em) {
+  .wpcf7-response-output {
+    margin-top: 0.5rem;
+  }
+}
+
+.wpcf7-submit {
+  float: right;
+}
+
+.wpcf7-spinner {
+  float: right;
+}
+
 /* Box Sizing
 --------------------------------------------- */
 /*--------------------------------------------------------------
@@ -809,56 +884,6 @@ select {
   .is-style-carousel-layout {
     margin-bottom: 7.625rem;
   }
-}
-
-/*------------------------------------*\
-  #Contact Form 7
-\*------------------------------------*/
-.wpcf7-form p {
-  margin-bottom: 3.75rem;
-}
-
-.wpcf7-response-output {
-  text-align: left;
-  color: var(--sheen_theme_error_color);
-  font-size: 12px;
-  line-height: 10px;
-  margin: 0px !important;
-  border-radius: 4px;
-  border: none !important;
-  letter-spacing: 0.1em;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  display: flex;
-  align-items: flex-start;
-  padding: 0px !important;
-}
-.wpcf7-response-output::before {
-  content: " * ";
-}
-@media (min-width: 57.5em) {
-  .wpcf7-response-output {
-    line-height: 20px;
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
-  }
-}
-
-.wpcf7-not-valid-tip {
-  color: var(--sheen_theme_error_color);
-}
-
-.wpcf7-form-control-wrap.author-name {
-  margin-bottom: 4.0625rem;
-}
-
-.wpcf7-form-control.wpcf7-textarea {
-  height: 5rem;
 }
 
 table {
@@ -2201,6 +2226,10 @@ input[type=submit]:focus {
   flex-wrap: wrap;
 }
 
+.c-social-share__title {
+  text-transform: uppercase;
+}
+
 /*------------------------------------*\
   #Pagination
 \*------------------------------------*/
@@ -2267,8 +2296,8 @@ input[type=submit]:focus {
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
-  font-size: 12px !important;
-  line-height: 15px !important;
+  font-size: 16px !important;
+  line-height: 25px !important;
   text-decoration: none !important;
   border-radius: 999px !important;
 }
@@ -2292,6 +2321,9 @@ input[type=submit]:focus {
 .page-numbers.current {
   background-color: var(--sheen_theme_primary_accent_color);
   color: var(--sheen_theme_primary_text_color) !important;
+}
+.page-numbers.current:hover, .page-numbers.current:focus, .page-numbers.current:active {
+  background-color: var(--sheen_theme_primary_accent_color) !important;
 }
 
 .next.page-numbers .dashicons {
@@ -2529,7 +2561,7 @@ input[type=submit]:focus {
   display: flex;
   justify-content: flex-start;
   margin-top: 4rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--sheen_theme_primary_text_color);
 }
 @media (min-width: 57.5em) {
