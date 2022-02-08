@@ -53,6 +53,8 @@
 }
 
 .c-main__body--projects {
+    margin: rem(0px auto 0px auto);
+
     .c-main__no-result {
         display: block;
         margin-bottom: rem(64px);
@@ -137,11 +139,10 @@
 .c-main__filter {
     width: 100%;
     margin-top: rem(64px);
-    margin-bottom: rem(30px);
+    margin-bottom: rem(39px);
 
     @include mq($from: tablet) {
         margin-top: rem(141px);
-        margin-bottom: rem(42px);
     }
 }
 

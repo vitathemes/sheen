@@ -5,7 +5,7 @@
  * 
  * The main template file for home page
  *
- * If this page doesn't exists index.php recommend show ( Recommended for using as home page )
+ * If this page doesn't exists index.php recommend to show ( Recommended for using as home page )
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -22,7 +22,7 @@ get_header();
                     if( $sheen_profile_name ) { 
                         echo sprintf( '<h1 class="c-profile__name">%s</h1>', esc_html($sheen_profile_name));
                     }
-
+                    
                     $sheen_profile_desc = get_theme_mod( 'profile_description', '' );
                     if($sheen_profile_desc) { 
                         echo sprintf('<p class="c-profile__description h4">%s</p>' , esc_html($sheen_profile_desc) );

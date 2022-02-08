@@ -1,6 +1,11 @@
 .c-filter {
     display: none;
     transition: 0s all !important;
+    margin-bottom: rem(42px);
+
+    @include mq($from: tablet) {
+        margin-bottom: rem(69px);
+    }
 }
 
 .c-filter__title {

@@ -179,16 +179,17 @@ if ( ! function_exists('sheen_modify_libwp_post_type_argument') ) {
 		];
 		
 		$sheen_postTypeArguments['rewrite']['slug'] 		= 'projects';
-		$sheen_postTypeArguments['public'] 				= true;
+		$sheen_postTypeArguments['public'] 					= true;
 		$sheen_postTypeArguments['show_ui'] 				= true;
+		$sheen_postTypeArguments['taxonomies']	      	    = array('project_category' , 'post_tag');
 		$sheen_postTypeArguments['menu_position'] 			= 5;
-		$sheen_postTypeArguments['show_in_nav_menus']  	= true;
-		$sheen_postTypeArguments['show_in_admin_bar']  	= true;
+		$sheen_postTypeArguments['show_in_nav_menus']  		= true;
+		$sheen_postTypeArguments['show_in_admin_bar']  		= true;
 		$sheen_postTypeArguments['hierarchical'] 			= true;
-		$sheen_postTypeArguments['can_export'] 			= true;
+		$sheen_postTypeArguments['can_export'] 				= true;
 		$sheen_postTypeArguments['has_archive'] 			= true;
 		$sheen_postTypeArguments['exclude_from_search'] 	= false;
-		$sheen_postTypeArguments['publicly_queryable'] 	= true;
+		$sheen_postTypeArguments['publicly_queryable'] 		= true;
 		$sheen_postTypeArguments['capability_type'] 		= 'post';
 		$sheen_postTypeArguments['show_in_rest'] 			= true;
 		$sheen_postTypeArguments['supports'] 				= array( 'title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' , 'comments' );

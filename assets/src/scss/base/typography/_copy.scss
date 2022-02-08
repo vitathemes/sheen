@@ -26,9 +26,15 @@ blockquote {
     margin: 0;
     margin-bottom: rem(16px);
     padding: rem(8px 0px 8px 16px);
+    color: $sheen_secondary_text_color;
+    font-style: italic;
 
     P {
         margin: 0;
+    }
+
+    * {
+        color: inherit;
     }
 }
 
@@ -71,4 +77,6 @@ hr {
     border-top: 2px solid $sheen_tertiary_text_color !important;
     background: none;
     outline: none;
+
+    margin: rem(48px 0px);
 }

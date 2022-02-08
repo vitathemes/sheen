@@ -16,14 +16,14 @@
             <div class="c-single__meta">
                 <?php
                     if( 'projects' == get_post_type() ) { 
-                        $sheen_date_option = get_theme_mod( 'display_projects_date', true );
+                        $sheen_date_option   = get_theme_mod( 'display_projects_date', false );
                         $sheen_author_option = get_theme_mod( 'display_projects_author' , false);
-                        $sheen_categories = get_theme_mod( 'projects_display_taxonomy', false );
+                        $sheen_categories    = get_theme_mod( 'display_projects_taxonomy', true );
                     }
                     else { 
-                        $sheen_date_option = get_theme_mod( 'single_display_date', true );
+                        $sheen_date_option   = get_theme_mod( 'single_display_date', true );
                         $sheen_author_option = get_theme_mod( 'single_display_author' , true);
-                        $sheen_categories = get_theme_mod( 'single_display_category', true );
+                        $sheen_categories    = get_theme_mod( 'single_display_category', true );
                     }
 
                     if( $sheen_date_option == true ) { 

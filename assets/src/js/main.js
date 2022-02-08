@@ -54,13 +54,23 @@ jQuery(function ($) {
         horizontalOrder: true,
     });
 
-    $(".is-style-masonry-grid").masonry({
-        // options
-        itemSelector: ".wp-block-image",
-        gutter: 48,
-        fitWidth: true,
-        horizontalOrder: true,
-    });
+    if (sheen_childFinder("body", "blocks-gallery-grid")) {
+        $(".is-style-masonry-grid > .blocks-gallery-grid").masonry({
+            // options
+            itemSelector: ".blocks-gallery-item",
+            gutter: 48,
+            fitWidth: true,
+            horizontalOrder: true,
+        });
+    } else {
+        $(".is-style-masonry-grid").masonry({
+            // options
+            itemSelector: ".wp-block-image",
+            gutter: 48,
+            fitWidth: true,
+            horizontalOrder: true,
+        });
+    }
 
     /*--------------------------------------*\
       #Scroll to top & Focus on logo

@@ -750,29 +750,42 @@ select {
 \*------------------------------------*/
 .wp-block-embed {
   max-width: 90%;
+  width: 100%;
+}
+.wp-block-embed iframe {
+  width: 100%;
+  max-width: 100%;
 }
 
 /*------------------------------------*\
   #Gallery Block
 \*------------------------------------*/
-.is-style-masonry-grid {
+.is-style-masonry-grid,
+.is-style-masonry-grid > .blocks-gallery-grid {
   max-width: 100% !important;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 @media (min-width: 57.5em) {
-  .is-style-masonry-grid {
+  .is-style-masonry-grid,
+.is-style-masonry-grid > .blocks-gallery-grid {
     margin-bottom: 6rem;
   }
 }
-.is-style-masonry-grid .wp-block-image {
+.is-style-masonry-grid .wp-block-image,
+.is-style-masonry-grid .blocks-gallery-item,
+.is-style-masonry-grid > .blocks-gallery-grid .wp-block-image,
+.is-style-masonry-grid > .blocks-gallery-grid .blocks-gallery-item {
   margin: 0px !important;
   margin-bottom: 2.375rem !important;
   width: 100% !important;
   max-width: 100%;
 }
 @media (min-width: 57.5em) {
-  .is-style-masonry-grid .wp-block-image {
+  .is-style-masonry-grid .wp-block-image,
+.is-style-masonry-grid .blocks-gallery-item,
+.is-style-masonry-grid > .blocks-gallery-grid .wp-block-image,
+.is-style-masonry-grid > .blocks-gallery-grid .blocks-gallery-item {
     margin-bottom: 3.125rem !important;
     width: 380px !important;
     margin-left: 0 !important;
@@ -789,6 +802,9 @@ select {
   }
 }
 
+/*------------------------------------*\
+  #Contact Form 7
+\*------------------------------------*/
 .wpcf7-form p {
   margin-bottom: 3.75rem;
 }
@@ -918,6 +934,14 @@ legend {
   color: var(--sheen_theme_primary_text_color);
 }
 
+hr {
+  border: none !important;
+  border-top: 2px solid var(--sheen_theme_tertiary_text_color) !important;
+  background: none;
+  outline: none;
+  margin: 3rem 0rem;
+}
+
 h1,
 .h1 {
   font-weight: 700;
@@ -938,15 +962,15 @@ h2,
 
 h3,
 .h3 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.5rem;
   font-family: "josefin-sans";
   color: var(--sheen_theme_headings_color);
 }
 
-.h3--bold {
-  font-weight: 700;
+.h3--regular {
+  font-weight: 400;
 }
 
 h4,
@@ -2348,6 +2372,10 @@ input[type=submit]:focus {
 
 .c-single__author {
   text-transform: uppercase;
+}
+
+.c-single__title {
+  text-transform: capitalize;
 }
 
 /*------------------------------------*\

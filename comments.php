@@ -41,7 +41,7 @@
 			// Change the title of send button
 			'label_submit' => __( 'Submit', 'sheen'),
 			// Change the title replyof comment
-			'title_reply' => sprintf( '<span class="h3 h3--bold">%s</span>' , esc_html__( 'Leave a Reply', 'sheen' ) ),
+			'title_reply' => sprintf( '<span class="h3">%s</span>' , esc_html__( 'Leave a Reply', 'sheen' ) ),
 			// Change the title of the reply section
 			'title_reply_to' =>  __( 'Reply' , 'sheen'),
 			//Cancel Reply Text
@@ -63,7 +63,7 @@
 		if ( have_comments() ) :
 	?>
 
-    <h3 class="c-comment__title comments-title">
+    <h3 class="c-comment__title comments-title h3--regular">
         <?php
 			$sheen_comment_count = get_comments_number();
 			if( true == get_theme_mod( 'single_comments_count', false ) ) { 

@@ -721,7 +721,7 @@ if( function_exists( 'kirki' ) ) {
 		'label'           => esc_html__( 'H3', 'sheen' ),
 		'section'         => 'typography',
 		'default'         => [
-			'font-weight'    => '400',
+			'font-weight'    => '700',
 			'font-family'    => 'Josefin Sans',
 			'font-size'      => '1.5rem',
 			'line-height'    => '1.5rem',
@@ -863,10 +863,10 @@ if( function_exists( 'kirki' ) ) {
 
 	Kirki::add_field( 'sheen', [
 		'type'        => 'toggle',
-		'settings'    => 'projects_display_taxonomy',
+		'settings'    => 'display_projects_taxonomy',
 		'label'       => esc_html__( 'Display Projects Category', 'sheen' ),
 		'section'     => 'projects_options',
-		'default'     => 0,
+		'default'     => 1,
 		'priority'    => 40,
 	] );
 

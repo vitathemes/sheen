@@ -87,7 +87,11 @@
     }
 
     .menu-item.current-menu-item > .menu-item__link {
-        // color: blue;
+        color: $sheen_secondary_text_color;
+    }
+
+    .current_page_parent > .menu-item__link {
+        color: $sheen_secondary_text_color;
     }
 
     .menu-item {
@@ -174,7 +178,7 @@
     &:active {
         background-color: transparent;
         border: none;
-        color: $sheen_primary_accent_color;
+        color: $sheen_secondary_text_color;
     }
 
     @include mq($from: tablet) {

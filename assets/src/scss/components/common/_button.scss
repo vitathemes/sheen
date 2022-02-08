@@ -9,7 +9,7 @@ input[type="reset"],
 input[type="submit"] {
     border: 1px solid $color_border; // 333333
     background-color: transparent; //transparent
-    color: $sheen_primary_color; // 000000
+    color: $sheen_primary_text_color; // 060606
     border-radius: 0px;
     cursor: pointer;
     transition: $global-transition;
@@ -67,13 +67,19 @@ input[type="submit"] {
 \*------------------------------------*/
 .wp-block-button__link {
     margin: rem(8px 0px);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $sheen_primary_text_color; // #060606
+    }
 }
 
 .wp-block-file__button,
 .wp-block-search__button {
     border: 1px solid $color_border !important; // 333333
     background-color: transparent !important; //transparent
-    color: $sheen_primary_color !important; // 000000
+    color: $sheen_primary_text_color !important; // 060606
     border-radius: 0px !important;
     cursor: pointer !important;
     transition: $global-transition !important;
