@@ -187,6 +187,16 @@
             color: $sheen_primary_text_color;
         }
 
+        &:hover {
+            outline: none;
+        }
+
+        &:focus,
+        &:active {
+            outline: $sheen_neutral_dark_gray_color 1px solid;
+            border-radius: rem(3px);
+        }
+
         @include mq($from: tablet) {
             font-size: rem(20px);
             line-height: rem(26px);
@@ -199,7 +209,6 @@
     position: absolute;
     right: rem(16px);
 
-    &:hover,
     &:focus,
     &:active {
         outline: $sheen_main_white_color solid 1px;
@@ -210,6 +219,6 @@
     font-size: rem(20px);
 
     @include mq($from: tablet) {
-        font-size: rem(30px);
+        font-size: rem(22px);
     }
 }

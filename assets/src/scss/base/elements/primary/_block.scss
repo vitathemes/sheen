@@ -80,3 +80,11 @@
         margin-bottom: rem(122px);
     }
 }
+
+.wp-block-columns {
+    .wp-block-column {
+        @include mq($until: tablet) {
+            margin-bottom: rem(70px);
+        }
+    }
+}
