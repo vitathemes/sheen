@@ -1996,7 +1996,7 @@ h6 {
 
 .c-filter__list {
   visibility: hidden;
-  display: none;
+  opacity: 0;
 }
 
 /*------------------------------------*\

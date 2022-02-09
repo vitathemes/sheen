@@ -14,6 +14,16 @@ jQuery(function ($) {
     /*--------------------------------------*\
       #Category Filter  
     \*--------------------------------------*/
+
+    $(".js-filter__cat").on("keyup", function (e) {
+        if (event.key === "Enter") {
+            const sheen_currentAttr = $(this).attr("for");
+            const sheen_selectedItem = $(".c-filter__list[id='" + sheen_currentAttr + "']");
+            $(sheen_selectedItem).prop("checked", true);
+            $("#filter").submit();
+        }
+    });
+
     $(".js-filter__list").on("change", function () {
         $("#filter").submit();
     });
@@ -38,9 +48,22 @@ jQuery(function ($) {
         return false;
     });
 
+    /*--------------------------------------*\
+      #Add active class on click 
+    \*--------------------------------------*/
     $("#filter > .js-filter__cat").on("click", function () {
         $("#filter .js-filter__cat").removeClass("active");
         $(this).addClass("active");
+    });
+
+    /*--------------------------------------*\
+      #Add active class on enter key 
+    \*--------------------------------------*/
+    $(".js-filter__cat").on("keyup", function () {
+        if (event.key === "Enter") {
+            $("#filter .js-filter__cat").removeClass("active");
+            $(this).addClass("active");
+        }
     });
 
     /*--------------------------------------*\
@@ -301,3 +324,13 @@ if (sheen_childFinder("body", "js-nav__toggle")) {
         }
     });
 }
+
+/*----------------------------------------------*\
+  #Filter Label selectable for (accessibility)
+\*----------------------------------------------*/
+// if (sheen_childFinder("body", "c-filter__cat")) {
+//     const sheen_filterItems = document.querySelectorAll(".");
+//     for (let i = 0; i < sheen_filterItems.length; i++) {
+//         sheen_filterItems[i].addEventListener("", function () {});
+//     }
+// }

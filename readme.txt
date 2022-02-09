@@ -93,6 +93,18 @@ TGMPA by Thomas Griffin, Gary Jones, Juliette
 License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
 Source: http://tgmpluginactivation.com
 
+Flickity by desandro
+License: GNU GPLv3, https://flickity.metafizzy.co/license.html
+Source: https://flickity.metafizzy.co/
+
+Masonry by desandro
+License: MIT, https://desandro.mit-license.org/
+Source: https://masonry.desandro.com/#mit-license
+
+normal.jpg & wide.jpg & no-thumbnail.png by VitaThemes ( Created By VitaThemes )
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: assets/images/
+
 Image for theme screenshot, Credit pxhere
 License: CC0 1.0 Universal (CC0 1.0)
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
