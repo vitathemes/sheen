@@ -82,6 +82,7 @@
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+    margin-bottom: rem(64px);
 
     @include mq($from: tablet) {
         min-height: calc(100vh - 30em);
@@ -119,14 +120,18 @@
 
 .c-main__error-desc {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: rem(16px);
+    text-align: center;
 }
 
 .c-main__desc {
     color: $sheen_primary_text_color;
     display: inline-block;
     margin: 0;
+    margin-top: rem(32px);
+    margin-bottom: rem(32px);
 
     @include mq($until: tablet) {
         width: 100%;

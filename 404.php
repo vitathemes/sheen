@@ -24,8 +24,8 @@ get_header();
                     <?php esc_html_e( 'Back to Home', 'sheen' ); ?>
                 </a>
             </div>
-        </section><!-- .error-404 -->`
-    </div><!-- .error-404 -->`
+        </section><!-- .error-404 -->
+    </div><!-- .error-404 -->
 </main><!-- .c-main__content -->
 
 <?php

@@ -324,13 +324,3 @@ if (sheen_childFinder("body", "js-nav__toggle")) {
         }
     });
 }
-
-/*----------------------------------------------*\
-  #Filter Label selectable for (accessibility)
-\*----------------------------------------------*/
-// if (sheen_childFinder("body", "c-filter__cat")) {
-//     const sheen_filterItems = document.querySelectorAll(".");
-//     for (let i = 0; i < sheen_filterItems.length; i++) {
-//         sheen_filterItems[i].addEventListener("", function () {});
-//     }
-// }
