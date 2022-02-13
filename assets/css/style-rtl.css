@@ -1843,6 +1843,7 @@ h6 {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 4rem;
 }
 @media (min-width: 57.5em) {
   .c-main__error {
@@ -1883,14 +1884,18 @@ h6 {
 
 .c-main__error-desc {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .c-main__desc {
   color: var(--sheen_theme_primary_text_color);
   display: inline-block;
   margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 @media (max-width: 57.49em) {
   .c-main__desc {
@@ -1995,6 +2000,7 @@ h6 {
 }
 
 .c-filter__list {
+  visibility: hidden;
   opacity: 0;
 }
 

@@ -232,27 +232,6 @@ if ( ! function_exists( 'sheen_get_seprator' ) ) :
 endif;
 
 
-if ( ! function_exists( 'sheen_get_footer_copy' ) ) : 
-	/**
-	 * Display A simple Seprator
-	 */
-
-	function sheen_get_footer_copy( $sheen_has_custom_option = false ) {
-		
-		if( get_theme_mod('footer_copy_text' , esc_html('© 2022.Sheen, made by')) ) { 
-
-			/** Translator %s 1: The Footer copyright text */
-			echo wp_kses_post( sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Sheen, made by'))) );
-		}
-
-		else { 
-			echo wp_kses_post( sprintf('<h5>%s</h5>' , get_theme_mod('footer_copy_text' , esc_html('© 2022.Sheen, made by'))) );
-		}
-
-	}
-endif;
-
-
 if ( ! function_exists( 'sheen_socials_links' ) ) :
 	/**
 	  * Display Social Networks
@@ -273,15 +252,15 @@ if ( ! function_exists( 'sheen_socials_links' ) ) :
 		$sheen_spotify    		=  get_theme_mod( 'spotify', '' );
 		$sheen_gitlab    		=  get_theme_mod( 'gitlab', '' );
 		$sheen_lastfm    		=  get_theme_mod( 'lastfm', '' );
-		$sheen_stackoverflow   =  get_theme_mod( 'stackoverflow', '' );
+		$sheen_stackoverflow    =  get_theme_mod( 'stackoverflow', '' );
 		$sheen_quora    		=  get_theme_mod( 'quora', '' );
 		$sheen_reddit    		=  get_theme_mod( 'reddit', '' );
 		$sheen_medium    		=  get_theme_mod( 'medium', '' );
 		$sheen_vimeo    		=  get_theme_mod( 'vimeo', '' );
 		$sheen_lanyrd    		=  get_theme_mod( 'lanyrd', '' );
-		$sheen_dribbble    	=  get_theme_mod( 'dribbble', '' );
+		$sheen_dribbble    	    =  get_theme_mod( 'dribbble', '' );
 		$sheen_behance    		=  get_theme_mod( 'behance', '' );
-		$sheen_telegram    	=  get_theme_mod( 'telegram', '' );
+		$sheen_telegram    	    =  get_theme_mod( 'telegram', '' );
 		$sheen_codepen    		=  get_theme_mod( 'codepen', '' );
 
 		// If variable was not empty will display the icons

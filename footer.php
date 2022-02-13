@@ -22,7 +22,6 @@
                 /** Translator %s 1 : Footer custom Text */
                 echo sprintf('<h4 class="c-footer__text u-margin-none">%s</h4>' , esc_html($sheen_footer_custom_text) );
 			}
-            if( get_theme_mod( 'footer_copy_text' , '© 2022.Sheen, made by VitaThemes' ) )
         ?>
         <div class="c-footer__copy">
             <?php 
@@ -36,6 +35,7 @@
     </div>
 </footer><!-- #colophon -->
 <?php endif; ?>
+
 </div><!-- o-page__container -->
 </div><!-- o-page -->
 
