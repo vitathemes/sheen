@@ -6,7 +6,7 @@
  * @package     WordPress
  * @subpackage  Comment_Walker
  */
-class sheen_walker_comment extends Walker_Comment
+class Sheen_walker_comment extends Walker_Comment
 {
 	/**
 	 * Output a comment in the HTML5 format. Don't worry, we're
@@ -30,7 +30,6 @@ class sheen_walker_comment extends Walker_Comment
         <div class="comment-meta">
 
             <?php if ($args['avatar_size'] !== 0) echo get_avatar($comment, $args['avatar_size']); ?>
-
 
             <div class="comment-content">
                 <div class="comment-header">
