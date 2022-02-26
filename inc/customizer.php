@@ -67,11 +67,14 @@ if( function_exists( 'kirki' ) ) {
 	  ############# Config ###############
 	\*------------------------------------*/
 	
-	// Config
-	// Kirki::add_config( 'sheen_theme', array(
-	// 	'capability'    => 'edit_theme_options',
-	// 	'option_type'   => 'theme_mod',
-	// ));
+	/**
+	 * 
+	 * Config is not needed anymore since v4+
+	 * 
+	 * 
+	 * @link https://kirki.org/docs/setup/config/
+	 * 
+	*/
 
 	/*------------------------------------*\
 	  ############# Panels ###############

@@ -2,124 +2,121 @@
   #Start jQuery
 \*--------------------------------------*/
 jQuery(function ($) {
-    /*--------------------------------------*\
-      #Category Filter Toggle
-    \*--------------------------------------*/
-    $(".js-main__filter-items").on("click", function () {
-        $(".js-main__filter-wrapper").toggleClass("is-open");
+    $(document).ready(function () {
+        /*--------------------------------------*\
+            #Category Filter Toggle
+        \*--------------------------------------*/
+        $(".js-main__filter-items").on("click", function () {
+            $(".js-main__filter-wrapper").toggleClass("is-open");
 
-        $(".js-filter").slideToggle();
-    });
-
-    /*--------------------------------------*\
-      #Category Filter  
-    \*--------------------------------------*/
-
-    $(".js-filter__cat").on("keyup", function (e) {
-        if (event.key === "Enter") {
-            const sheen_currentAttr = $(this).attr("for");
-            const sheen_selectedItem = $(".c-filter__list[id='" + sheen_currentAttr + "']");
-            $(sheen_selectedItem).prop("checked", true);
-            $("#filter").submit();
-        }
-    });
-
-    $(".js-filter__list").on("change", function () {
-        $("#filter").submit();
-    });
-
-    $("#filter").submit(function () {
-        var filter = $("#filter");
-        $.ajax({
-            url: filter.attr("action"),
-            data: filter.serialize(), // form data
-            type: filter.attr("method"), // POST
-            beforeSend: function (xhr) {},
-            success: function (data) {
-                filter.find("button").text("Apply filter"); // changing the button label back
-                $("#response").html(data); // insert data
-
-                setTimeout(function () {
-                    $(".js-main__body-has-masonry").masonry("reloadItems");
-                    $(".js-main__body-has-masonry").masonry();
-                }, 10);
-            },
+            $(".js-filter").slideToggle();
         });
-        return false;
-    });
 
-    /*--------------------------------------*\
-      #Add active class on click 
-    \*--------------------------------------*/
-    $("#filter > .js-filter__cat").on("click", function () {
-        $("#filter .js-filter__cat").removeClass("active");
-        $(this).addClass("active");
-    });
+        /*--------------------------------------*\
+            #Category Filter  
+        \*--------------------------------------*/
 
-    /*--------------------------------------*\
-      #Add active class on enter key 
-    \*--------------------------------------*/
-    $(".js-filter__cat").on("keyup", function () {
-        if (event.key === "Enter") {
+        $(".js-filter__cat").on("keyup", function (e) {
+            if (event.key === "Enter") {
+                const sheen_currentAttr = $(this).attr("for");
+                const sheen_selectedItem = $(".c-filter__list[id='" + sheen_currentAttr + "']");
+                $(sheen_selectedItem).prop("checked", true);
+                $("#filter").submit();
+            }
+        });
+
+        $(".js-filter__list").on("change", function () {
+            $("#filter").submit();
+        });
+
+        $("#filter").submit(function () {
+            var filter = $("#filter");
+            $.ajax({
+                url: filter.attr("action"),
+                data: filter.serialize(), // form data
+                type: filter.attr("method"), // POST
+                beforeSend: function (xhr) {},
+                success: function (data) {
+                    filter.find("button").text("Apply filter"); // changing the button label back
+                    $("#response").html(data); // insert data
+
+                    setTimeout(function () {
+                        $(".js-main__body-has-masonry").masonry("reloadItems");
+                        $(".js-main__body-has-masonry").masonry();
+                    }, 10);
+                },
+            });
+            return false;
+        });
+
+        /*--------------------------------------*\
+            #Add active class on click 
+        \*--------------------------------------*/
+        $("#filter > .js-filter__cat").on("click", function () {
             $("#filter .js-filter__cat").removeClass("active");
             $(this).addClass("active");
-        }
-    });
-
-    /*--------------------------------------*\
-      Masonry Grids
-    \*--------------------------------------*/
-    $(".js-main__body-has-masonry").masonry({
-        // options
-        itemSelector: ".js-post-has-masonry",
-        gutter: 48,
-        fitWidth: true,
-        horizontalOrder: true,
-    });
-
-    if (sheen_childFinder("body", "blocks-gallery-grid")) {
-        $(".is-style-masonry-grid > .blocks-gallery-grid").masonry({
-            // options
-            itemSelector: ".blocks-gallery-item",
-            gutter: 48,
-            fitWidth: true,
-            horizontalOrder: true,
         });
-    } else {
-        $(".is-style-masonry-grid").masonry({
-            // options
-            itemSelector: ".wp-block-image",
-            gutter: 48,
-            fitWidth: true,
-            horizontalOrder: true,
-        });
-    }
 
-    /*--------------------------------------*\
-      #Scroll to top & Focus on logo
-    \*--------------------------------------*/
-    $(".js-footer__to-top").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 1000);
-
-        setTimeout(() => {
-            if (sheen_childFinder("body", "custom-logo-link")) {
-                $(".custom-logo-link").focus();
-            } else {
-                $(".c-header__title__anchor").focus();
+        /*--------------------------------------*\
+            #Add active class on enter key 
+        \*--------------------------------------*/
+        $(".js-filter__cat").on("keyup", function () {
+            if (event.key === "Enter") {
+                $("#filter .js-filter__cat").removeClass("active");
+                $(this).addClass("active");
             }
-        }, 1000);
-    });
+        });
 
-    /*------------------------------------*\
-      #Handle Load More button
-    \*------------------------------------*/
-    $(document).ready(function () {
+        /*--------------------------------------*\
+            Masonry Grids
+        \*--------------------------------------*/
+        $(".js-main__body-has-masonry").masonry({
+            // options
+            itemSelector: ".js-post-has-masonry",
+            gutter: 48,
+            fitWidth: true,
+            horizontalOrder: true,
+        });
+
+        if (sheen_childFinder("body", "blocks-gallery-grid")) {
+            $(".is-style-masonry-grid > .blocks-gallery-grid").masonry({
+                // options
+                itemSelector: ".blocks-gallery-item",
+                gutter: 48,
+                fitWidth: true,
+                horizontalOrder: true,
+            });
+        } else {
+            $(".is-style-masonry-grid").masonry({
+                // options
+                itemSelector: ".wp-block-image",
+                gutter: 48,
+                fitWidth: true,
+                horizontalOrder: true,
+            });
+        }
+
+        /*--------------------------------------*\
+          #Scroll to top & Focus on logo
+        \*--------------------------------------*/
+        $(".js-footer__to-top").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 1000);
+
+            setTimeout(() => {
+                if (sheen_childFinder("body", "custom-logo-link")) {
+                    $(".custom-logo-link").focus();
+                } else {
+                    $(".c-header__title__anchor").focus();
+                }
+            }, 1000);
+        });
+
+        /*------------------------------------*\
+          #Handle Load More button
+        \*------------------------------------*/
+
         const sheen_loadMoreButton = $(".js-pagination__load-more__btn");
         $(".js-pagination__load-more").click(function () {
-            // setTimeout(function () {
-            //     sheen_lazyLoadInstance.update();
-            // }, 1000);
-
             var loadMore = $(this),
                 data = {
                     action: "loadmore",
@@ -151,17 +148,17 @@ jQuery(function ($) {
                 },
             });
         });
-    });
 
-    /*--------------------------------------*\
-      #Carousel - Single Page
-    \*--------------------------------------*/
-    $(".is-style-carousel-layout").flickity({
-        setGallerySize: false,
-        imagesLoaded: true,
-        cellAlign: "left",
-        prevNextButtons: false,
-        lazyLoad: true,
+        /*--------------------------------------*\
+            #Carousel - Single Page
+        \*--------------------------------------*/
+        $(".is-style-carousel-layout").flickity({
+            setGallerySize: false,
+            imagesLoaded: true,
+            cellAlign: "left",
+            prevNextButtons: false,
+            lazyLoad: true,
+        });
     });
 });
 /*--------------------------------------*\
