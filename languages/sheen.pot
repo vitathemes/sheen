@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 17:22+0330\n"
+"POT-Creation-Date: 2022-03-02 14:39+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: 404.php:18
+#: 404.php:17
 msgid "Oops!"
 msgstr ""
 
-#: 404.php:19
+#: 404.php:18
 msgid "we are sorry, but the page you requested was not found."
 msgstr ""
 
-#: 404.php:24
+#: 404.php:22
 msgid "Back to Home"
 msgstr ""
 
@@ -102,11 +102,11 @@ msgstr ""
 msgid "To top button"
 msgstr ""
 
-#: footer.php:30
+#: footer.php:29
 msgid "Sheen, made by"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:31
 msgid "VitaThemes"
 msgstr ""
 
@@ -114,15 +114,15 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:39
+#: header.php:38
 msgid "Primary menu"
 msgstr ""
 
-#: header.php:60
+#: header.php:59
 msgid "Toggle Search open"
 msgstr ""
 
-#: header.php:70
+#: header.php:69
 msgid "Toggle Search close"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Search…"
 msgstr ""
 
-#: searchform.php:15
+#: searchform.php:14
 msgid "Search"
 msgstr ""
 
@@ -151,507 +151,507 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#: classes/class_sheen_walker_comment.php:58
+#: classes/class_sheen_walker_comment.php:57
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: classes/class_sheen_walker_comment.php:65
+#: classes/class_sheen_walker_comment.php:64
 msgid "Edit"
 msgstr ""
 
-#: inc/customizer.php:84
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer.php:90
+#: inc/customizer.php:88
 msgid "Elements"
 msgstr ""
 
-#: inc/customizer.php:99
+#: inc/customizer.php:97
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:109
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:119
 msgid "Social Networks"
 msgstr ""
 
-#: inc/customizer.php:107
-msgid "Add or Change Social Networks"
-msgstr ""
-
-#: inc/customizer.php:114
-msgid "Theme Colors"
-msgstr ""
-
-#: inc/customizer.php:115
-msgid "Change Theme color and customize them."
-msgstr ""
-
-#: inc/customizer.php:123
-msgid "Footer Context"
-msgstr ""
-
-#: inc/customizer.php:124
-msgid "Change Theme footer Texts"
+#: inc/customizer.php:120
+msgid "Add or edit your social networks"
 msgstr ""
 
 #: inc/customizer.php:131
-msgid "Footer Copyright Option"
+msgid "Theme Colors"
 msgstr ""
 
 #: inc/customizer.php:132
-msgid "Change Theme footer Copyright"
+msgid "Change Theme color and customize them."
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:143
+msgid "Footer Context"
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Change Theme footer Texts"
+msgstr ""
+
+#: inc/customizer.php:157
 msgid "Single Options"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:166
 msgid "Home Page Options"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:175
 msgid "Projects Options"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer.php:184
 msgid "Archive Options"
 msgstr ""
 
-#: inc/customizer.php:174
+#: inc/customizer.php:201
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:184
+#: inc/customizer.php:211
 msgid "Primary Accent Color"
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:221
 msgid "Headings Color"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:231
 msgid "Primary Text Color"
 msgstr ""
 
-#: inc/customizer.php:214
+#: inc/customizer.php:241
 msgid "Primary White Text Color"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:251
 msgid "Secondary Text Color"
 msgstr ""
 
-#: inc/customizer.php:234
+#: inc/customizer.php:261
 msgid "Tertiary Text Color"
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:271
 msgid "Error Color"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:281
 msgid "Border Color"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:291
 msgid "Secondary Border Color"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:309
 msgid "Footer Cusom Text"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:311
 msgid "Sheen, a creative portfolio theme"
 msgstr ""
 
-#: inc/customizer.php:298 inc/template-tags.php:299
+#: inc/customizer.php:327 inc/template-tags.php:291
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:306 inc/template-tags.php:307
+#: inc/customizer.php:336 inc/template-tags.php:299
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:314 inc/template-tags.php:303
+#: inc/customizer.php:346 inc/template-tags.php:295
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:322 inc/template-tags.php:295
+#: inc/customizer.php:355 inc/template-tags.php:287
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:330 inc/template-tags.php:311
+#: inc/customizer.php:364 inc/template-tags.php:303
 msgid "Github"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:373
 msgid "Email"
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:382
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:356
+#: inc/customizer.php:391
 msgid "Youtube"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:400
 msgid "Spotify"
 msgstr ""
 
-#: inc/customizer.php:372
+#: inc/customizer.php:409
 msgid "Gitlab"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:418
 msgid "Lastfm"
 msgstr ""
 
-#: inc/customizer.php:388
+#: inc/customizer.php:427
 msgid "Stackoverflow"
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:436
 msgid "Quora"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:445
 msgid "Reddit"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:454
 msgid "Medium"
 msgstr ""
 
-#: inc/customizer.php:420
+#: inc/customizer.php:463
 msgid "Vimeo"
 msgstr ""
 
-#: inc/customizer.php:428
+#: inc/customizer.php:472
 msgid "Lanyrd"
 msgstr ""
 
-#: inc/customizer.php:436
+#: inc/customizer.php:481
 msgid "Dribbble"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:490
 msgid "Behance"
 msgstr ""
 
-#: inc/customizer.php:453 inc/template-tags.php:375
+#: inc/customizer.php:499 inc/template-tags.php:367
 msgid "Codepen"
 msgstr ""
 
-#: inc/customizer.php:461 inc/template-tags.php:371
+#: inc/customizer.php:508 inc/template-tags.php:363
 msgid "Telegram"
 msgstr ""
 
-#: inc/customizer.php:478
+#: inc/customizer.php:526
 msgid "Thumbnail Size"
 msgstr ""
 
-#: inc/customizer.php:491
+#: inc/customizer.php:540
 msgid "Display Single Tags"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:550
 msgid "Display Share Options"
 msgstr ""
 
-#: inc/customizer.php:509
-msgid "Post Meta Wrapper"
-msgstr ""
-
-#: inc/customizer.php:518
+#: inc/customizer.php:560
 msgid "Display Comments Count"
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:570
 msgid "Display Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:580
 msgid "Display Post Date"
 msgstr ""
 
-#: inc/customizer.php:545
+#: inc/customizer.php:590
 msgid "Display Post Author"
 msgstr ""
 
-#: inc/customizer.php:554
+#: inc/customizer.php:600
 msgid "Display Post Categories"
 msgstr ""
 
-#: inc/customizer.php:572
+#: inc/customizer.php:618
 msgid "Profile Image"
 msgstr ""
 
-#: inc/customizer.php:573
+#: inc/customizer.php:619
 msgid "Add Profile Image here"
 msgstr ""
 
-#: inc/customizer.php:584
+#: inc/customizer.php:631
 msgid "Name"
 msgstr ""
 
-#: inc/customizer.php:592
+#: inc/customizer.php:640
 msgid "Description"
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:659
 msgid "Use Google Fonts"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:677
 msgid "Base Font"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:713
 msgid "H1"
 msgstr ""
 
-#: inc/customizer.php:691
+#: inc/customizer.php:743
 msgid "H2"
 msgstr ""
 
-#: inc/customizer.php:721
+#: inc/customizer.php:773
 msgid "H3"
 msgstr ""
 
-#: inc/customizer.php:751
+#: inc/customizer.php:803
 msgid "H4"
 msgstr ""
 
-#: inc/customizer.php:781
+#: inc/customizer.php:833
 msgid "H5"
 msgstr ""
 
-#: inc/customizer.php:811
+#: inc/customizer.php:863
 msgid "H6"
 msgstr ""
 
-#: inc/customizer.php:841
+#: inc/customizer.php:894
 msgid "Post Type Archive title"
 msgstr ""
 
-#: inc/customizer.php:849
+#: inc/customizer.php:903
 msgid "Display Projects Date"
 msgstr ""
 
-#: inc/customizer.php:858
+#: inc/customizer.php:913
 msgid "Display Author"
 msgstr ""
 
-#: inc/customizer.php:867
+#: inc/customizer.php:923
 msgid "Display Projects Category"
 msgstr ""
 
-#: inc/customizer.php:876
+#: inc/customizer.php:933
 msgid "Display Projects Archives Date"
 msgstr ""
 
-#: inc/customizer.php:893
+#: inc/customizer.php:943
+msgid "Display Projects Archives Category"
+msgstr ""
+
+#: inc/customizer.php:961
 msgid "Display Date"
+msgstr ""
+
+#: inc/customizer.php:971
+msgid "Display Thumbnail"
+msgstr ""
+
+#: inc/customizer.php:982
+msgid "Display Category"
 msgstr ""
 
 #: inc/setup.php:40
 msgid "Primary"
 msgstr ""
 
-#: inc/template-functions.php:172
+#: inc/template-functions.php:168
 msgctxt "Post type general name"
 msgid "Projects"
 msgstr ""
 
-#: inc/template-functions.php:173
+#: inc/template-functions.php:169
 msgctxt "Post type singular name"
 msgid "Project"
 msgstr ""
 
-#: inc/template-functions.php:174
+#: inc/template-functions.php:170
 msgctxt "Admin Menu text"
 msgid "Projects"
 msgstr ""
 
-#: inc/template-functions.php:175
+#: inc/template-functions.php:171
 msgid "Add New"
 msgstr ""
 
-#: inc/template-functions.php:176
+#: inc/template-functions.php:172
 msgid "Edit Project"
 msgstr ""
 
-#: inc/template-functions.php:177
+#: inc/template-functions.php:173
 msgid "View Project"
 msgstr ""
 
-#: inc/template-functions.php:178
+#: inc/template-functions.php:174
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-functions.php:232
+#: inc/template-functions.php:229
 msgctxt "taxonomy general name"
 msgid "Project Categories"
 msgstr ""
 
-#: inc/template-functions.php:233
+#: inc/template-functions.php:230
 msgctxt "taxonomy singular name"
 msgid "Project Category"
 msgstr ""
 
-#: inc/template-functions.php:234
+#: inc/template-functions.php:231
 msgid "Search Project Categories"
 msgstr ""
 
-#: inc/template-functions.php:235
+#: inc/template-functions.php:232
 msgid "All Project Categories"
 msgstr ""
 
-#: inc/template-functions.php:236
+#: inc/template-functions.php:233
 msgid "Edit Project Category"
 msgstr ""
 
-#: inc/template-functions.php:237
+#: inc/template-functions.php:234
 msgid "Add New Project Category"
 msgstr ""
 
-#: inc/template-functions.php:238
+#: inc/template-functions.php:235
 msgid "New Project Category Name"
 msgstr ""
 
-#: inc/template-functions.php:239
+#: inc/template-functions.php:236
 msgid "Project Categories"
 msgstr ""
 
-#: inc/template-functions.php:368
+#: inc/template-functions.php:365
 msgid "projects"
 msgstr ""
 
-#: inc/template-tags.php:47
+#: inc/template-tags.php:60
 #, php-format
 msgctxt "post author"
 msgid "by: %s"
 msgstr ""
 
-#: inc/template-tags.php:64 inc/template-tags.php:201
+#: inc/template-tags.php:77 inc/template-tags.php:214
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:67
+#: inc/template-tags.php:80
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:71
+#: inc/template-tags.php:84
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:74
+#: inc/template-tags.php:87
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:84
+#: inc/template-tags.php:97
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:101
+#: inc/template-tags.php:114
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:139
+#: inc/template-tags.php:152
 msgid "Blog"
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:178
 msgid "no thumbnail"
 msgstr ""
 
-#: inc/template-tags.php:315
+#: inc/template-tags.php:307
 msgid "Mail"
 msgstr ""
 
-#: inc/template-tags.php:319
+#: inc/template-tags.php:311
 msgid "pinterest"
 msgstr ""
 
-#: inc/template-tags.php:323
+#: inc/template-tags.php:315
 msgid "youtube"
 msgstr ""
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:319
 msgid "spotify"
 msgstr ""
 
-#: inc/template-tags.php:331
+#: inc/template-tags.php:323
 msgid "lastfm"
 msgstr ""
 
-#: inc/template-tags.php:335
+#: inc/template-tags.php:327
 msgid "gitlab"
 msgstr ""
 
-#: inc/template-tags.php:339
+#: inc/template-tags.php:331
 msgid "stackoverflow"
 msgstr ""
 
-#: inc/template-tags.php:343
+#: inc/template-tags.php:335
 msgid "reddit"
 msgstr ""
 
-#: inc/template-tags.php:347
+#: inc/template-tags.php:339
 msgid "quora"
 msgstr ""
 
-#: inc/template-tags.php:351
+#: inc/template-tags.php:343
 msgid "medium"
 msgstr ""
 
-#: inc/template-tags.php:355
+#: inc/template-tags.php:347
 msgid "vimeo"
 msgstr ""
 
-#: inc/template-tags.php:359
+#: inc/template-tags.php:351
 msgid "dribbble"
 msgstr ""
 
-#: inc/template-tags.php:363
+#: inc/template-tags.php:355
 msgid "behance"
 msgstr ""
 
-#: inc/template-tags.php:367
+#: inc/template-tags.php:359
 msgid "lanyrd"
 msgstr ""
 
-#: inc/template-tags.php:443
+#: inc/template-tags.php:434
 msgid "tags: "
 msgstr ""
 
-#: inc/template-tags.php:462
+#: inc/template-tags.php:453
 msgid "Share:"
 msgstr ""
 
-#: inc/template-tags.php:463
+#: inc/template-tags.php:454
 msgid "facebook"
 msgstr ""
 
-#: inc/template-tags.php:464
+#: inc/template-tags.php:455
 msgid "twitter"
 msgstr ""
 
-#: inc/template-tags.php:465
+#: inc/template-tags.php:456
 msgid "linkedin"
 msgstr ""
 
-#: inc/template-tags.php:482
+#: inc/template-tags.php:474
 msgid "Profile image"
 msgstr ""
 
@@ -1491,13 +1491,13 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:32 template-parts/content-single.php:77
+#: template-parts/content-page.php:32 template-parts/content-single.php:76
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-page.php:45 template-parts/content-single.php:90
-#: template-parts/content.php:50
+#: template-parts/content-page.php:45 template-parts/content-single.php:89
+#: template-parts/content.php:61
 msgid "Pages:"
 msgstr ""
 

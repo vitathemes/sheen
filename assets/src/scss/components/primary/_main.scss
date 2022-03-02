@@ -144,10 +144,10 @@
 .c-main__filter {
     width: 100%;
     margin-top: rem(64px);
-    margin-bottom: rem(39px);
+    margin-bottom: rem(14px);
 
     @include mq($from: tablet) {
-        margin-top: rem(141px);
+        margin-top: rem(116px);
     }
 }
 
@@ -170,6 +170,13 @@
     display: flex;
     border: none;
     padding: 0;
+
+    // Ux friendly button
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
     &:hover,
     &:focus,
