@@ -75,7 +75,6 @@ function sheen_pingback_header() {
 }
 add_action( 'wp_head', 'sheen_pingback_header' );
 
-
 if ( ! function_exists( 'sheen_branding' ) ) {
 	function sheen_branding() { 
 		/**
@@ -85,7 +84,6 @@ if ( ! function_exists( 'sheen_branding' ) ) {
 			the_custom_logo();
 		} 
 		else {	
-
 			// Display the Text title with link 
 			/* translator %s : link of main page. translator %s 2: Site title  */
 			echo sprintf('<h1 class="c-header__title site-title"><a class="c-header__title__anchor h2" href="%s" rel="home">%s</a></h1>',
@@ -94,7 +92,6 @@ if ( ! function_exists( 'sheen_branding' ) ) {
 		}
 	}
 }
-
 
 if ( ! function_exists( 'sheen_typography' )) {
 	
@@ -136,7 +133,6 @@ if ( ! function_exists( 'sheen_typography' )) {
 		return $html;	
 	}
 }
-
 
 if ( ! function_exists( 'sheen_theme_settings' )) : 
 	function sheen_theme_settings() {
@@ -250,7 +246,7 @@ function sheen_modify_libwp_taxonomy_argument($sheen_taxonomyArguments) {
 }
 
 
-if( !function_exists('sheen_load_more_script') ) : 
+if(!function_exists('sheen_load_more_script')): 
 	/**
 	 * 
 	 * Load More button 

@@ -937,6 +937,16 @@ if( function_exists( 'kirki' ) ) {
 		]
 	);
 
+	new \Kirki\Field\Toggle(
+		[
+			'settings'    => 'projects_display_custom_taxonomy',
+			'label'       => esc_html__( 'Display Projects Archives Category', 'sheen' ),
+			'section'     => 'projects_options',
+			'default'     => 1,
+			'priority'    => 60,
+		]
+	);
+
 	/*------------------------------------*\
 	  #Projects Options end 
 	\*------------------------------------*/
@@ -952,6 +962,27 @@ if( function_exists( 'kirki' ) ) {
 			'section'     => 'archive_options',
 			'default'     => 1,
 			'priority'    => 40,
+		]
+	);
+
+	new \Kirki\Field\Toggle(
+		[
+			'settings'    => 'archives_display_thumbnail',
+			'label'       => esc_html__( 'Display Thumbnail', 'sheen' ),
+			'section'     => 'archive_options',
+			'default'     => 1,
+			'priority'    => 50,
+		]
+	);
+	
+
+	new \Kirki\Field\Toggle(
+		[
+			'settings'    => 'archives_display_category',
+			'label'       => esc_html__( 'Display Category', 'sheen' ),
+			'section'     => 'archive_options',
+			'default'     => 1,
+			'priority'    => 70,
 		]
 	);
 	

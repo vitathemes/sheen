@@ -15,7 +15,6 @@ jQuery(function ($) {
         /*--------------------------------------*\
             #Category Filter  
         \*--------------------------------------*/
-
         $(".js-filter__cat").on("keyup", function (e) {
             if (event.key === "Enter") {
                 const sheen_currentAttr = $(this).attr("for");
@@ -114,7 +113,6 @@ jQuery(function ($) {
         /*------------------------------------*\
           #Handle Load More button
         \*------------------------------------*/
-
         const sheen_loadMoreButton = $(".js-pagination__load-more__btn");
         $(".js-pagination__load-more").click(function () {
             var loadMore = $(this),
