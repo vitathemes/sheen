@@ -26,7 +26,7 @@
         $sheen_query->query($sheen_args);
     ?>
 
-    <div class="c-main__filter">
+    <div class="c-main__filter <?php echo esc_attr( sheen_get_filter_class() ) ?>">
         <div class="c-main__filter-wrapper js-main__filter-wrapper">
             <button class="c-main__filter-items js-main__filter-items" aria-label="<?php esc_attr_e( 'Filter button', 'sheen' ) ?>">
                 <div class="c-main__filter-item"></div>

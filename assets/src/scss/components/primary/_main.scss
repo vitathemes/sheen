@@ -140,6 +140,10 @@
     margin-bottom: rem(31.5px);
 }
 
+.c-main__filter--opened {
+    display: none;
+}
+
 .c-main__filter-wrapper {
     width: 100%;
     display: flex;

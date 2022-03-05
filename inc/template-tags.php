@@ -501,3 +501,24 @@ if ( ! function_exists( 'sheen_get_taxonomy' ) ) :
         }
     }
 endif;
+
+if(!function_exists('sheen_get_filter_class')) : 
+	/**
+	 *
+	 * Get filter Style based on customizer
+	 * 
+	 * @since v1.0.1
+	 * 
+	 */
+	function sheen_get_filter_class( $sheen_is_main = true ) { 
+		$sheen_filter_style = get_theme_mod( 'home_filter_style' , 'closed' );
+		if( $sheen_filter_style === 'opened' ) { 
+			if( $sheen_is_main ) { 
+				return esc_attr( 'c-main__filter--opened' );
+			}
+			else { 
+				return esc_attr( 'c-filter--opened' );
+			}
+		}
+	}
+endif;
