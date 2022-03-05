@@ -8,6 +8,10 @@
     }
 }
 
+.c-filter--opened {
+    display: block;
+}
+
 .c-filter__title {
     text-transform: uppercase;
     color: $sheen_secondary_text_color;

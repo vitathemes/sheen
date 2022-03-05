@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-02 14:39+0330\n"
+"POT-Creation-Date: 2022-03-05 12:19+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -391,71 +391,83 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: inc/customizer.php:659
+#: inc/customizer.php:649
+msgid "Home Page Filter Style"
+msgstr ""
+
+#: inc/customizer.php:654
+msgid "Closed with toggle"
+msgstr ""
+
+#: inc/customizer.php:655
+msgid "Open without toggle"
+msgstr ""
+
+#: inc/customizer.php:673
 msgid "Use Google Fonts"
 msgstr ""
 
-#: inc/customizer.php:677
+#: inc/customizer.php:691
 msgid "Base Font"
 msgstr ""
 
-#: inc/customizer.php:713
+#: inc/customizer.php:727
 msgid "H1"
 msgstr ""
 
-#: inc/customizer.php:743
+#: inc/customizer.php:757
 msgid "H2"
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:787
 msgid "H3"
 msgstr ""
 
-#: inc/customizer.php:803
+#: inc/customizer.php:817
 msgid "H4"
 msgstr ""
 
-#: inc/customizer.php:833
+#: inc/customizer.php:847
 msgid "H5"
 msgstr ""
 
-#: inc/customizer.php:863
+#: inc/customizer.php:877
 msgid "H6"
 msgstr ""
 
-#: inc/customizer.php:894
+#: inc/customizer.php:908
 msgid "Post Type Archive title"
 msgstr ""
 
-#: inc/customizer.php:903
+#: inc/customizer.php:917
 msgid "Display Projects Date"
 msgstr ""
 
-#: inc/customizer.php:913
+#: inc/customizer.php:927
 msgid "Display Author"
 msgstr ""
 
-#: inc/customizer.php:923
+#: inc/customizer.php:937
 msgid "Display Projects Category"
 msgstr ""
 
-#: inc/customizer.php:933
+#: inc/customizer.php:947
 msgid "Display Projects Archives Date"
 msgstr ""
 
-#: inc/customizer.php:943
+#: inc/customizer.php:957
 msgid "Display Projects Archives Category"
 msgstr ""
 
-#: inc/customizer.php:961
+#: inc/customizer.php:975
 msgid "Display Date"
 msgstr ""
 
-#: inc/customizer.php:971
+#: inc/customizer.php:985
 msgid "Display Thumbnail"
 msgstr ""
 
-#: inc/customizer.php:982
+#: inc/customizer.php:996
 msgid "Display Category"
 msgstr ""
 

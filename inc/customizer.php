@@ -643,6 +643,20 @@ if( function_exists( 'kirki' ) ) {
 		]
 	);
 
+	new \Kirki\Field\Radio_Buttonset(
+		[
+			'settings'    => 'home_filter_style',
+			'label'       => esc_html__( 'Home Page Filter Style', 'sheen' ),
+			'section'     => 'home_options',
+			'default'     => 'closed',
+			'priority'    => 40,
+			'choices'     => [
+				'closed'   => esc_html__( 'Closed with toggle', 'sheen' ),
+				'opened' => esc_html__( 'Open without toggle', 'sheen' ),
+			],
+		]
+	);
+
 	/*------------------------------------*\
 	  #Home Page Options end
 	\*------------------------------------*/
