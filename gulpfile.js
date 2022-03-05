@@ -66,7 +66,7 @@ const vendorScriptsTask = (cb) => {
 
 function liveServerTask(cb) {
     browserSync.init({
-        proxy: "brilliance.local",
+        proxy: "sheen.local/",
     });
     gulp.watch([sassSrc + "**/*.scss"]).on(
         "change",
