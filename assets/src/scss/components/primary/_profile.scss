@@ -3,10 +3,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    margin-top: rem(8px);
+    margin-bottom: rem(83px);
+
+    @include mq($from: tablet) {
+        margin-top: rem(111px);
+        margin-bottom: rem(166px);
+    }
 }
 
 .c-profile__thumbnail {

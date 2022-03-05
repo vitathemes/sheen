@@ -45,7 +45,7 @@
 				
 				if( 'projects' === get_post_type() ) { 
 					if($sheen_archive_category) { 
-						sheen_get_taxonomy('project_category' , 'c-post__taxonomy' , 'a');
+						sheen_get_taxonomy('project_category' , 'c-post__taxonomy u-link--primary' , 'a');
 					}
 				}
 				else { 

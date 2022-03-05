@@ -13,7 +13,7 @@
 get_header();
 ?>
 <main id="primary" class="c-main">
-    <div class="c-main__content c-main__content--big-space">
+    <div class="c-main__content">
         <div class="c-profile">
             <?php sheen_get_profile_image(); ?>
             <div class="c-profile__context">

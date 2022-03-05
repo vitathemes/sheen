@@ -63,6 +63,7 @@
 .c-header__title__anchor {
     text-transform: uppercase;
     color: $sheen_headings_color;
+    text-decoration: none;
 
     &:hover,
     &:focus,

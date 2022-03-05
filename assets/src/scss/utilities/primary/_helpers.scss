@@ -9,6 +9,18 @@
 /*------------------------------------*\
   #Links helpers
 \*------------------------------------*/
+
+.u-link--primary {
+    color: $color_link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover;
+    }
+}
+
 .u-link--secondary {
     color: $color_link_secondary; //060606
     text-decoration: none;

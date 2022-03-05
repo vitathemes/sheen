@@ -73,6 +73,10 @@ input[type="submit"] {
     &:active {
         color: $sheen_primary_text_color; // #060606
     }
+
+    &:visited {
+        color: $sheen_primary_text_color; // #060606
+    }
 }
 
 .wp-block-file__button,

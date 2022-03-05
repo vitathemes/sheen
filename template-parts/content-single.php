@@ -51,7 +51,7 @@
                         }
                         else { 
                             /** Display Custom Taxonomy on projects */
-                            sheen_get_taxonomy('project_category' , 'c-post__taxonomy a' , 'a'); // Will be Escaped in function 
+                            sheen_get_taxonomy('project_category' , 'c-post__taxonomy u-link--primary' , 'a'); // Will be Escaped in function 
                         }
                     }
                     

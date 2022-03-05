@@ -18,15 +18,20 @@
     }
 
     @include mq($until: desktop-md) {
-        width: 570px;
+        width: rem(570px);
     }
 
     @include mq($until: tablet) {
         width: 100%;
     }
+
+    @include mq($from: desktop, $until: desktop-md) {
+        width: rem(460px);
+    }
 }
 
 .c-post__thumbnail__link {
+    display: block;
     &:hover,
     &:focus,
     &:active {
