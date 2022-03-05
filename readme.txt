@@ -47,6 +47,8 @@ See a working example at [demo.vitathemes.com/sheen](https://demo.vitathemes.com
 * Remove unused files
 * Change link styles
 * Improve minor style issues
+* Add new customizer features
+* Update Pot file
 
 = 1.0.0 =
 * Initial version
