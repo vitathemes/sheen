@@ -37,12 +37,6 @@
     }
 }
 
-.c-main__content--big-space {
-    @include mq($from: tablet) {
-        margin-top: rem(239px);
-    }
-}
-
 .c-main__header {
     width: 100%;
 }
@@ -143,12 +137,7 @@
 \*------------------------------------*/
 .c-main__filter {
     width: 100%;
-    margin-top: rem(64px);
-    margin-bottom: rem(14px);
-
-    @include mq($from: tablet) {
-        margin-top: rem(116px);
-    }
+    margin-bottom: rem(31.5px);
 }
 
 .c-main__filter-wrapper {

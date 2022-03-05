@@ -35,9 +35,9 @@ class Sheen_walker_comment extends Walker_Comment
                 <div class="comment-header">
                     <?php
                         if (get_comment_author_url($comment) != "") {
-	                        printf('<h6 class="c-comment__author__name"><a href="%s">%s</a></h6>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
+	                        printf('<h6 class="c-comment__author__name u-link--tertiary"><a class="u-link--tertiary" href="%s">%s</a></h6>', esc_html(esc_url(get_comment_author_url($comment))), esc_html(esc_html(get_comment_author($comment))));
                         } else {
-	                        printf('<h6 class="c-comment__author__name">%s</h6>', esc_html(get_comment_author($comment)));
+	                        printf('<h6 class="c-comment__author__name u-link--tertiary">%s</h6>', esc_html(get_comment_author($comment)));
                         }
 					?>
                     <div class="time">

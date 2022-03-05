@@ -3,14 +3,16 @@
 \*------------------------------------*/
 a,
 .a {
-    color: $color_link; //767676
+    color: $sheen_primary_color; //767676
     transition: $global-transition;
-    text-decoration: none;
+    -webkit-text-decoration-color: $sheen_primary_accent_color; /* safari still uses vendor prefix */
+    text-decoration-color: $sheen_primary_accent_color;
 
     &:hover,
     &:focus,
     &:active {
         color: $color_link_hover;
+        text-decoration: none;
     }
 
     &:focus {

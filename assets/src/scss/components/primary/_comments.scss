@@ -65,6 +65,16 @@
 #cancel-comment-reply-link {
     margin-left: 8px;
     font-size: 14px;
+
+    color: $color_link;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color_link_hover;
+    }
 }
 
 /*------------------------------------*\
@@ -123,6 +133,11 @@
 
 .comment-body {
     padding-bottom: 39px;
+
+    * {
+        max-width: 100%;
+        overflow: auto;
+    }
 }
 
 .comment.depth-1 {
@@ -254,6 +269,7 @@
 .logged-in-as {
     a {
         color: $sheen_secondary_text_color;
+        text-decoration: none;
 
         &:visited {
             text-decoration: none;
@@ -338,4 +354,8 @@
             }
         }
     }
+}
+
+.comment-edit-link {
+    margin-right: rem(8px);
 }

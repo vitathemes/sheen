@@ -3,7 +3,7 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990, nimaprmdi
 Requires at least: 5.6
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-3.0-or-later
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -39,9 +39,14 @@ See a working example at [demo.vitathemes.com/sheen](https://demo.vitathemes.com
 4. Active Recommended plugins at the top of dashboard ( `Kirki Customizer Framework` , `LibWp`).
 5. After libWp plugin activated go to `Settings > Permalink` and select `Post name` (\*this option is recommended) radio button and save the changes.
 6. You can add your projects from `Projects` section in dashboard.
-7. Also for editing theme features you can go to Appearance > Customize and Customize theme. Also we highly recommend to Avtive `Kirki Customizer Framework` to have more editing features.
+7. Also for editing theme features you can go to Appearance > Customize and Customize theme. Also we highly recommend to Active `Kirki Customizer Framework` to have more editing features.
 
 == Changelog ==
+
+= 1.0.1 =
+* Remove unused files
+* Change link styles
+* Improve minor style issues
 
 = 1.0.0 =
 * Initial version
