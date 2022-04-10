@@ -373,7 +373,7 @@ if ( ! function_exists( 'sheen_socials_links' ) ) :
 endif;
 
 
-if ( !function_exists('sheen_get_loadmore') ) : 
+if ( ! function_exists('sheen_get_loadmore') ) : 
 	function sheen_get_loadmore( $query  , $sheen_has_masonry = false ) { 
 		/**
 		 * 
@@ -502,7 +502,7 @@ if ( ! function_exists( 'sheen_get_taxonomy' ) ) :
     }
 endif;
 
-if(!function_exists('sheen_get_filter_class')) : 
+if(! function_exists('sheen_get_filter_class')) : 
 	/**
 	 *
 	 * Get filter Style based on customizer

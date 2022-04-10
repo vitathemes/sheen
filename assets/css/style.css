@@ -1097,7 +1097,7 @@ h6 {
   #Header
 \*------------------------------------*/
 .c-header {
-  max-height: 3.75rem;
+  max-height: 6.25rem;
   padding: 0rem 1rem;
 }
 @media (min-width: 57.5em) {
@@ -3083,7 +3083,6 @@ input[type=submit]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: lightcoral;
   width: 100%;
   margin-top: auto;
   margin-bottom: 3.0625rem;
