@@ -91,5 +91,5 @@ if ( ! function_exists( 'sheen_setup' ) ) :
 
 		add_theme_support( 'align-wide' );
 	}
-	add_action( 'after_setup_theme', 'sheen_setup' );
 endif;
+add_action( 'after_setup_theme', 'sheen_setup' );

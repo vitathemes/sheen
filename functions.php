@@ -9,10 +9,10 @@
 
 if ( ! defined( 'SHEEN_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'SHEEN_VERSION', '1.0.0' );
+	define( 'SHEEN_VERSION', '1.0.2' );
 }
 
-if(! function_exists('sheen_content_width')) : 
+if( ! function_exists('sheen_content_width')) : 
 	/**
 	 * Set the content width in pixels, based on the theme's design and stylesheet.
 	 *
@@ -23,8 +23,8 @@ if(! function_exists('sheen_content_width')) :
 	function sheen_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'sheen_content_width', 640 );
 	}
-	add_action( 'after_setup_theme', 'sheen_content_width', 0 );
 endif;
+add_action( 'after_setup_theme', 'sheen_content_width', 0 );
 
 
 /**

@@ -45,35 +45,41 @@ if( !function_exists('sheen_enqueue_editor_scripts') ) :
 	function sheen_enqueue_editor_scripts() {
 		wp_enqueue_script( 'sheen-editor-scripts', get_template_directory_uri() . '/assets/js/block.js' );
 	}
-	add_action( 'admin_enqueue_scripts', 'sheen_enqueue_editor_scripts' );
 endif;
+add_action( 'admin_enqueue_scripts', 'sheen_enqueue_editor_scripts' );
 
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function sheen_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
+if( ! function_exists('sheen_body_classes') ) :
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	function sheen_body_classes( $classes ) {
+		// Adds a class of hfeed to non-singular pages.
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+		}
+
+		return $classes;
 	}
-
-	return $classes;
-}
+endif;
 add_filter( 'body_class', 'sheen_body_classes' );
 
-/**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
-function sheen_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+
+if( ! function_exists('sheen_pingback_header') ) : 
+	/**
+	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+	 */
+	function sheen_pingback_header() {
+		if ( is_singular() && pings_open() ) {
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+		}
 	}
-}
+endif;
 add_action( 'wp_head', 'sheen_pingback_header' );
+
 
 if ( ! function_exists( 'sheen_branding' ) ) {
 	function sheen_branding() { 
@@ -134,6 +140,7 @@ if ( ! function_exists( 'sheen_typography' )) {
 	}
 }
 
+
 if ( ! function_exists( 'sheen_theme_settings' )) : 
 	function sheen_theme_settings() {
 		$sheen_theme_typography = sheen_typography();
@@ -142,7 +149,6 @@ if ( ! function_exists( 'sheen_theme_settings' )) :
 		echo sprintf('<style>%s</style>' , esc_html($sheen_theme_typography) );
 	}
 endif;
-
 add_action( 'admin_head', 'sheen_theme_settings' );
 add_action( 'wp_head', 'sheen_theme_settings' );
 
@@ -155,8 +161,8 @@ if ( ! function_exists( 'sheen_modify_libwp_post_type' ) ) {
 		$sheen_postTypeName = 'projects';
 		return $sheen_postTypeName;
 	} 
-	add_filter('libwp_post_type_1_name', 'sheen_modify_libwp_post_type');
 }
+add_filter('libwp_post_type_1_name', 'sheen_modify_libwp_post_type');
   
 
 if ( ! function_exists('sheen_modify_libwp_post_type_argument') ) {	  
@@ -192,8 +198,8 @@ if ( ! function_exists('sheen_modify_libwp_post_type_argument') ) {
 	
 		return $sheen_postTypeArguments;
 	}  
-	add_filter('libwp_post_type_1_arguments', 'sheen_modify_libwp_post_type_argument');
 }
+add_filter('libwp_post_type_1_arguments', 'sheen_modify_libwp_post_type_argument');
 
 
 if ( ! function_exists('sheen_modify_libwp_taxonomy_name')) {
@@ -204,8 +210,8 @@ if ( ! function_exists('sheen_modify_libwp_taxonomy_name')) {
 		$sheen_taxonomyName = 'project_category';
 		return $sheen_taxonomyName;
 	}
-	add_filter('libwp_taxonomy_1_name', 'sheen_modify_libwp_taxonomy_name');
 }
+add_filter('libwp_taxonomy_1_name', 'sheen_modify_libwp_taxonomy_name');
 
   
 if ( ! function_exists('sheen_modify_libwp_taxonomy_post_type_name')) {
@@ -216,34 +222,33 @@ if ( ! function_exists('sheen_modify_libwp_taxonomy_post_type_name')) {
 		$sheen_taxonomyPostTypeName = 'projects';
 		return $sheen_taxonomyPostTypeName;
 	}
-	add_filter('libwp_taxonomy_1_post_type', 'sheen_modify_libwp_taxonomy_post_type_name');
 }
+add_filter('libwp_taxonomy_1_post_type', 'sheen_modify_libwp_taxonomy_post_type_name');
 	
 
 if ( ! function_exists('sheen_modify_libwp_taxonomy_argument') ) {
-function sheen_modify_libwp_taxonomy_argument($sheen_taxonomyArguments) {
-	/**
-	* Modify LibWP taxonomy name (If libwp plugin exist)
-	*/
-	$sheen_taxonomyArguments['labels'] = [
-		'name'          => _x('Project Categories', 'taxonomy general name', 'sheen'),
-		'singular_name' => _x('Project Category', 'taxonomy singular name', 'sheen'),
-		'search_items'  => __('Search Project Categories', 'sheen'),
-		'all_items'     => __('All Project Categories', 'sheen'),
-		'edit_item'     => __('Edit Project Category', 'sheen'),
-		'add_new_item'  => __('Add New Project Category', 'sheen'),
-		'new_item_name' => __('New Project Category Name', 'sheen'),
-		'menu_name'     => __('Project Categories', 'sheen'),
-	];
-	$sheen_taxonomyArguments['rewrite']['slug'] = 'project_category';
-	$sheen_taxonomyArguments['show_in_rest'] = true;
+	function sheen_modify_libwp_taxonomy_argument($sheen_taxonomyArguments) {
+		/**
+		* Modify LibWP taxonomy name (If libwp plugin exist)
+		*/
+		$sheen_taxonomyArguments['labels'] = [
+			'name'          => _x('Project Categories', 'taxonomy general name', 'sheen'),
+			'singular_name' => _x('Project Category', 'taxonomy singular name', 'sheen'),
+			'search_items'  => __('Search Project Categories', 'sheen'),
+			'all_items'     => __('All Project Categories', 'sheen'),
+			'edit_item'     => __('Edit Project Category', 'sheen'),
+			'add_new_item'  => __('Add New Project Category', 'sheen'),
+			'new_item_name' => __('New Project Category Name', 'sheen'),
+			'menu_name'     => __('Project Categories', 'sheen'),
+		];
+		$sheen_taxonomyArguments['rewrite']['slug'] = 'project_category';
+		$sheen_taxonomyArguments['show_in_rest'] = true;
 
-	return $sheen_taxonomyArguments;
-		  
+		return $sheen_taxonomyArguments;
+			
+		}
 	}
-	
-	add_filter('libwp_taxonomy_1_arguments', 'sheen_modify_libwp_taxonomy_argument');
-}
+add_filter('libwp_taxonomy_1_arguments', 'sheen_modify_libwp_taxonomy_argument');
 
 
 if(!function_exists('sheen_load_more_script')): 
@@ -265,8 +270,8 @@ if(!function_exists('sheen_load_more_script')):
 		) );
 		wp_enqueue_script( 'sheen-main-script' );
 	}
-	add_action( 'wp_enqueue_scripts', 'sheen_load_more_script' );
 endif;
+add_action( 'wp_enqueue_scripts', 'sheen_load_more_script' );
 
 
 if( !function_exists('sheen_loadmore_ajax_handler') ) : 
@@ -299,9 +304,9 @@ if( !function_exists('sheen_loadmore_ajax_handler') ) :
 			die; 
 		}
 	}
-	add_action('wp_ajax_loadmore', 'sheen_loadmore_ajax_handler'); // wp_ajax_{action}
-	add_action('wp_ajax_nopriv_loadmore', 'sheen_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 endif;
+add_action('wp_ajax_loadmore', 'sheen_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'sheen_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
 
@@ -343,9 +348,9 @@ if( !function_exists('sheen_cats_filter') ) :
 		
 		die();
 	}
-	add_action('wp_ajax_myfilter', 'sheen_cats_filter'); // wp_ajax_{ACTION HERE} 
-	add_action('wp_ajax_nopriv_myfilter', 'sheen_cats_filter');
 endif;
+add_action('wp_ajax_myfilter', 'sheen_cats_filter'); // wp_ajax_{ACTION HERE} 
+add_action('wp_ajax_nopriv_myfilter', 'sheen_cats_filter');
 
 
 if ( !function_exists('sheen_modify_archive_title') ) {
@@ -367,6 +372,6 @@ if ( !function_exists('sheen_modify_archive_title') ) {
 		}
 		return wp_kses_post( $sheen_title );
 	}
-	add_filter( 'wp_title', 'sheen_modify_archive_title' );
-	add_filter( 'get_the_archive_title', 'sheen_modify_archive_title' );
 }
+add_filter( 'wp_title', 'sheen_modify_archive_title' );
+add_filter( 'get_the_archive_title', 'sheen_modify_archive_title' );
