@@ -46,6 +46,7 @@ See a working example at [demo.vitathemes.com/sheen](https://demo.vitathemes.com
 = 1.0.2 =
 * Improve Plugable functions
 * Fix minor issues 
+* Add kirki customizer version handler
 
 = 1.0.1 =
 * Remove unused files
