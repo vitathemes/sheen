@@ -1,3 +1,26 @@
+/*!
+Theme Name: Sheen
+Theme URI: https://vitathemes.com/theme/sheen/
+Author: VitaThemes
+Author URI: http://vitathemes.com
+Description: Sheen is a fast and minimal theme for portfolio web sites.
+Version: 1.0.2
+Tested up to: 5.9
+Requires PHP: 5.6
+License: GPL-3.0-or-later
+License URI: https://opensource.org/licenses/GPL-3.0
+Text Domain: sheen
+Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL 3.0 (GPL Version 3.0).
+Use it to make something cool, have fun, and share what you've learned.
+
+sheen is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
 /* Normalize
 --------------------------------------------- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1097,7 +1120,7 @@ h6 {
   #Header
 \*------------------------------------*/
 .c-header {
-  max-height: 3.75rem;
+  max-height: 6.25rem;
   padding: 0rem 1rem;
 }
 @media (min-width: 57.5em) {
@@ -3083,7 +3106,6 @@ input[type=submit]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: lightcoral;
   width: 100%;
   margin-top: auto;
   margin-bottom: 3.0625rem;

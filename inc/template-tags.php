@@ -177,7 +177,7 @@ if ( ! function_exists('sheen_get_thumbnail')) :
 		else{
 			echo '<img class="'.esc_attr( $sheen_custom_class ).' " alt="'.esc_attr__( 'no thumbnail', 'sheen' ).'" src="' . esc_url(get_template_directory_uri()). '/assets/images/no-thumbnail.png" />';
 		}
-}
+	}
 endif;
 
 
@@ -204,7 +204,7 @@ if ( ! function_exists( 'sheen_post_categories' ) ) :
 endif;
 
 
-if (! function_exists('sheen_get_category')) :
+if ( ! function_exists('sheen_get_category')) :
 	/**
 	  * Return Post category
 	  */
@@ -373,7 +373,7 @@ if ( ! function_exists( 'sheen_socials_links' ) ) :
 endif;
 
 
-if ( !function_exists('sheen_get_loadmore') ) : 
+if ( ! function_exists('sheen_get_loadmore') ) : 
 	function sheen_get_loadmore( $query  , $sheen_has_masonry = false ) { 
 		/**
 		 * 
@@ -392,7 +392,7 @@ if ( !function_exists('sheen_get_loadmore') ) :
 endif;
 
 
-if (! function_exists('sheen_get_default_pagination')) :
+if ( ! function_exists('sheen_get_default_pagination')) :
 	/**
 	  * Show numeric pagination
 	  *
@@ -416,7 +416,7 @@ if (! function_exists('sheen_get_default_pagination')) :
 endif;
 
 
-if (! function_exists('sheen_get_tags')) :
+if ( ! function_exists('sheen_get_tags')) :
 	/**
 	 * 
 	 * Return post tags
@@ -502,7 +502,8 @@ if ( ! function_exists( 'sheen_get_taxonomy' ) ) :
     }
 endif;
 
-if(!function_exists('sheen_get_filter_class')) : 
+
+if( ! function_exists('sheen_get_filter_class')) : 
 	/**
 	 *
 	 * Get filter Style based on customizer
